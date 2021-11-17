@@ -1,0 +1,49 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Campagne;
+use App\Models\Profile;
+use Illuminate\Http\Request;
+
+class AdminController extends Controller
+{
+    public function index(){
+        return view('admin.index');
+    }
+
+    public function index2(){
+        return view('admin.index-1');
+    }
+
+    public function withdarwalView(){
+        return view('admin.withdarwal');
+        
+    }
+
+    public function campagnes_actif(){
+        return view('admin.campagnes-actif');
+    }
+
+    public function campagnes_inactif(){
+        return view('admin.campagnes-inactif');
+    }
+    public function users(){
+        return view('admin.users');
+    }
+
+    public function see($id){
+        $users = Profile::where('user_id',$id)->first();
+        $usersCount = Profile::where('user_id',$id)->count();
+        $hisCampagnes = Campagne::where('user_id',$id)->paginate(5);
+        return view('admin.see-more',compact('users','hisCampagnes','usersCount'));
+    }
+    
+
+    public function seeMoreCampagne($id){
+        
+        $campagnePost = Campagne::where('id',$id)->first();
+       // dd($campagnes);
+        return view('admin.see-more-campagne',compact('campagnePost'));
+    }
+}
