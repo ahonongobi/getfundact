@@ -5,7 +5,7 @@
                     <div class="col-sm-6 col-lg-3">
                         <div class="footer-item">
                             <div class="footer-logo">
-                                <a class="logo" href="index.php">
+                                <a class="logo" href="/">
                                     <img src="assets/img/logo-two.png" alt="Logo">
                                 </a>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat vero, magni est placeat neque, repellat maxime a dolore</p>

@@ -170,9 +170,9 @@
                                 @endphp</li>
                                 <li>Montant visé: {{$item->montant_v}} FCFA</li>
                             </ul>
-                            <h4>Contributions: 
+                            <!--<h4>Contributions: 
                                 <span>60 personnes</span>
-                            </h4>
+                            -->
                         </div>
                     </div>
                 </div>

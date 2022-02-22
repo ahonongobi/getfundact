@@ -123,16 +123,16 @@
         <div class="navbar-area sticky-top">
 
             <div class="mobile-nav">
-                <a href="index.php" class="logo">
-                    <img src="assets/img/logo-two.png" alt="Logo">
+                <a href="/" class="logo">
+                    <img src="{{ asset('assets/img/logo-two.png') }}" alt="Logo">
                 </a>
             </div>
 
             <div class="main-nav">
                 <div class="container">
                     <nav class="navbar navbar-expand-md navbar-light">
-                        <a class="navbar-brand" href="index.php">
-                            <img src="assets/img/logo.png" alt="Logo">
+                        <a class="navbar-brand" href="/">
+                            <img src="{{ asset('assets/img/logo.png') }}" alt="Logo">
                         </a>
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                             <ul class="navbar-nav">
@@ -144,7 +144,7 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="about.php" class="nav-link dropdown-toggle ">À PROPOS 
+                                    <a href="/about" class="nav-link dropdown-toggle ">À PROPOS 
                                     
                                     </a>
                                   

@@ -20,6 +20,7 @@ class WithdrawalController extends Controller
         //dd($request->nom_campagne);
         $withdrawalinfo =  new Withdrawal();
         $withdrawalinfo->id_user  = Auth::user()->id;
+        //$withdrawalinfo->id_campagne = $request->id;
         $withdrawalinfo->nom_campagne =  $request->nom_campagne;
         
         if ($withdrawalinfo->save()) {

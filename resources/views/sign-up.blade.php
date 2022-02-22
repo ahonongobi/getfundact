@@ -169,6 +169,8 @@
                 <script>
                     function Abyssinie(){
                   swal("{{Session::get('title')}}", "{{Session::get('sending')}}", "{{Session::get('type')}}");
+                  setTimeout(function(){ window.location.href="/login"; }, 6000);
+
              }
           
           $(document).ready(function(){

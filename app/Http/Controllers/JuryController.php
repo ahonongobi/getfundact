@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Campagne;
 use App\Models\User;
+use App\Models\Withdrawal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -45,6 +46,25 @@ class JuryController extends Controller
       public function unvalidateCampagne($id){
         $user = Campagne::where('id',$id)->first();
         DB::update("UPDATE campagnes SET statut=? WHERE id=?",[
+            0,$id
+        ]);
+        return back()->with('success','Campagnes désactivée avec succès!!!');
+      }
+
+      //start pay and unpay user
+
+      public function pay($id){
+        $user = Withdrawal::where('id',$id)->first();
+        DB::update("UPDATE withdrawals SET statut=? WHERE id=?",[
+            1,$id
+        ]);
+        return back()->with('success','Campagnes désactivée avec succès!!!');
+      }
+
+
+      public function unpay($id){
+        $user = Withdrawal::where('id',$id)->first();
+        DB::update("UPDATE withdrawals SET statut=? WHERE id=?",[
             0,$id
         ]);
         return back()->with('success','Campagnes désactivée avec succès!!!');

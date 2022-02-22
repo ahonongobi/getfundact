@@ -108,7 +108,7 @@
                                     
                                     <div class="col-lg-12 mb-2">
                                         <div class="form-group">
-                                            <input type="text" required value="{{ old('nom_prenoms') }}" name="nom_prenoms" class="form-control" placeholder="** Nom complet (prénom nom)">
+                                            <input type="text" required value="{{ $profile_data->nom_prenoms ?? '' }}" name="nom_prenoms" class="form-control" placeholder="** Nom complet (prénom nom)">
                                             <span class="text-danger">
                                                 @if ($errors->has('nom_prenoms'))
                                                     {{$errors->first('nom_prenoms')}}
@@ -118,7 +118,7 @@
                                     </div>
                                     <div class="col-lg-12 mb-2">
                                         <div class="form-group">
-                                            <input type="date" required value="{{ old('date_naissance') }}" name="date_naissance" class="form-control" placeholder="** Date de naissance">
+                                            <input type="date" required value="{{ $profile_data->date_naissance ?? '' }}" name="date_naissance" class="form-control" placeholder="** Date de naissance">
                                             <span class="text-danger">
                                                 @if ($errors->has('date_naissance'))
                                                     {{$errors->first('date_naissance')}}
@@ -128,7 +128,7 @@
                                     </div>
                                     <div class="col-lg-12 mb-2">
                                         <div class="form-group">
-                                            <input type="text" required value="{{ old('nationanlite') }}" name="nationanlite" class="form-control" placeholder="** Nationalité">
+                                            <input type="text" required value="{{ $profile_data->nationanlite ?? '' }}" name="nationanlite" class="form-control" placeholder="** Nationalité">
                                             <span class="text-danger">
                                                 @if ($errors->has('nationalite'))
                                                     {{$errors->first('nationalite')}}
@@ -139,7 +139,7 @@
             
                                     <div class="col-lg-12 mb-2">
                                         <div class="form-group">
-                                            <input type="text" required name="pays" value="{{ old('pays') }}" class="form-control" placeholder="** Pays de résidence">
+                                            <input type="text" required name="pays" value="{{ $profile_data->pays ?? '' }}" class="form-control" placeholder="** Pays de résidence">
                                             <span class="text-danger">
                                                 @if ($errors->has('pays'))
                                                     {{$errors->first('pays')}}
@@ -150,7 +150,7 @@
             
                                     <div class="col-lg-12 mb-2">
                                         <div class="form-group">
-                                            <input type="email" required name="email" readonly value="{{ Auth::user()->email }}" class="form-control" placeholder="* Email">
+                                            <input type="email" required name="email" readonly value="{{ $profile_data->email ?? '' }}" class="form-control" placeholder="* Email">
                                             <span class="text-danger">
                                                 @if ($errors->has('email'))
                                                     {{$errors->first('email')}}
@@ -161,7 +161,7 @@
             
                                     <div class="col-lg-12 mb-2">
                                         <div class="form-group">
-                                            <input type="number" required name="tel" value="{{ old('tel') }}" class="form-control" placeholder="Numéro de téléphone">
+                                            <input type="number" required name="tel" value="{{ $profile_data->tel ?? '' }}" class="form-control" placeholder="Numéro de téléphone">
                                             <span class="text-danger">
                                                 @if ($errors->has('tel'))
                                                     {{$errors->first('tel')}}
@@ -170,7 +170,7 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
-                                        <button type="submit" class="btn common-btn">SE CONNECTER</button>
+                                        <button type="submit" class="btn common-btn">Enregistrer</button>
                                     </div>
                                 </container>
             
@@ -208,7 +208,7 @@
                                     <div class="col-lg-12 mb-4">
                                         <div class="form-group">
                                             <label for="">* Votre addresse telle que connue à votre Banque</label>
-                                            <input type="text"  name="votre_addresse" class="form-control" placeholder="">
+                                            <input type="text" value="{{ $profile_data->votre_addresse  ?? ''}}"  name="votre_addresse" class="form-control" placeholder="">
                                             <span class="text-danger">
                                                 @if ($errors->has('votre_addresse'))
                                                     {{$errors->first('votre_addresse')}}
@@ -219,7 +219,7 @@
                                     <div class="col-lg-12 mb-2">
                                         <div class="form-group">
                                             <label for="">Ville</label>
-                                            <input type="text"  name="ville" class="form-control" placeholder="">
+                                            <input type="text" value="{{ $profile_data->ville ?? '' }}"  name="ville"  class="form-control" placeholder="">
                                             <span class="text-danger">
                                                 @if ($errors->has('ville'))
                                                     {{$errors->first('ville')}}
@@ -230,7 +230,7 @@
                                     <div class="col-lg-12 mb-2">
                                         <div class="form-group">
                                             <label for="">Region</label>
-                                            <input type="text"  name="region" class="form-control" placeholder="">
+                                            <input type="text" value="{{ $profile_data->region ?? '' }}"  name="region" class="form-control" placeholder="">
                                             <span class="text-danger">
                                                 @if ($errors->has('region'))
                                                     {{$errors->first('region')}}
@@ -242,7 +242,7 @@
                                     <div class="col-lg-12 mb-2">
                                         <div class="form-group">
                                             <label for="">Code postal</label>
-                                            <input type="text"  name="code_postal" class="form-control" placeholder="">
+                                            <input type="text" value="{{ $profile_data->code_postal ?? '' }}" name="code_postal" class="form-control" placeholder="">
                                             <span class="text-danger">
                                                 @if ($errors->has('code_postal'))
                                                     {{$errors->first('code_postal')}}
@@ -250,11 +250,11 @@
                                             </span>
                                         </div>
                                     </div>
-                                      <h5 class="text-success">Coordonnées bancaires (FR)</h5>
-                                    <div class="col-lg-12 mb-2">
+                                      <h5 class="text-success d-none">Coordonnées bancaires (FR)</h5>
+                                    <div class="col-lg-12 mb-2 d-none">
                                         <div class="form-group">
                                             <label for="">Numéro du compte</label>
-                                            <input type="text"  name="numero_compte" class="form-control" placeholder="">
+                                            <input type="text" value="neant" name="numero_compte" class="form-control" placeholder="">
                                             <span class="text-danger">
                                                 @if ($errors->has('numero_compte'))
                                                     {{$errors->first('numero_compte')}}
@@ -263,11 +263,11 @@
                                         </div>
                                     </div>
             
-                                    <div class="col-lg-12 mb-2">
+                                    <div class="col-lg-12 mb-2 d-none">
                                         <div class="form-group">
                                             <label for="">Numéro de l'institution
                                             </label>
-                                            <input type="text"  name="numero_institution" class="form-control" placeholder="">
+                                            <input type="text" value="neant122"  name="numero_institution" class="form-control" placeholder="">
                                             <span class="text-danger">
                                                 @if ($errors->has('numero_institution'))
                                                     {{$errors->first('numero_institution')}}
@@ -284,7 +284,7 @@
                                     
                                     <div class="form-group">
                                         <label for="">Iban</label>
-                                        <input type="text"  name="iban" class="form-control">
+                                        <input type="text" value="{{ $profile_data->iban ?? '' }}"  name="iban" class="form-control">
                                         <span class="text-danger">
                                             @if ($errors->has('iban'))
                                                 {{$errors->first('iban')}}
@@ -293,7 +293,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="">BIC</label>
-                                        <input type="text"  name="bic" class="form-control">
+                                        <input type="text" value="{{ $profile_data->bic ?? '' }}"  name="bic" class="form-control">
                                         <span class="text-danger">
                                             @if ($errors->has('bic'))
                                                 {{$errors->first('bic')}}
@@ -302,7 +302,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="">Nom de la banque</label>
-                                        <input type="text"  name="nom_banque" class="form-control">
+                                        <input type="text" value="{{ $profile_data->nom_banque ?? ''}}"  name="nom_banque" class="form-control">
                                         <span class="text-danger">
                                             @if ($errors->has('nom_banque'))
                                                 {{$errors->first('nom_banque')}}
@@ -312,7 +312,7 @@
                                      <div class="col-lg-12 mb-2">
                                         <div class="form-group">
                                             <label for="">Code de l'agence</label>
-                                            <input type="text"  name="code_agence" class="form-control">
+                                            <input type="text" value="{{ $profile_data->code_agence ?? ''}}"  name="code_agence" class="form-control">
                                             <span class="text-danger">
                                                 @if ($errors->has('code_agence'))
                                                     {{$errors->first('code_agence')}}

@@ -32,11 +32,17 @@
         <title>GetFund action, soutenez la communauté</title>
         <link rel="icon" type="image/png" href="{{('assets/img/favicon.png')}}">
         <script src="{{asset('assets/ckeditor/ckeditor.js')}}" ></script>
-
+        <style>
+            body{
+                font-family: montserrat !important;
+            }
+        </style>
+        
+        
     </head>
     <body>
 
-        <div class="loader">
+        <div class="loader d-none">
             <div class="d-table">
                 <div class="d-table-cell">
                     <div class="pre-box-one">
@@ -178,7 +184,21 @@
                                 <li>
                                     @if(Auth::check())
                                     <span>{{ Auth::user()->name }} {{ Auth::user()->surname }}</span>
+                                    <span>
+                                        @if (Auth::user()->states==1)
+                                            | Compte Actif
+                                        @else
+                                        | Compte inactif
+                                        @endif
+                                    </span>
                                     @else
+                                        
+                                    @endif
+                                </li>
+                                <li>
+                                    @if(Auth::check())
+                                      
+                                   @else
                                         
                                     @endif
                                 </li>
@@ -199,7 +219,7 @@
                             <h3>
                                 <a href="#">MONTANT COLLECTÉ</a>
                             </h3>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply rom text. Contrary to popular belief is not simply.</p>
+                            <p></p>
                             <a class="feature-btn" href="#">{{ $count_your_contribution_amount_for_you }} FCFA</a>
                         </div>
                     </div>
@@ -209,7 +229,7 @@
                             <h3>
                                 <a href="#">MONTANT DEMANDÉ</a>
                             </h3>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply rom text. Contrary to popular belief is not simply.</p>
+                            <p></p>
                             <a class="feature-btn" href="#">{{ $count_your_contribution_amount_for_you }} FCFA</a>
                         </div>
                     </div>
@@ -219,7 +239,7 @@
                             <h3>
                                 <a href="#">Contributions</a>
                             </h3>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply rom text. Contrary to popular belief is not simply.</p>
+                            <p></p>
                             <a class="feature-btn" href="#">{{$count_contribution_for_you}} donations déjà</a>
                         </div>
                     </div>
@@ -236,7 +256,7 @@
                             <h3>
                                 <a href="#">MONTANT COLLECTÉ</a>
                             </h3>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply rom text. Contrary to popular belief is not simply.</p>
+                            <p></p>
                             <a class="feature-btn" href="#">${{ $count_contribution_amount }}</a>
                         </div>
                     </div>
@@ -246,7 +266,7 @@
                             <h3>
                                 <a href="#">MONTANT DEMANDÉ</a>
                             </h3>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply rom text. Contrary to popular belief is not simply.</p>
+                            <p></p>
                             <a class="feature-btn" href="#">${{$details ?? ''->montant_v}}</a>
                         </div>
                     </div>
@@ -256,7 +276,7 @@
                             <h3>
                                 <a href="#">Contributions</a>
                             </h3>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply rom text. Contrary to popular belief is not simply.</p>
+                            <p></p>
                             <a class="feature-btn" href="#">{{$count_contribution}} donations déjà</a>
                         </div>
                     </div>
@@ -276,8 +296,8 @@
             <div class="col-sm-6 col-lg-3">
                 <div class="footer-item">
                     <div class="footer-logo">
-                        <a class="logo" href="index.php">
-                            <img src="assets/img/logo-two.png" alt="Logo">
+                        <a class="logo" href="/">
+                            <img src="{{asset('assets/img/logo-two.png')}}" alt="Logo">
                         </a>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat vero, magni est placeat neque, repellat maxime a dolore</p>
                         <ul>

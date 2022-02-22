@@ -34,25 +34,16 @@
                                             <span>Paratger:</span>
                                         </li>
                                         <li>
-                                            <a href="#" target="_blank">
+                                            <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:8000/donation-details/{{ url('donation-details/'.$details->id.'/'.$details->name_b) }}&display=popup">
                                                 <i class="icofont-facebook"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#" target="_blank">
-                                                <i class="icofont-twitter"></i>
+                                            <a href="https://api.whatsapp.com/send?text={{ url('donation-details/'.$details->id.'/'.$details->name_b) }}" target="_blank">
+                                                <i class="icofont-whatsapp"></i>
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="#" target="_blank">
-                                                <i class="icofont-youtube-play"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" target="_blank">
-                                                <i class="icofont-instagram"></i>
-                                            </a>
-                                        </li>
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -78,92 +69,193 @@
                         </div>
                     </div>
                     <div class="details-payment">
-                        <h3>Contribution</h3>
-                        <form method="POST" action="{{ url('contribution') }}">
-                            @csrf
-                            <input type="hidden" value="{{ $details->id }}" name="id_campagne">
-                            <input type="hidden" value="{{ $details->user_id }}" name="id_author">
-                            <input type="hidden" value="{{ $details->name }}" name="nom_du_porteur">
-                            <div class="form-radio-area">
-                                
+                    <h3>Contribution</h3>
+                    @if($email_value->email == "sa.intelligencia@gmail.com")
+                    <form method="POST" action="{{ url('contribution') }}">
+                        @csrf
+                        <input type="hidden" value="{{ $details->id }}" name="id_campagne">
+                        <input type="hidden" value="{{ $details->user_id }}" name="id_author">
+                        <input type="hidden" value="{{ $details->name }}" name="nom_du_porteur">
+                        <div class="form-radio-area">
+                            
 
+                        </div>
+                        <span class="text-danger">
+                            @if ($errors->has('inlineRadioOptions'))
+                                {{$errors->first('inlineRadioOptions')}}
+                            @endif
+                        </span>
+                        <div class="form-input-area">
+                            <div class="form-group">
+                                <label>
+                                    <i class="icofont-user-alt-3"></i>
+                                </label>
+                                <input type="text" name="name" class="form-control" placeholder="Nom">
+                                <span class="text-danger">
+                                    @if ($errors->has('name'))
+                                        {{$errors->first('name')}}
+                                    @endif
+                                </span>
                             </div>
-                            <span class="text-danger">
-                                @if ($errors->has('inlineRadioOptions'))
-                                    {{$errors->first('inlineRadioOptions')}}
-                                @endif
-                            </span>
-                            <div class="form-input-area">
-                                <div class="form-group">
-                                    <label>
-                                        <i class="icofont-user-alt-3"></i>
-                                    </label>
-                                    <input type="text" name="name" class="form-control" placeholder="Nom">
-                                    <span class="text-danger">
-                                        @if ($errors->has('name'))
-                                            {{$errors->first('name')}}
-                                        @endif
-                                    </span>
-                                </div>
-                                <div class="form-group">
-                                    <label>
-                                        <i class="icofont-user-alt-3"></i>
-                                    </label>
-                                    <input type="text" class="form-control" name="surname" placeholder="Prénoms">
-                                    <span class="text-danger">
-                                        @if ($errors->has('surname'))
-                                            {{$errors->first('surname')}}
-                                        @endif
-                                    </span>
-                                </div>
-                                <div class="form-group">
-                                    <label>
-                                        <i class="icofont-ui-email"></i>
-                                    </label>
-                                    <input type="email" name="email" class="form-control" placeholder="Email">
-                                    <span class="text-danger">
-                                        @if ($errors->has('email'))
-                                            {{$errors->first('email')}}
-                                        @endif
-                                    </span>
-                                </div>
-                                <div class="form-group">
-                                    <label>
-                                        <i class="icofont-ui-call"></i>
-                                    </label>
-                                    <input type="text" name="numero" class="form-control" placeholder="Numero de téléphone">
-                                    <span class="text-danger">
-                                        @if ($errors->has('numero'))
-                                            {{$errors->first('numero')}}
-                                        @endif
-                                    </span>
-                                </div>
-                                <div class="form-group">
-                                    <label>
-                                        <i class="icofont-dollar"></i>
-                                    </label>
-                                    <input type="number" min="0" name="montant" class="form-control" placeholder="$100.00">
-                                    <span class="text-danger">
-                                        @if ($errors->has('montant'))
-                                            {{$errors->first('montant')}}
-                                        @endif
-                                    </span>
-                                </div>
-                                <div class="text-center">
-                                    
-                                    <button type="submit" class="btn common-btn">Faire un don maintenant</button>
-
+                            <div class="form-group">
+                                <label>
+                                    <i class="icofont-user-alt-3"></i>
+                                </label>
+                                <input type="text" class="form-control" name="surname" placeholder="Prénoms">
+                                <span class="text-danger">
+                                    @if ($errors->has('surname'))
+                                        {{$errors->first('surname')}}
+                                    @endif
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <i class="icofont-ui-email"></i>
+                                </label>
+                                <input type="email" name="email" class="form-control" placeholder="Email">
+                                <span class="text-danger">
+                                    @if ($errors->has('email'))
+                                        {{$errors->first('email')}}
+                                    @endif
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <i class="icofont-ui-call"></i>
+                                </label>
+                                <input type="text" name="numero" class="form-control" placeholder="Numero de téléphone">
+                                <span class="text-danger">
+                                    @if ($errors->has('numero'))
+                                        {{$errors->first('numero')}}
+                                    @endif
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <i class="icofont-dollar"></i>
+                                </label>
+                                <input onInput="edValueKeyPress()" type="number" id="invest" min="0" name="montant" class="form-control" placeholder="$100.00">
+                                <span class="text-danger">
+                                    @if ($errors->has('montant'))
+                                        {{$errors->first('montant')}}
+                                    @endif
+                                </span>
+                            </div>
+                            <div class="calculatrice">
+                                <span>Equivalent en FCFA:</span> <span id="for_th_day">0FCFA</span>
+                            </div>
+                            <div class="text-center">
                                 
-                                </div>
+                                <button type="submit" class="btn common-btn">Faire un don maintenant</button>
+
+                            
                             </div>
-                        </form>
+                        </div>
+                        
+                    </form>
+                    @elseif($email_value->email != $auth_id)
+                    
+                    <form method="POST" action="{{ url('contribution') }}">
+                        @csrf
+                        <input type="hidden" value="{{ $details->id }}" name="id_campagne">
+                        <input type="hidden" value="{{ $details->user_id }}" name="id_author">
+                        <input type="hidden" value="{{ $details->name }}" name="nom_du_porteur">
+                        <div class="form-radio-area">
+                            
+
+                        </div>
+                        <span class="text-danger">
+                            @if ($errors->has('inlineRadioOptions'))
+                                {{$errors->first('inlineRadioOptions')}}
+                            @endif
+                        </span>
+                        <div class="form-input-area">
+                            <div class="form-group">
+                                <label>
+                                    <i class="icofont-user-alt-3"></i>
+                                </label>
+                                <input type="text" name="name" class="form-control" placeholder="Nom">
+                                <span class="text-danger">
+                                    @if ($errors->has('name'))
+                                        {{$errors->first('name')}}
+                                    @endif
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <i class="icofont-user-alt-3"></i>
+                                </label>
+                                <input type="text" class="form-control" name="surname" placeholder="Prénoms">
+                                <span class="text-danger">
+                                    @if ($errors->has('surname'))
+                                        {{$errors->first('surname')}}
+                                    @endif
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <i class="icofont-ui-email"></i>
+                                </label>
+                                <input type="email" name="email" class="form-control" placeholder="Email">
+                                <span class="text-danger">
+                                    @if ($errors->has('email'))
+                                        {{$errors->first('email')}}
+                                    @endif
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <i class="icofont-ui-call"></i>
+                                </label>
+                                <input type="text" name="numero" class="form-control" placeholder="Numero de téléphone">
+                                <span class="text-danger">
+                                    @if ($errors->has('numero'))
+                                        {{$errors->first('numero')}}
+                                    @endif
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <i class="icofont-dollar"></i>
+                                </label>
+                                <input onInput="edValueKeyPress()" id="invest" type="number" min="0" name="montant" class="form-control" placeholder="$100.00">
+                                <span class="text-danger">
+                                    @if ($errors->has('montant'))
+                                        {{$errors->first('montant')}}
+                                    @endif
+                                </span>
+                            </div>
+                            <div class="calculatrice">
+                                <span>Equivalent en FCFA:</span> <span id="for_th_day">0FCFA</span>
+                            </div>
+                            <div class="text-center">
+                                
+                                <button type="submit" class="btn common-btn">Faire un don maintenant</button>
+
+                            
+                            </div>
+                        </div>
+                        
+                    </form>
+                    
+                       
+                    @else
+                    Vous ne pouvez pas contribur a votre propre offre.
+                
+                    @endif
+
+                        
                     </div>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="widget-area">
                     <div class="search widget-item">
-                        <form>
+                        @php
+                            \Carbon\Carbon::setLocale('fr');
+                        @endphp
+                        <span>Actif {{$details->created_at->diffForHumans()}} </span>
+                        <form class="d-none">
                             <input type="text" class="form-control" placeholder="Search...">
                             <button type="submit" class="btn">
                                 <i class="icofont-search-1"></i>
@@ -247,8 +339,10 @@
                     <div class="instagram widget-item">
                         <h3>ont contribués</h3>
                         <div class="row m-0">
+
                             @foreach ($contributeur as $contribuable)
-                            <div style="margin-right: 2%;" class="col-2 col-sm-2 col-lg-2 p-0 mr-2">
+                            <div style="margin-right: 2%;" class="col-2 col-sm-2 col-lg-2 p-0 mr-2 d-none">
+                                
                                 <div class="instagram-item">
                                     <img src="{{ asset('/storage/UserPhoto/'.$contribuable->photo) }}" alt="">
                                     <a href="{{ url('/contributions') }}">
@@ -257,6 +351,31 @@
                                 </div>
                             </div>
                             @endforeach
+                           
+                            <table class="table table-striped table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th>NOM CONTRIBUTEUR</th>
+                                        <th>MONTANT</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($contributeur as $contribuable)
+                                   <tr>
+                                    <td>{{$contribuable->name}}</td>
+                                    <td class="font-weight-bold">{{$contribuable->montant}} FCFA</td>
+                                    
+                                    </tr>  
+                                    @endforeach                                 
+                                                                         
+                                    
+                                </tbody>
+                            </table>
+                            
+                            <div class="d-flex justify-content-center">
+                                {!! $contributeur->links() !!}
+                            </div>
                             
                             
                             
@@ -273,4 +392,16 @@
         </div>
     </div>
 </div>
+<script>
+    function edValueKeyPress() {
+			var x = document.getElementById("invest").value;
+            
+            document.getElementById("for_th_day").innerHTML =   (x*584.87) +"FCFA";
+            
+            
+            
+           
+            
+		}
+</script>
 @stop

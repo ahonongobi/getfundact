@@ -34,23 +34,13 @@
                                             <span>Paratger:</span>
                                         </li>
                                         <li>
-                                            <a href="#" target="_blank">
+                                            <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:8000/donation-details/{{ url('donation-details/'.$details->id.'/'.$details->name_b) }}&display=popup">
                                                 <i class="icofont-facebook"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#" target="_blank">
-                                                <i class="icofont-twitter"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" target="_blank">
-                                                <i class="icofont-youtube-play"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" target="_blank">
-                                                <i class="icofont-instagram"></i>
+                                            <a href="https://api.whatsapp.com/send?text={{ url('donation-details/'.$details->id.'/'.$details->name_b) }}" target="_blank">
+                                                <i class="icofont-whatsapp"></i>
                                             </a>
                                         </li>
                                     </ul>
@@ -143,12 +133,15 @@
                                     <label>
                                         <i class="icofont-dollar"></i>
                                     </label>
-                                    <input type="number" min="0" name="montant" class="form-control" placeholder="$100.00">
+                                    <input onInput="edValueKeyPress()" id="invest" type="number" min="0" name="montant" class="form-control" placeholder="$100.00">
                                     <span class="text-danger">
                                         @if ($errors->has('montant'))
                                             {{$errors->first('montant')}}
                                         @endif
                                     </span>
+                                </div>
+                                <div class="calculatrice">
+                                    <span>Equivalent en FCFA:</span> <span id="for_th_day">0FCFA</span>
                                 </div>
                                 <div class="text-center">
                                     @if ($check_if_user_complete_profile!=0)
@@ -170,8 +163,13 @@
             </div>
             <div class="col-lg-4">
                 <div class="widget-area">
+                    @php
+                            \Carbon\Carbon::setLocale('fr');
+                        @endphp
+                         Actif {{$details->created_at->diffForHumans()}}
                     <div class="search widget-item d-none">
-                        <form>
+                       
+                        <form class="d-none">
                             <input type="text" class="form-control" placeholder="Search...">
                             <button type="submit" class="btn">
                                 <i class="icofont-search-1"></i>
@@ -243,6 +241,7 @@
                     </div>
                    
                     <div class="common-right-content widget-item">
+                        
                         <h3>Categories</h3>
                         <ul>
                             <li><a href="#">Education (10)</a></li>
@@ -256,7 +255,7 @@
                         <h3>ont contribués</h3>
                         <div class="row m-0">
                             @foreach ($contributeur as $contribuable)
-                            <div style="margin-right: 2%;" class="col-2 col-sm-2 col-lg-2 p-0 mr-2">
+                            <div style="margin-right: 2%;" class="col-2 col-sm-2 col-lg-2 p-0 mr-2 d-none">
                                 <div class="instagram-item">
                                     <img src="{{ asset('/storage/UserPhoto/'.$contribuable->photo) }}" alt="Instagram">
                                     <a href="{{ url('/contributions') }}">
@@ -267,7 +266,30 @@
                             @endforeach
                             
                             
+                            <table class="table table-striped table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th>NOM CONTRIBUTEUR</th>
+                                        <th>MONTANT</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($contributeur as $contribuable)
+                                   <tr>
+                                    <td>{{$contribuable->name}}</td>
+                                    <td class="font-weight-bold">{{$contribuable->montant}} FCFA</td>
+                                    
+                                    </tr>  
+                                    @endforeach                                 
+                                                                         
+                                    
+                                </tbody>
+                            </table>
                             
+                            <div class="d-flex justify-content-center">
+                                {!! $contributeur->links() !!}
+                            </div>
                             
                             
                             
@@ -282,4 +304,16 @@
         </div>
     </div>
 </div>
+<script>
+    function edValueKeyPress() {
+			var x = document.getElementById("invest").value;
+            
+            document.getElementById("for_th_day").innerHTML =   (x*584.87) +"FCFA";
+            
+            
+            
+           
+            
+		}
+</script>
 @stop

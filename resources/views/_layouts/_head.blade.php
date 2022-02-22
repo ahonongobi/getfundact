@@ -32,9 +32,9 @@
         <title>GetFund action, soutenez la communauté</title>
         <link rel="icon" type="image/png" href="assets/img/favicon.png">
     </head>
-    <body>
+    <body style="font-family: montserrat; ">
 
-        <div class="loader">
+        <div class="loader d-none">
             <div class="d-table">
                 <div class="d-table-cell">
                     <div class="pre-box-one">
@@ -124,7 +124,7 @@
         <div class="navbar-area sticky-top">
 
             <div class="mobile-nav">
-                <a href="index.php" class="logo">
+                <a href="/" class="logo">
                     <img src="{{asset('assets/img/logo-two.png')}}" alt="Logo">
                 </a>
             </div>
@@ -132,7 +132,7 @@
             <div class="main-nav">
                 <div class="container">
                     <nav class="navbar navbar-expand-md navbar-light">
-                        <a class="navbar-brand" href="index.php">
+                        <a class="navbar-brand" href="/">
                             <img src="{{asset('assets/img/logo.png')}}" alt="Logo">
                         </a>
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
@@ -154,7 +154,7 @@
 
 
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle ">COMMENT ÇA MARCHE 
+                                    <a href="/how-work" class="nav-link dropdown-toggle ">COMMENT ÇA MARCHE 
                                     
                                     </a>
                                   
@@ -193,7 +193,7 @@
             <div class="col-sm-6 col-lg-3">
                 <div class="footer-item">
                     <div class="footer-logo">
-                        <a class="logo" href="index.php">
+                        <a class="logo" href="/">
                             <img src="assets/img/logo-two.png" alt="Logo">
                         </a>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat vero, magni est placeat neque, repellat maxime a dolore</p>
@@ -211,10 +211,10 @@
                     <div class="footer-links">
                         <h3>A propos de nous</h3>
                         <ul>
-                            <li><a href=""><i class="icofont-simple-right"></i>Pourquoi choisir Getfund-act</a></li>
-                            <li><a href=""><i class="icofont-simple-right"></i>Nous contacter</a></li>
+                            <li><a href="/why-choose-us"><i class="icofont-simple-right"></i>Pourquoi choisir Getfund-act</a></li>
+                            <li><a href="/contact"><i class="icofont-simple-right"></i>Nous contacter</a></li>
                             <li><a href="/about"><i class="icofont-simple-right"></i>A propos de nous</a></li>
-                            <li><a href=""><i class="icofont-simple-right"></i>Comment reussir mes campagnes</a></li>
+                            <li><a href="/sucess"><i class="icofont-simple-right"></i>Comment reussir mes campagnes</a></li>
                         </ul>
                     </div>
                 </div>
@@ -224,10 +224,10 @@
                     <div class="footer-links">
                         <h3>Liens utils</h3>
                         <ul>
-                            <li><a href=""><i class="icofont-simple-right"></i>Exemples de cagnotte</a></li>
-                            <li><a href=""><i class="icofont-simple-right"></i>FAQ/Aide</a></li>
-                            <li><a href=""><i class="icofont-simple-right"></i>Evenements</a></li>
-                            <li><a href=""><i class="icofont-simple-right"></i>Don</a></li>
+                            <li><a href="/#donations-area"><i class="icofont-simple-right"></i>Exemples de cagnotte</a></li>
+                            <li><a href="/faq"><i class="icofont-simple-right"></i>FAQ/Aide</a></li>
+                            <li><a href="/faq"><i class="icofont-simple-right"></i>Evenements</a></li>
+                            <li><a href="/faq"><i class="icofont-simple-right"></i>Don</a></li>
                         </ul>
                     </div>
                 </div>
@@ -266,7 +266,7 @@
         </div>
         <div class="copyright-area">
             <p>Copyright ©2021 GETFUND ACT. Développé  par 
-                <a href="https://intelligencia-tech.com/" target="_blank">Intelligencia tech</a> | <a href="">Notice légale et confidentialité</a>
+                <a href="https://intelligencia-tech.com/" target="_blank">Intelligencia SI</a> | <a href="/termes">Notice légale et confidentialité</a>
             </p>
 
         </div>

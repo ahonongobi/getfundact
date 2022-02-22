@@ -5,6 +5,13 @@
 @section('content')
 <section class="donations-area two pt-100 pb-70">
     <div class="container">
+        @if (Session::has('success'))
+        <div class="alert alert-success">
+           
+                {{Session::get('success')}}
+           
+        </div>
+        @endif
         <div class="section-title">
             <span class="sub-title">GETFUND ACTION</span>
             <h2>Campagnes publics</h2>
@@ -17,7 +24,7 @@
                 <div class="donation-item">
                     <div class="img">
                         <img src="{{asset('storage/UserDocument/'.$item->file_vignette)}}" alt="Donation">
-                        <a class="common-btn" href="{{ url('donation-details/'.$item->id.'/'.$item->name_b) }}">Contribuer</a>
+                        <a class="common-btn" href="{{ url('donation-details/'.$item->id.'/'.$item->name_b) }}">Détails</a>
                     </div>
                     <div class="inner">
                         <div class="top">
@@ -124,8 +131,9 @@
                                 <li>Montant visé: {{$item->montant_v}} FCFA</li>
                             </ul>
                             <h4 class=""> 
-                                Contributions:<span> 60 personnes</span>
+                                
                                 <a href="{{ url('edit/'.$item->id) }}" style="text-decoration: none; color: #d45214; cursor: pointer;" class="ml-10"><i class="icofont-edit"></i></a>
+                                <a onclick="return confirm('Cette action est irréversible')" href="{{ url('delete-post/'.$item->id) }}" style="text-decoration: none; color: #d45214; cursor: pointer;" class="ml-10"><i class="icofont-trash"></i></a>
                             </h4>
                         </div>
                     </div>

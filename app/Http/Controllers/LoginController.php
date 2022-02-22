@@ -79,6 +79,9 @@ class LoginController extends Controller
                 if($finduser->user_type =="Personne"){
                     return redirect('/my_space');
                 } 
+                elseif($finduser->user_type =="Particulier"){
+                    return redirect('/my_space');
+                }
                 elseif($finduser->user_type =="Organisation"){
                     return redirect('/my_org');
                 } 
@@ -102,7 +105,7 @@ class LoginController extends Controller
                     $newUser->password = encrypt('123456dummy');
                     $newUser->save();
     
-                Auth::login($newUser);
+                    Auth::login($newUser);
      
                 return redirect(route('separate',$user->email));
             }

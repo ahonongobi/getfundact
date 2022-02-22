@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Campagne;
 use App\Models\Profile;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -45,5 +46,11 @@ class AdminController extends Controller
         $campagnePost = Campagne::where('id',$id)->first();
        // dd($campagnes);
         return view('admin.see-more-campagne',compact('campagnePost'));
+    }
+
+    public function search(Request $request){
+        $searchs = User::where("email", "LIKE" ,'%'.$request->input("search").'%')
+        ->orWhere("name", "LIKE" ,'%'.$request->input("search").'%')->orWhere("surname", "LIKE" ,'%'.$request->input("search").'%')->orWhere("user_type", "LIKE" ,'%'.$request->input("search").'%')->paginate(40);
+        return view('admin.search', compact('searchs'));
     }
 }

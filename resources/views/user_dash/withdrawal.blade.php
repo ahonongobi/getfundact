@@ -16,9 +16,10 @@
                             
                               
                                 <select name="nom_campagne" class="mb-4 form-group">
-                                    <option value="all">Tout</option>
+                                    <option>Veuillez selectionner le rétrait que vous souhaitez effectué :) </option>
+                                    <option value="all">Je veux retirer tout mes sous</option>
                                     @foreach ($withdrawalinfo as $item)
-                                    <option value="{{ $item->name }}">{{ $item->name }}/ {{ $item->created_at }}/ ${{ $item->montant_cotise ?? '0' }}</option>
+                                    <option value="{{ $item->id }}-{{ $item->name }}">{{ $item->name }}/ {{ $item->created_at }}/ ${{ $item->montant_cotise ?? '0' }}</option>
                                     @endforeach
                                     
                                 </select>

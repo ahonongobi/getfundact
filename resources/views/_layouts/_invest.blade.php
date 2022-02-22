@@ -33,10 +33,15 @@
         <link rel="icon" type="image/png" href="{{('assets/img/favicon.png')}}">
         <script src="{{asset('assets/ckeditor/ckeditor.js')}}" ></script>
         <script src="https://cdn.fedapay.com/checkout.js?v=1.1.7"></script>
+        <style>
+            body{
+                font-family: montserrat !important;
+            }
+        </style>
     </head>
     <body>
 
-        <div class="loader">
+        <div class="loader d-none">
             <div class="d-table">
                 <div class="d-table-cell">
                     <div class="pre-box-one">
@@ -121,6 +126,17 @@
                                 </li>
                                 <li>
                                     <span>{{ Auth::user()->name ?? ''}} {{ Auth::user()->surname ?? '' }}</span>
+
+                                    @if (Auth::check())
+                                    <span>
+                                        @if (Auth::user()->states==1)
+                                            | Compte Actif
+                                        @else
+                                        | Compte inactif
+                                        @endif
+                                    </span>
+                                    
+                                    @endif
                                 </li>
                             </ul>
                         </div>
@@ -138,7 +154,7 @@
                             <h3>
                                 <a href="#">CAMPAGNES DISPONIBLES</a>
                             </h3>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply rom text. Contrary to popular belief is not simply.</p>
+                            <p></p>
                             <a class="feature-btn" href="#">{{$count_all_campagnes ?? ''}} campagnes</a>
                         </div>
                     </div>
@@ -148,7 +164,7 @@
                             <h3>
                                 <a href="#">MONTANT CONTRIBUE</a>
                             </h3>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply rom text. Contrary to popular belief is not simply.</p>
+                            <p></p>
                             <a class="feature-btn" href="#">{{ $count_your_contribution_amount ?? '' }} FCFA</a>
                         </div>
                     </div>
@@ -158,7 +174,7 @@
                             <h3>
                                 <a href="#">NOMBRE DE CONTRIBUTION</a>
                             </h3>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply rom text. Contrary to popular belief is not simply.</p>
+                            <p></p>
                             <a class="feature-btn" href="#">{{$count_your_contribution ?? ''}} donations déjà</a>
                         </div>
                     </div>
@@ -177,7 +193,7 @@
             <div class="col-sm-6 col-lg-3">
                 <div class="footer-item">
                     <div class="footer-logo">
-                        <a class="logo" href="index.php">
+                        <a class="logo" href="/">
                             <img src="assets/img/logo-two.png" alt="Logo">
                         </a>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat vero, magni est placeat neque, repellat maxime a dolore</p>
@@ -190,6 +206,7 @@
                     </div>
                 </div>
             </div>
+            
            <div class="col-sm-6 col-lg-3">
                 <div class="footer-item">
                     <div class="footer-links">

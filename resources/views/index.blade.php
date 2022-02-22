@@ -77,30 +77,31 @@
                 <div class="feature-item">
                     <i class="flaticon-solidarity"></i>
                     <h3>
-                        <a href="#">Be a volunteer</a>
+                        <a href="#">Configuration simple
+</a>
                     </h3>
-                    <p>Contrary to popular belief, Lorem Ipsum is not simply rom text. Contrary to popular belief is not simply.</p>
-                    <a class="feature-btn" href="#">Join Now</a>
+                    <p>Vous pouvez personnaliser et partager votre campagne getfund Act en quelques minutes. </p>
+                   
                 </div>
             </div>
             <div class="col-sm-6 col-lg-4">
                 <div class="feature-item two">
                     <i class="flaticon-donation"></i>
                     <h3>
-                        <a href="#">Donate now</a>
+                        <a href="#">Sécurité</a>
                     </h3>
-                    <p>Contrary to popular belief, Lorem Ipsum is not simply rom text. Contrary to popular belief is not simply.</p>
-                    <a class="feature-btn" href="#">Join Now</a>
+                    <p>Notre équipe de confiance et sécurité travaille 24 h/24 et 7 j/7 pour vous protéger contre d'éventuelles fraudes.</p>
+                   
                 </div>
             </div>
             <div class="col-sm-6 offset-sm-3 offset-lg-0 col-lg-4">
                 <div class="feature-item three">
                     <i class="flaticon-love"></i>
                     <h3>
-                        <a href="#">Show your love</a>
+                        <a href="#">Bénéfique</a>
                     </h3>
-                    <p>Contrary to popular belief, Lorem Ipsum is not simply rom text. Contrary to popular belief is not simply.</p>
-                    <a class="feature-btn" href="#">Join Now</a>
+                    <p>Exploitez la puissance des réseaux sociaux pour diffuser votre histoire et obtenir davantage de soutien.</p>
+                   
                 </div>
             </div>
         </div>
@@ -137,8 +138,8 @@
                         </li>
                     </ul>
                     <div class="about-btn-area">
-                        <a class="common-btn about-btn" href="#">Lancer une campapagne</a>
-                        <a class="common-btn" href="#">En savoir plus</a>
+                        <a class="common-btn about-btn" href="/login">Lancer une campapagne</a>
+                        <a class="common-btn" href="/about">En savoir plus</a>
                     </div>
                 </div>
             </div>
@@ -157,11 +158,11 @@
 </div>
 
 
-<section class="donations-area two pt-100 pb-70">
+<section id="donations-area" class="donations-area two pt-100 pb-70">
     <div class="container">
         <div class="section-title">
             <span class="sub-title">GETFUND ACTION</span>
-            <h2>Campagnes publics</h2>
+            <h2>Principales collectes de fonds</h2>
    
         </div>
         <div class="row">
@@ -266,7 +267,7 @@
 
                             
                             <ul>
-                                <li>Montant contribué:  @php
+                                   <li>Montant contribué:  @php
                                     if($item->montant_cotise==NULL)
                                     echo "0 FCFA";
 
@@ -276,9 +277,9 @@
                                 @endphp</li>
                                 <li>Montant visé: {{$item->montant_v}} FCFA</li>
                             </ul>
-                            <h4>Contributions: 
+                           <!--<h4>Contributions: 
                                 <span>60 personnes</span>
-                            </h4>
+                            -->
                         </div>
                     </div>
                 </div>
@@ -286,39 +287,6 @@
             @endforeach
             <div class="d-flex justify-content-center">
                 {!! $all_campagnes->links() !!}
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<section class="gallery-area two pt-100 pb-70">
-    <div class="container-fluid">
-        <div class="section-title">
-            <span class="sub-title">Our gallery</span>
-            <h2>Discover the best things we do</h2>
-            <p>We exist for non-profits, social enterprises, community groups, activists,lorem politicians and individual citizens that are making.</p>
-        </div>
-        <div class="gallery-slider owl-theme owl-carousel">
-
-            @foreach ($gallery as $item)
-            <div class="gallery-item">
-                <a href="{{ asset('/storage/UserDocument/'.$item->file_vignette) }}" data-lightbox="roadtrip">
-                    <img src="{{ asset('/storage/UserDocument/'.$item->file_vignette) }}" alt="Gallery">
-                    <i class="icofont-eye"></i>
-                </a>
-            </div>
-            @endforeach
-            
-            
-            
-            
-            
-            <div class="gallery-item d-none">
-                <a href="assets/img/gallery/gallery6.jpg" data-lightbox="roadtrip">
-                    <img src="assets/img/gallery/gallery6.jpg" alt="Gallery">
-                    <i class="icofont-eye"></i>
-                </a>
             </div>
         </div>
     </div>
@@ -355,7 +323,7 @@
                     <span class="sub-span">02</span>
                 </div>
             </div>
-            <div class="col-sm-6 col-lg-4">
+            <div class="col-sm-6 col-lg-4">%MCEPASTEBIN%
                 <div class="dream-item">
                     <h3>
                         <a href="donations.html">First time a non- profitable organization is fighting against the poverty</a>
@@ -376,7 +344,7 @@
                         <span>*Volunteer</span>in every Country</h4>
                     <span class="sub-span">04</span>
                 </div>
-            </div>
+            </div>%MCEPASTEBIN%
             <div class="col-sm-6 col-lg-4">
                 <div class="dream-item">
                     <h3>
@@ -420,37 +388,44 @@
             </div>
             <div class="col-lg-6">
                 <div class="section-title">
-                    <span class="sub-title">Core features</span>
-                    <h2>Mission to make a smile</h2>
-                    <p>We exist for non-profits, social enterprises, community groups, activists,lorem politicians and individual citizens that are making.</p>
+                    <span class="sub-title">GETFUND ACT</span>
+                    <h2>Vous offre tout ce dont vous avez besoin
+</h2>
+                    <p> Notre réputation repose sur notre volonté de servir et soutenir notre communauté à chaque étape.</p>
                 </div>
                 <div class="row">
                     <div class="col-sm-6 col-sm-6">
                         <div class="benefit-item">
                             <i class="flaticon-house"></i>
-                            <h3>Build home</h3>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique illum excepturi</p>
+                            <h3>Humanitaire</h3>
+                            <p>Faites un don ou lancez une collecte de fonds pour aider un proche.
+</p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-sm-6">
                         <div class="benefit-item two">
                             <i class="flaticon-hospital"></i>
-                            <h3>Medical facilities</h3>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique illum excepturi</p>
+                            <h3>Aide medical</h3>
+                            <p>Lancez une campagne et réglez de suite vos dépenses de santé.
+
+</p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-sm-6">
                         <div class="benefit-item three">
                             <i class="flaticon-fast-food"></i>
-                            <h3>Food & water</h3>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique illum excepturi</p>
+                            <h3>Anniversaire</h3>
+                            <p>Faites un don ou lancez une collecte de fonds pour aider un proche.
+</p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-sm-6">
                         <div class="benefit-item four">
                             <i class="flaticon-graduation-cap"></i>
-                            <h3>Education facilities</h3>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique illum excepturi</p>
+                            <h3>Éducation</h3>
+                            <p>Lancez une campagne et réglez de suite vos frais de scolarité.
+
+</p>
                         </div>
                     </div>
                 </div>
@@ -484,7 +459,7 @@
                             </li>
                             <li>
                                 <i class="icofont-location-pin"></i>
-                                <span>Australia</span>
+                                <span>Australia</span>%MCEPASTEBIN%
                             </li>
                         </ul>
                     </div>

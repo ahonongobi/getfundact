@@ -145,15 +145,15 @@
                                             </td>
                                             @if ($item->statut ==1)
                                             <td class="font-weight-medium text-success">Actif</td>
-                                            @elseif($item->states ==0)
+                                            @elseif($item->statut ==0)
                                             
                                             <td class="font-weight-medium text-warning">En attente</td>
-                                            @elseif($item->states == 2)
+                                            @elseif($item->statut == 2)
                                             <td class="font-weight-medium text-danger">Inactif</td>
                                             @endif
                                             <td>
 
-                                                <button class="btn btn-warning rounded-0 text-white"><i class="ti-eye menu-icon"></i></button>
+                                                <a href="{{ url('see-more-campagne/'.$item->id) }}" class="btn btn-warning rounded-0 text-white"><i class="ti-eye menu-icon"></i></a>
 
                                             </td>
                                         </tr>  

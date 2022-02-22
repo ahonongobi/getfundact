@@ -107,7 +107,7 @@
                                     
                                     <div class="col-lg-12 mb-2">
                                         <div class="form-group">
-                                            <input type="text" required value="{{ old('nom_prenoms') }}" name="nom_prenoms" class="form-control" placeholder="** Nom complet (prénom nom)">
+                                            <input type="text" required value="{{ $profile_data->nom_prenoms ?? ''}}" name="nom_prenoms" class="form-control" placeholder="** Nom complet (prénom nom)">
                                             <span class="text-danger">
                                                 @if ($errors->has('nom_prenoms'))
                                                     {{$errors->first('nom_prenoms')}}
@@ -117,7 +117,7 @@
                                     </div>
                                     <div class="col-lg-12 mb-2">
                                         <div class="form-group">
-                                            <input type="date" required value="{{ old('date_naissance') }}" name="date_naissance" class="form-control" placeholder="** Date de naissance">
+                                            <input type="date" required value="{{ $profile_data->date_naissance ?? ''}}" name="date_naissance" class="form-control" placeholder="** Date de naissance">
                                             <span class="text-danger">
                                                 @if ($errors->has('date_naissance'))
                                                     {{$errors->first('date_naissance')}}
@@ -127,7 +127,7 @@
                                     </div>
                                     <div class="col-lg-12 mb-2">
                                         <div class="form-group">
-                                            <input type="text" required value="{{ old('nationanlite') }}" name="nationanlite" class="form-control" placeholder="** Nationalité">
+                                            <input type="text" required value="{{ $profile_data->nationanlite ?? ''}}" name="nationanlite" class="form-control" placeholder="** Nationalité">
                                             <span class="text-danger">
                                                 @if ($errors->has('nationalite'))
                                                     {{$errors->first('nationalite')}}
@@ -138,7 +138,7 @@
             
                                     <div class="col-lg-12 mb-2">
                                         <div class="form-group">
-                                            <input type="text" required name="pays" value="{{ old('pays') }}" class="form-control" placeholder="** Pays de résidence">
+                                            <input type="text" required name="pays" value="{{ $profile_data->pays ?? ''}}" class="form-control" placeholder="** Pays de résidence">
                                             <span class="text-danger">
                                                 @if ($errors->has('pays'))
                                                     {{$errors->first('pays')}}
@@ -149,7 +149,7 @@
             
                                     <div class="col-lg-12 mb-2">
                                         <div class="form-group">
-                                            <input type="email" required name="email" value="{{ old('email') }}" class="form-control" placeholder="* Email">
+                                            <input type="email" required name="email" value="{{ $profile_data->email ?? '' }}" class="form-control" placeholder="* Email">
                                             <span class="text-danger">
                                                 @if ($errors->has('email'))
                                                     {{$errors->first('email')}}
@@ -160,7 +160,7 @@
             
                                     <div class="col-lg-12 mb-2">
                                         <div class="form-group">
-                                            <input type="number" required name="tel" value="{{ old('tel') }}" class="form-control" placeholder="Numéro de téléphone">
+                                            <input type="number" required name="tel" value="{{ $profile_data->tel ?? '' }}" class="form-control" placeholder="Numéro de téléphone">
                                             <span class="text-danger">
                                                 @if ($errors->has('tel'))
                                                     {{$errors->first('tel')}}
@@ -169,7 +169,7 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
-                                        <button type="submit" class="btn common-btn">SE CONNECTER</button>
+                                        <button type="submit" class="btn common-btn">Enregistrer</button>
                                     </div>
                                 </container>
             

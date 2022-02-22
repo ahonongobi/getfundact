@@ -33,6 +33,29 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+// route for send data to database
+Route::get('/faq', function () {
+    return view('faq');
+});
+
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+Route::get('/termes', function () {
+    return view('termes');
+});
+Route::get('/how-work', function () {
+    return view('how-work');
+});
+
+Route::get('/why-choose-us', function () {
+    return view('why-choose-us');
+});
+Route::get('/sucess', function () {
+    return view('sucess');
+});
+
 Route::get('login',[LoginController::class,'view'])->name('login');
 Route::get('register',[RegisterController::class,'view'])->name('regiter');
 Route::get('about',[MainController::class,'view'])->name('about');
@@ -78,7 +101,10 @@ Route::post('addcampagnes',[CampagneController::class,'addCamapagnes']);
 Route::post('/editcampagnes/{id}',[EditController::class,'editPost']);
 Route::post('/withdrawal',[WithdrawalController::class,'withdrawal']);
 
-
+Route::get('/notifications', function(){
+             return view('admin.notifications');
+});
+Route::get('/delete-post/{id}',[CampagneController::class,'deletePost']);
 
 
 });
@@ -111,6 +137,14 @@ Route::get('/unactivePost/{id}',[JuryController::class,'unvalidateCampagne']);
 
 Route::get('/delete/{id}',[JuryController::class,'deleteUser']);
 
+//start pay user here
+
+
+Route::get('/pay/{id}',[JuryController::class,'pay']);
+Route::get('/unpay/{id}',[JuryController::class,'unpay']);
+
+//Search in admin Route
+Route::post('search',[AdminController::class,'search']);
 
 
 //kkiapay

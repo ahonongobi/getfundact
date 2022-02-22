@@ -34,7 +34,7 @@ class AppServiceProvider extends ServiceProvider
     {
 
         Paginator::useBootstrap();
-        View::composer(['index','invest_dash.index','invest_dash.donation-details','user_dash.donation-details','user_dash.my-campagne','invest_dash.campagne-org','user_dash.index','user_dash.contribution','invest_dash.contribution-org','_layouts._invest','_layouts._user','admin.*','_layouts._admin'], function ($view){
+        View::composer(['index','invest_dash.index','invest_dash.donation-details','user_dash.donation-details','user_dash.my-campagne','invest_dash.campagne-org','user_dash.index','user_dash.contribution','invest_dash.contribution-org','_layouts._invest','_layouts._user','admin.*','_layouts._admin','user_dash.*','invest_dash.*'], function ($view){
 
             if (Auth::check()) {
                 $view->with('campagnes', Campagne::where('user_id',Auth::user()->id)->get());
@@ -51,7 +51,9 @@ class AppServiceProvider extends ServiceProvider
                 $view->with('count_your_contribution_amount_for_you', Contrubution::where('id_author',Auth::user()->id)->sum('montant'));
 
                 $view->with('check_if_user_complete_profile', Profile::where('user_id',Auth::user()->id)->count());
-
+                $view->with('profile_data', Profile::where('user_id',Auth::user()->id)->first());
+                $view->with('email_value', User::where('id',Auth::user()->id)->first());
+                $view->with('auth_id', Auth::user()->email);
                 
 
 
@@ -70,12 +72,16 @@ class AppServiceProvider extends ServiceProvider
             $view->with('admin_all_campagne_inactif', Campagne::where('statut',0)->paginate(10));
 
             $view->with('all_withdraw', Withdrawal::paginate(20));
-
+            $view->with('all_withdraw_per_day',DB::table('withdrawals')->select(DB::raw('*'))
+            ->whereRaw('Date(created_at) = CURDATE()')->paginate(20));
             //endadmin
             $view->with('all_campagnes', Campagne::paginate(12));
             $view->with('gallery',Campagne::all());
             
-            
+            if (!(Auth::check())) {
+                $view->with('email_value', User::where('email',"sa.intelligencia@gmail.com")->first());
+                $view->with('auth_id', "sa.intelligencia@gmail.com");
+            }
 
 
         });

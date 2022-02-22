@@ -7,13 +7,13 @@
                 <div class="d-table-cell">
                     <div class="container">
                         <div class="title-item">
-                            <h2>About</h2>
+                            <h2 style="font-family: montserrat;">À PROPOS</h2>
                             <ul>
                                 <li>
-                                    <a href="index.html">Home</a>
+                                    <a href="/">ACCUEIL</a>
                                 </li>
                                 <li>
-                                    <span>About</span>
+                                    <span style="font-family: montserrat;">GETFUND ACT</span>
                                 </li>
                             </ul>
                         </div>
@@ -34,13 +34,13 @@
                     <div class="col-lg-6">
                         <div class="about-content">
                             <div class="section-title">
-                                <span class="sub-title">A Propos de nous</span>
-                                <h2>Nous sommes pour de bonne cause</h2>
+                                <span class="sub-title" style="font-family: montserrat;">A PROPOS DE NOUS</span>
+                                <h2 style="font-family: montserrat;">Nous sommes pour de bonne cause</h2>
                             </div>
-                            <span class="about-span">GetfundAct est une plateforme de cagnotte en ligne internationale, qui permet à des groupes, des associations et des communautés de récolter des fonds auprès de personnes éparpillées dans le Monde et ainsi de se mobiliser pour un proche, un collègue ou d’agir solidairement pour des causes environnementales, sociales, culturelles…
+                            <span class="about-span" style="font-family: montserrat; text-align: justify;">GetfundAct est une plateforme de cagnotte en ligne internationale, qui permet à des groupes, des associations et des communautés de récolter des fonds auprès de personnes éparpillées dans le Monde et ainsi de se mobiliser pour un proche, un collègue ou d’agir solidairement pour des causes environnementales, sociales, culturelles…
                             </span>
-                            <p>Nous avons configuré ce portail pour gérer certains cas graves qui nécessitaient une attention urgente, où ces personnes n'avaient aucun moyen de résoudre le problème financier. Par conséquent, GetfundAct aide à faire campagne pour un fonds afin d'offrir une solution grâce au financement participatif.</p>
-                            <p>GetfundAct vous aide à créer rapidement une campagne et à raconter votre histoire de collecte de fonds. Vous pouvez collecter des fonds en tant qu'individu ou inviter d'autres personnes à se joindre à votre équipe de collecte de fonds. Chaque campagne doit contenir une raison puissante derrière l'idée, des récompenses passionnantes et uniques et un affichage accrocheur. Connaître ces points est extrêmement essentiel pour créer une campagne réussie.</p>
+                            <p style="font-family: montserrat; text-align: justify;">Nous avons configuré ce portail pour gérer certains cas graves qui nécessitaient une attention urgente, où ces personnes n'avaient aucun moyen de résoudre le problème financier. Par conséquent, GetfundAct aide à faire campagne pour un fonds afin d'offrir une solution grâce au financement participatif.</p>
+                            <p style="font-family: montserrat; text-align: justify;">GetfundAct vous aide à créer rapidement une campagne et à raconter votre histoire de collecte de fonds. Vous pouvez collecter des fonds en tant qu'individu ou inviter d'autres personnes à se joindre à votre équipe de collecte de fonds. Chaque campagne doit contenir une raison puissante derrière l'idée, des récompenses passionnantes et uniques et un affichage accrocheur. Connaître ces points est extrêmement essentiel pour créer une campagne réussie.</p>
                         </div>
                     </div>
                 </div>
@@ -130,7 +130,42 @@
         <div class="benefit-area two pt-100 pb-70 dream-area">
             <div class="container">
                 <div class="row align-items-center">
+                   
                     <div class="col-lg-6">
+                        <div class="section-title">
+                            <span class="sub-title"></span>
+                            <h2 style="font-family: montserrat;">Notre Mission</h2>
+                            <p style="font-family: montserrat; text-align: justify;">Nous créons une opportunité de financement que certaines petites entreprises n'ont peut-être pas reçue de manière traditionnelle, c'est également un excellent débouché pour les entreprises plus établies. Les initiatives courantes de financement participatif basées sur les dons comprennent :</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 col-sm-6">
+                                <div class="benefit-item">
+                                    <i class="flaticon-house"></i>
+                                    <h3 style="font-family: montserrat;">Collecte de fonds pour les secours en cas de catastrophe</h3>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-sm-6">
+                                <div class="benefit-item two">
+                                    <i class="flaticon-hospital"></i>
+                                    <h3 style="font-family: montserrat;">Les organismes de bienfaisance</h3>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-sm-6">
+                                <div class="benefit-item three">
+                                    <i class="flaticon-fast-food"></i>
+                                    <h3 style="font-family: montserrat;">Organisations à but non-lucratif</h3>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-sm-6">
+                                <div class="benefit-item four">
+                                    <i class="flaticon-graduation-cap"></i>
+                                    <h3 style="font-family: montserrat;">Factures médicales</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                     <div class="col-lg-6">
                         <div class="benefit-img">
                             <img src="assets/img/benefit-main1.jpg" alt="Benefit">
                             <img src="assets/img/benefit-shape1.png" alt="Benefit">
@@ -138,39 +173,6 @@
                                 <button class="js-modal-btn" data-video-id="uemObN8_dcw">
                                     <i class="icofont-ui-play"></i>
                                 </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="section-title">
-                            <span class="sub-title"></span>
-                            <h2>Notre Mission</h2>
-                            <p>Nous créons une opportunité de financement que certaines petites entreprises n'ont peut-être pas reçue de manière traditionnelle, c'est également un excellent débouché pour les entreprises plus établies. Les initiatives courantes de financement participatif basées sur les dons comprennent :</p>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6 col-sm-6">
-                                <div class="benefit-item">
-                                    <i class="flaticon-house"></i>
-                                    <h3>Collecte de fonds pour les secours en cas de catastrophe</h3>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-sm-6">
-                                <div class="benefit-item two">
-                                    <i class="flaticon-hospital"></i>
-                                    <h3>Les organismes de bienfaisance</h3>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-sm-6">
-                                <div class="benefit-item three">
-                                    <i class="flaticon-fast-food"></i>
-                                    <h3>Organisations à but non-lucratif</h3>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-sm-6">
-                                <div class="benefit-item four">
-                                    <i class="flaticon-graduation-cap"></i>
-                                    <h3>Factures médicales</h3>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -182,9 +184,9 @@
         <section class="team-area four pt-100 pb-70">
             <div class="container">
                 <div class="section-title">
-                    <span class="sub-title">Equipe</span>
-                    <h2>Notre equipe</h2>
-                    <p>We exist for non-profits, social enterprises, community groups, activists,lorem politicians and individual citizens that are making.</p>
+                    <span class="sub-title" style="font-family: montserrat;">Equipe</span>
+                    <h2 style="font-family: montserrat;">Notre equipe</h2>
+                    <p style="font-family: montserrat;">We exist for non-profits, social enterprises, community groups, activists,lorem politicians and individual citizens that are making.</p>
                 </div>
                 <div class="row">
                     <div class="col-sm-6 col-lg-4">
@@ -199,7 +201,7 @@
                                 </ul>
                             </div>
                             <div class="bottom">
-                                <h3>Jenas handar</h3>
+                                <h3>Guillaume Lewis GBOYOU</h3>
                                 <span>CEO & Founder</span>
                             </div>
                         </div>
@@ -207,7 +209,7 @@
                     <div class="col-sm-6 col-lg-4">
                         <div class="team-item">
                             <div class="top">
-                                <img src="assets/img/team/team2.jpg" alt="Team">
+                                <img src="{{asset('assets/img/pp.jpeg')}}" alt="Team">
                                 <ul>
                                     <li><a href="#" target="_blank"><i class="icofont-facebook"></i></a></li>
                                     <li><a href="#" target="_blank"><i class="icofont-twitter"></i></a></li>
@@ -216,8 +218,10 @@
                                 </ul>
                             </div>
                             <div class="bottom">
-                                <h3>Smithy alisha</h3>
-                                <span>Manager</span>
+                                <h3>GOBI ABYSSINIE</h3>
+                                <span>IT, DevOps and Customer Experience
+
+</span>
                             </div>
                         </div>
                     </div>

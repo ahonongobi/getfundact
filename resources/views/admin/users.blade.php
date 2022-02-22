@@ -4,20 +4,23 @@
 
 
    
-                <div class="row">
+                @if (Session::has('success'))
+                <div class="col-12 grid-margin">
+                <div class="card">
+                    <div class="card-body">
                     
+                    <div class="alert alert-fill-success" role="alert">
+                        <i class="mdi mdi-alert-circle"></i> {{Session::get('success')}} </div>
+                    
+                    </div>
+                </div>
+                </div>
+                @endif
+                <div class="row">
+                   
                 </div>
                 <div class="row">
-                    @if (Session::has('success'))
-                    <span class="btn btn-success rounded-0 text-white mr-3">
-           
-                {{Session::get('success')}}
-                    </span>
                     
-                    @endif
-                </div>
-                <div class="row">
-
                     <div class="col-md-12 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
