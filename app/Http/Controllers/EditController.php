@@ -16,7 +16,20 @@ class EditController extends Controller
 
     public function editPost(Request $request, $id){
         
-
+       $request->validate([
+          'categories' => 'required',
+          'name' => "required",
+          'duree' => "required",
+          'monnaie' => "required",
+          'montant_v' => "required",
+          'name_b' => "required",
+          "name_b"=>'required',
+          "where" => 'required',
+          'details' => 'required',
+          'details_ojectifs' => 'required',
+          'detail_budget'=>'required',
+          "details_budget_en" => 'required',
+       ]);
        $add_campagne = Campagne::find($id);
 
        $add_campagne->user_id = Auth::user()->id;

@@ -56,7 +56,7 @@
 
             <div class="mobile-nav">
                 <a href="{{ url('my_space') }}" class="logo">
-                    <img src="{{asset('assets/img/logo-two.png')}}" alt="Logo">
+                    <img style="width:300px;height:80px;" src="{{asset('assets/img/logogetf.png')}}" alt="Logo">
                 </a>
             </div>
 
@@ -66,7 +66,7 @@
                     @if (Auth::check())
                     <nav class="navbar navbar-expand-md navbar-light">
                         <a class="navbar-brand" href="{{ url('my_space') }}">
-                            <img src="{{asset('assets/img/logo.png')}}" alt="Logo">
+                            <img style="width:300px;height:80px;" src="{{asset('assets/img/logo.png')}}" alt="Logo">
                         </a>
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                             <ul class="navbar-nav">
@@ -114,7 +114,7 @@
                     @else
                     <nav class="navbar navbar-expand-md navbar-light">
                         <a class="navbar-brand" href="/">
-                            <img src="{{asset('assets/img/logo.png')}}" alt="Logo">
+                            <img style="width:300px;height:80px;" src="{{asset('assets/img/logo.png')}}" alt="Logo">
                         </a>
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                             <ul class="navbar-nav">
@@ -169,12 +169,16 @@
             </div>
         </div>
         
-        <div class="page-title-area title-bg-one">
+        <div @if (isset($details->file_couverture))
+            style="background-image: url({{asset('storage/UserDocument/'.$details->file_couverture)}});"
+        @else
+        style="background-image: url({{asset('assets/img/banner/title-bg1.jpg')}});"
+        @endif  class="page-title-area title-bg-one">
             <div class="d-table">
                 <div class="d-table-cell">
                     <div class="container">
                         <div class="title-item">
-                            <h2>GETFOUND ACTION</h2>
+                            <h2>{{$details->name ?? 'GETFOUND ACTION'}}</h2>
                             <ul>
                                 <li>
                                     @if (Auth::check())
@@ -297,7 +301,8 @@
                 <div class="footer-item">
                     <div class="footer-logo">
                         <a class="logo" href="/">
-                            <img src="{{asset('assets/img/logo-two.png')}}" alt="Logo">
+                            
+                            <img src="{{asset('assets/img/logogetf.png')}}" alt="Logo">
                         </a>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat vero, magni est placeat neque, repellat maxime a dolore</p>
                         <ul>

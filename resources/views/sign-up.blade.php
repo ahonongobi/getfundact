@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="{{asset('assets/css/animate.min.css')}}">
 
         <link rel="stylesheet" href="{{asset('assets/css/lightbox.min.css')}}">
-
+        
         <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.min.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/owl.theme.default.min.css')}}">
 
@@ -28,7 +28,7 @@
 
         <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
         <link rel="stylesheet" href="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css">
-
+        <link rel="stylesheet" href="{{asset('assets/css/theme-dark.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
         <title>GetFund action, soutenez la communauté</title>
         <link rel="icon" type="image/png" href="{{('assets/img/favicon.png')}}">
@@ -163,7 +163,7 @@
         <script src="{{asset('assets/js/jquery.appear.min.js')}}"></script>
         
         <script src="{{asset('assets/js/jquery.nice-select.min.js')}}"></script>
-        
+        <script src="{{('assets/js/custom.js')}}"></script>
         <script src="{{asset('assets/js/custom.js')}}"></script>
                 <script src="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js"></script>
                 <script>

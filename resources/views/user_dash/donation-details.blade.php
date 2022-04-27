@@ -8,6 +8,7 @@
             <div class="col-lg-8">
                 <div class="details-item">
                     <div class="details-img"> 
+                        <h3>A Propos et description</h3>
                         <img src="{{asset('storage/UserDocument/'.$details->file_vignette)}}" style="width: 100%; height:550px; oject-fit:cover; object-position: 50% 50%;" alt="Details">
                         <h2>{{$details->name}}</h2>
                         <p>
@@ -21,6 +22,7 @@
                                 echo htmlspecialchars_decode($details->detail_budget);
                             @endphp
                         </blockquote>
+                        <h3>Details rédigé en anglais</h3>
                         <p>@php
                             echo htmlspecialchars_decode($details->Details_budget_en);
                         @endphp</p>
@@ -134,7 +136,7 @@
                                 <label>
                                     <i class="icofont-dollar"></i>
                                 </label>
-                                <input onInput="edValueKeyPress()" type="number" id="invest" min="0" name="montant" class="form-control" placeholder="$100.00">
+                                <input onInput="edValueKeyPress()" type="number" id="invest" min="0" name="montant" class="form-control" placeholder="FCFA 100.00">
                                 <span class="text-danger">
                                     @if ($errors->has('montant'))
                                         {{$errors->first('montant')}}
@@ -142,7 +144,7 @@
                                 </span>
                             </div>
                             <div class="calculatrice">
-                                <span>Equivalent en FCFA:</span> <span id="for_th_day">0FCFA</span>
+                                <span>Equivalent en $ (dollar):</span> <span id="for_th_day">$0</span>
                             </div>
                             <div class="text-center">
                                 
@@ -218,7 +220,7 @@
                                 <label>
                                     <i class="icofont-dollar"></i>
                                 </label>
-                                <input onInput="edValueKeyPress()" id="invest" type="number" min="0" name="montant" class="form-control" placeholder="$100.00">
+                                <input onInput="edValueKeyPress()" id="invest" type="number" min="0" name="montant" class="form-control" placeholder="FCFA 100.00">
                                 <span class="text-danger">
                                     @if ($errors->has('montant'))
                                         {{$errors->first('montant')}}
@@ -226,7 +228,7 @@
                                 </span>
                             </div>
                             <div class="calculatrice">
-                                <span>Equivalent en FCFA:</span> <span id="for_th_day">0FCFA</span>
+                                <span>Equivalent en $ (dollar):</span> <span id="for_th_day">$0</span>
                             </div>
                             <div class="text-center">
                                 
@@ -383,10 +385,13 @@
                             
                         </div>
                     </div>
-
-                   {{-- <div class="instagram widget-item">
-                        <iframe width="420" height="315" src="https://www.youtube.com/embed/MNX7HgcWqHc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div> --}}
+                    @if ($details->video != null)
+                    <div class="instagram widget-item">  
+                        <iframe width="420" height="315" src="{{$details->video ?? ""}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>  
+                    @endif
+                    
+                   
                 </div>
             </div>
         </div>
@@ -396,7 +401,7 @@
     function edValueKeyPress() {
 			var x = document.getElementById("invest").value;
             
-            document.getElementById("for_th_day").innerHTML =   (x*584.87) +"FCFA";
+            document.getElementById("for_th_day").innerHTML =   (x/584.87) +"FCFA";
             
             
             

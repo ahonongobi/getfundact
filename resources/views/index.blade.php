@@ -170,8 +170,8 @@
             @foreach ($all_campagnes as $item)
             <div class="col-sm-6 col-lg-4">
                 <div class="donation-item">
-                    <div class="img">
-                        <img src="{{asset('storage/UserDocument/'.$item->file_vignette)}}" alt="Donation">
+                    <div  class="img">
+                        <img style="height: 400px !important" src="{{asset('storage/UserDocument/'.$item->file_vignette)}}" alt="Donation">
                         <a class="common-btn" href="{{ url('getfund-donation-details/'.$item->id.'/'.$item->name_b) }}">Contribuer</a>
                     </div>
                     <div class="inner">
@@ -277,9 +277,9 @@
                                 @endphp</li>
                                 <li>Montant visé: {{$item->montant_v}} FCFA</li>
                             </ul>
-                           <!--<h4>Contributions: 
+                           {{--<h4>Contributions: 
                                 <span>60 personnes</span>
-                            -->
+                            </h4>--}}
                         </div>
                     </div>
                 </div>

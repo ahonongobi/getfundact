@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Mail;
 
 class CampagneController extends Controller
 {
+	
     public function addCamapagnes(Request $request){
 
        $add_campagne = new Campagne();

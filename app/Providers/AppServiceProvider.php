@@ -75,7 +75,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('all_withdraw_per_day',DB::table('withdrawals')->select(DB::raw('*'))
             ->whereRaw('Date(created_at) = CURDATE()')->paginate(20));
             //endadmin
-            $view->with('all_campagnes', Campagne::paginate(12));
+            $view->with('all_campagnes', Campagne::where('statut',1)->paginate(12));
             $view->with('gallery',Campagne::all());
             
             if (!(Auth::check())) {

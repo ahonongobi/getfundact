@@ -40,7 +40,7 @@ class AdminController extends Controller
         return view('admin.see-more',compact('users','hisCampagnes','usersCount'));
     }
     
-
+    
     public function seeMoreCampagne($id){
         
         $campagnePost = Campagne::where('id',$id)->first();

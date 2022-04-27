@@ -29,6 +29,7 @@
         <link rel="stylesheet" href="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css">
 
         <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/css/theme-dark.css')}}">
         <title>GetFund action, soutenez la communauté</title>
         <link rel="icon" type="image/png" href="assets/img/favicon.png">
     </head>
@@ -92,7 +93,7 @@
                                     </a>
                                 </li>
                             </ul>
-                            <div class="language">
+                            <div  class="language">
                                 <select>
                                     <option>English</option>
                                     <option>العربيّة</option>
@@ -125,7 +126,7 @@
 
             <div class="mobile-nav">
                 <a href="/" class="logo">
-                    <img src="{{asset('assets/img/logo-two.png')}}" alt="Logo">
+                    <img src="{{asset('assets/img/logogetf.png')}}"  alt="Logo">
                 </a>
             </div>
 
@@ -133,7 +134,7 @@
                 <div class="container">
                     <nav class="navbar navbar-expand-md navbar-light">
                         <a class="navbar-brand" href="/">
-                            <img src="{{asset('assets/img/logo.png')}}" alt="Logo">
+                            <img style="width:400px;height:80px;" src="{{asset('assets/img/logo.png')}}" alt="Logo">
                         </a>
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                             <ul class="navbar-nav">
@@ -194,7 +195,7 @@
                 <div class="footer-item">
                     <div class="footer-logo">
                         <a class="logo" href="/">
-                            <img src="assets/img/logo-two.png" alt="Logo">
+                            <img src="assets/img/logogetf.png" alt="Logo">
                         </a>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat vero, magni est placeat neque, repellat maxime a dolore</p>
                         <ul>
@@ -328,6 +329,27 @@
 
 <script src="{{('assets/js/custom.js')}}"></script>
 <script src="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js"></script>
+<script>
+        
+
+    (function() {
+        if (!localStorage.getItem('cookieconsent')) {
+            document.body.innerHTML += '\
+    <div class="cookieconsent" style="position:fixed;padding:20px;left:0;bottom:0;background-color:#302c51;color:#FFF;text-align:center;width:100%;z-index:99999;">\
+        Ce site utilise des cookies pour améliorer vos préférences. En poursuivant votre navigation sur ce site, vous consentez à leur utilisation.\
+        <a  style="background-color: #ff6015;" class="btn more  text-white" href="#">Oui J\'accepte</a>\
+    </div>\
+    ';
+            document.querySelector('.cookieconsent a').onclick = function(e) {
+                e.preventDefault();
+                document.querySelector('.cookieconsent').style.display = 'none';
+                localStorage.setItem('cookieconsent', true);
+            };
+        }
+    })();
+
+
+</script>
 <script>
 
          

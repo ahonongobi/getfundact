@@ -1,23 +1,5 @@
-@extends('_layouts._user')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="{{asset('textarea/css/froala_editor.css')}}">
-  <link rel="stylesheet" href="{{asset('textarea/css/froala_style.css')}}">
-  <link rel="stylesheet" href="{{asset('textarea/css/plugins/code_view.css')}}">
-  <link rel="stylesheet" href="{{asset('textarea/css/plugins/image_manager.css')}}">
-  <link rel="stylesheet" href="{{asset('textarea/css/plugins/image.css')}}">
-  <link rel="stylesheet" href="{{asset('textarea/css/plugins/table.css')}}">
-  <link rel="stylesheet" href="{{asset('textarea/css/plugins/video.css')}}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css">
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script><style>
-
-</style>
+@extends('_layouts._user_head2')
 @section('content')
-
-
-
-
 
 <div class="about-area two pb-70">
     <div class="container">
@@ -25,7 +7,11 @@
             <h4>Ma cagnotte</h4>
         </center>
         <div class="row align-items-center">
-            
+            @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                <div class="alert alert-danger">{{$error}}</div>
+            @endforeach
+            @endif
             <form method="POST" enctype="multipart/form-data" action="{{ url('editcampagnes/'.$item->id) }}">
                 @csrf
     
@@ -110,7 +96,7 @@
                         </div>
                         <div class="col-lg-12 mb-4">
                             <label for="">Détaillez votre objectif</label>
-                            <textarea name="details_ojectifs" placeholder="" class="form-control" id="long_desc" rows="3">
+                            <textarea name="details_ojectifs" placeholder="" class="form-control" id="myTextarea2" rows="3">
                                  {{$item->details_ojectifs}}
                                 </textarea>
                                 <small class="text-muted">Racontez-nous l'histoire de votre projet. Qu'est-ce que c'est, pourquoi cela importe-t-il, et pourquoi les contributeurs devraient s'en préoccuper? Voici l'endroit pour plus de détails.</small>
@@ -200,88 +186,8 @@
         </div>
     </div>
 </div>
-<script>
-    CKEDITOR.replace('long_desc4');
-    CKEDITOR.replace('long_desc5');
-    CKEDITOR.replace('long_desc6');
-</script>
-<script>
-    
-</script>
-<script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.js"></script>
-  <script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/mode/xml/xml.min.js"></script>
-  <script type="text/javascript" src="{{asset('textarea/js/froala_editor.min.js')}}"></script>
-  <script type="text/javascript" src="{{asset('textarea/js/plugins/align.min.js')}}"></script>
-  <script type="text/javascript" src="{{asset('textarea/js/plugins/code_beautifier.min.js')}}"></script>
-  <script type="text/javascript" src="{{asset('textarea/js/plugins/code_view.min.js')}}"></script>
-  <script type="text/javascript" src="{{asset('textarea/js/plugins/draggable.min.js')}}"></script>
-  <script type="text/javascript" src="{{asset('textarea/js/plugins/image.min.js')}}"></script>
-  <script type="text/javascript" src="{{asset('textarea/js/plugins/image_manager.min.js')}}"></script>
-  <script type="text/javascript" src="{{asset('textarea/js/plugins/link.min.js')}}"></script>
-  <script type="text/javascript" src="{{asset('textarea/js/plugins/lists.min.js')}}"></script>
-  <script type="text/javascript" src="{{asset('textarea/js/plugins/paragraph_format.min.js')}}"></script>
-  <script type="text/javascript" src="{{asset('textarea/js/plugins/paragraph_style.min.js')}}"></script>
-  <script type="text/javascript" src="{{asset('textarea/js/plugins/table.min.js')}}"></script>
-  <script type="text/javascript" src="{{asset('textarea/js/plugins/video.min.js')}}"></script>
-  <script type="text/javascript" src="{{asset('textarea/js/plugins/url.min.js')}}"></script>
-  <script type="text/javascript" src="{{asset('textarea/js/plugins/entities.min.js')}}"></script>
-
-  <script>
-    (function () {
-      const editorInstance = new FroalaEditor('#long_desc', {
-        enter: FroalaEditor.ENTER_P,
-        placeholderText: null,
-        events: {
-          initialized: function () {
-            const editor = this
-            this.el.closest('form').addEventListener('submit', function (e) {
-              console.log(editor.$oel.val())
-              e.preventDefault()
-            })
-          }
-        }
-      })
-    })()
-  </script>
 
 
-
-<script>
-    (function () {
-      const editorInstance = new FroalaEditor('#long_desc2', {
-        enter: FroalaEditor.ENTER_P,
-        placeholderText: null,
-        events: {
-          initialized: function () {
-            const editor = this
-            this.el.closest('form').addEventListener('submit', function (e) {
-              console.log(editor.$oel.val())
-              e.preventDefault()
-            })
-          }
-        }
-      })
-    })()
-  </script>
-  <script>
-    (function () {
-      const editorInstance = new FroalaEditor('#long_desc3', {
-        enter: FroalaEditor.ENTER_P,
-        placeholderText: null,
-        events: {
-          initialized: function () {
-            const editor = this
-            this.el.closest('form').addEventListener('submit', function (e) {
-              console.log(editor.$oel.val())
-              e.preventDefault()
-            })
-          }
-        }
-      })
-    })()
-  </script>
 
 
 @endsection

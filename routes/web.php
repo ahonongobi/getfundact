@@ -117,7 +117,7 @@ Route::any('/checkout',[ContrubutionController::class,'checkout']);
 
 Route::get('/my_org_social',[OrgController::class,'index']);
 Route::get('my_space_social',[MainController::class,'indexUserDash']);
-
+//route 
 //admin
 Route::get('/administration',[AdminController::class,'index']);
 Route::get('/withdarwal',[AdminController::class, 'withdarwalView']);
