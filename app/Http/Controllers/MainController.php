@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Campagne;
 use App\Models\Contrubution;
+use App\Models\Profile;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -17,7 +19,24 @@ class MainController extends Controller
         return view('separeta',compact('email'));
     }
     public function indexUserDash(){
-        return view('user_dash.index');
+        $checkIfuserAccountIsValid = User::where('email',Auth::user()->email)->first();
+        if ($checkIfuserAccountIsValid->states == 0) {
+            $alertMessage = "KYC: Votre compte est désactivé ou inactif, veuillez contacter l'administrateur ou remplissez votre profil.";
+        } 
+        
+        $checkIfUserAccountIsComplet = Profile::where('email',Auth::user()->email)->count();
+        if ($checkIfUserAccountIsComplet==0 OR $checkIfuserAccountIsValid->states == 0) {
+            $notification_2 = 'Votre compte est encore imcomplet, veuillez svp renseignez les information du profil. !!!';
+            $alertMessage = "KYC: Votre compte est désactivé ou inactif, veuillez contacter l'administrateur ou remplissez votre profil.";
+            return view('user_dash.index',compact('notification_2','alertMessage'));
+        } else {
+            //$alertMessage = "KYC: Votre compte est désactivé ou inactif, veuillez contacter l'administrateur ou remplissez votre profil.";
+            $notification_2 = 'Chèr(e) utilisateurs, soyez les bienvenues sur getfundact.com !!!';
+            return view('user_dash.index',compact('notification_2'));
+        }
+        
+
+        
     }
 
     public function indexCampagne(){

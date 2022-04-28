@@ -118,7 +118,13 @@
                                     </div>
                                     <div class="col-lg-12 mb-2">
                                         <div class="form-group">
-                                            <input type="date" required value="{{ $profile_data->date_naissance ?? '' }}" name="date_naissance" class="form-control" placeholder="** Date de naissance">
+                                            @if (isset($profile_data->date_naissance))
+                                            <input type="text" required value="{{ substr($profile_data->date_naissance,0,10) ?? '' }}" name="date_naissance" class="form-control" placeholder="** Date de naissance">
+
+                                            @else
+                                            <input type="date" required value="" name="date_naissance" class="form-control" placeholder="** Date de naissance">
+                                            @endif
+                                            
                                             <span class="text-danger">
                                                 @if ($errors->has('date_naissance'))
                                                     {{$errors->first('date_naissance')}}
@@ -150,7 +156,7 @@
             
                                     <div class="col-lg-12 mb-2">
                                         <div class="form-group">
-                                            <input type="email" required name="email" readonly value="{{ $profile_data->email ?? '' }}" class="form-control" placeholder="* Email">
+                                            <input type="email" required name="email" readonly value="{{ Auth::user()->email ?? '' }}" class="form-control" placeholder="* Email">
                                             <span class="text-danger">
                                                 @if ($errors->has('email'))
                                                     {{$errors->first('email')}}
@@ -176,12 +182,22 @@
             
                                 <container class="col-md-6">
                                     <center>
+                                        @if (isset($profile_data->photo))
+                                        <div class="col-lg-12 mb-2">
+                                            <div class="form-group">
+                                                <img src="{{ asset('storage/UserPhoto/'.$profile_data->photo) }}" alt="" width="150" height="150" class="img-fluid">
+                                            </div>
+                                        </div>
+                                        @else
                                         <img src="{{asset('assets/avatar7.png')}}" class="mb-2" width="150" height="150" alt="" srcset="">
                                          <span class="text-success">Uploader photo</span>
+                                        @endif
+                                        
+                                        
                                     </center>                                   
                                      <div class="col-lg-12 mb-2">
                                         <div class="form-group">
-                                            <input type="file" required name="file" class="form-control">
+                                            <input type="file" name="file" class="form-control">
                                             <span class="text-danger">
                                                 @if ($errors->has('file'))
                                                     {{$errors->first('file')}}

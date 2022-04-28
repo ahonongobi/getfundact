@@ -40,7 +40,7 @@ class ContrubutionController extends Controller
         if ($okToSendMoney->save()) {
             $notification_gobi = array(
                 'title' => 'Féliciations',
-                'sending' => "Votre contribution est parvenue avec succès. Merci pour votre esprit de bénévolat au sein de la société.",
+                'sending' => "Votre contribution est parvenue avec succès. Merci pour votre participation.",
                 'type' => 'success',
         
                 );

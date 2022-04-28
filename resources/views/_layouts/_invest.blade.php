@@ -59,15 +59,16 @@
 
             <div class="mobile-nav">
                 <a href="{{ url('my_org') }}" class="logo">
-                    <img src="{{asset('assets/img/logo-two.png')}}" alt="Logo">
+                    <img style="width: 300px; height:80px;" src="{{asset('assets/img/logogetf.png')}}" alt="Logo">
                 </a>
             </div>
 
             <div class="main-nav">
                 <div class="container">
+                    @if(Auth::check())
                     <nav class="navbar navbar-expand-md navbar-light">
                         <a class="navbar-brand" href="{{ url('my_org') }}">
-                            <img src="{{asset('assets/img/logo.png')}}" alt="Logo">
+                            <img style="width: 300px; height:80px;" src="{{asset('assets/img/logo.png')}}" alt="Logo">
                         </a>
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                             <ul class="navbar-nav">
@@ -110,6 +111,59 @@
                             </div>
                         </div>
                     </nav>
+                    @else
+                    <nav class="navbar navbar-expand-md navbar-light">
+                        <a class="navbar-brand" href="/">
+                            <img style="width:300px;height:80px;" src="{{asset('assets/img/logo.png')}}" alt="Logo">
+                        </a>
+                        <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a href="/" class="nav-link dropdown-toggle active">ACCUEIL 
+                                    
+                                    </a>
+                                  
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="{{url('about')}}" class="nav-link dropdown-toggle ">À PROPOS 
+                                    
+                                    </a>
+                                  
+                                </li>
+
+
+
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link dropdown-toggle ">COMMENT ÇA MARCHE 
+                                    
+                                    </a>
+                                  
+                                </li>
+
+                              
+                                <li class="nav-item">
+                                    <a href="{{ url('login') }}" class="nav-link">SE CONNECTER 
+                                    <i class="icofont-user"></i>
+                                    </a>
+                                  
+                                </li>
+                                   
+                             
+                              
+                              
+                                
+
+                            </ul>
+                            <div class="side-nav">
+                                <a class="donate-btn" href="{{ url('login') }}">
+                                    DEMARER
+                                    <i class="icofont-heart-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </nav>
+                    @endif
                 </div>
             </div>
         </div>
@@ -122,7 +176,9 @@
                             <h2>GETFOUND ACTION</h2>
                             <ul>
                                 <li>
-                                    <a href="user.php">Bienvenue : </a>
+                                    @if(Auth::check())
+                                    <a href="">Bienvenue : </a>
+                                    @endif
                                 </li>
                                 <li>
                                     <span>{{ Auth::user()->name ?? ''}} {{ Auth::user()->surname ?? '' }}</span>
@@ -194,7 +250,7 @@
                 <div class="footer-item">
                     <div class="footer-logo">
                         <a class="logo" href="/">
-                            <img src="assets/img/logo-two.png" alt="Logo">
+                            <img  src="{{asset('assets/img/logogetf.png')}}" alt="Logo">
                         </a>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat vero, magni est placeat neque, repellat maxime a dolore</p>
                         <ul>

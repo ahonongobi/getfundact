@@ -27,7 +27,7 @@
 
         <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
         <link rel="stylesheet" href="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css">
-
+        <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
         <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
         <title>GetFund action, soutenez la communauté</title>
         <link rel="icon" type="image/png" href="{{('assets/img/favicon.png')}}">
@@ -182,7 +182,7 @@
                             <ul>
                                 <li>
                                     @if (Auth::check())
-                                    <a href="user.php">Bienvenue : </a>
+                                    <a href="">Bienvenue : </a>
                                     @endif
                                 </li>
                                 <li>
@@ -413,7 +413,9 @@
 <script src="{{asset('assets/js/jquery.nice-select.min.js')}}"></script>
 
 <script src="{{asset('assets/js/custom.js')}}"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <script src="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js"></script>
+
 
  <script>
      $('.tab-link').click( function() {
@@ -448,6 +450,82 @@
   })
 
 </script>
+<script>
+    @if(Session::has('message')){
+        var type= "{{Session::get('alert-type','info')}}";
+        switch(type){
+          case'info':
+          toastr.info("{{Session::get('message')}}");
+          break;
+          case'warning':
+          toastr.warning("{{Session::get('message')}}");
+          break;
+          case'success':
+          toastr.success("{{Session::get('message')}}");
+          break;
+        } 
+      } 
+      
+       
+
+    @endif
+    
+  </script>
+  <script>
+      $(document).ready(function(){
+
+          @if (isset($notification_2)) {
+              toastr.options = {
+                  timeOut: 5000,
+                    //positionClass: "toast-top-center",
+                    preventDuplicates: true,
+                    closeButton: true,
+                    progressBar: true,
+                    //showMethod: "slideDown",
+                    //hideMethod: "slideUp",
+                    showDuration: 200,
+                    hideDuration: 1000,
+                    extendedTimeOut: 1000,
+                    timeOut: 0,
+                    tapToDismiss: true,
+                    closeOnHover: true,
+                    extendedTimeOut: 1000,
+
+              }
+            toastr.info('{{$notification_2}}');
+          }
+          @endif
+         
+      })
+  </script>
+  <script>
+      
+      $(document).ready(function(){
+
+@if (isset($alertMessage)) {
+    toastr.options = {
+        timeOut: 5000,
+          //positionClass: "toast-top-center",
+          preventDuplicates: true,
+          closeButton: true,
+          progressBar: true,
+          //showMethod: "slideDown",
+          //hideMethod: "slideUp",
+          showDuration: 200,
+          hideDuration: 1000,
+          extendedTimeOut: 1000,
+          timeOut: 0,
+          tapToDismiss: true,
+          closeOnHover: true,
+          extendedTimeOut: 1000,
+
+    }
+  toastr.warning('{{$alertMessage}}');
+}
+@endif
+
+})
+  </script>
 
 </body>
 </html>

@@ -23,7 +23,7 @@
             <div class="col-sm-6 col-lg-4">
                 <div class="donation-item">
                     <div class="img">
-                        <img src="{{asset('storage/UserDocument/'.$item->file_vignette)}}" alt="Donation">
+                        <img style="height: 400px;" src="{{asset('storage/UserDocument/'.$item->file_vignette)}}" alt="Donation">
                         <a class="common-btn" href="{{ url('donation-details/'.$item->id.'/'.$item->name_b) }}">Détails</a>
                     </div>
                     <div class="inner">
@@ -130,10 +130,10 @@
                                 @endphp</li>
                                 <li>Montant visé: {{$item->montant_v}} FCFA</li>
                             </ul>
-                            <h4 class=""> 
+                            <h4 class="d-flex justify-content-between"> 
                                 
-                                <a href="{{ url('edit/'.$item->id) }}" style="text-decoration: none; color: #d45214; cursor: pointer;" class="ml-10"><i class="icofont-edit"></i></a>
-                                <a onclick="return confirm('Cette action est irréversible')" href="{{ url('delete-post/'.$item->id) }}" style="text-decoration: none; color: #d45214; cursor: pointer;" class="ml-10"><i class="icofont-trash"></i></a>
+                                <a href="{{ url('edit/'.$item->id) }}" style="text-decoration: none; color: #d45214; cursor: pointer;" class="ml-10">Modifier <i class="icofont-edit"></i></a>
+                                <a onclick="return confirm('Cette action est irréversible')" href="{{ url('delete-post/'.$item->id) }}" style="text-decoration: none; color: #d45214; cursor: pointer;" class="ml-10">Supprimer <i class="icofont-trash"></i></a>
                             </h4>
                         </div>
                     </div>

@@ -74,25 +74,29 @@
                                 border-right: 1px solid #e15b1a;
                             }
 
-                            .drop-zone {
-                                max-width: 100%;
-                                height: 200px;
-                                padding: 25px;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
+                            #filedrag {
+                                padding: 1em;
+                                margin: 1em 0;
+                                color: #1a1a1a;
+                                border: 2px dashed #808080;
+                                border-radius: 4px;
+                                cursor: default;
+                                width: 100%;
+                                display: inline-block;
                                 text-align: center;
-                                font-family: "Quicksand", sans-serif;
-                                font-weight: 500;
-                                font-size: 20px;
-                                cursor: pointer;
-                                color: #cccccc;
-                                border: 4px dashed #009578;
-                                border-radius: 10px;
                             }
 
-                            .drop-zone--over {
+                            #filedrag.hover {
+                                border-color: #efd126;
                                 border-style: solid;
+                            }
+
+                            #filedrag.hover .box-icon {
+                                max-width: 50px;
+                            }
+
+                            #fileselect {
+                                margin: auto;
                             }
 
                             .box-icon {
@@ -101,31 +105,42 @@
                                 margin: auto;
                             }
 
-                            .drop-zone__input {
+                            #messages {
+                                padding: 0 10px;
+                                margin: 1em 0;
+                                max-height: 400px;
+                                overflow-y: scroll;
+                            }
+
+                            #progress p {
+                                display: block;
+                                width: 100%;
+                                padding: 5px 15px;
+                                margin: 2px 0;
+                                border: 1px solid #eee;
+                                border-radius: 20px;
+                                background: #eee 100% 0 repeat-y;
+                                color: #333;
+                            }
+
+                            #progress p.success {
+                                background: #28a745 none 0 0 no-repeat;
+                                color: #fff;
+                            }
+
+                            #progress p.failed {
+                                background: #dc3545 none 0 0 no-repeat;
+                                color: #fff;
+                            }
+
+                            .mobile-upload {
                                 display: none;
                             }
 
-                            .drop-zone__thumb {
-                                width: 100%;
-                                height: 100%;
-                                border-radius: 10px;
-                                overflow: hidden;
-                                background-color: #cccccc;
-                                background-size: cover;
-                                position: relative;
-                            }
-
-                            .drop-zone__thumb::after {
-                                content: attr(data-label);
-                                position: absolute;
-                                bottom: 0;
-                                left: 0;
-                                width: 100%;
-                                padding: 5px 0;
-                                color: #ffffff;
-                                background: rgba(0, 0, 0, 0.75);
-                                font-size: 14px;
-                                text-align: center;
+                            @media (pointer: coarse) {
+                                .desktop-upload {
+                                    display: none;
+                                }
                             }
 
                         </style>
@@ -162,33 +177,33 @@
                             </select>
 
                             <!--<div class="mb-3">
-                                                    <select class="" name="categories" class="mb-4">
-                                                        <option value="">Veuillez selectionner la catégories dans laquelle se trouve votre campagne                    </option>
-                                                        <option value="Anniversaire">Anniversaire</option>
-                                                        <option value="Associatif">Associatif</option>
-                                                        <option value="Autres">Autres</option>
-                                                        <option value="Bicycling">Bicycling</option>
-                                                        <option value="Entertainment">Entertainment</option>
-                                                        <option value="Environment">Environment</option>
-                                                        <option value="Evènement">Evènement</option>
-                                                        <option value="Event">Event</option>
-                                                        <option value="Familial">Familial</option>
-                                                        <option value="Humanitaire">Humanitaire</option>
-                                                        <option value="Mariage">Mariage</option>
-                                                        <option value="Mobility">Mobility</option>
-                                                        <option value="Recreation">Recreation</option>
-                                                        <option value="Restoration">Restoration</option>
-                                                        <option value="Schools">Schools</option>
-                                                        <option value="Soutien pour proche">Soutien pour proche</option>
-                                                        <option value="Sports">Sports</option>
-                                                        <option value="Streetscapes">Streetscapes</option>
-                                                        <option value="Technology">Technology</option>
-                                                        <option value="Tontine">Tontine</option>
-                                                        <option value="Transit">Transit</option>
-                                                        <option value="Voyage">Voyage</option>
-                                                    </select>
-                                                  </div>
-                                                -->
+                                                <select class="" name="categories" class="mb-4">
+                                                    <option value="">Veuillez selectionner la catégories dans laquelle se trouve votre campagne                    </option>
+                                                    <option value="Anniversaire">Anniversaire</option>
+                                                    <option value="Associatif">Associatif</option>
+                                                    <option value="Autres">Autres</option>
+                                                    <option value="Bicycling">Bicycling</option>
+                                                    <option value="Entertainment">Entertainment</option>
+                                                    <option value="Environment">Environment</option>
+                                                    <option value="Evènement">Evènement</option>
+                                                    <option value="Event">Event</option>
+                                                    <option value="Familial">Familial</option>
+                                                    <option value="Humanitaire">Humanitaire</option>
+                                                    <option value="Mariage">Mariage</option>
+                                                    <option value="Mobility">Mobility</option>
+                                                    <option value="Recreation">Recreation</option>
+                                                    <option value="Restoration">Restoration</option>
+                                                    <option value="Schools">Schools</option>
+                                                    <option value="Soutien pour proche">Soutien pour proche</option>
+                                                    <option value="Sports">Sports</option>
+                                                    <option value="Streetscapes">Streetscapes</option>
+                                                    <option value="Technology">Technology</option>
+                                                    <option value="Tontine">Tontine</option>
+                                                    <option value="Transit">Transit</option>
+                                                    <option value="Voyage">Voyage</option>
+                                                </select>
+                                              </div>
+                                            -->
 
 
                         </div>
@@ -282,55 +297,47 @@
                             </div>
                         </div>
                         <!--<div class="col-lg-12 mb-4 ">
-                                    <div class="form-group">
-                                        <label for="">Image de vignette (cagnotte publique)</label>
-                                        <input type="file" required name="file_vignette" class="form-control">
-                                        <small class="text-muted">Télécharger une image de taille minimum 500x340(.jpg ou
-                                            .png).</small>
-                                    </div>
-                                </div> -->
+                                <div class="form-group">
+                                    <label for="">Image de vignette (cagnotte publique)</label>
+                                    <input type="file" required name="file_vignette" class="form-control">
+                                    <small class="text-muted">Télécharger une image de taille minimum 500x340(.jpg ou
+                                        .png).</small>
+                                </div>
+                            </div> -->
 
                         <!--- drop file zone -->
 
-                        <!-- file drop zone 2 -->
-                        <label for="">Image de vignette (cagnotte publique)</label>
-                        <small class="text-muted">Télécharger une image de taille minimum 500x340(.jpg ou
-                            .png).</small>
-                        <div class="drop-zone col-lg-12 mb-4 ">
-
-                            <span class="drop-zone__prompt">
-                                <img class="box-icon"
-                                    src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Octicons-cloud-upload.svg" />
-                                Glissez et deposer / ou cliquez pour télécharger
-                            </span>
-                            <input type="file" required name="file_vignette" class="drop-zone__input">
+                        <div class="col-lg-12 mb-4 form-group desktop-upload">
+                            <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="2097152" />
+                            <div>
+                                <label for="">Image de vignette (cagnotte publique)</label> <br>
+                                <small class="text-muted">Télécharger une image de taille minimum 500x340(.jpg ou
+                                    .png).</small>
+                                <div id="filedrag">
+                                    <img class="box-icon"
+                                        src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Octicons-cloud-upload.svg" />
+                                    <label for="fileselect">Glissez et deposer / ou </label>
+                                    <input type="file" id="fileselect" name="file_vignette" />
+                                </div>
+                                <div id="messages">
+                                    <p></p>
+                                </div>
+                                <div id="progress"></div>
+                            </div>
                         </div>
-                        <!-- end file drop zone 2 -->
 
 
-                        {{-- <div class="col-lg-12 mb-4 ">
+                        <div class="col-lg-12 mb-4 ">
                             <div class="form-group">
                                 <label for="">Image de couverture de votre cagnotte</label>
                                 <input type="file" required name="file_couverture" class="form-control">
                                 <small class="text-muted">Télécharger une image de taille minimum 500x340(.jpg ou
                                     .png).</small>
                             </div>
-                        </div> --}}
+                        </div>
 
                         <!-- file drop zone 2 -->
-                        <label for="">Image de couverture de votre cagnotte</label>
-                        <small class="text-muted">Télécharger une image de taille minimum 500x340(.jpg ou
-                            .png).</small>
-                        <div class="drop-zone col-lg-12 mb-4 ">
-
-                            <span class="drop-zone__prompt">
-                                <img class="box-icon"
-                                    src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Octicons-cloud-upload.svg" />
-                                Glissez et deposer / ou cliquez pour télécharger
-                            </span>
-                            <input type="file" required name="file_couverture" class="drop-zone__input">
-                        </div>
-                        <!-- end file drop zone 2 -->
+                        
                         <div class="col-lg-12 mb-4 ">
                             <div class="form-group">
                                 <input type="text" value="{{ old('siteweb') }}" required name="siteweb"
