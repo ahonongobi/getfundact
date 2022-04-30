@@ -24,7 +24,7 @@ Ajouter une photo de profil sur votre page de cagnotte la rendra plus dynamique 
 {{$message}}
 C'est à vous! Bonne chance!
 
-L' équipe Getfund act
+L'équipe Getfundact
 
 
 

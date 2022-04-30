@@ -35,7 +35,13 @@ class AppServiceProvider extends ServiceProvider
 
         Paginator::useBootstrap();
         View::composer(['index','invest_dash.index','invest_dash.donation-details','user_dash.donation-details','user_dash.my-campagne','invest_dash.campagne-org','user_dash.index','user_dash.contribution','invest_dash.contribution-org','_layouts._invest','_layouts._user','admin.*','_layouts._admin','user_dash.*','invest_dash.*'], function ($view){
-
+            $montantCotise = Contrubution::groupBy('id_campagnes')->where('states_payment',1)->selectRaw('sum(montant) as montant, id_campagnes')->get();
+            foreach($montantCotise as $montant){
+                $montantCampagne = Campagne::where('id',$montant->id_campagnes)->first();
+                $montantCampagne->montant_cotise = $montant->montant;
+                $montantCampagne->update();
+                //var_dump($montantCampagne);
+            }
             if (Auth::check()) {
                 $view->with('campagnes', Campagne::where('user_id',Auth::user()->id)->get());
                 $view->with('all_campagnes', Campagne::paginate(10));
@@ -59,7 +65,7 @@ class AppServiceProvider extends ServiceProvider
 
             }       
             //admin
-            $view->with('all_users', User::paginate(20));
+            $view->with('all_users', User::orderBy('id','DESC')->paginate(20));
             $view->with('count_all_campagne', Campagne::count());
             $view->with('Countall_users', User::count());
             $view->with('todayUser', DB::table('users')->select(DB::raw('*'))

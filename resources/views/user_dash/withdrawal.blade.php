@@ -15,14 +15,76 @@
                         <div class="form-group mb-5">
                             
                               
-                                <select name="nom_campagne" class="mb-4 form-group">
+                                {{--<select name="nom_campagne" class="mb-4 form-group">
                                     <option>Veuillez selectionner le rétrait que vous souhaitez effectué :) </option>
                                     <option value="all">Je veux retirer tout mes sous</option>
                                     @foreach ($withdrawalinfo as $item)
                                     <option value="{{ $item->id }}-{{ $item->name }}">{{ $item->name }}/ {{ $item->created_at }}/ ${{ $item->montant_cotise ?? '0' }}</option>
                                     @endforeach
                                     
-                                </select>
+                                </select>--}}
+                                <style>
+                                    section:last-of-type button {
+                                        width: 50%;
+                                        padding: 2em 0;
+                                        border-bottom: 0;
+                                    }
+        
+                                    section:last-of-type button:nth-child(even) {
+                                        border-right: 1px solid #e15b1a;
+                                    }
+        
+                                    section:last-of-type button:nth-child(3),
+                                    section:last-of-type button:nth-child(4) {
+                                        border-bottom: 1px solid #e15b1a;
+                                    }
+        
+                                    section button {
+                                        width: 25%;
+                                        padding: 1em 0;
+                                        background: none;
+                                        box-shadow: none;
+                                        text-transform: uppercase;
+                                        letter-spacing: 5px;
+                                        border-left: 1px solid #e15b1a;
+                                        border-top: 1px solid #e15b1a;
+                                        border-bottom: 1px solid #e15b1a;
+                                        border-right: 0;
+                                        transition: background 0.25s ease-in;
+                                        cursor: pointer;
+                                        color: #302c51;
+                                    }
+        
+                                    section button:hover,
+                                    section button.active {
+                                        background: #e15b1a;
+                                        color: white;
+                                    }
+        
+                                    section button:focus {
+                                        outline: none;
+                                    }
+        
+                                    section button:last-of-type {
+                                        border-right: 1px solid #e15b1a;
+                                    }
+        
+                                    
+        
+                                </style>
+                                 
+                                <div class="col-lg-12 col-md-12 mt-3">
+                                    <label for="">Veuillez selectionner le rétrait que vous souhaitez effectué :)
+                                    </label>
+                                    <select name="nom_campagne" class="select2button mt-3">
+                                        <option value="all" selected>Je veux retirer tout mes sous</option>
+                                       
+                                        @foreach ($withdrawalinfo as $item)
+                                        <option value="{{ $item->id }}-{{ $item->name }}">{{ $item->name }}/ ${{ $item->montant_cotise ?? '0' }}</option>
+                                        @endforeach
+                                    </select>
+        
+                                </div>
                               
                          </div>
                     </div>

@@ -24,6 +24,7 @@
         <link rel="stylesheet" href="{{asset('assets/css/odometer.min.css')}}">
 
         <link rel="stylesheet" href="{{asset('assets/css/nice-select.min.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/css/theme-dark.css')}}">
 
         <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
         <link rel="stylesheet" href="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css">
@@ -526,6 +527,43 @@
 
 })
   </script>
+
+<script>
+    (function($) {
+
+$.fn.select2button = function(options) {
+  this.hide();
+  return this.each(function(index) {
+    $(this).after('<section />');
+    var op = $('option', this);
+    var ops = $('option:selected', this).index();
+
+    op.each(function() {
+      $('section').eq(index).append('<button>' + $(this).text() + '</button>')
+      var btn = $('section:eq(' + index + ') button');
+
+      if (this.index == ops){
+        btn.eq(this.index).addClass('active');
+      }
+        
+
+      btn.on('click', function() {
+        var btns = $(this).index();
+        op.removeAttr("selected");
+        btn.removeClass('active');
+        $(this).addClass('active');
+        op.eq(btns).attr('selected', true);
+      })
+    });
+
+  });
+};
+
+}(jQuery));
+
+// Call!
+$('.select2button').select2button();
+</script>
 
 </body>
 </html>

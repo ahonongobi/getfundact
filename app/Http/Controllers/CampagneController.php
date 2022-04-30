@@ -69,7 +69,7 @@ class CampagneController extends Controller
                 $taken_id = Campagne::where('user_id',Auth::user()->id)->latest()->first();
                 //dd($taken_id);
                 $id = $taken_id->id;
-                $message ="Nous vous remercions d'avoir choisir Getfund Act pour votre campagne. Lien de votre campagne:https://getfundact.com/getfund-donation-details/$id/$request->name";
+                $message ="Nous vous remercions d'avoir choisir Getfund Act pour votre campagne. Lien de votre campagne:<a href='https://getfundact.com/getfund-donation-details/$id/$request->name'>https://getfundact.com/getfund-donation-details/$id/$request->name</a>";
                 
                 $mailable = new Confirmation($request->name,$request->name_b,$message);
                 Mail::to(Auth::user()->email)->send($mailable);

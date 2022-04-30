@@ -59,7 +59,10 @@ class ContrubutionController extends Controller
                 $sendMoney->transaction_id =  $_POST['transaction-id'];
                 $sendMoney->transaction_status =  $_POST['transaction-status'];
                 $sendMoney->amount =  $request->amount;
+
+
                 if ($sendMoney->save()) {
+                    //$updateContrubution = Contrubution::where('email',$request->email)->update(['states_payment'=>1]);
                     $notification_gobi = array(
                         'title' => 'Féliciations',
                         'sending' => "Votre contribution est parvenue avec succès. Merci pour votre esprit de bénévolat au sein de la société.",

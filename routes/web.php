@@ -148,4 +148,4 @@ Route::post('search',[AdminController::class,'search']);
 
 
 //kkiapay
-Route::get('callback/{slug}', [PaymentController::class, 'callback'])->name('callback');
+Route::get('callback/{slug}/{email}', [PaymentController::class, 'callback'])->name('callback');

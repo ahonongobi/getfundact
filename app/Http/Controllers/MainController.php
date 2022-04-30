@@ -69,7 +69,7 @@ class MainController extends Controller
         $count_contribution=Contrubution::where('id_campagnes',$id)->count();
         $count_contribution_amount= Contrubution::where('id_campagnes',$id)->sum('montant');
         $details = Campagne::where('id',$id)->first();
-        $contributeur = Contrubution::where('id_campagnes',$id)->paginate(10);
+        $contributeur = Contrubution::where('id_campagnes',$id)->where('states_payment',1)->paginate(10);
         return view('user_dash.donation-details',compact('details','contributeur','count_contribution','count_contribution_amount'));
     }
     public function donationDetailsOrg($id,$name){

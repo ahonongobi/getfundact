@@ -188,8 +188,14 @@
                             </p>
                         </div>
                         <div class="bottom">
-                            
-                             @if ($item->montant_cotise==0)
+                            <div style="height: 15px;" class="progress">
+                                @php
+                                    $xpercent = 100*$item->montant_cotise/$item->montant_v;
+                                    $x = number_format((float)100*$item->montant_cotise/$item->montant_v,2,'.','');
+                                @endphp
+                                <div  class="progress-bar  progress-bar-striped bg-success progress-bar-animated" role="progressbar" style="width: {{ $xpercent }}%; background-color: #ff6015 !important" aria-valuenow="{{$xpercent}}" aria-valuemin="0" aria-valuemax="100">{{$x}}%</div>
+                              </div>
+                             {{--@if ($item->montant_cotise==0.00)
                              <div class="skill">
                                 <div class="skill-bar skill0 wow fadeInLeftBig">
 
@@ -199,7 +205,7 @@
                             </div>
                              @endif
                             
-                            @if ($item->montant_cotise==(1/10)*$item->montant_v)
+                            @if (0 < $item->montant_cotise AND $item->montant_cotise < (10*$item->montant_v)/100)
                             <div class="skill">
                                 <div class="skill-bar skill10 wow fadeInLeftBig">
 
@@ -265,10 +271,10 @@
                             </div>
                             @endif
 
-                            
+                            --}}
                             <ul>
                                    <li>Montant contribué:  @php
-                                    if($item->montant_cotise==NULL)
+                                    if($item->montant_cotise==0)
                                     echo "0 FCFA";
 
                                     else {

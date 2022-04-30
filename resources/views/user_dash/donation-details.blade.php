@@ -27,6 +27,14 @@
                             echo htmlspecialchars_decode($details->Details_budget_en);
                         @endphp</p>
                     </div>
+                    @if ($details->video != null)
+                    <div style="width: 100%; max-width:100%" class="instagram widget-item">  
+                        @php
+                          echo  htmlspecialchars_decode($details->video);
+                        @endphp
+                       {{-- <iframe width="420" height="315" src="https://www.youtube.com/embed/MNX7HgcWqHc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> --}}
+                    </div>  
+                    @endif
                     <div class="details-share">
                         <div class="row">
                             <div class="col-sm-6 col-lg-6">
@@ -365,7 +373,7 @@
                                 <tbody>
                                     @foreach ($contributeur as $contribuable)
                                    <tr>
-                                    <td>{{$contribuable->name}}</td>
+                                    <td>{{$contribuable->name}} {{$contribuable->surname}} </td>
                                     <td class="font-weight-bold">{{$contribuable->montant}} FCFA</td>
                                     
                                     </tr>  
@@ -385,11 +393,15 @@
                             
                         </div>
                     </div>
-                    @if ($details->video != null)
+                   {{-- @if ($details->video != null)
                     <div class="instagram widget-item">  
-                        <iframe width="420" height="315" src="{{$details->video ?? ""}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        @php
+                          echo  htmlspecialchars_decode($details->video);
+                        @endphp
+                        <iframe width="420" height="315" src="https://www.youtube.com/embed/MNX7HgcWqHc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>  
                     @endif
+                     --}}
                     
                    
                 </div>

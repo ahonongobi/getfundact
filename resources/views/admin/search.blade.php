@@ -63,7 +63,7 @@
                                         <thead>
                                             <tr>
                                                 <th>Name</th>
-                                                <th>Surname</th>
+                                                <th>E-mail</th>
                                                 <th>Date</th>
                                                 <th>Statut</th>
                                                 
@@ -75,8 +75,8 @@
                                         <tbody>
                                           @foreach ($searchs as $item)
                                           <tr>
-                                            <td>{{$item->name}}</td>
-                                            <td class="font-weight-bold">{{$item->surname}}</td>
+                                            <td>{{$item->name }} {{ $item->surname}}</td>
+                                            <td class="font-weight-bold">{{$item->email}}</td>
                                             <td>{{$item->created_at}}</td>
                                             @if ($item->states ==1)
                                             <td class="font-weight-medium text-success">Actif</td>
@@ -116,7 +116,7 @@
                                             
                                         </tbody>
                                     </table>
-                                    <div class="d-flex justify-content">{!! $all_users->links() !!}</div>
+                                   {{-- <div class="d-flex justify-content">{!! $all_users->links() !!}</div>--}}
                                 </div>
                             </div>
                         </div>

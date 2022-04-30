@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Checkout;
+use App\Models\Contrubution;
 use Illuminate\Http\Request;
 use App\Models\Payment;
 use Illuminate\Support\Facades\Auth;
@@ -10,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 
 class PaymentController extends Controller
 {
-    public function callback(Request $request,$slug){
+    public function callback(Request $request,$slug,$email){
         $transaction = $request->get('transaction_id');
         
         
@@ -22,9 +23,11 @@ class PaymentController extends Controller
         $sendMoney->amount =  $slug;
          
         if ($sendMoney->save()) {
+
+           $updateContrubution = Contrubution::where('email',$email)->orderBy('id','desc')->first()->update(['states_payment'=>1]);
             $notification_gobi = array(
                 'title' => 'Féliciations',
-                'sending' => "Votre contribution est parvenue avec succès. Merci pour votre esprit de bénévolat au sein de la société.",
+                'sending' => "Votre contribution est parvenue avec succès. Merci pour votre contribution au sein de la société.",
                 'type' => 'success',
         
                 );

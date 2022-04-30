@@ -81,7 +81,7 @@
                                     @if ($usersCount !=0)
                                     <a href="{{ asset('storage/UserPhoto/'.$users->photo) }}">
 
-                                        <img src="{{ asset('storage/UserPhoto/'.$users->photo) }}" alt="" srcset="">
+                                        <img style="width: 200px; height:200px;" src="{{ asset('storage/UserPhoto/'.$users->photo) }}" alt="" srcset="">
                                     </a>
                                     <a href="{{ asset('storage/UserDocument/'.$users->cni) }}">
                                         <img width="400" height="300" src="{{ asset('storage/UserDocument/'.$users->cni) }}" alt="" srcset="">

@@ -35,6 +35,7 @@
                         
                             <form  action="{{url('checkout')}}" method="POST">
                                 @csrf
+                                <input type="hidden" name="email" value="$var_email" id="">
                                 <input type="hidden" name="amount" value="{{$var_montant}}">
                                 <script
                                   src="https://cdn.fedapay.com/checkout.js?v=1.1.7"
@@ -105,7 +106,7 @@
                         position='center'
                         sandbox='true'
                         data=''
-                        callback="{{route('callback',["slug"=>$var_montant])}}">
+                        callback="{{route('callback',["slug"=>$var_montant,"email"=>$var_email])}}">
                     </div>
                 </div>
                 

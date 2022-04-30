@@ -63,9 +63,6 @@
                                         <td>keys_word</td>
                                         <td>{{ $campagnePost->keys_word ?? 'non rensigné' }}</td>
                                     </tr><tr>
-                                        <td>Video</td>
-                                        <td>{{ $campagnePost->video ?? 'non rensigné' }}</td>
-                                    </tr><tr>
                                         <td>Siteweb</td>
                                         <td>{{ $campagnePost->siteweb ?? 'non rensigné' }}</td>
                                     </tr><tr>
@@ -102,6 +99,11 @@
                                         <img width="400" height="300" src="{{ asset('storage/UserDocument/'.$campagnePost->file_couverture) }}" alt="" srcset="">
                                     </a>
                                     
+                                    <span>
+                                        @php
+                                           echo htmlspecialchars_decode($campagnePost->video) ?? 'non rensigné'
+                                        @endphp
+                                    </span>
                                     
                                 </div>
                             </div>
