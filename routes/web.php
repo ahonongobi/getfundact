@@ -7,6 +7,7 @@ use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\CNIController;
 use App\Http\Controllers\ContrubutionController;
 use App\Http\Controllers\EditController;
+use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\JuryController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MainController;
@@ -69,7 +70,15 @@ Route::get('auth/google/callback', [LoginController::class,'handleGoogleCallback
 
 Route::get('auth/facebook', [LoginController::class,'redirectToFacebook']);
 Route::get('auth/facebook/callback', [LoginController::class,'handleFacebookCallback']);
-
+//start here password forget 
+Route::get('/password-forget',function()
+{
+   return view('forget-password');  
+});
+Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
+Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
+Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
+//end here password forget 
 //middleware route
 Route::group(["middleware"=>"auth"],function(){
 Route::get('my_space',[MainController::class,'indexUserDash']);

@@ -164,38 +164,51 @@
                                             <a href="/">
                                                 <img src="{{asset('assets/img/logo.png')}}" alt="Logo">
                                             </a>
-                                            <h2>ESPACE MEMBRE</h2>
+                                            <h2> <i class="fa fa-refresh"></i> REINITIALISATION DE MOT DE PASSE</h2>
                                         </div>
-                                        @if (Session::has('message'))
-                                            <div class="alert alert-success">
-                                               <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
-                                                <strong>{{ Session::get('message') }}</strong>
-                                            </div>
-                                            
-                                        @endif
-                                        <form method="POST" action="{{ url('login') }}">
+                                        <form method="POST" action="{{ route('reset.password.post') }}">
                                             @csrf
+                                            <input type="hidden" name="token" value="{{ $token }}">
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
-                                                        <input type="email" required name="email" class="form-control" placeholder="Email">
+                                                        <input type="email" required name="email" class="form-control" placeholder="Email de votre compte">
+                                                        @if ($errors->has('email'))
+
+                                                        <span class="text-danger">{{ $errors->first('email') }}</span>
+                  
+                                                    @endif
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
-                                                        <input type="password" required name="password" class="form-control" placeholder="MOT DE PASSE">
+                                                        <input type="password" required name="password" class="form-control" placeholder="Nouveau mot de passe">
+                                                        @if ($errors->has('password'))
+
+                                                        <span class="text-danger">{{ $errors->first('password') }}</span>
+                  
+                                                    @endif
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12">
-                                                    <button onclick="launch_toast()" type="submit" class="btn common-btn">SE CONNECTER</button>
+                                                    <div class="form-group">
+                                                        <input type="password" required name="password_confirmation" class="form-control" placeholder="Confirmation mot de passe">
+                                                        @if ($errors->has('password_confirmation'))
+
+                                                        <span class="text-danger">{{ $errors->first('password_confirmation') }}</span>
+                  
+                                                    @endif
+                                                    </div>
+                                                </div>
+                                            
+                                                <div class="col-lg-12">
+                                                    <button onclick="launch_toast()" type="submit" class="btn common-btn">REINITIALISEZ</button>
                                                 </div>
                                             </div>
                                         </form>
                                         <div class="bottom">
                                             <p> PAS DE COMPTE ?
                                                 <a href="{{url('register')}}">CREER UN COMPTE</a>
-                                                |
-                                                <a href="{{ url('password-forget') }}">MOT DE PASSE OUBLIE</a>
                                             </p>
                                             <h4>OU</h4>
                                             <ul>

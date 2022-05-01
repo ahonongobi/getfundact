@@ -80,7 +80,7 @@
                     </div>
                     <div class="details-payment">
                     <h3>Contribution</h3>
-                    @if($email_value->email == "sa.intelligencia@gmail.com")
+                    @if(Auth::check() AND $details->user_id !== Auth::user()->id)
                     <form method="POST" action="{{ url('contribution') }}">
                         @csrf
                         <input type="hidden" value="{{ $details->id }}" name="id_campagne">
@@ -163,7 +163,93 @@
                         </div>
                         
                     </form>
-                    @elseif($email_value->email != $auth_id)
+                    @endif
+
+                    @if(!(Auth::check()))
+                    <form method="POST" action="{{ url('contribution') }}">
+                        @csrf
+                        <input type="hidden" value="{{ $details->id }}" name="id_campagne">
+                        <input type="hidden" value="{{ $details->user_id }}" name="id_author">
+                        <input type="hidden" value="{{ $details->name }}" name="nom_du_porteur">
+                        <div class="form-radio-area">
+                            
+
+                        </div>
+                        <span class="text-danger">
+                            @if ($errors->has('inlineRadioOptions'))
+                                {{$errors->first('inlineRadioOptions')}}
+                            @endif
+                        </span>
+                        <div class="form-input-area">
+                            <div class="form-group">
+                                <label>
+                                    <i class="icofont-user-alt-3"></i>
+                                </label>
+                                <input type="text" name="name" class="form-control" placeholder="Nom">
+                                <span class="text-danger">
+                                    @if ($errors->has('name'))
+                                        {{$errors->first('name')}}
+                                    @endif
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <i class="icofont-user-alt-3"></i>
+                                </label>
+                                <input type="text" class="form-control" name="surname" placeholder="Prénoms">
+                                <span class="text-danger">
+                                    @if ($errors->has('surname'))
+                                        {{$errors->first('surname')}}
+                                    @endif
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <i class="icofont-ui-email"></i>
+                                </label>
+                                <input type="email" name="email" class="form-control" placeholder="Email">
+                                <span class="text-danger">
+                                    @if ($errors->has('email'))
+                                        {{$errors->first('email')}}
+                                    @endif
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <i class="icofont-ui-call"></i>
+                                </label>
+                                <input type="text" name="numero" class="form-control" placeholder="Numero de téléphone">
+                                <span class="text-danger">
+                                    @if ($errors->has('numero'))
+                                        {{$errors->first('numero')}}
+                                    @endif
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <i class="icofont-dollar"></i>
+                                </label>
+                                <input onInput="edValueKeyPress()" type="number" id="invest" min="0" name="montant" class="form-control" placeholder="FCFA 100.00">
+                                <span class="text-danger">
+                                    @if ($errors->has('montant'))
+                                        {{$errors->first('montant')}}
+                                    @endif
+                                </span>
+                            </div>
+                            <div class="calculatrice">
+                                <span>Equivalent en $ (dollar):</span> <span id="for_th_day">$0</span>
+                            </div>
+                            <div class="text-center">
+                                
+                                <button type="submit" class="btn common-btn">Faire un don maintenant</button>
+
+                            
+                            </div>
+                        </div>
+                        
+                    </form>
+                    @endif
+                   {{-- @elseif($email_value->email != $auth_id)
                     
                     <form method="POST" action="{{ url('contribution') }}">
                         @csrf
@@ -249,7 +335,8 @@
                     </form>
                     
                        
-                    @else
+                    @else --}}
+                    @if(Auth::check() AND $details->user_id == Auth::user()->id)
                     Vous ne pouvez pas contribur a votre propre offre.
                 
                     @endif
