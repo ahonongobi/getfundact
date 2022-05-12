@@ -35,7 +35,7 @@ class RegisterController extends Controller
         $user->facebook_id = "none";
         if($user->save()){
 
-            $message ="Votre inscription a été enregistré avec succès. Nous vous remerçions d'avoir choisir Getfundact pour votre campagne et votre mot de passe est: $request->password";
+            $message ="Vos identifiants pour se connecter: E-mail: $request->email et Mot de passe: $request->password";
             $mailable = new MessageConfirmation($request->name,$request->email,$message);
             Mail::to($request->email)->send($mailable);
             $notification_gobi = array(

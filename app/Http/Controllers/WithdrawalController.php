@@ -38,7 +38,7 @@ class WithdrawalController extends Controller
             Mail::to(Auth::user()->email)->send($mailable);
             $notification_gobi = array(
                 'title' => 'Félicitations',
-                'sending' => "Votre inscription a été enregistré avec succès. Nous vous remerçions !!!.",
+                'sending' => "Votre demande de rétrait a été prise en compte. Vous recevrez un email de confirmation dans les prochains jours.",
                 'type' => 'success',
         
                 );

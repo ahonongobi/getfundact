@@ -74,7 +74,7 @@ class MainController extends Controller
     }
     public function donationDetailsOrg($id,$name){
         $details = Campagne::where('id',$id)->first();
-        $count_contribution_for_you = Contrubution::where('id_author',Auth::user()->id)->count();
+        $count_contribution_for_you = Contrubution::where('id_author',Auth::user()->id)->where('states_payment',1)->count();
         $contributeur = Contrubution::where('id_campagnes',$id)->paginate();
 
         return view('invest_dash.donation-details',compact('details','contributeur','count_contribution_for_you'));

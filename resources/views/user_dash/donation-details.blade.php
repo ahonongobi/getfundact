@@ -8,21 +8,22 @@
             <div class="col-lg-8">
                 <div class="details-item">
                     <div class="details-img"> 
-                        <h3>A Propos et description</h3>
+                        <h3 style="text-transform: uppercase; font-family:montserrat;">A Propos et description</h3>
                         <img src="{{asset('storage/UserDocument/'.$details->file_vignette)}}" style="width: 100%; height:550px; oject-fit:cover; object-position: 50% 50%;" alt="Details">
-                        <h2>{{$details->name}}</h2>
+                        <h2 style="text-transform: uppercase; font-family:montserrat;">{{$details->name}}</h2>
                         <p>
                             @php
                                 echo htmlspecialchars_decode($details->details_ojectifs);
                             @endphp
                         </p>
+                        <h3 style="text-transform: uppercase; font-family:montserrat;">Details du budget</h3>
                         <blockquote>
                             <i class="icofont-quote-left"></i>
                             @php
                                 echo htmlspecialchars_decode($details->detail_budget);
                             @endphp
                         </blockquote>
-                        <h3>Details rédigé en anglais</h3>
+                        <h3 style="text-transform: uppercase; font-family:montserrat;">Details rédigé en anglais</h3>
                         <p>@php
                             echo htmlspecialchars_decode($details->Details_budget_en);
                         @endphp</p>
@@ -41,7 +42,7 @@
                                 <div class="left">
                                     <ul>
                                         <li>
-                                            <span>Paratger:</span>
+                                            <span style="font-family:montserrat;">Paratger:</span>
                                         </li>
                                         <li>
                                             <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:8000/donation-details/{{ url('donation-details/'.$details->id.'/'.$details->name_b) }}&display=popup">
@@ -156,7 +157,7 @@
                             </div>
                             <div class="text-center">
                                 
-                                <button type="submit" class="btn common-btn">Faire un don maintenant</button>
+                                <button type="submit" class="btn common-btn">Contribuer</button>
 
                             
                             </div>

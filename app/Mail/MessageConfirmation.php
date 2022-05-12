@@ -32,6 +32,6 @@ class MessageConfirmation extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.confirmation.confirmation-created');
+        return $this->markdown('emails.confirmation.confirmation-created')->subject('Message de confirmation');
     }
 }

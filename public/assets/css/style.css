@@ -1,7 +1,8 @@
 @import "../../../../../external.html?link=https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&amp;display=swap";
 @import "../../../../../external.html?link=https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&amp;display=swap";
 body {
-    font-family: open sans, sans-serif;
+    /**font-family: open sans, sans-serif; **/
+    font-family: montserrat;
     color: #757575;
     background-color: #fff;
     font-size: 16px;
@@ -12,9 +13,10 @@ h3,
 h4,
 h5,
 h6 {
+    font-family: montserrat;
     font-weight: 700;
     color: #302c51;
-    font-family: quicksand, sans-serif;
+   /** font-family: quicksand, sans-serif; **/
 }
 p {
     line-height: 1.7;

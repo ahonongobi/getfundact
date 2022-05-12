@@ -77,7 +77,7 @@
                                     <label for="">Veuillez selectionner le rétrait que vous souhaitez effectué :)
                                     </label>
                                     <select name="nom_campagne" class="select2button mt-3">
-                                        <option value="all" selected>Je veux retirer tout mes sous</option>
+                                        <option style="font-size: 5px" value="all" selected>Je veux retirer tout mes sous</option>
                                        
                                         @foreach ($withdrawalinfo as $item)
                                         <option value="{{ $item->id }}-{{ $item->name }}">{{ $item->name }}/ ${{ $item->montant_cotise ?? '0' }}</option>

@@ -51,8 +51,16 @@ class ForgotPasswordController extends Controller
     }
 
     public function showResetPasswordForm($token) { 
-
-        return view('forgetPasswordLink', ['token' => $token]);
+       $checkIfLinkExpired = DB::table('password_resets')->where('token', $token)->first();
+       if (Carbon::now()->greaterThan(Carbon::parse($checkIfLinkExpired->created_at)->addDay())) {
+        $notification_gobi = "Le lien de réinitialisation de votre mot de passe a expiré.";
+                
+        return view('forgetPasswordLink',['token' => $token, 'notification_gobi' => $notification_gobi]);
+              
+         } else {
+            return view('forgetPasswordLink', ['token' => $token]); 
+       }
+        
 
      }
 

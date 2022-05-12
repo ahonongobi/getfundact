@@ -30,7 +30,8 @@ class EditController extends Controller
           'detail_budget'=>'required',
           "details_budget_en" => 'required',
        ]);
-       $add_campagne = Campagne::find($id);
+       $add_campagne = Campagne::where('id',$id)->first();
+       //find($id)
 
        $add_campagne->user_id = Auth::user()->id;
        $add_campagne->categories = $request->categories;
@@ -63,32 +64,62 @@ class EditController extends Controller
        if($request->hasFile('file_vignette'))
         {
             $file1 = $request->file('file_vignette');
-            $file2 = $request->file('file_couverture');
+            //$file2 = $request->file('file_couverture');
            
             
     
     
             $filename1 = 2*time().'.'.$file1->getClientOriginalExtension();
-            $filename2 = 3*time().'.'.$file2->getClientOriginalExtension();
+            //$filename2 = 3*time().'.'.$file2->getClientOriginalExtension();
             $path = public_path().'/storage/UserDocument/';
             
             $file1->move($path,$filename1);
-            $file2->move($path,$filename2);
+            //$file2->move($path,$filename2);
             
-            if (empty($request->file('file_vignette'))) {
+            if (!empty($request->file('file_vignette'))) {
                 $add_campagne->file_vignette = $filename1;
             } else {
                 # code...
             }
 
-            if (empty($request->file('file_couverture'))) {
+            
+            
+            
+        }
+
+        if(empty($request->file('file_couverture'))) {
+           //
+        }
+        if(empty($request->file('file_vignette'))) {
+            //
+         }
+        if($request->hasFile('file_couverture'))
+        {
+            //$file1 = $request->file('file_vignette');
+            $file2 = $request->file('file_couverture');
+           
+            
+    
+    
+           // $filename1 = 2*time().'.'.$file1->getClientOriginalExtension();
+            $filename2 = 3*time().'.'.$file2->getClientOriginalExtension();
+            $path = public_path().'/storage/UserDocument/';
+            
+            //$file1->move($path,$filename1);
+            $file2->move($path,$filename2);
+            
+            
+
+            if (!empty($request->file('file_couverture'))) {
                 $add_campagne->file_couverture = $filename2;
             } else {
-                
+                //
             }
             
             
         }
+
+        //end file 2
 
      
         if ($add_campagne->update()) {
@@ -97,7 +128,7 @@ class EditController extends Controller
                 
             $notification_gobi = array(
             'title' => 'Félicitations',
-            'sending' => 'Les informations de la campagne ont été modifiée ave succès.',
+            'sending' => 'Les informations de la campagne ont été modifiée avec succès.',
             'type' => 'success',
     
             );

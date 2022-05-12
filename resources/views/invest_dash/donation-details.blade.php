@@ -154,10 +154,7 @@
                                 </div>
                             </div>
                         </form>
-                        
-
-                        
-                        
+                              
                     </div>
                 </div>
             </div>
@@ -183,7 +180,7 @@
                                 <li>
                                     <img src="assets/img/blog/blog-details1.jpg" alt="Details">
                                 </li>
-                                <li>
+                                <li>   
                                     <h4>
                                         <a href="#">Donate for nutrition less poor people</a>
                                     </h4>
@@ -307,13 +304,7 @@
 <script>
     function edValueKeyPress() {
 			var x = document.getElementById("invest").value;
-            
-            document.getElementById("for_th_day").innerHTML =   (x*584.87) +"FCFA";
-            
-            
-            
-           
-            
+            document.getElementById("for_th_day").innerHTML =   (x*584.87) +"FCFA";        
 		}
 </script>
 @stop

@@ -65,7 +65,7 @@
 
 <!-- HIDDEN PREHEADER TEXT -->
 <div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: 'Lato', Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
-    Nous sommes ravis de vous avoir ici! Préparez-vous à plonger dans votre nouveau compte.
+  La réinitialisation de votre mot de passe est facile.
     
 
 </div>
@@ -106,7 +106,8 @@
                 <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;" >
                   <p style="margin: 0;">
 
-                    Réinitialiser votre mot de passe est facile. Appuyez simplement sur le bouton ci-dessous et suivez les instructions. Vous serez opérationnel en un rien de temps. </p>
+                    Appuyez simplement sur le bouton ci-dessous et suivez les instructions. 
+                    Vous serez opérationnel en un rien de temps. Ce lien s'expire dans 24 h.</p>
                 </td>
               </tr>
               <!-- BULLETPROOF BUTTON -->

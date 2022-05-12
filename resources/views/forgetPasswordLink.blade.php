@@ -166,6 +166,12 @@
                                             </a>
                                             <h2> <i class="fa fa-refresh"></i> REINITIALISATION DE MOT DE PASSE</h2>
                                         </div>
+                                       @if (isset($notification_gobi))
+                                       <div class="alert alert-danger">
+                                        <strong>{{$notification_gobi}}</strong> 
+                                       </div>
+                                       @endif
+                                       
                                         <form method="POST" action="{{ route('reset.password.post') }}">
                                             @csrf
                                             <input type="hidden" name="token" value="{{ $token }}">
@@ -202,7 +208,11 @@
                                                 </div>
                                             
                                                 <div class="col-lg-12">
-                                                    <button onclick="launch_toast()" type="submit" class="btn common-btn">REINITIALISEZ</button>
+                                                   @if (isset($notification_gobi))
+                                                   <button  type="submit" class="btn common-btn disabled">REINITIALISEZ</button>
+                                                   @else
+                                                   <button onclick="launch_toast()" type="submit" class="btn common-btn">REINITIALISEZ</button> 
+                                                   @endif
                                                 </div>
                                             </div>
                                         </form>

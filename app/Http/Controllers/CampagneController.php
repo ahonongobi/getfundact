@@ -29,7 +29,7 @@ class CampagneController extends Controller
        $add_campagne->details_ojectifs = $request->details_ojectifs;
        $add_campagne->keys_word = $request->keys_word;
        $add_campagne->video = $request->video;
-
+       $add_campagne->montant_cotise = 0;
 
        $add_campagne->siteweb = $request->siteweb;
        $add_campagne->hashtag = $request->hashtag;
@@ -69,9 +69,9 @@ class CampagneController extends Controller
                 $taken_id = Campagne::where('user_id',Auth::user()->id)->latest()->first();
                 //dd($taken_id);
                 $id = $taken_id->id;
-                $message ="Nous vous remercions d'avoir choisir Getfund Act pour votre campagne. Lien de votre campagne:<a href='https://getfundact.com/getfund-donation-details/$id/$request->name'>https://getfundact.com/getfund-donation-details/$id/$request->name</a>";
+                $message ="Nous vous remercions d'avoir choisi Getfund Action pour votre campagne. Lien de votre campagne :<a style='cursor:pointer;' target='_blank' href='https://getfundact.com/getfund-donation-details/$id/$request->name'>https://getfundact.com/getfund-donation-details/$id/$request->name</a>";
                 
-                $mailable = new Confirmation($request->name,$request->name_b,$message);
+                $mailable = new Confirmation($request->name,$request->name_b,$message,$id);
                 Mail::to(Auth::user()->email)->send($mailable);
 
                 $notification_gobi = array(

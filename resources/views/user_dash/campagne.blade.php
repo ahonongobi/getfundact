@@ -275,7 +275,7 @@
                                 <input type="text" value="{{ old('video') }}" required name="video" class="form-control"
                                     placeholder="**Vidéo (si vous avez une vidéo youtube de votre événement ou projet)">
                                 <small class="text-muted">
-                                    Copier-Coller le lien d une vidéo Viméo ou Youtube qui présente votre cagnotte. Votre
+                                    Copier-Coller le lien "ifrmae" d une vidéo Viméo ou Youtube qui présente votre cagnotte. Votre
                                     vidéo doit être courte pour captiver vos potentiels contributeurs mais complète afin de
                                     dire d éclairer au mieux sur votre cagnotte.
                                 </small>

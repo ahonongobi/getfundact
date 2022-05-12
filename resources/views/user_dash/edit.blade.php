@@ -22,13 +22,115 @@
                        
                         <div class="col-lg-12 mb-4">
                             <div class="form-group mb-5">
-                                
+                                <style>
+                                    section:last-of-type button {
+                                        width: 50%;
+                                        padding: 2em 0;
+                                        border-bottom: 0;
+                                    }
+        
+                                    section:last-of-type button:nth-child(even) {
+                                        border-right: 1px solid #e15b1a;
+                                    }
+        
+                                    section:last-of-type button:nth-child(3),
+                                    section:last-of-type button:nth-child(4) {
+                                        border-bottom: 1px solid #e15b1a;
+                                    }
+        
+                                    section button {
+                                        width: 25%;
+                                        padding: 1em 0;
+                                        background: none;
+                                        box-shadow: none;
+                                        text-transform: uppercase;
+                                        letter-spacing: 5px;
+                                        border-left: 1px solid #e15b1a;
+                                        border-top: 1px solid #e15b1a;
+                                        border-bottom: 1px solid #e15b1a;
+                                        border-right: 0;
+                                        transition: background 0.25s ease-in;
+                                        cursor: pointer;
+                                    }
+        
+                                    section button:hover,
+                                    section button.active {
+                                        background: #e15b1a;
+                                        color: white;
+                                    }
+        
+                                    section button:focus {
+                                        outline: none;
+                                    }
+        
+                                    section button:last-of-type {
+                                        border-right: 1px solid #e15b1a;
+                                    }
+        
+                                    .drop-zone {
+                                        max-width: 100%;
+                                        height: 200px;
+                                        padding: 25px;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        text-align: center;
+                                        font-family: "Quicksand", sans-serif;
+                                        font-weight: 500;
+                                        font-size: 20px;
+                                        cursor: pointer;
+                                        color: #cccccc;
+                                        border: 4px dashed #009578;
+                                        border-radius: 10px;
+                                    }
+        
+                                    .drop-zone--over {
+                                        border-style: solid;
+                                    }
+        
+                                    .box-icon {
+                                        max-width: 50px;
+                                        display: block;
+                                        margin: auto;
+                                    }
+        
+                                    .drop-zone__input {
+                                        display: none;
+                                    }
+        
+                                    .drop-zone__thumb {
+                                        width: 100%;
+                                        height: 100%;
+                                        border-radius: 10px;
+                                        overflow: hidden;
+                                        background-color: #cccccc;
+                                        background-size: cover;
+                                        position: relative;
+                                    }
+        
+                                    .drop-zone__thumb::after {
+                                        content: attr(data-label);
+                                        position: absolute;
+                                        bottom: 0;
+                                        left: 0;
+                                        width: 100%;
+                                        padding: 5px 0;
+                                        color: #ffffff;
+                                        background: rgba(0, 0, 0, 0.75);
+                                        font-size: 14px;
+                                        text-align: center;
+                                    }
+        
+                                </style>
                                   
-                                    <select name="categories" class="mb-4 form-group">
-                                        <option value="">Catégories dans laquelle se trouve votre campagne</option>
+                                  <div class="col-lg-12 col-md-12 mt-3">
+                                    <label for="">Veuillez selectionner la catégories dans laquelle se trouve votre campagne:
+                                    </label>
+                                    <select name="categories" class="select2button mt-3">
+                                        <option value="{{ $item->categories }}" selected>{{ $item->categories }}</option>
                                         <option value="Anniversaire">Anniversaire</option>
                                         <option value="Associatif">Associatif</option>
-                                        <option value="Autres">Autres</option>
+        
                                         <option value="Bicycling">Bicycling</option>
                                         <option value="Entertainment">Entertainment</option>
                                         <option value="Environment">Environment</option>
@@ -48,7 +150,13 @@
                                         <option value="Tontine">Tontine</option>
                                         <option value="Transit">Transit</option>
                                         <option value="Voyage">Voyage</option>
+                                        <option value="Autres">Autres</option>
                                     </select>
+        
+                    
+        
+        
+                                </div>
                                   
                              </div>
                         </div>
@@ -65,7 +173,7 @@
                         </div>
                         <div class="col-lg-12 mb-4">
                             <div class="form-group">
-                                <input type="text" required name="monnaie" readonly class="form-control" value="Dollar (USD)" placeholder="Monnaie">
+                                <input type="text" required name="monnaie" readonly class="form-control" value="FCFA (XOF)" placeholder="Monnaie">
                             </div>
                         </div>
                         <div class="col-lg-12 mb-4">
@@ -123,20 +231,54 @@
                                 </small>
                             </div>
                         </div> 
-                        <div class="col-lg-12 mb-4 ">
+                        <div class="col-lg-6 mb-4  d-flex justify-content-between">
+                            <img style="margin-right: 2%; height:400px;" class="ml-3" src="{{asset('storage/UserDocument/'. $item->file_couverture)}}" alt="" srcset="">
+                            <img class="ml-3" style="height:400px;"  src="{{asset('storage/UserDocument/'. $item->file_vignette)}}" alt="" srcset="">
+                        </div>
+                        <!-- file drop zone 2 -->
+                        <label for="">Image de vignette (cagnotte publique)</label>
+                        <small class="text-muted">Télécharger une image de taille minimum 500x340(.jpg ou
+                            .png).</small>
+                        <div class="drop-zone col-lg-12 mb-4 ">
+
+                            <span class="drop-zone__prompt">
+                                <img class="box-icon"
+                                    src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Octicons-cloud-upload.svg" />
+                                Glissez et deposer / ou cliquez pour télécharger
+                            </span>
+                            <input type="file"  name="file_vignette" class="drop-zone__input">
+                        </div>
+                        <!-- end file drop zone 2 -->
+                         <!-- file drop zone 2 -->
+                         <label for="">Image de couverture de votre cagnotte</label>
+                         <small class="text-muted">Télécharger une image de taille minimum 500x340(.jpg ou
+                             .png).</small>
+                         <div class="drop-zone col-lg-12 mb-4 ">
+ 
+                             <span class="drop-zone__prompt">
+                                 <img class="box-icon"
+                                     src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Octicons-cloud-upload.svg" />
+                                 Glissez et deposer / ou cliquez pour télécharger
+                             </span>
+                             <input type="file" name="file_couverture" class="drop-zone__input">
+                         </div>
+                         
+                         <!-- end file drop zone 2 -->
+                        {{--<div class="col-lg-12 mb-4 ">
                             <div class="form-group">
                                 <label for="">Image de vignette (cagnotte publique)</label>
                                 <input type="file"  name="file_vignette" class="form-control">
                                 <small class="text-muted">Télécharger une image de taille minimum 500x340(.jpg ou .png).</small>
                             </div>
-                        </div>
-                        <div class="col-lg-12 mb-4 ">
+                        </div>--}}
+                        {{--<div class="col-lg-12 mb-4 ">
                             <div class="form-group">
                                 <label for="">Image de couverture de votre cagnotte</label>
                                 <input type="file" name="file_couverture" class="form-control">
                                 <small class="text-muted">Télécharger une image de taille minimum 500x340(.jpg ou .png).</small>
                             </div>
-                        </div>
+                        </div>--}}
+
                         <div class="col-lg-12 mb-4 ">
                             <div class="form-group">
                                 <input type="text" value="{{ $item->siteweb }}" required name="siteweb" class="form-control" placeholder="Site Web (si vous avez une page web de votre événement ou projet)">
@@ -174,7 +316,7 @@
                                 </small>
                         </div>
 
-                        <input type="checkbox" checked required name="" id=""> En soumettant, vous acceptez les Conditions d'utilisation.
+                        <input type="checkbox" required name="" id="">J'ai vérifié que tout les champs sont remplis.
                         <div class="col-lg-12">
                             <button type="submit" class="btn common-btn">SOUMETTRE LES INFORMATIONS MODIFIEES POUR VALIDATIONS</button>
                         </div>

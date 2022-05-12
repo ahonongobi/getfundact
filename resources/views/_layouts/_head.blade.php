@@ -266,7 +266,7 @@
             </div>
         </div>
         <div class="copyright-area">
-            <p>Copyright ©2021 GETFUND ACT. Développé  par 
+            <p>Copyright ©2021- <script>document.write(new Date().getFullYear())</script> GETFUND ACT. Développé  par 
                 <a href="https://intelligencia-tech.com/" target="_blank">Intelligencia SI</a> | <a href="/termes">Notice légale et confidentialité</a>
             </p>
 
