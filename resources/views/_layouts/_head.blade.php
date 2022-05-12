@@ -30,7 +30,7 @@
 
         <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/theme-dark.css')}}">
-        <title>GetFund action, soutenez la communauté</title>
+        <title>haha GetFund action, soutenez la communauté</title>
         <link rel="icon" type="image/png" href="assets/img/favicon.png">
     </head>
     <body style="font-family: montserrat; ">
