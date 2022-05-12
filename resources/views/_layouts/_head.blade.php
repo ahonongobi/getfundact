@@ -225,7 +225,7 @@
                     <div class="footer-links">
                         <h3>Liens utils</h3>
                         <ul>
-                            <li><a href="/#donations-area"><i class="icofont-simple-right"></i>Exemples de cagnotte</a></li>
+                            <li><a href="/all-campagnes"><i class="icofont-simple-right"></i>Exemples de cagnotte</a></li>
                             <li><a href="/faq"><i class="icofont-simple-right"></i>FAQ/Aide</a></li>
                             <li><a href="/faq"><i class="icofont-simple-right"></i>Evenements</a></li>
                             <li><a href="/faq"><i class="icofont-simple-right"></i>Don</a></li>

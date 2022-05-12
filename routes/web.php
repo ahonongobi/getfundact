@@ -5,6 +5,7 @@ use App\Http\Controllers\BanqucaireController;
 use App\Http\Controllers\CampagneController;
 use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\CNIController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ContrubutionController;
 use App\Http\Controllers\EditController;
 use App\Http\Controllers\ForgotPasswordController;
@@ -57,11 +58,12 @@ Route::get('/sucess', function () {
     return view('sucess');
 });
 
+
 Route::get('login',[LoginController::class,'view'])->name('login');
 Route::get('register',[RegisterController::class,'view'])->name('regiter');
 Route::get('about',[MainController::class,'view'])->name('about');
-
-
+Route::get('all-campagnes',[CampagneController::class,'view'])->name('all-campagnes');
+Route::post('contact-nous',[ContactController::class,'send_mail'])->name('contact-nous');
 //post route start here 
 Route::post('register',[RegisterController::class,'register'])->name('regiter.post');
 Route::post('login',[LoginController::class,'login']);

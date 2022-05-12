@@ -12,7 +12,11 @@ use Illuminate\Support\Facades\Mail;
 
 class CampagneController extends Controller
 {
-	
+	public function view(){
+		$campagnes = Campagne::paginate(12);
+		return view('campagnes', compact('campagnes'));
+	}
+
     public function addCamapagnes(Request $request){
 
        $add_campagne = new Campagne();
