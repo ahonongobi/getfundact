@@ -30,7 +30,7 @@
 
         <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/theme-dark.css')}}">
-        <title>haha 2 GetFund action, soutenez la communauté</title>
+        <title>Cron Job push GetFund action, soutenez la communauté</title>
         <link rel="icon" type="image/png" href="assets/img/favicon.png">
     </head>
     <body style="font-family: montserrat; ">
