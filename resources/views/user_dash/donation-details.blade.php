@@ -426,13 +426,24 @@
                    
                     <div class="common-right-content widget-item">
                         <h3>Categories</h3>
-                        <ul>
-                            <li><a href="#">Education (10)</a></li>
-                            <li><a href="#">Medical (25)</a></li>
-                            <li><a href="#">Food & Water (14)</a></li>
-                            <li><a href="#">National Charity (2)</a></li>
-                            <li><a href="#">Cloth (4)</a></li>
-                        </ul>
+                        <div class="d-flex justify-content-between">
+                            <ul class="mx-2">
+                                <li><a href="{{url('campagnes/Anniversaire')}}">Anniversaire</a></li>
+                                <li><a href="{{url('campagnes/Associatif')}}">Associatif</a></li>
+                                <li><a href="{{url('campagnes/Entertainment')}}">Divertissement</a></li>
+                                <li><a href="{{url('campagnes/Evènement')}}">Evénément</a></li>
+                                <li><a href="{{url('campagnes/Environnement')}}">Environnement</a></li>
+                                <li><a href="{{url('campagnes/Sports')}}">Sports</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="{{url('campagnes/Humanitaire')}}">Humanitaire</a></li>
+                                <li><a href="{{url('campagnes/Mariage')}}">Mariage</a></li>
+                                <li><a href="{{url('campagnes/Mobility')}}">Mobilité</a></li>
+                                <li><a href="{{url('campagnes/Schools')}}">Ecole</a></li>
+                                <li><a href="{{url('campagnes/Soutien pour proche')}}">Soutien pour proche</a></li>
+                                <li><a href="{{url('campagnes/Voyage')}}">Voyage</a></li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="instagram widget-item">
                         <h3>ont contribués</h3>

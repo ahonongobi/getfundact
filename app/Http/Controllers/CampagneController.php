@@ -112,7 +112,11 @@ class CampagneController extends Controller
         return back()->with('success','Campagnes supprimée avec succès!!!');
        
     }
-
+ 
+	public function campagneCategory($campagnes){
+        $campagnes = Campagne::where('categories', $campagnes)->paginate(12);
+        return view('campagnes', compact('campagnes'));
+    }
     public function editor(){
         
 /*!

@@ -139,22 +139,22 @@
                                 <option value="Anniversaire" selected>Anniversaire</option>
                                 <option value="Associatif">Associatif</option>
 
-                                <option value="Bicycling">Bicycling</option>
-                                <option value="Entertainment">Entertainment</option>
-                                <option value="Environment">Environment</option>
-                                <option value="Evènement">Evènement</option>
-                                <option value="Event">Event</option>
+                                <option value="Bicycling">Vélos</option>
+                                <option value="Entertainment">Divertissement</option>
+                                <option value="Environment">Environnement</option>
+                                <option value="Evènement">Evénément</option>
+                                
                                 <option value="Familial">Familial</option>
                                 <option value="Humanitaire">Humanitaire</option>
                                 <option value="Mariage">Mariage</option>
-                                <option value="Mobility">Mobility</option>
-                                <option value="Recreation">Recreation</option>
+                                <option value="Mobility">Mobilité</option>
+                                <option value="Recreation">Récréation</option>
                                 <option value="Restoration">Restoration</option>
-                                <option value="Schools">Schools</option>
+                                <option value="Schools">Ecole</option>
                                 <option value="Soutien pour proche">Soutien pour proche</option>
                                 <option value="Sports">Sports</option>
                                 <option value="Streetscapes">Streetscapes</option>
-                                <option value="Technology">Technology</option>
+                                <option value="Technology">Technologie</option>
                                 <option value="Tontine">Tontine</option>
                                 <option value="Transit">Transit</option>
                                 <option value="Voyage">Voyage</option>

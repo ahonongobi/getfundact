@@ -63,6 +63,8 @@ Route::get('login',[LoginController::class,'view'])->name('login');
 Route::get('register',[RegisterController::class,'view'])->name('regiter');
 Route::get('about',[MainController::class,'view'])->name('about');
 Route::get('all-campagnes',[CampagneController::class,'view'])->name('all-campagnes');
+Route::get('campagnes/{campagnes}',[CampagneController::class,'campagneCategory'])->name('campagne-category');
+
 Route::post('contact-nous',[ContactController::class,'send_mail'])->name('contact-nous');
 //post route start here 
 Route::post('register',[RegisterController::class,'register'])->name('regiter.post');
