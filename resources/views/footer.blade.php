@@ -70,7 +70,7 @@
                                     <ul>
                                         <li>
                                             <i class="icofont-location-pin"></i>
-                                            <a href="#">6B, Helvetica street, Jordan</a>
+                                            <a href="#">Rue en Face de IITA, TANKPÈ ABOMEY-CALAVI</a>
                                         </li>
                                         <li>
                                             <i class="icofont-ui-call"></i>

@@ -333,8 +333,8 @@
                     <div class="footer-links">
                         <h3>Liens utils</h3>
                         <ul>
-                            <li><a href=""><i class="icofont-simple-right"></i>Exemples de cagnotte</a></li>
-                            <li><a href=""><i class="icofont-simple-right"></i>FAQ/Aide</a></li>
+                            <li><a href="/all-campagnes"><i class="icofont-simple-right"></i>Exemples de cagnotte</a></li>
+                            <li><a href="/faq"><i class="icofont-simple-right"></i>FAQ/Aide</a></li>
                             <li><a href=""><i class="icofont-simple-right"></i>Evenements</a></li>
                             <li><a href=""><i class="icofont-simple-right"></i>Don</a></li>
                         </ul>
@@ -357,18 +357,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="contact-inner">
-                            <ul>
-                                <li>
-                                    <i class="icofont-location-pin"></i>
-                                    <a href="#">6A, New street, Spain</a>
-                                </li>
-                                <li>
-                                    <i class="icofont-ui-call"></i>
-                                    <a href="tel:+548658956">+548-658-956</a>
-                                </li>
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

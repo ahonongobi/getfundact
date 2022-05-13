@@ -54,11 +54,11 @@
                             <ul>
                                 <li>
                                     <i class="icofont-location-pin"></i>
-                                    <a href="#">6B, Helvetica street, Jordan</a>
+                                    <a href="#">IITA, TANKPÈ ABOMEY-CALAVI</a>
                                 </li>
                                 <li>
                                     <i class="icofont-ui-call"></i>
-                                    <a href="tel:+0123456987">+0123-456-987</a>
+                                    <a href="tel:+229 5150 7071">+229 5150 7071</a>
                                 </li>
                             </ul>
                         </div>
@@ -249,7 +249,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="contact-inner">
+                        <!---<div class="contact-inner">
                             <ul>
                                 <li>
                                     <i class="icofont-location-pin"></i>
@@ -260,7 +260,7 @@
                                     <a href="tel:+548658956">+548-658-956</a>
                                 </li>
                             </ul>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

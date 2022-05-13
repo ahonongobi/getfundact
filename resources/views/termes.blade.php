@@ -8,13 +8,13 @@
                 <div class="d-table-cell">
                     <div class="container">
                         <div class="title-item">
-                            <h2>Terms & Conditions</h2>
+                            <h2>Termes & Conditions</h2>
                             <ul>
                                 <li>
-                                    <a href="index.html">Home</a>
+                                    <a href="/">Accueil</a>
                                 </li>
                                 <li>
-                                    <span>Terms & Conditions</span>
+                                    <span>Termes & Conditions</span>
                                 </li>
                             </ul>
                         </div>

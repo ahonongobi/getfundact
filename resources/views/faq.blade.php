@@ -9,7 +9,7 @@
                     <h2>FAQ</h2>
                     <ul>
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="/">Accueil</a>
                         </li>
                         <li>
                             <span>FAQ</span>
@@ -27,7 +27,7 @@
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <div class="faq-img">
-                    <img src="assets/img/faq-main.jpg" alt="FAQ">
+                    <img src="https://www.stockspots.eu/wp-content/uploads/2019/10/2350619-1.png" alt="FAQ">
                 </div>
             </div>
             <div class="col-lg-6">

@@ -31,7 +31,7 @@
                         <div class="contact-info">
                             <i class="icofont-location-pin"></i>
                             <span>Location:</span>
-                            <a href="#">6B, Helvetica street, Jordan</a>
+                            <a href="#">Rue en Face de IITA, TANKPÈ ABOMEY-CALAVI</a>
                             <a href="#">6A, North street, Jordan</a>
                         </div>
                     </div>
