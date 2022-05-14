@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\OrderShipped;
 use App\Models\Campagne;
+use App\Models\Profile;
 use App\Models\Withdrawal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,7 +14,8 @@ class WithdrawalController extends Controller
 {
     public function view(){
         $withdrawalinfo =  Campagne::where('user_id',Auth::user()->id)->get();
-        return view('user_dash.withdrawal',compact('withdrawalinfo'));
+        $profile  = Profile::where('user_id',Auth::user()->id)->first();
+        return view('user_dash.withdrawal',compact('withdrawalinfo','profile'));
     }
 
     public function withdrawal(Request $request){
