@@ -59,6 +59,11 @@
                                 transition: background 0.25s ease-in;
                                 cursor: pointer;
                             }
+                            @media (max-width: 991px) {
+                                section button {
+                                    width: 50%;
+                                }
+                            }
 
                             section button:hover,
                             section button.active {
@@ -151,13 +156,14 @@
                                 <option value="Recreation">Récréation</option>
                                 <option value="Restoration">Restoration</option>
                                 <option value="Schools">Ecole</option>
-                                <option value="Soutien pour proche">Soutien pour proche</option>
+                                
                                 <option value="Sports">Sports</option>
                                 <option value="Streetscapes">Streetscapes</option>
                                 <option value="Technology">Technologie</option>
                                 <option value="Tontine">Tontine</option>
                                 <option value="Transit">Transit</option>
-                                <option value="Voyage">Voyage</option>
+                                <option value="Voyage">Effectuer un Voyage</option>
+                                <option value="Soutien pour proche">Soutien pour proche</option>
                                 <option value="Autres">Autres</option>
                             </select>
 

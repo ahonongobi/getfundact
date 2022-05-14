@@ -107,9 +107,10 @@
                                     <div class="centered">
                                         <div id="search-box">
                                             <i id="close-btn" class="icofont-close"></i>
-                                            <form>
-                                                <input type="text" class="form-control" placeholder="Search..."/>
-                                                <button type="submit" class="btn">Search</button>
+                                            <form method="POST" action="{{url('search-compagn')}}">
+                                                @csrf
+                                                <input type="text" name="search" class="form-control" placeholder="Tapez catgorie ou un mot clé..."/>
+                                                <button type="submit" class="btn">Réchercher</button>
                                             </form>
                                         </div>
                                     </div>

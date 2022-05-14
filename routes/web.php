@@ -17,7 +17,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\WithdrawalController;
 use App\Http\Controllers\PaymentController;
-
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
@@ -64,7 +64,7 @@ Route::get('register',[RegisterController::class,'view'])->name('regiter');
 Route::get('about',[MainController::class,'view'])->name('about');
 Route::get('all-campagnes',[CampagneController::class,'view'])->name('all-campagnes');
 Route::get('campagnes/{campagnes}',[CampagneController::class,'campagneCategory'])->name('campagne-category');
-
+Route::post('search-compagn',[SearchController::class,'search'])->name('search');
 Route::post('contact-nous',[ContactController::class,'send_mail'])->name('contact-nous');
 //post route start here 
 Route::post('register',[RegisterController::class,'register'])->name('regiter.post');

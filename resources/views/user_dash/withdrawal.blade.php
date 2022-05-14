@@ -40,7 +40,7 @@
                                     }
         
                                     section button {
-                                        width: 25%;
+                                        width: 50%;
                                         padding: 1em 0;
                                         background: none;
                                         box-shadow: none;
@@ -54,7 +54,11 @@
                                         cursor: pointer;
                                         color: #302c51;
                                     }
-        
+                                    @media (max-width: 991px) {
+                                        section button {
+                                            width: 100%;
+                                        }
+                                  }
                                     section button:hover,
                                     section button.active {
                                         background: #e15b1a;

@@ -64,7 +64,7 @@
   
       <div class="mobile-nav">
           <a href="{{ url('my_space') }}" class="logo">
-              <img style="width: 300px; height:80px;" src="{{asset('assets/img/logogetf.png')}}" alt="Logo">
+              <img style="width: 300px; height:auto;" src="{{asset('assets/img/logogetf.png')}}" alt="Logo">
           </a>
       </div>
   
@@ -122,7 +122,7 @@
               @else
               <nav class="navbar navbar-expand-md navbar-light">
                   <a class="navbar-brand" href="/">
-                      <img style="width:300px;height:80px;" src="{{asset('assets/img/logo.png')}}" alt="Logo">
+                      <img style="width:300px;height:auto;" src="{{asset('assets/img/logo.png')}}" alt="Logo">
                   </a>
                   <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                       <ul class="navbar-nav">
@@ -297,11 +297,12 @@
 <footer class="footer-area pt-100">
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 col-lg-3">
+            <div class="col-sm-6 col-lg-6">
                 <div class="footer-item">
                     <div class="footer-logo">
                         <a class="logo" href="/">
-                            <img src="{{asset('assets/img/logogetf.png')}}" alt="Logo">
+                            
+                            <img style="width: 300px" src="{{asset('assets/img/logogetf.png')}}" alt="Logo">
                         </a>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat vero, magni est placeat neque, repellat maxime a dolore</p>
                         <ul>
@@ -313,10 +314,10 @@
                     </div>
                 </div>
             </div>
-           <div class="col-sm-6 col-lg-3">
+           <!--<div class="col-sm-6 col-lg-3">
                 <div class="footer-item">
                     <div class="footer-links">
-                        <h3>A propos de nous</h3>
+                       
                         <ul>
                             <li><a href=""><i class="icofont-simple-right"></i>Pourquoi choisir Getfund-act</a></li>
                             <li><a href=""><i class="icofont-simple-right"></i>Nous contacter</a></li>
@@ -325,16 +326,16 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="col-sm-6 col-lg-3">
                 <div class="footer-item">
                     <div class="footer-links">
                         <h3>Liens utils</h3>
                         <ul>
-                            <li><a href=""><i class="icofont-simple-right"></i>Exemples de cagnotte</a></li>
-                            <li><a href=""><i class="icofont-simple-right"></i>FAQ/Aide</a></li>
-                            <li><a href=""><i class="icofont-simple-right"></i>Evenements</a></li>
-                            <li><a href=""><i class="icofont-simple-right"></i>Don</a></li>
+                            <li><a href="/my-campagne"><i class="icofont-simple-right"></i>Mes campagnes</a></li>
+                            <li><a href="/profile"><i class="icofont-simple-right"></i>Mon profil</a></li>
+                            <li><a href="/contributions"><i class="icofont-simple-right"></i>Mes contributions</a></li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -355,18 +356,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="contact-inner">
-                            <ul>
-                                <li>
-                                    <i class="icofont-location-pin"></i>
-                                    <a href="#">6A, New street, Spain</a>
-                                </li>
-                                <li>
-                                    <i class="icofont-ui-call"></i>
-                                    <a href="tel:+548658956">+548-658-956</a>
-                                </li>
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
