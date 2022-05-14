@@ -1,12 +1,16 @@
 @extends('_layouts._user')
 
 <style>
-    @media screen  (max-width: 991px) {
+    @media (max-width: 810px) {
         #mobile_img {
-            height: 10px !important;
+            height: auto !important;
         }
     }
+    #mobile_img {
+        width: 100%; height:600px; /**oject-fit:cover; object-position: bottom; **/
+    }
 </style>
+
 @section('content')
 <div class="donation-details-area ptb-100">
     <div class="container">
@@ -15,8 +19,8 @@
                 <div class="details-item">
                     <div class="details-img"> 
                         <h3 style="text-transform: uppercase; font-family:montserrat;">A Propos et description</h3>
-                        <div style="height: 550px; class="">
-                            <img id="mobile_img" src="{{asset('storage/UserDocument/'.$details->file_vignette)}}" style="width: 100%; height:550px; oject-fit:cover; object-position: bottom;" alt="Details">
+                        <div>
+                            <img id="mobile_img" src="{{asset('storage/UserDocument/'.$details->file_vignette)}}"  alt="Details">
                         </div>
                         <h2 style="text-transform: uppercase; font-family:montserrat;">{{$details->name}}</h2>
                         <p>

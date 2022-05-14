@@ -1,5 +1,8 @@
 @extends('_layouts._user')
 <style>
+    body{
+        background-color: #E0E8FE !important;
+    }
     .main-container{
     
     font-family: 'Red Hat Display', sans-serif;
