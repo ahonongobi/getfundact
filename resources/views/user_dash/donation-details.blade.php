@@ -458,7 +458,12 @@
                         </div>
                     </div>
                     <div class="instagram widget-item">
-                        <h3>ont contribués</h3>
+                        @if ($contributeur_count == 0)
+                        <h3>Aucunes contributions</h3>
+                        @else
+                        <h3>{{ $contributeur_count }} personnes ont contribués</h3>
+                        @endif
+                        
                         <div class="row m-0">
 
                             @foreach ($contributeur as $contribuable)
@@ -475,11 +480,13 @@
                            
                             <table class="table table-striped table-borderless">
                                 <thead>
+                                    @if($contributeur_count > 0)
                                     <tr>
                                         <th>NOM CONTRIBUTEUR</th>
                                         <th>MONTANT</th>
                                         
                                     </tr>
+                                    @endif
                                 </thead>
                                 <tbody>
                                     @foreach ($contributeur as $contribuable)
