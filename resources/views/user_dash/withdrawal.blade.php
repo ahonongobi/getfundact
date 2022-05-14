@@ -349,7 +349,11 @@
                     </div>
                 </div>
                 <div class="btn-section">
+                    @if ($count_your_contribution_amount_for_you > 0)
                     <button style="background-color: #e15b1a !important;color:#fff" class="btn-payment btn" type="submit">Lancer le rétrait</button>
+                    @else
+                    <button style="background-color: #e15b1a !important;color:#fff" class="btn-payment btn disabled" type="submit">Lancer le rétrait</button>
+                    @endif
                     <button style="color: red;" class="btn-submit btn" type="submit">Annuler le processus</button>
                 </div>
             </div>
