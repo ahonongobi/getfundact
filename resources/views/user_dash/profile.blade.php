@@ -381,7 +381,10 @@
                         <form method="POST" enctype="multipart/form-data" action="{{ url('cni') }}">
                             @csrf
                             <div class="row">
-                                <container class="col-md-6">
+                                <container class="col-md-12">
+                                    <div>
+                                        <img src="{{asset('assets/img/kyc.png')}}" height="200" alt="" srcset="">
+                                    </div>
                                     
                                     <div class="col-lg-12 mb-4">
                                         <div class="form-group">
@@ -408,12 +411,14 @@
                                     </div>
                     
                                     
-                                    <div class="col-lg-12">
-                                        <button type="submit" class="btn common-btn">Sauvegarder les modifications</button>
-                                    </div>
+                                   
                                 </container>
+                                
             
-                            
+                                
+                            </div>
+                            <div class="col-lg-12">
+                                <button type="submit" class="btn common-btn">Sauvegarder les modifications</button>
                             </div>
                         </form>
                     </div>

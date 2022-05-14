@@ -1,6 +1,12 @@
 @extends('_layouts._user')
 
-
+<style>
+    @media screen  (max-width: 991px) {
+        #mobile_img {
+            height: 10px !important;
+        }
+    }
+</style>
 @section('content')
 <div class="donation-details-area ptb-100">
     <div class="container">
@@ -9,7 +15,9 @@
                 <div class="details-item">
                     <div class="details-img"> 
                         <h3 style="text-transform: uppercase; font-family:montserrat;">A Propos et description</h3>
-                        <img src="{{asset('storage/UserDocument/'.$details->file_vignette)}}" style="width: 100%; height:550px; oject-fit:cover; object-position: 50% 50%;" alt="Details">
+                        <div style="height: 550px; class="">
+                            <img id="mobile_img" src="{{asset('storage/UserDocument/'.$details->file_vignette)}}" style="width: 100%; height:550px; oject-fit:cover; object-position: bottom;" alt="Details">
+                        </div>
                         <h2 style="text-transform: uppercase; font-family:montserrat;">{{$details->name}}</h2>
                         <p>
                             @php
