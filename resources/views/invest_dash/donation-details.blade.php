@@ -8,23 +8,36 @@
             <div class="col-lg-8">
                 <div class="details-item">
                     <div class="details-img"> 
-                        <img src="{{asset('storage/UserDocument/'.$details->file_vignette)}}" style="width: 100%; height:550px; oject-fit:cover; object-position: 50% 50%;" alt="Details">
-                        <h2>{{$details->name}}</h2>
+                        <h3 style="text-transform: uppercase; font-family:montserrat;">A Propos et description</h3>
+                        <div style="height: 550px; class="">
+                            <img id="mobile_img" src="{{asset('storage/UserDocument/'.$details->file_vignette)}}" style="width: 100%; height:550px; oject-fit:cover; object-position: bottom;" alt="Details">
+                        </div>
+                        <h2 style="text-transform: uppercase; font-family:montserrat;">{{$details->name}}</h2>
                         <p>
                             @php
                                 echo htmlspecialchars_decode($details->details_ojectifs);
                             @endphp
                         </p>
+                        <h3 style="text-transform: uppercase; font-family:montserrat;">Details du budget</h3>
                         <blockquote>
                             <i class="icofont-quote-left"></i>
                             @php
                                 echo htmlspecialchars_decode($details->detail_budget);
                             @endphp
                         </blockquote>
+                        <h3 style="text-transform: uppercase; font-family:montserrat;">Details rédigé en anglais</h3>
                         <p>@php
                             echo htmlspecialchars_decode($details->Details_budget_en);
                         @endphp</p>
                     </div>
+                    @if ($details->video != null)
+                    <div style="width: 100%; max-width:100%" class="instagram widget-item">  
+                        @php
+                          echo  htmlspecialchars_decode($details->video);
+                        @endphp
+                       {{-- <iframe width="420" height="315" src="https://www.youtube.com/embed/MNX7HgcWqHc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> --}}
+                    </div>  
+                    @endif
                     <div class="details-share">
                         <div class="row">
                             <div class="col-sm-6 col-lg-6">
@@ -133,7 +146,7 @@
                                     <label>
                                         <i class="icofont-dollar"></i>
                                     </label>
-                                    <input onInput="edValueKeyPress()" id="invest" type="number" min="0" name="montant" class="form-control" placeholder="$100.00">
+                                    <input onInput="edValueKeyPress()" id="invest" type="number" min="0" name="montant" class="form-control" placeholder="FCFA 100.00">
                                     <span class="text-danger">
                                         @if ($errors->has('montant'))
                                             {{$errors->first('montant')}}
@@ -141,7 +154,7 @@
                                     </span>
                                 </div>
                                 <div class="calculatrice">
-                                    <span>Equivalent en FCFA:</span> <span id="for_th_day">0FCFA</span>
+                                    <span>Equivalent en $ (dollar):</span> <span id="for_th_day">$0</span>
                                 </div>
                                 <div class="text-center">
                                     @if ($check_if_user_complete_profile!=0)
@@ -160,12 +173,11 @@
             </div>
             <div class="col-lg-4">
                 <div class="widget-area">
-                    @php
+                    <div class="search widget-item">
+                        @php
                             \Carbon\Carbon::setLocale('fr');
                         @endphp
-                         Actif {{$details->created_at->diffForHumans()}}
-                    <div class="search widget-item d-none">
-                       
+                        <span>Actif {{$details->created_at->diffForHumans()}} </span>
                         <form class="d-none">
                             <input type="text" class="form-control" placeholder="Search...">
                             <button type="submit" class="btn">
@@ -180,7 +192,7 @@
                                 <li>
                                     <img src="assets/img/blog/blog-details1.jpg" alt="Details">
                                 </li>
-                                <li>   
+                                <li>
                                     <h4>
                                         <a href="#">Donate for nutrition less poor people</a>
                                     </h4>
@@ -238,31 +250,42 @@
                     </div>
                    
                     <div class="common-right-content widget-item">
-                        
                         <h3>Categories</h3>
-                        <ul>
-                            <li><a href="#">Education (10)</a></li>
-                            <li><a href="#">Medical (25)</a></li>
-                            <li><a href="#">Food & Water (14)</a></li>
-                            <li><a href="#">National Charity (2)</a></li>
-                            <li><a href="#">Cloth (4)</a></li>
-                        </ul>
+                        <div class="d-flex justify-content-between">
+                            <ul class="mx-2">
+                                <li><a href="{{url('compagnes-org/Anniversaire')}}">Anniversaire</a></li>
+                                <li><a href="{{url('compagnes-org/Associatif')}}">Associatif</a></li>
+                                <li><a href="{{url('compagnes-org/Entertainment')}}">Divertissement</a></li>
+                                <li><a href="{{url('compagnes-org/Evènement')}}">Evénément</a></li>
+                                <li><a href="{{url('compagnes-org/Environnement')}}">Environnement</a></li>
+                                <li><a href="{{url('compagnes-org/Sports')}}">Sports</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="{{url('compagnes-org/Humanitaire')}}">Humanitaire</a></li>
+                                <li><a href="{{url('compagnes-org/Mariage')}}">Mariage</a></li>
+                                <li><a href="{{url('compagnes-org/Mobility')}}">Mobilité</a></li>
+                                <li><a href="{{url('compagnes-org/Schools')}}">Ecole</a></li>
+                                <li><a href="{{url('compagnes-org/Soutien pour proche')}}">Soutien pour proche</a></li>
+                                <li><a href="{{url('compagnes-org/Voyage')}}">Voyage</a></li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="instagram widget-item">
                         <h3>ont contribués</h3>
                         <div class="row m-0">
+
                             @foreach ($contributeur as $contribuable)
                             <div style="margin-right: 2%;" class="col-2 col-sm-2 col-lg-2 p-0 mr-2 d-none">
+                                
                                 <div class="instagram-item">
-                                    <img src="{{ asset('/storage/UserPhoto/'.$contribuable->photo) }}" alt="Instagram">
+                                    <img src="{{ asset('/storage/UserPhoto/'.$contribuable->photo) }}" alt="">
                                     <a href="{{ url('/contributions') }}">
                                         
                                     </a>
                                 </div>
                             </div>
                             @endforeach
-                            
-                            
+                           
                             <table class="table table-striped table-borderless">
                                 <thead>
                                     <tr>
@@ -274,7 +297,7 @@
                                 <tbody>
                                     @foreach ($contributeur as $contribuable)
                                    <tr>
-                                    <td>{{$contribuable->name}}</td>
+                                    <td>{{$contribuable->name}} {{$contribuable->surname}} </td>
                                     <td class="font-weight-bold">{{$contribuable->montant}} FCFA</td>
                                     
                                     </tr>  
@@ -290,12 +313,21 @@
                             
                             
                             
+                            
+                            
                         </div>
                     </div>
-
-                   {{-- <div class="instagram widget-item">
+                   {{-- @if ($details->video != null)
+                    <div class="instagram widget-item">  
+                        @php
+                          echo  htmlspecialchars_decode($details->video);
+                        @endphp
                         <iframe width="420" height="315" src="https://www.youtube.com/embed/MNX7HgcWqHc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div> --}}
+                    </div>  
+                    @endif
+                     --}}
+                    
+                   
                 </div>
             </div>
         </div>

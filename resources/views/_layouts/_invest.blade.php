@@ -173,7 +173,7 @@
                 <div class="d-table-cell">
                     <div class="container">
                         <div class="title-item">
-                            <h2>GETFOUND ACTION</h2>
+                            <h2>GETFUND ACTION</h2>
                             <ul>
                                 <li>
                                     @if(Auth::check())
@@ -246,11 +246,12 @@
   <footer class="footer-area pt-100">
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 col-lg-3">
+            <div class="col-sm-6 col-lg-6">
                 <div class="footer-item">
                     <div class="footer-logo">
                         <a class="logo" href="/">
-                            <img  src="{{asset('assets/img/logogetf.png')}}" alt="Logo">
+                            
+                            <img style="width: 300px" src="{{asset('assets/img/logogetf.png')}}" alt="Logo">
                         </a>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat vero, magni est placeat neque, repellat maxime a dolore</p>
                         <ul>
@@ -262,11 +263,10 @@
                     </div>
                 </div>
             </div>
-            
-           <div class="col-sm-6 col-lg-3">
+           <!--<div class="col-sm-6 col-lg-3">
                 <div class="footer-item">
                     <div class="footer-links">
-                        <h3>A propos de nous</h3>
+                       
                         <ul>
                             <li><a href=""><i class="icofont-simple-right"></i>Pourquoi choisir Getfund-act</a></li>
                             <li><a href=""><i class="icofont-simple-right"></i>Nous contacter</a></li>
@@ -275,16 +275,16 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="col-sm-6 col-lg-3">
                 <div class="footer-item">
                     <div class="footer-links">
                         <h3>Liens utils</h3>
                         <ul>
-                            <li><a href=""><i class="icofont-simple-right"></i>Exemples de cagnotte</a></li>
-                            <li><a href=""><i class="icofont-simple-right"></i>FAQ/Aide</a></li>
-                            <li><a href=""><i class="icofont-simple-right"></i>Evenements</a></li>
-                            <li><a href=""><i class="icofont-simple-right"></i>Don</a></li>
+                            <li><a href="/my-campagne-org"><i class="icofont-simple-right"></i>Campagnes</a></li>
+                            <li><a href="/profile-org"><i class="icofont-simple-right"></i>Mon profil</a></li>
+                            <li><a href="/contributions-org"><i class="icofont-simple-right"></i>Mes contributions</a></li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -305,24 +305,13 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="contact-inner">
-                            <ul>
-                                <li>
-                                    <i class="icofont-location-pin"></i>
-                                    <a href="#">6A, New street, Spain</a>
-                                </li>
-                                <li>
-                                    <i class="icofont-ui-call"></i>
-                                    <a href="tel:+548658956">+548-658-956</a>
-                                </li>
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
         <div class="copyright-area">
-            <p>Copyright ©2021-<script>document.write(new Date().getFullYear())</script>  GETFUND ACT. Développé  par 
+            <p>Copyright ©2021- <script>document.write(new Date().getFullYear())</script>  GETFUND ACT. Développé  par 
                 <a href="https://intelligencia-si.com/" target="_blank">Intelligencia SI</a> | <a href="">Notice légale et confidentialité</a>
             </p>
 

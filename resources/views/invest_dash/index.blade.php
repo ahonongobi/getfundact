@@ -62,8 +62,8 @@
             @foreach ($all_campagnes as $item)
             <div class="col-sm-6 col-lg-4">
                 <div class="donation-item">
-                    <div class="img">
-                        <img src="{{asset('storage/UserDocument/'.$item->file_vignette)}}" alt="Donation">
+                    <div  class="img">
+                        <img style="height: 400px !important" src="{{asset('storage/UserDocument/'.$item->file_vignette)}}" alt="Donation">
                         <a class="common-btn" href="{{ url('donation-details-org/'.$item->id.'/'.$item->name_b) }}">Contribuer</a>
                     </div>
                     <div class="inner">
@@ -80,9 +80,14 @@
                             </p>
                         </div>
                         <div class="bottom">
-                            
-                             
-                            @if ($item->montant_cotise==0)
+                            <div style="height: 15px;" class="progress">
+                                @php
+                                    $xpercent = 100*$item->montant_cotise/$item->montant_v;
+                                    $x = number_format((float)100*$item->montant_cotise/$item->montant_v,2,'.','');
+                                @endphp
+                                <div  class="progress-bar  progress-bar-striped bg-success progress-bar-animated" role="progressbar" style="width: {{ $xpercent }}%; background-color: #ff6015 !important" aria-valuenow="{{$xpercent}}" aria-valuemin="0" aria-valuemax="100">{{$x}}%</div>
+                              </div>
+                             {{--@if ($item->montant_cotise==0.00)
                              <div class="skill">
                                 <div class="skill-bar skill0 wow fadeInLeftBig">
 
@@ -92,7 +97,7 @@
                             </div>
                              @endif
                             
-                            @if ($item->montant_cotise==(1/10)*$item->montant_v)
+                            @if (0 < $item->montant_cotise AND $item->montant_cotise < (10*$item->montant_v)/100)
                             <div class="skill">
                                 <div class="skill-bar skill10 wow fadeInLeftBig">
 
@@ -158,10 +163,10 @@
                             </div>
                             @endif
 
-                            
+                            --}}
                             <ul>
-                                <li>Montant contribué:  @php
-                                    if($item->montant_cotise==NULL)
+                                   <li>Montant contribué:  @php
+                                    if($item->montant_cotise==0)
                                     echo "0 FCFA";
 
                                     else {
@@ -170,108 +175,16 @@
                                 @endphp</li>
                                 <li>Montant visé: {{$item->montant_v}} FCFA</li>
                             </ul>
-                            <!--<h4>Contributions: 
+                           {{--<h4>Contributions: 
                                 <span>60 personnes</span>
-                            -->
+                            </h4>--}}
                         </div>
                     </div>
                 </div>
             </div>
             @endforeach
             
-            <div class="col-sm-6 col-lg-4">
-                <div class="donation-item">
-                    <div class="img">
-                        <img src="assets/img/donation/donation2.jpg" alt="Donation">
-                        <a class="common-btn" href="{{ url('donation-details') }}">Donate Now</a>
-                    </div>
-                    <div class="inner">
-                        <div class="top">
-                            <a class="tags" href="#">#Education</a>
-                            <h3>
-                                <a href="{{ url('donation-details') }}">Education for poor children</a>
-                            </h3>
-                            <p>We exist for non-profits, social enterprises, activists. Lorem politicians and individual citizens.</p>
-                        </div>
-                        <div class="bottom">
-                            <div class="skill">
-                                <div class="skill-bar skill2 wow fadeInLeftBig">
-                                    <span class="skill-count2">95%</span>
-                                </div>
-                            </div>
-                            <ul>
-                                <li>Raised: $6,500.00</li>
-                                <li>Goal: $8,050.00</li>
-                            </ul>
-                            <h4>Donated by
-                                <span>50 people</span>
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 d-none">
-                <div class="donation-item">
-                    <div class="img">
-                        <img src="assets/img/donation/donation3.jpg" alt="Donation">
-                        <a class="common-btn" href="{{ url('donation-details') }}">Donate Now</a>
-                    </div>
-                    <div class="inner">
-                        <div class="top">
-                            <a class="tags" href="#">#Family</a>
-                            <h3>
-                                <a href="{{ url('donation-details') }}">Financial help for poor</a>
-                            </h3>
-                            <p>We exist for non-profits, social enterprises, activists. Lorem politicians and individual citizens.</p>
-                        </div>
-                        <div class="bottom">
-                            <div class="skill">
-                                <div class="skill-bar skill3 wow fadeInLeftBig">
-                                    <span class="skill-count3">90%</span>
-                                </div>
-                            </div>
-                            <ul>
-                                <li>Raised: $5,540.00</li>
-                                <li>Goal: $6,055.00</li>
-                            </ul>
-                            <h4>Donated by
-                                <span>40 people</span>
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 d-none">
-                <div class="donation-item">
-                    <div class="img">
-                        <img src="assets/img/donation/donation4.jpg" alt="Donation">
-                        <a class="common-btn" href="{{ url('donation-details') }}">Donate Now</a>
-                    </div>
-                    <div class="inner">
-                        <div class="top">
-                            <a class="tags" href="#">#Funding</a>
-                            <h3>
-                                <a href="{{ url('donation-details') }}">Funding for family</a>
-                            </h3>
-                            <p>We exist for non-profits, social enterprises, activists. Lorem politicians and individual citizens.</p>
-                        </div>
-                        <div class="bottom">
-                            <div class="skill">
-                                <div class="skill-bar skill4 wow fadeInLeftBig">
-                                    <span class="skill-count4">80%</span>
-                                </div>
-                            </div>
-                            <ul>
-                                <li>Raised: $5,56.00</li>
-                                <li>Goal: $6,85.00</li>
-                            </ul>
-                            <h4>Donated by
-                                <span>30 people</span>
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
             <div class="col-sm-6 col-lg-4 d-none">
                 <div class="donation-item">
                     <div class="img">
@@ -303,37 +216,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-lg-4">
-                <div class="donation-item">
-                    <div class="img">
-                        <img src="assets/img/donation/donation6.jpg" alt="Donation">
-                        <a class="common-btn" href="{{ url('donation-details') }}">Donate Now</a>
-                    </div>
-                    <div class="inner">
-                        <div class="top">
-                            <a class="tags" href="#">#Drought</a>
-                            <h3>
-                                <a href="{{ url('donation-details') }}">Relief for drought-affected</a>
-                            </h3>
-                            <p>We exist for non-profits, social enterprises, activists. Lorem politicians and individual citizens.</p>
-                        </div>
-                        <div class="bottom">
-                            <div class="skill">
-                                <div class="skill-bar skill6 wow fadeInLeftBig">
-                                    <span class="skill-count6">70%</span>
-                                </div>
-                            </div>
-                            <ul>
-                                <li>Raised: $9,5.00</li>
-                                <li>Goal: $3,84.00</li>
-                            </ul>
-                            <h4>Donated by
-                                <span>10 people</span>
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
 </section>

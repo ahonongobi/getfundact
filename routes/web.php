@@ -105,6 +105,7 @@ Route::get('/contributions-org',[OrgController::class,'contributionsOrg']);
 Route::get('/my-campagne-org',[OrgController::class,'mycampagneOrg'])->name('my-campagne-org');
 Route::get('withdrawal',[WithdrawalController::class,'view']);
 
+Route::get('compagnes-org/{campagnes}',[OrgController::class,'campagneCategoryOrg'])->name('campagne-category-org');
 //post
 Route::post('addProfile',[ProfileController::class,'addProfile']);
 Route::post('addBancaire',[BanqucaireController::class,'addBancaire']);

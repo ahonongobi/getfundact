@@ -182,7 +182,7 @@
           <div class="d-table-cell">
               <div class="container">
                   <div class="title-item">
-                      <h2>GETFOUND ACTION</h2>
+                      <h2>GETFUND ACTION</h2>
                       <ul>
                           <li>
                               @if (Auth::check())

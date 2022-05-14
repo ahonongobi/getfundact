@@ -11,7 +11,7 @@
         </div>
         <div class="row">
 
-            @foreach ($all_campagnes ?? $campagnes as $item)
+            @foreach ($campagnesorg as $item)
             <div class="col-sm-6 col-lg-4">
                 <div class="donation-item">
                     <div class="img">

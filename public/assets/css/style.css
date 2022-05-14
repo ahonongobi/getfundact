@@ -2151,8 +2151,9 @@ ul {
     -webkit-box-shadow: 0 0 20px 0 #dddddd8c;
     box-shadow: 0 0 20px 0 #dddddd8c;
 }
+
 .title-bg-one {
-    background-image: url(../img/banner/title-bg1.jpg);
+    background-image: url(../img/banner/bg.jpg);
 }
 .title-bg-two {
     background-image: url(../img/banner/title-bg2.jpg);

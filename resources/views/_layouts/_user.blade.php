@@ -174,13 +174,13 @@
         <div @if (isset($details->file_couverture))
             style="background-image: url({{asset('storage/UserDocument/'.$details->file_couverture)}});"
         @else
-        style="background-image: url({{asset('assets/img/banner/title-bg1.jpg')}});"
+        style="background-image: url({{asset('assets/img/banner/bg.jpg')}});"
         @endif  class="page-title-area title-bg-one">
             <div class="d-table">
                 <div class="d-table-cell">
                     <div class="container">
                         <div class="title-item">
-                            <h2>{{$details->name ?? 'GETFOUND ACTION'}}</h2>
+                            <h2>{{$details->name ?? 'GETFUND ACTION'}}</h2>
                             <ul>
                                 <li>
                                     @if (Auth::check())

@@ -44,7 +44,7 @@ class AppServiceProvider extends ServiceProvider
             }
             if (Auth::check()) {
                 $view->with('campagnes', Campagne::where('user_id',Auth::user()->id)->get());
-                $view->with('all_campagnes', Campagne::paginate(10));
+                $view->with('all_campagnes', Campagne::where('statut',1)->paginate(12));
                 $view->with('contribution', Contrubution::where('id_author',Auth::user()->id)->where('states_payment',1)->paginate(10));
                 $view->with('your_contribution', Contrubution::where('id_user',Auth::user()->id)->where('states_payment',1)->get());
 
@@ -53,7 +53,7 @@ class AppServiceProvider extends ServiceProvider
                 $view->with('count_your_contribution_amount', Contrubution::where('id_user',Auth::user()->id)->where('states_payment',1)->sum('montant'));
 
                 $view->with('count_contribution_for_you', Contrubution::where('id_author',Auth::user()->id)->where('states_payment',1)->count());
-                $view->with('count_all_campagnes', Campagne::count());
+                $view->with('count_all_campagnes', Campagne::where('statut',1)->count());
                 $view->with('count_your_contribution_amount_for_you', Contrubution::where('id_author',Auth::user()->id)->where('states_payment',1)->sum('montant'));
 
                 $view->with('check_if_user_complete_profile', Profile::where('user_id',Auth::user()->id)->count());
