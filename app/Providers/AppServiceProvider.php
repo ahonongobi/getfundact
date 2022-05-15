@@ -32,6 +32,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        //sum montant_cotise by user_id where statut = 1
+        $montantCotise = Campagne::where('statut',1)->groupBy('user_id')->selectRaw('sum(montant_cotise) as montant, user_id')->get();
+            
+        foreach($montantCotise as $montant){
+            $montantUser = User::where('id',$montant->user_id)->first();
+            $montantUser->solde = $montant->montant;
+            $montantUser->update();
+            //var_dump($montantUser);
+        }
 
         Paginator::useBootstrap();
         View::composer(['index','invest_dash.index','invest_dash.donation-details','user_dash.donation-details','user_dash.my-campagne','invest_dash.campagne-org','user_dash.index','user_dash.contribution','invest_dash.contribution-org','_layouts._invest','_layouts._user','admin.*','_layouts._admin','user_dash.*','invest_dash.*'], function ($view){
@@ -50,20 +59,12 @@ class AppServiceProvider extends ServiceProvider
                     $montant->update();
                 }
             }
-            //sum montant_cotise by user_id
-            $montantCotise = Campagne::groupBy('user_id')->selectRaw('sum(montant_cotise) as montant, user_id')->where('statut',1)->get();
             
-            foreach($montantCotise as $montant){
-                $montantUser = User::where('id',$montant->user_id)->first();
-                $montantUser->solde = $montant->montant;
-                $montantUser->update();
-                //var_dump($montantUser);
-            }
 
             if (Auth::check()) {
                 //also calculate 
 
-                $montantCotise = Campagne::groupBy('user_id')->selectRaw('sum(montant_cotise) as montant, user_id')->where('statut',1)->get();
+                $montantCotise = Campagne::where('statut',1)->groupBy('user_id')->selectRaw('sum(montant_cotise) as montant, user_id')->get();
             
                 foreach($montantCotise as $montant){
                     $montantUser = User::where('id',$montant->user_id)->first();
