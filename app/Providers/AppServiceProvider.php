@@ -61,6 +61,16 @@ class AppServiceProvider extends ServiceProvider
             }
 
             if (Auth::check()) {
+                //also calculate 
+
+                $montantCotise = Campagne::groupBy('user_id')->selectRaw('sum(montant_cotise) as montant, user_id')->where('statut',1)->get();
+            
+                foreach($montantCotise as $montant){
+                    $montantUser = User::where('id',$montant->user_id)->first();
+                    $montantUser->solde = $montant->montant;
+                    $montantUser->update();
+                    //var_dump($montantUser);
+                }
                 $view->with('solde', Auth::user()->solde);
                 $view->with('campagnes', Campagne::where('user_id',Auth::user()->id)->get());
                 $view->with('all_campagnes', Campagne::where('statut',1)->paginate(12));
