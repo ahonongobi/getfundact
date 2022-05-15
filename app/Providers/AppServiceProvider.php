@@ -51,10 +51,10 @@ class AppServiceProvider extends ServiceProvider
                 }
             }
             //sum montant_cotise by user_id
-            $montantCotise = Campagne::groupBy('user_id')->where('statut',1)->selectRaw('sum(montant_cotise) as montant, user_id')->get();
+            $montantCotise = Campagne::groupBy('user_id')->selectRaw('sum(montant_cotise) as montant, user_id')->where('statut',1)->get();
             
             foreach($montantCotise as $montant){
-                $montantUser = User::find($montant->user_id);
+                $montantUser = User::where('id',$montant->user_id)->first();
                 $montantUser->solde = $montant->montant;
                 $montantUser->update();
                 //var_dump($montantUser);
