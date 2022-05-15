@@ -554,6 +554,58 @@ $.fn.select2button = function(options) {
 // Call!
 $('.select2button').select2button();
 </script>
+<script>
+    $(function() {
+    $('#moov').addClass('hidden').hide();
+    $('#mtn').addClass('hidden').hide();
+    $(".bank").css("background-color", "#302c51");
 
+    $('.mtn').click(function() {
+        $('#moov').addClass('hidden').hide();
+        $('#bank').addClass('hidden').hide();
+
+        if ($('#mtn').hasClass('hidden')) {
+            $('#mtn').removeClass('hidden').fadeIn(1000);
+            $(".mtn").css("background-color", "#302c51");
+            $(".bank").css("background-color", "#ff6015");
+            $(".moov").css("background-color", "#ff6015");
+           
+        }
+        else {
+            $('#mtn').addClass('hidden').fadeOut(1000);
+        }
+    });
+
+    $('.moov').click(function() {
+        $('#mtn').addClass('hidden').hide();
+        $('#bank').addClass('hidden').hide();
+
+        if ($('#moov').hasClass('hidden')) {
+            $('#moov').removeClass('hidden').fadeIn(1000);
+            $(".mtn").css("background-color", "#ff6015");
+            $(".bank").css("background-color", "#ff6015");
+            $(".moov").css("background-color", "#302c51");
+        }
+        else {
+            $('#moov').addClass('hidden').fadeOut(1000);
+        }
+    });
+
+    $('.bank').click(function() {
+        $('#mtn').addClass('hidden').hide();
+        $('#moov').addClass('hidden').hide();
+
+        if ($('#bank').hasClass('hidden')) {
+            $('#bank').removeClass('hidden').fadeIn(1000);
+            $(".mtn").css("background-color", "#ff6015");
+            $(".moov").css("background-color", "#ff6015");
+            $(".bank").css("background-color", "#302c51");
+        }
+        else {
+            $('#bank').addClass('hidden').fadeOut(1000);
+        }
+    });
+});
+</script>
 </body>
 </html>

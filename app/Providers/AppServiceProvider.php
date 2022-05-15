@@ -42,6 +42,17 @@ class AppServiceProvider extends ServiceProvider
                 $montantCampagne->update();
                 //var_dump($montantCampagne);
             }
+            //here we gonna update to 2 campagne when montant_cotise >= montant_v 
+            $montantCampagne = Campagne::where('statut',1)->get();
+            foreach($montantCampagne as $montant){
+                if($montant->montant_cotise >= $montant->montant_v){
+                    $montant->statut = 2;
+                    $montant->update();
+                }
+            }
+
+            
+
             if (Auth::check()) {
                 $view->with('campagnes', Campagne::where('user_id',Auth::user()->id)->get());
                 $view->with('all_campagnes', Campagne::where('statut',1)->paginate(12));
