@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\OrderShipped;
 use App\Models\Campagne;
 use App\Models\Profile;
+use App\Models\User;
 use App\Models\Withdrawal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,6 +20,17 @@ class WithdrawalController extends Controller
     }
 
     public function withdrawal(Request $request){
+        //update substracte user solde from montant withdrawal
+        $solde_0 = User::where('id',Auth::user()->id)->first();
+        $solde_0->solde = $solde_0->solde - $request->montant;
+        
+        $solde_0->update();
+        //update compagne table id_user statut to 2
+        $campagne = Campagne::where('user_id',Auth::user()->id)->where('statut',1)->get();
+        foreach($campagne as $campagnes){
+            $campagnes->statut = 2;
+            $campagnes->update();
+        }
         //dd($request->nom_campagne);
         $withdrawalinfo =  new Withdrawal();
         $withdrawalinfo->id_user  = Auth::user()->id;

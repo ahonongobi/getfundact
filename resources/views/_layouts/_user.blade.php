@@ -225,8 +225,9 @@
                             <h3>
                                 <a href="#">MONTANT COLLECTÉ</a>
                             </h3>
-                            <p></p>
-                            <a class="feature-btn" href="#">{{ $count_your_contribution_amount_for_you }} FCFA</a>
+                            <p></p> 
+                            {{--<a class="feature-btn" href="#">{{ $count_your_contribution_amount_for_you }} FCFA</a>--}}
+                            <a class="feature-btn" href="#">{{ $solde }} FCFA</a>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-4">

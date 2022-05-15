@@ -423,6 +423,7 @@
         <form method="POST" action="{{ url('withdrawal') }}">
             @csrf
             <input type="hidden" name="nom_campagne" value="Not defined">
+            <input type="hidden" name="montant" value="{{$solde}}">
         <div class="container">
             
             <div class="top-part"></div>
@@ -461,14 +462,14 @@
                     </div>
                     <div class="annual-plan">
                         <h2>Montant disponible</h2>
-                        <p>{{ $count_your_contribution_amount_for_you }} FCFA</p>
+                        <p>{{ $solde }} FCFA</p>
                     </div>
                     <div class="change">
                         <a href="/profile"></a>
                     </div>
                 </div>
                 <div class="btn-section">
-                    @if ($count_your_contribution_amount_for_you > 0)
+                    @if ($solde > 0)
                     <button style="background-color: #e15b1a !important;color:#fff" class="btn-payment btn" type="submit">Lancer le rétrait</button>
                     @else
                     <button style="background-color: #e15b1a !important;color:#fff" class="btn-payment btn disabled" type="submit">Lancer le rétrait</button>
@@ -485,7 +486,7 @@
           
         <form method="POST" action="{{ url('withdrawal') }}">
             @csrf
-            
+            <input type="hidden" name="montant" value="{{$solde}}">
         <div class="container">
             
             <div class="top-part"></div>
@@ -516,14 +517,14 @@
                     </div>
                     <div class="annual-plan">
                         <h2>Montant disponible</h2>
-                        <p>{{ $count_your_contribution_amount_for_you }} FCFA</p>
+                        <p>{{ $solde }} FCFA</p>
                     </div>
                     <div class="change">
                         <a href="/profile"></a>
                     </div>
                 </div>
                 <div class="btn-section">
-                    @if ($count_your_contribution_amount_for_you > 0)
+                    @if ($solde > 0)
                     <button style="background-color: #e15b1a !important;color:#fff" class="btn-payment btn" type="submit">Lancer le rétrait</button>
                     @else
                     <button style="background-color: #e15b1a !important;color:#fff" class="btn-payment btn disabled" type="submit">Lancer le rétrait</button>
@@ -540,7 +541,7 @@
           
         <form method="POST" action="{{ url('withdrawal') }}">
             @csrf
-            
+            <input type="hidden" name="montant" value="{{$solde}}">
         <div class="container">
             
             <div class="top-part"></div>
@@ -572,14 +573,14 @@
                     </div>
                     <div class="annual-plan">
                         <h2>Montant disponible</h2>
-                        <p>{{ $count_your_contribution_amount_for_you }} FCFA</p>
+                        <p>{{ $solde }} FCFA</p>
                     </div>
                     <div class="change">
                         <a href="/profile"></a>
                     </div>
                 </div>
                 <div class="btn-section">
-                    @if ($count_your_contribution_amount_for_you > 0)
+                    @if ($solde > 0)
                     <button style="background-color: #e15b1a !important;color:#fff" class="btn-payment btn" type="submit">Lancer le rétrait</button>
                     @else
                     <button style="background-color: #e15b1a !important;color:#fff" class="btn-payment btn disabled" type="submit">Lancer le rétrait</button>
