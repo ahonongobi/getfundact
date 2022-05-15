@@ -54,14 +54,11 @@ class AppServiceProvider extends ServiceProvider
             $montantCotise = Campagne::groupBy('user_id')->where('statut',1)->selectRaw('sum(montant_cotise) as montant, user_id')->get();
             
             foreach($montantCotise as $montant){
-                $montantUser = User::where('id',$montant->user_id)->first();
+                $montantUser = User::find($montant->user_id);
                 $montantUser->solde = $montant->montant;
                 $montantUser->update();
                 //var_dump($montantUser);
             }
-
-            
-            
 
             if (Auth::check()) {
                 $view->with('solde', Auth::user()->solde);
