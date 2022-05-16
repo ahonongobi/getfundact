@@ -24,7 +24,12 @@ class WithdrawalController extends Controller
         $profile  = Profile::where('user_id',Auth::user()->id)->first();
         return view('user_dash.list-withdrawal',compact('withdrawalinfo','profile'));
     }
-
+    //listWithdrawalPost
+    public function listWithdrawalPost(Request $request){
+        $withdrawalinfo =  Campagne::where('user_id',Auth::user()->id)->where('id',$request->id)->where('statut',1)->where('montant_cotise','>',0)->get();
+        $profile  = Profile::where('user_id',Auth::user()->id)->first();
+        return view('user_dash.withdrawal',compact('withdrawalinfo','profile'));
+    }
 
     public function withdrawal(Request $request){
         //update substracte user solde from montant withdrawal

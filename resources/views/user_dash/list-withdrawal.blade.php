@@ -305,16 +305,20 @@
       </div>
       --}}
       <div class="container">
+        <form method="POST" action="{{url('listWithdrawal')}}" >
+        @csrf
         <div class="plans">
+            
           <div class="title">Choisissisez la cagnote</div>
           {{-- foreach withdral  --}}
             @foreach ($withdrawalinfo as $item)
+            <input type="hidden" value="{{$item->id }}" name="id">
           <label class="plan basic-plan mb-3" for="basic{{$item->id}}">
             <input  type="radio" name="plan" id="basic{{$item->id}}" />
             <div class="plan-content">
-              <img loading="lazy" src="https://raw.githubusercontent.com/ismailvtl/ismailvtl.github.io/master/images/life-saver-img.svg" alt="" />
+              <img loading="lazy" src="{{asset('assets/img/banner/money.png')}}" alt="" />
               <div class="plan-details">
-                <span>{{$item->name}} ({{$item->categories}} XOF)</span>
+                <span>{{$item->name}}-{{$item->categories}}</span>
                 <p>
                     {{$item->montant_cotise}} XOF
                 </p>
@@ -322,6 +326,7 @@
             </div>
           </label>
           @endforeach
+          <button type="submit" class="btn common-btn">SOUMETTRE LE CHOIX</button>
          <!-- <label class="plan complete-plan" for="complete">
             <input type="radio" id="complete" name="plan" />
             <div class="plan-content">
@@ -343,6 +348,7 @@
             </div>
           </label>-->
         </div>
+    </form>
       </div>
       
       

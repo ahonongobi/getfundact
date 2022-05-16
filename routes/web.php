@@ -96,7 +96,7 @@ Route::get('/contributions',[MainController::class,'contributions'])->name('cont
 Route::get('/logout',[LoginController::class,'logout']);
 Route::get('/edit/{id}',[EditController::class,'edit']);
 Route::get('list-withdrawal',[WithdrawalController::class,'listWithdrawal']);
-
+Route::post('listWithdrawal',[WithdrawalController::class,'listWithdrawalPost']);
 //route org
 Route::get('/my_org',[OrgController::class,'index']);
 Route::get('/profile-org',[OrgController::class,'profileOrg']);
