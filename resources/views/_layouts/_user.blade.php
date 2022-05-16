@@ -608,5 +608,33 @@ $('.select2button').select2button();
     });
 });
 </script>
+<script>
+    function clicked(idWallet, idUser,amount) {
+        document.getElementById("idWallet_" + idWallet).value = idWallet;
+        document.getElementById("idUser_" + idWallet).value = idUser;
+        document.getElementById("amount_" + idWallet).value = amount;
+        //document.getElementById("form_"+idWallet).submit();
+        
+        // alert(idWallet);
+        $.ajax({
+            url: "",
+            type: "GET",
+            data: {
+                idWallet: idWallet,
+                idUser: idUser,
+                amount: amount
+
+            },
+            success: function(data) {
+                
+                console.log(idWallet);
+                
+                //window location href to listWithdrawal page with idWallet, idUser and amount as parameters
+                window.location.href = "/getlistWithdrawal?idWallet=" + idWallet + "&idUser=" + idUser + "&amount=" + amount;
+                // alert(data);
+            }
+        });
+    }
+</script>
 </body>
 </html>

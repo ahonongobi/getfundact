@@ -97,6 +97,9 @@ Route::get('/logout',[LoginController::class,'logout']);
 Route::get('/edit/{id}',[EditController::class,'edit']);
 Route::get('list-withdrawal',[WithdrawalController::class,'listWithdrawal']);
 Route::any('listWithdrawal',[WithdrawalController::class,'listWithdrawalPost']);
+//route for getlistWithdrawal
+Route::get('/getlistWithdrawal',[WithdrawalController::class,'getlistWithdrawal']);
+Route::get('user_dash.withdrawal',[WithdrawalController::class,'withdrawalTotal']);
 //route org
 Route::get('/my_org',[OrgController::class,'index']);
 Route::get('/profile-org',[OrgController::class,'profileOrg']);

@@ -139,9 +139,9 @@
 
                                             </td>
                                             <td>
-
+                                               
                                                 {{ $item->where}}
-
+                                            
                                             </td>
                                             @if ($item->statut ==1)
                                             <td class="font-weight-medium text-success">Actif</td>

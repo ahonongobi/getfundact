@@ -305,18 +305,21 @@
       </div>
       --}}
       <div class="container">
-        <form method="POST" action="{{url('listWithdrawal')}}" >
+        <form method="GET" action="{{url('listWithdrawal')}}" >
         @csrf
         <div class="plans">
             
           <div class="title">Choisissisez la cagnote</div>
           {{-- foreach withdral  --}}
             @foreach ($withdrawalinfo as $item)
-            
-            <input style="display: none;" type="checkbox" value="{{$item->id}}" name="id[]">
+            <input type="hidden" data-user="{{$item->id}}" id="idWallet_{{$item->id}}"  name="idWallet" value="{{$item->id}}">
+           <input type="hidden"  id="idUser_{{$item->id}}" name="idUser_{{$item->id}}" value="{{$item->id}}">
+           <input type="hidden"  id="amount_{{$item->id}}" name="amount_{{$item->id}}" value="{{$item->montant_cotise}}">
+
+            <input style="display: none;" id="montant" type="checkbox" value="{{$item->id}}" name="id[]">
             
             <input type="hidden" name="montant" value="{{$item->montant_cotise}}">
-          <label class="plan basic-plan mb-3" for="basic{{$item->id}}">
+          <label onClick="clicked({{ $item->id }} , {{ $item->user_id}} , {{ $item->montant_cotise}})" id="cdlicked" class="plan basic-plan mb-3" for="basic{{$item->id}}">
             <input  type="radio" name="plan" id="basic{{$item->id}}" />
             <div class="plan-content">
               <img loading="lazy" src="{{asset('assets/img/banner/money.png')}}" alt="" />
@@ -352,7 +355,9 @@
           </label>-->
         </div>
     </form>
+    
       </div>
+      
       
       
 @endsection

@@ -423,8 +423,8 @@
         <form method="POST" action="{{ url('withdrawal') }}">
             @csrf
             <input type="hidden" name="nom_campagne" value="Not defined">
-            <input type="hidden" name="montant" value="{{$montant}}">
-            <input type="hidden" name="id" value="{{ $withdrawalinfo->id }}">
+            <input type="hidden" name="montant" value="{{Session::get('montant')}}">
+            <input type="hidden" name="id" value="{{ $withdrawalinfo->id  ?? ''}}">
 
         <div class="container">
             
@@ -440,7 +440,7 @@
                     </div>
                     <div class="annual-plan">
                         <h2>Nom de la banque</h2>
-                        <p>{{$profile->nom_banque}}</p>
+                        <p>{{Session::get('nom_banque')}}</p>
                     </div>
                     <div class="change">
                         <a href="#">Changer</a>
@@ -452,7 +452,7 @@
                     </div>
                     <div class="annual-plan">
                         <h2>Iban/BIC</h2>
-                        <p>{{$profile->iban}} <br>{{$profile->bic}}</p>
+                        <p>{{Session::get('iban')}} <br>{{Session::get('bic')}}</p>
                     </div>
                     <div class="change">
                         <a href="/profile">Changer</a>
@@ -464,7 +464,7 @@
                     </div>
                     <div class="annual-plan">
                         <h2>Montant disponible</h2>
-                        <p>{{ $montant ?? '' }} FCFA</p>
+                        <p>{{ Session::get('montant') ?? '' }} FCFA</p>
                     </div>
                     <div class="change">
                         <a href="/profile"></a>
@@ -488,7 +488,7 @@
           
         <form method="POST" action="{{ url('withdrawal') }}">
             @csrf
-            <input type="hidden" name="montant" value="{{$solde}}">
+            <input type="hidden" name="montant" value="{{$solde ?? ''}}">
         <div class="container">
             
             <div class="top-part"></div>
@@ -519,14 +519,14 @@
                     </div>
                     <div class="annual-plan">
                         <h2>Montant disponible</h2>
-                        <p>{{ $solde }} FCFA</p>
+                        <p>{{ Session::get('montant') ?? '' }} FCFA</p>
                     </div>
                     <div class="change">
                         <a href="/profile"></a>
                     </div>
                 </div>
                 <div class="btn-section">
-                    @if ($solde > 0)
+                    @if (Session::get('montant') > 0)
                     <button style="background-color: #e15b1a !important;color:#fff" class="btn-payment btn" type="submit">Lancer le rétrait</button>
                     @else
                     <button style="background-color: #e15b1a !important;color:#fff" class="btn-payment btn disabled" type="submit">Lancer le rétrait</button>
@@ -543,7 +543,7 @@
           
         <form method="POST" action="{{ url('withdrawal') }}">
             @csrf
-            <input type="hidden" name="montant" value="{{$solde}}">
+            <input type="hidden" name="montant" value="{{$solde ?? ''}}">
         <div class="container">
             
             <div class="top-part"></div>
@@ -575,14 +575,14 @@
                     </div>
                     <div class="annual-plan">
                         <h2>Montant disponible</h2>
-                        <p>{{ $solde }} FCFA</p>
+                        <p>{{ Session::get('montant') ?? '' }} FCFA</p>
                     </div>
                     <div class="change">
                         <a href="/profile"></a>
                     </div>
                 </div>
                 <div class="btn-section">
-                    @if ($solde > 0)
+                    @if (Session::get('montant') > 0)
                     <button style="background-color: #e15b1a !important;color:#fff" class="btn-payment btn" type="submit">Lancer le rétrait</button>
                     @else
                     <button style="background-color: #e15b1a !important;color:#fff" class="btn-payment btn disabled" type="submit">Lancer le rétrait</button>

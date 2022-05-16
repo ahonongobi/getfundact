@@ -26,16 +26,40 @@ class WithdrawalController extends Controller
     }
     //listWithdrawalPost
     public function listWithdrawalPost(Request $request){
-        
-          dd($request->id);
-        
         $withdrawalinfo =  Campagne::where('user_id',Auth::user()->id)->where('id',$request->id)->where('statut',1)->first();
         
         $profile  = Profile::where('user_id',Auth::user()->id)->first();
         $montant = $withdrawalinfo->montant_cotise;
         return view('user_dash.withdrawal',compact('withdrawalinfo','profile','montant'));
     }
-
+   //getlistWithdrawal
+    public function getlistWithdrawal(){
+        $amount = request()->filled('amount');
+        //filled is a laravel function to check if the value is not empty
+        //filled idWallet and amount
+        if(request()->filled('idWallet') && request()->filled('amount')){
+            $idWallet = request()->idWallet;
+            $amount = request()->amount;
+            $withdrawalinfo =  Campagne::where('user_id',Auth::user()->id)->where('id',$idWallet)->where('statut',1)->first();
+            $profile  = Profile::where('user_id',Auth::user()->id)->first();
+            $montant = $withdrawalinfo->montant_cotise;
+            //compact variable with redirect : nom_banque,iban,bic,montant 
+            $nom_banque = $profile->nom_banque;
+            $iban = $profile->iban;
+            $bic = $profile->bic;
+            //return redirect 
+            return redirect('user_dash.withdrawal')->with('nom_banque',$nom_banque)->with('iban',$iban)->with('bic',$bic)->with('montant',$montant);
+            
+            
+        }
+        
+       // return view('/user_dash.withdrawal',compact('amount','id'));
+    }
+    //withdrawalTotal view function
+    public function withdrawalTotal(){
+        
+        return view('user_dash.withdrawal');
+    }
     public function withdrawal(Request $request){
         //update substracte user solde from montant withdrawal
         $solde_0 = User::where('id',Auth::user()->id)->first();
