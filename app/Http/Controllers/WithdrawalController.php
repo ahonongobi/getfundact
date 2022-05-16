@@ -26,9 +26,12 @@ class WithdrawalController extends Controller
     }
     //listWithdrawalPost
     public function listWithdrawalPost(Request $request){
-        $withdrawalinfo =  Campagne::where('user_id',Auth::user()->id)->where('id',$request->id)->where('statut',1)->where('montant_cotise','>',0)->get();
+      
+        $withdrawalinfo =  Campagne::where('user_id',Auth::user()->id)->where('id',$request->id)->where('statut',1)->first();
+        
         $profile  = Profile::where('user_id',Auth::user()->id)->first();
-        return view('user_dash.withdrawal',compact('withdrawalinfo','profile'));
+        $montant = $withdrawalinfo->montant_cotise;
+        return view('user_dash.withdrawal',compact('withdrawalinfo','profile','montant'));
     }
 
     public function withdrawal(Request $request){
@@ -38,7 +41,7 @@ class WithdrawalController extends Controller
         
         $solde_0->update();
         //update compagne table id_user statut to 2
-        $campagne = Campagne::where('user_id',Auth::user()->id)->where('statut',1)->get();
+        $campagne = Campagne::where('id',$request->id)->where('user_id',Auth::user()->id)->where('statut',1)->get();
         foreach($campagne as $campagnes){
             $campagnes->statut = 2;
             $campagnes->update();

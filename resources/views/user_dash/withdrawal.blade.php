@@ -423,7 +423,9 @@
         <form method="POST" action="{{ url('withdrawal') }}">
             @csrf
             <input type="hidden" name="nom_campagne" value="Not defined">
-            <input type="hidden" name="montant" value="{{$solde}}">
+            <input type="hidden" name="montant" value="{{$montant}}">
+            <input type="hidden" name="id" value="{{ $withdrawalinfo->id }}">
+
         <div class="container">
             
             <div class="top-part"></div>
@@ -462,7 +464,7 @@
                     </div>
                     <div class="annual-plan">
                         <h2>Montant disponible</h2>
-                        <p>{{ $solde }} FCFA</p>
+                        <p>{{ $montant ?? '' }} FCFA</p>
                     </div>
                     <div class="change">
                         <a href="/profile"></a>

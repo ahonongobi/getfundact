@@ -312,7 +312,8 @@
           <div class="title">Choisissisez la cagnote</div>
           {{-- foreach withdral  --}}
             @foreach ($withdrawalinfo as $item)
-            <input type="hidden" value="{{$item->id }}" name="id">
+            <input style="display: none;" type="radio" checked value="{{$item->id}}" name="id">
+            <input type="hidden" name="montant" value="{{$item->montant_cotise}}">
           <label class="plan basic-plan mb-3" for="basic{{$item->id}}">
             <input  type="radio" name="plan" id="basic{{$item->id}}" />
             <div class="plan-content">
