@@ -42,7 +42,7 @@ class ProfileController extends Controller
 
                 $filename1 = 2 * time() . '.' . $file1->getClientOriginalExtension();
                 //make($file1)->save(public_path('/storage/actuality_photos/' .$filename1));
-                $path = public_path() . '/storage/UserPhoto/';
+                $path = public_path() . '/storage/UserDocument/';
 
                 $file1->move($path, $filename1);
                 //$file1->move_uploaded_file($filename1,$path);
@@ -106,7 +106,7 @@ class ProfileController extends Controller
 
                 $filename1 = 2 * time() . '.' . $file1->getClientOriginalExtension();
                 //make($file1)->save(public_path('/storage/actuality_photos/' .$filename1));
-                $path = public_path() . '/storage/UserPhoto/';
+                $path = public_path() . '/storage/UserDocument/';
 
                 $file1->move($path, $filename1);
                 //$file1->move_uploaded_file($filename1,$path);
