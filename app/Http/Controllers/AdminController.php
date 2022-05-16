@@ -50,7 +50,7 @@ class AdminController extends Controller
 
     public function search(Request $request){
         $searchs = User::where("email", "LIKE" ,'%'.$request->input("search").'%')
-        ->orWhere("name", "LIKE" ,'%'.$request->input("search").'%')->orWhere("surname", "LIKE" ,'%'.$request->input("search").'%')->orWhere("user_type", "LIKE" ,'%'.$request->input("search").'%')->get(40);
+        ->orWhere("name", "LIKE" ,'%'.$request->input("search").'%')->orWhere("surname", "LIKE" ,'%'.$request->input("search").'%')->orWhere("user_type", "LIKE" ,'%'.$request->input("search").'%')->paginate(40);
         return view('admin.search', compact('searchs'));
     }
 }

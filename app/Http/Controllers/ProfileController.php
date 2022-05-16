@@ -115,7 +115,7 @@ class ProfileController extends Controller
                 if ($send->update()) {
                     $notification_gobi = array(
                         'title' => 'Félicitations',
-                        'sending' => 'Les informations du profile enrégistré ave succès.',
+                        'sending' => 'Les informations du profile enrégistrée ave succès.',
                         'type' => 'success',
 
                     );

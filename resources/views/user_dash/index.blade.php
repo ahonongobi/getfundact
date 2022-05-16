@@ -35,7 +35,8 @@
                         </li>
                     </ul>
                     <div class="about-btn-area">
-                        <a class="common-btn about-btn" href="{{ url('withdrawal') }}">Demander un rétrait</a>
+                        {{-- withdrawal url --}}
+                        <a class="common-btn about-btn" href="{{ url('list-withdrawal') }}">Demander un rétrait</a>
                         <a class="common-btn" href="#">COMMENT ÇA MARCHE</a>
                     </div>
                 </div>
