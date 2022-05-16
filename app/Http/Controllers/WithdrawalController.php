@@ -26,11 +26,8 @@ class WithdrawalController extends Controller
     }
     //listWithdrawalPost
     public function listWithdrawalPost(Request $request){
-        foreach($request->id as $key => $value){
-            $request->id[$key];
-            dd($request->id[$key]);
-        }
-
+        
+          dd($request->id);
         
         $withdrawalinfo =  Campagne::where('user_id',Auth::user()->id)->where('id',$request->id)->where('statut',1)->first();
         

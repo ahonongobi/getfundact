@@ -7,7 +7,7 @@
         }
     }
     #mobile_img {
-        width: 100%; height:600px; /**oject-fit:cover; object-position: bottom; **/
+        width:  400px; height:600px; /**oject-fit:cover; object-position: bottom; **/
     }
 </style>
 
