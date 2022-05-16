@@ -83,10 +83,10 @@
 
                                         <img style="width: 200px; height:200px;" src="{{ asset('storage/UserPhoto/'.$users->photo) }}" alt="" srcset="">
                                     </a>
-                                    <a href="{{ asset('storage/UserDocument/'.$users->cni) }}">
+                                    <a href="{{ asset('storage/UserPhoto/'.$users->cni) }}">
                                         <img width="400" height="300" src="{{ asset('storage/UserPhoto/'.$users->cni) }}" alt="" srcset="">
                                     </a>
-                                    <a href="{{ asset('storage/UserDocument/'.$users->s_cni) }}">
+                                    <a href="{{ asset('storage/UserPhoto/'.$users->s_cni) }}">
                                         <img width="400" height="300" src="{{ asset('storage/UserPhoto/'.$users->s_cni) }}" alt="" srcset="">
                                     </a>
                                     @endif
