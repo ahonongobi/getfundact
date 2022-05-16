@@ -185,7 +185,7 @@
                                         @if (isset($profile_data->photo))
                                         <div class="col-lg-12 mb-2">
                                             <div class="form-group">
-                                                <img src="{{ asset('storage/UserPhoto/'.$profile_data->photo) }}" alt="" width="150" height="150" class="img-fluid">
+                                                <img src="{{ asset('storage/UserDocument/'.$profile_data->photo) }}" alt="" width="150" height="150" class="img-fluid">
                                             </div>
                                         </div>
                                         @else
