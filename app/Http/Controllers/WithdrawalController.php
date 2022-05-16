@@ -18,6 +18,8 @@ class WithdrawalController extends Controller
         $profile  = Profile::where('user_id',Auth::user()->id)->first();
         return view('user_dash.withdrawal',compact('withdrawalinfo','profile'));
     }
+    //listWithdrawal view function
+    
 
     public function withdrawal(Request $request){
         //update substracte user solde from montant withdrawal

@@ -95,7 +95,7 @@ Route::get('/donation-details-org/{id}/{name}',[MainController::class,'donationD
 Route::get('/contributions',[MainController::class,'contributions'])->name('contributionss');
 Route::get('/logout',[LoginController::class,'logout']);
 Route::get('/edit/{id}',[EditController::class,'edit']);
-
+Route::get('list-withdrawal',[WithdrawalController::class,'listWithdrawal']);
 
 //route org
 Route::get('/my_org',[OrgController::class,'index']);

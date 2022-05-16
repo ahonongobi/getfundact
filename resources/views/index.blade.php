@@ -70,7 +70,7 @@
 </div>
 
 
-<div class="feature-area two pb-70">
+<div class="feature-area two pb-70 d-none">
     <div class="container">
         <div class="row">
             <div class="col-sm-6 col-lg-4">
@@ -378,7 +378,7 @@
 </section>
 
 
-<div class="benefit-area two pt-100 pb-70">
+<div class="benefit-area two pt-100 pb-70 d-none">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
