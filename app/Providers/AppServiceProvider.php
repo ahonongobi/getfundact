@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Campagne;
 use App\Models\Contrubution;
+use App\Models\Historique;
 use App\Models\Profile;
 use App\Models\User;
 use App\Models\Withdrawal;
@@ -81,7 +82,8 @@ class AppServiceProvider extends ServiceProvider
                 $view->with('profile_data', Profile::where('user_id',Auth::user()->id)->first());
                 $view->with('email_value', User::where('id',Auth::user()->id)->first());
                 $view->with('auth_id', Auth::user()->email);
-                
+                // get all from historique table
+                $view->with('historique', Historique::all());
 
 
             }       
@@ -109,6 +111,8 @@ class AppServiceProvider extends ServiceProvider
                 $view->with('email_value', User::where('email',"sa.intelligencia@gmail.com")->first());
                 $view->with('auth_id', "sa.intelligencia@gmail.com");
             }
+            
+
 
 
         });

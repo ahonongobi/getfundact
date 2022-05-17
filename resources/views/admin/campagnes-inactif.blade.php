@@ -47,11 +47,27 @@
                                 data-title="Supprimer" data-toggle="modal" data-target="#delete"><span
                                     class="ti-trash"></span></button></p>
                     </td>
-                    <td>
-                        <p data-placement="top" data-toggle="tooltip" title="campagne actif"><button
-                                class="btn btn-success btn-lg" data-title="Valider" data-toggle="modal"
-                                data-target="#delete"><span class="ti-check"></span></button></p>
-                    </td>
+                    {{-- return  ti-close where statut 0 and ti-check if statut 1 --}}
+                    @if ($item->statut == 1)
+                        <td>
+                            <p data-placement="top" data-toggle="tooltip" title="Desactivé"><button
+                                    class="btn btn-warning btn-lg" data-title="Desactivé" data-toggle="modal"
+                                    data-target="#desactive"><span class="ti-close"></span></button></p>
+                        </td>
+                    @elseif($item->statut == 0)
+                        <td>
+                            <p data-placement="top" data-toggle="tooltip" title="Campagne inactive"><button
+                                    class="btn btn-danger btn-lg" data-title="Activé" data-toggle="modal"
+                                    data-target="#active"><span class="ti-close"></span></button></p>
+                        </td>
+                    @elseif($item->statut == 2)
+                        <td>
+                            <p data-placement="top" data-toggle="tooltip" title="Campagne suspendue"><button
+                                    class="btn btn-warning btn-lg" data-title="Supprimer" data-toggle="modal"
+                                    data-target="#delete"><span class="ti-trash"></span></button></p>
+                        </td>
+                    @endif
+
 
                 </tr>
             @endforeach

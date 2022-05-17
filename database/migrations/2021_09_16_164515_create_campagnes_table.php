@@ -40,7 +40,7 @@ class CreateCampagnesTable extends Migration
             $table->timestamps();
         });
     }
-
+    
     /**
      * Reverse the migrations.
      *
