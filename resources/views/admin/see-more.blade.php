@@ -147,11 +147,12 @@
             <!-- <img style="width: 1429px !important; height:300px" src="https://unsplash.it/975/300" alt="Profile banner" /> -->
             <img style="width: 1429px !important; height:300px" src="{{asset('assets/img/banner/bg.jpg')}}" alt="Profile banner" />
         </figure>
-        @if ($usersCount != 0)
+        @if ($usersCount != 0 AND $users->photo != null)
+            <img class="profile-photo" src="{{asset('assets/img/profile/'.$users->photo)}}" alt="Profile Photo" />
         <figure class="profile-picture" style="background-image: url('{{ asset('storage/UserDocument/' . $users->photo) }}')">
         </figure>
         @else
-        <figure class="profile-picture" style="background-image: url('{{ asset('storage/UserDocument/default.png') }}')">
+        <figure class="profile-picture" style="background-image: url('{{ asset('assets/gobi_avatar.png') }}')">
         </figure>
         @endif
         <div class="profile-stats">
