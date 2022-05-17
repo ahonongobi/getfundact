@@ -24,6 +24,7 @@
   <!-- common css -->
   <link media="all" type="text/css" rel="stylesheet" href="{{asset('admin/css/app.css')}}">
   <!-- end common css -->
+  <link rel="stylesheet" href="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css">
   <!-- fancy box -->
   <link media="all" type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css">
@@ -592,7 +593,8 @@
     <script src="{{asset('admin/assets/js/settings.js')}}"></script>
     <script src="{{asset('admin/assets/js/todolist.js')}}"></script>
     <!-- end common js -->
-  
+    <script src="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js"></script>
+
       <script src="{{asset('admin/assets/js/dashboard.js')}}"></script>
        <!--fancybox-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
@@ -642,6 +644,29 @@
           protect: true
         });
       </script>
+      <!--end fancybox-->
+      <script>
+
+         
+        function Abyssinie(){
+        swal("{{Session::get('title')}}", "{{Session::get('sending')}}", "{{Session::get('type')}}");
+      }
+      
+      $(document).ready(function(){
+            //swal("a","b","warning")
+        @if(Session::has('sending')) {
+          Abyssinie();
+        } 
+        @endif
+        @if(!Session::has('sending')) {
+          console.log('try to post');
+        } 
+        
+        @endif
+        
+      })
+    
+    </script>
   </body>
   
   </html>

@@ -23,7 +23,9 @@
                         <a href="{{ url('activePost/'.$campagnePost->id) }}" class="btn btn-success ml-3 text-white">Activer </a>
 
                         @else
-                        <a href="{{ url('unactivePost/'.$campagnePost->id) }}" class="btn btn-danger ml-3 text-white">Désactiver </a>
+                        {{-- onclick for confirmation before delete  --}}
+                        
+                        <a onclick="return confirm('Vous êtes sur le point de désactiver cette campagne')" href="{{ url('unactivePost/'.$campagnePost->id) }}" class="btn btn-danger ml-3 text-white">Désactiver </a>
 
                         @endif
                     </div>
