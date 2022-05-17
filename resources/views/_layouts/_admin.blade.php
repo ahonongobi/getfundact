@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
   
   </head>
-<body data-base-url="">
+<body id="element" data-base-url="">
 
   <div class="container-scroller" id="app">
     <nav  class="navbar col-lg-12 col-12 p-0 bg-danger fixed-top d-flex flex-row">
@@ -59,8 +59,11 @@
     </ul>
     <ul class="navbar-nav navbar-nav-right">
       <li class="nav-item dropdown mr-1">
+        <a onclick="var el = document.getElementById('element'); el.requestFullscreen();">
+          <i style="font-size: 20px;text-decoration:none" class="ti-fullscreen text-white"></i>
+        </a>
         <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-toggle="dropdown">
-          <i class="ti-email mx-0"></i>
+          <i class="ti-email mx-0 text-white"></i>
         </a>
         <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
           <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
@@ -104,7 +107,7 @@
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
-          <i class="ti-bell mx-0"></i>
+          <i class="ti-bell mx-0 text-white"></i>
           <span class="count"></span>
         </a>
         <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
@@ -157,11 +160,11 @@
         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
           <a class="dropdown-item">
             <i class="ti-settings text-primary"></i>
-            Settings
+           Paramèttre
           </a>
-          <a class="dropdown-item">
+          <a  href="/logout" class="dropdown-item">
             <i class="ti-power-off text-primary"></i>
-            Logout
+            Se decpnnecter
           </a>
         </div>
       </li>
@@ -193,7 +196,7 @@
     </div>
   </div>
 </div>
-<div id="right-sidebar" class="settings-panel">
+<div style="background-color: #302c51 !important" id="right-sidebar" class="settings-panel">
   <i class="settings-close ti-close"></i>
   <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
     <li class="nav-item">
@@ -349,7 +352,7 @@
         <span class="menu-title">Home</span>
       </a>
     </li>
-    <li class="nav-item ">
+    <li class="nav-item">
         <a class="nav-link" href="/users">
           <i class="ti-user menu-icon"></i>
           <span class="menu-title">Utilisateurs</span>

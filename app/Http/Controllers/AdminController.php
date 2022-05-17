@@ -37,7 +37,15 @@ class AdminController extends Controller
         $users = Profile::where('user_id',$id)->first();
         $usersCount = Profile::where('user_id',$id)->count();
         $hisCampagnes = Campagne::where('user_id',$id)->paginate(5);
-        return view('admin.see-more',compact('users','hisCampagnes','usersCount'));
+        //check user solde on model User
+        $user = User::where('id',$id)->first();
+        $solde = $user->solde;
+        //last login using carbone libray on model User model updated_at
+        $lastLogin = $user->updated_at;
+
+
+
+        return view('admin.see-more',compact('users','hisCampagnes','usersCount','solde','lastLogin'));
     }
     
     
