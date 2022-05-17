@@ -1,14 +1,84 @@
 @extends('_layouts._admin')
 
 @section('content')
+    <table id="example" class="display nowrap table-responsive" style="width:100%">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Categories</th>
+                <th>Durée</th>
+                <th>Montant visé</th>
+                <th>Montant Cotisé</th>
+                <th>Name bénéf.</th>
+                <th>Hashtag</th>
+                <th>Mots clés</th>
+                <th>Statut</th>
+                <th>Voir</th>
+                <th>Desactivé</th>
+                <th>Etat</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($admin_all_campagne_inactif as $item)
+                <tr>
+                    <td>{{ $item->name }}</td>
+                    <td>{{ $item->categories }}</td>
+                    <td>{{ $item->duree }}</td>
+                    <td>{{ $item->montant_v }}XOF</td>
+                    <td>{{ $item->montant_cotise }}XOF</td>
 
+                    <td>{{ $item->name_b }}</td>
+                    <td>{{ $item->hashtag }}</td>
+                    <td>{{ $item->keys_word }}</td>
+                    @if ($item->statut == 1)
+                        <td class="font-weight-medium text-success">Actif</td>
+                    @elseif($item->statut == 0)
+                        <td class="font-weight-medium text-warning">Inactif</td>
+                    @elseif($item->statut == 2)
+                        <td class="font-weight-medium text-danger">Supprimer</td>
+                    @endif
+                    <td>
+                        <p data-placement="top" data-toggle="tooltip" title="voir plus"><a
+                                href="{{ url('see-more-campagne/' . $item->id) }}" class="btn btn-primary btn-lg"
+                                data-title="Voir" data-target="#edit"><span class="ti-eye"></span></a></p>
+                    </td>
+                    <td>
+                        <p data-placement="top" data-toggle="tooltip" title="Supprimer"><button class="btn btn-danger btn-lg"
+                                data-title="Supprimer" data-toggle="modal" data-target="#delete"><span
+                                    class="ti-trash"></span></button></p>
+                    </td>
+                    <td>
+                        <p data-placement="top" data-toggle="tooltip" title="campagne actif"><button
+                                class="btn btn-success btn-lg" data-title="Valider" data-toggle="modal"
+                                data-target="#delete"><span class="ti-check"></span></button></p>
+                    </td>
 
-   
-                <div class="row">
-                    
-                </div>
+                </tr>
+            @endforeach
 
-                <div class="row">
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Nom</th>
+                <th>Categories</th>
+                <th>Durée</th>
+                <th>Montant visé</th>
+                <th>Montant Cotisé</th>
+                <th>Name bénéf.</th>
+                <th>Ou depensé</th>
+                <th>Statut</th>
+                <th>Voir</th>
+                <th>Desactivé</th>
+                <th>Etat</th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <div class="row">
+
+    </div>
+
+    {{-- <div class="row">
                     <div class="col-md-12 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
@@ -53,7 +123,7 @@
                                                 {{ $item->where}}
 
                                             </td>
-                                            @if ($item->statut ==1)
+                                            @if ($item->statut == 1)
                                             <td class="font-weight-medium text-success">Actif</td>
                                             @elseif($item->states ==0)
                                             
@@ -79,9 +149,9 @@
                         </div>
                     </div>
 
-                </div>
+                </div> --}}
 
 
-            </div>
-        </div>
-    @endsection
+    </div>
+    </div>
+@endsection

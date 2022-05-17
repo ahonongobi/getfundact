@@ -13,7 +13,7 @@
                             <div class="card-body">
                                 <p class="card-title mb-0">Demande de retrait Aujourd'hui</p>
                                 <div class="table-responsive">
-                                    <table class="table table-striped table-borderless">
+                                    <table id="example" class="table table-striped table-borderless">
                                         <thead>
                                             <tr>
                                                 <th>ID utilisateur</th>
@@ -78,7 +78,7 @@
                             <div class="card-body">
                                 <p class="card-title mb-0">Demande de retrait</p>
                                 <div class="table-responsive">
-                                    <table class="table table-striped table-borderless">
+                                    <table id="example2" class="table table-striped table-borderless">
                                         <thead>
                                             <tr>
                                                 <th>ID utilisateur</th>

@@ -332,7 +332,7 @@
             </div>
           </label>
           @endforeach
-          <button type="submit" class="btn common-btn">SOUMETTRE LE CHOIX</button>
+          {{--<button type="submit" class="btn common-btn">SOUMETTRE LE CHOIX</button>--}}
          <!-- <label class="plan complete-plan" for="complete">
             <input type="radio" id="complete" name="plan" />
             <div class="plan-content">

@@ -4,7 +4,7 @@
 
                 <div class="row">
                     <div class="col-md-12 grid-margin">
-                        <div class="card bg-primary border-0 position-relative">
+                        <div style="background-color: #302c51 !important" class="card bg-primary border-0 position-relative">
                             <div class="card-body">
                                 <p class="card-title text-white">Performance en temp réel</p>
                                 <div id="performanceOverview"

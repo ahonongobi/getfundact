@@ -24,17 +24,19 @@
   <!-- common css -->
   <link media="all" type="text/css" rel="stylesheet" href="{{asset('admin/css/app.css')}}">
   <!-- end common css -->
-
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
+  
   </head>
 <body data-base-url="">
 
   <div class="container-scroller" id="app">
-    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-  <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-    <a class="navbar-brand brand-logo mr-5" href=""><img src="{{asset('admin/assets/images/logo.png')}}" class="mr-2" alt="logo"/></a>
-    <a class="navbar-brand brand-logo-mini" href=""><img src="{{asset('admin/assets/images/logo.png')}}" alt="logo"/></a>
+    <nav  class="navbar col-lg-12 col-12 p-0 bg-danger fixed-top d-flex flex-row">
+  <div style="background-color: #302c51 !important" class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+    <a style="width: 600px !important" class="navbar-brand brand-logo mr-5" href=""><img src="{{asset('admin/assets/images/logogetf.png')}}" class="mr-2" alt="logo"/></a>
+    <a style="width: 600px !important" class="navbar-brand brand-logo-mini" href=""><img src="{{asset('admin/assets/images/logogetf.png')}}" alt="logo"/></a>
   </div>
-  <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+  <div style="background-color: #302c51 !important" class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
     <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
       <span class="ti-layout-grid2"></span>
     </button>
@@ -338,7 +340,8 @@
     </div>
     <!-- chat tab ends -->
   </div>
-</div>      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+</div>     
+ <nav  class="sidebar sidebar-offcanvas" id="sidebar">
   <ul class="nav">
     <li class="nav-item active">
       <a class="nav-link" href="/dashboard-interface">
@@ -487,13 +490,13 @@
             </div>
             <div class="row">
                 <div class="col-md-3 grid-margin stretch-card">
-                    <div class="card">
+                    <div style="background-color: #27293d !important" class="card">
                         <div class="card-body">
-                            <p class="card-title text-md-center text-xl-left">Nombre de Campagnes</p>
+                            <p class="card-title text-md-center text-xl-left text-white">Nombre de Campagnes</p>
                             <div
                                 class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                                <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">{{ $count_all_campagne }}</h3>
-                                <i class="ti-calendar icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
+                                <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0 text-white">{{ $count_all_campagne }}</h3>
+                                <i style="color: white !important" class="ti-calendar icon-md text-muted mb-0 mb-md-3 mb-xl-0 text-white"></i>
                             </div>
                             <p class="mb-0 mt-2 text-warning d-none">2.00% <span class="text-black ml-1"><small>(30
                                         days)</small></span></p>
@@ -501,13 +504,13 @@
                     </div>
                 </div>
                 <div class="col-md-3 grid-margin stretch-card">
-                    <div class="card">
+                    <div style="background-color: #f5a623" class="card">
                         <div class="card-body">
-                            <p class="card-title text-md-center text-xl-left">Nombre d'utilisateurs</p>
+                            <p class="card-title text-md-center text-xl-left text-white">Nombre d'utilisateurs</p>
                             <div
                                 class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                                <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">{{ $Countall_users }}</h3>
-                                <i class="ti-user icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
+                                <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0 text-white">{{ $Countall_users }}</h3>
+                                <i style="color: white !important" class="ti-user icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                             </div>
                             <p class="mb-0 mt-2 text-danger d-none">0.22% <span class="text-black ml-1"><small>(30
                                         days)</small></span></p>
@@ -515,13 +518,13 @@
                     </div>
                 </div>
                 <div class="col-md-3 grid-margin stretch-card">
-                    <div class="card">
+                    <div style="background-color: #f5a623" class="card">
                         <div class="card-body">
-                            <p class="card-title text-md-center text-xl-left">Inscription Journalière</p>
+                            <p class="card-title text-md-center text-xl-left text-white">Inscription Journalière</p>
                             <div
                                 class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                                <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">{{ $todayUser }}</h3>
-                                <i class="ti-agenda icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
+                                <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0 text-white">{{ $todayUser }}</h3>
+                                <i style="color: white !important" class="ti-agenda icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                             </div>
                             <p class="mb-0 mt-2 text-success d-none">10.00%<span class="text-black ml-1"><small>(30
                                         days)</small></span></p>
@@ -529,13 +532,13 @@
                     </div>
                 </div>
                 <div class="col-md-3 grid-margin stretch-card">
-                    <div class="card">
+                    <div style="background-color: #27293d !important" class="card">
                         <div class="card-body">
-                            <p class="card-title text-md-center text-xl-left">Montant disponible</p>
+                            <p class="card-title text-md-center text-xl-left text-white">Montant disponible</p>
                             <div
                                 class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                                <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">{{ $Count_dispo_amount }}FCFA</h3>
-                                <i class="ti-layers-alt icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
+                                <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0 text-white">{{ $Count_dispo_amount }}FCFA</h3>
+                                <i style="color: white !important" class="ti-layers-alt icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                             </div>
                             <p class="mb-0 mt-2 text-success d-none">22.00%<span class="text-black ml-1"><small>(30
                                         days)</small></span></p>
@@ -575,6 +578,38 @@
     <!-- end common js -->
   
       <script src="{{asset('admin/assets/js/dashboard.js')}}"></script>
+
+      <!-- data table -->
+      <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+      <script src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
+      <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+      <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+      <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+      <script>
+        $(document).ready(function() {
+        $('#example').DataTable( {
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ]
+        } );
+        } );
+
+      </script>
+      <script>
+        $(document).ready(function() {
+        $('#example2').DataTable( {
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ]
+        } );
+        } );
+
+      </script>
   </body>
   
   </html>
