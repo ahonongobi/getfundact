@@ -248,11 +248,11 @@
                                 <img style="width: 200px; height:200px;"
                                     src="{{ asset('storage/UserDocument/' . $users->photo) }}" alt="" srcset="">
                             </a>--}}
-                            <a href="{{ asset('storage/UserDocument/' . $users->cni) }}">
+                            <a data-fancybox="gallery" data-caption="Carte nationale d'identité face" href="{{ asset('storage/UserDocument/' . $users->cni) }}">
                                 <img width="600" height="300" src="{{ asset('storage/UserDocument/' . $users->cni) }}"
                                     alt="" srcset="">
                             </a>
-                            <a href="{{ asset('storage/UserDocument/' . $users->s_cni) }}">
+                            <a data-fancybox="gallery" data-caption="Carte nationale d'identité arrière" href="{{ asset('storage/UserDocument/' . $users->s_cni) }}">
                                 <img width="600" height="300" src="{{ asset('storage/UserDocument/' . $users->s_cni) }}"
                                     alt="" srcset="">
                             </a>

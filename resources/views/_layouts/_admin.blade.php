@@ -24,6 +24,8 @@
   <!-- common css -->
   <link media="all" type="text/css" rel="stylesheet" href="{{asset('admin/css/app.css')}}">
   <!-- end common css -->
+  <!-- fancy box -->
+  <link media="all" type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,9 +35,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@600&family=Nunito:wght@300&family=Open+Sans:wght@300&display=swap" rel="stylesheet">   <style>
      body{
       font-family: 'Lato', sans-serif;
-font-family: 'Montserrat', sans-serif;
-font-family: 'Nunito', sans-serif;
-font-family: 'Open Sans', sans-serif;
+      font-family: 'Montserrat', sans-serif;
+      font-family: 'Nunito', sans-serif;
+      font-family: 'Open Sans', sans-serif;
      }
    </style>
   </head>
@@ -592,7 +594,8 @@ font-family: 'Open Sans', sans-serif;
     <!-- end common js -->
   
       <script src="{{asset('admin/assets/js/dashboard.js')}}"></script>
-
+       <!--fancybox-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
       <!-- data table -->
       <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
       <script src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
@@ -623,6 +626,21 @@ font-family: 'Open Sans', sans-serif;
         } );
         } );
 
+      </script>
+      <script>
+        // Fancybox Config
+        $('[data-fancybox="gallery"]').fancybox({
+          buttons: [
+            "slideShow",
+            "thumbs",
+            "zoom",
+            "fullScreen",
+            "share",
+            "close"
+          ],
+          loop: false,
+          protect: true
+        });
       </script>
   </body>
   
