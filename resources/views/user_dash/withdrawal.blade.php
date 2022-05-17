@@ -488,7 +488,7 @@
           
         <form method="POST" action="{{ url('withdrawal') }}">
             @csrf
-            <input type="hidden" name="montant" value="{{$solde ?? ''}}">
+            <input type="hidden" name="montant" value="{{Session::get('montant')}}">
         <div class="container">
             
             <div class="top-part"></div>
@@ -543,7 +543,7 @@
           
         <form method="POST" action="{{ url('withdrawal') }}">
             @csrf
-            <input type="hidden" name="montant" value="{{$solde ?? ''}}">
+            <input type="hidden" name="montant" value="{{Session::get('montant')}}">
         <div class="container">
             
             <div class="top-part"></div>

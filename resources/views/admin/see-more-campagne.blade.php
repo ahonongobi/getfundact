@@ -49,7 +49,7 @@
                                         <td>{{ $campagnePost->monnaie ?? 'non rensigné' }}</td>
                                     </tr><tr>
                                         <td>Montant visé</td>
-                                        <td>{{ $campagnePost->montant_v ?? 'non rensigné' }}</td>
+                                        <td>{{ $campagnePost->montant_v.'XOF' ?? 'non rensigné' }}</td>
                                     </tr>
                                     <tr>
                                         <td>Nom du bénéficiaire</td>
@@ -72,7 +72,7 @@
                                         <td>{{ $campagnePost->hashtag ?? 'non rensigné' }}</td>
                                     </tr><tr>
                                         <td>Montant_cotise</td>
-                                        <td>{{ $campagnePost->montant_cotise ?? 'non rensigné' }}</td>
+                                        <td>{{ $campagnePost->montant_cotise.'XOF' ?? 'non rensigné' }}</td>
                                     </tr><tr>
                                         <td>Statut</td>
                                         {{-- return inactif if statut = 0 or actif if statut is 1 --}}

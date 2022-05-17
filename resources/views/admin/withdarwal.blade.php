@@ -18,6 +18,7 @@
                                             <tr>
                                                 <th>ID utilisateur</th>
                                                 <th>ID campagne-Nom campagne</th>
+                                                <th>Montant</th>
                                                 <th>Date</th>
                                                 
                                                 <th>Etat </th>
@@ -30,6 +31,13 @@
                                           <tr>
                                             <td>{{$item->id_user}}</td>
                                             <td class="font-weight-bold">{{$item->nom_campagne}}</td>
+                                            {{-- if montant is null then 0 else montant $item->montant --}}
+                                            @if ($item->montant == null)
+                                            <td>0XOF</td>
+                                                
+                                            @else
+                                               <td>{{$item->montant}}XOF</td> 
+                                            @endif
                                             <td>{{$item->created_at}}</td>
                                             @if ($item->statut ==1)
                                             <td class="font-weight-medium text-success">Déja soldé</td>
@@ -83,6 +91,7 @@
                                             <tr>
                                                 <th>ID utilisateur</th>
                                                 <th>ID campagne-Nom campagne</th>
+                                                <th>Montant</th>
                                                 <th>Date</th>
                                                 
                                                 <th>Etat </th>
@@ -95,6 +104,13 @@
                                           <tr>
                                             <td>{{$item->id_user}}</td>
                                             <td class="font-weight-bold">{{$item->nom_campagne}}</td>
+                                            {{-- if montant is null then 0 else montant $item->montant --}}
+                                            @if ($item->montant == null)
+                                            <td>0XOF</td>
+                                                
+                                            @else
+                                               <td>{{$item->montant}}XOF</td> 
+                                            @endif
                                             <td>{{$item->created_at}}</td>
                                             @if ($item->statut ==1)
                                             <td class="font-weight-medium text-success">Déja soldé</td>

@@ -18,6 +18,7 @@ class CreateWithdrawalsTable extends Migration
             $table->integer('id_user');
             $table->integer('id_campagne');
             $table->string('nom_campagne');
+            $table->string('montant');
             $table->timestamps();
         });
     }

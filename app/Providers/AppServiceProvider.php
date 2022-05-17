@@ -106,6 +106,15 @@ class AppServiceProvider extends ServiceProvider
             //endadmin
             $view->with('all_campagnes', Campagne::where('statut',1)->paginate(12));
             $view->with('gallery',Campagne::all());
+            //get all montant of withdrawal by user where statut 0
+            $view->with('all_withdraw_amount', Withdrawal::where('statut',0)->sum('montant'));
+            // get all montant of withdrawal by user
+            $view->with('all_withdrawal', Withdrawal::sum('montant'));
+            //get last 3 users id function
+            $view->with('last_users', User::orderBy('id','DESC')->take(3)->get());
+
+            $view->with('last_users', );
+
             
             if (!(Auth::check())) {
                 $view->with('email_value', User::where('email',"sa.intelligencia@gmail.com")->first());

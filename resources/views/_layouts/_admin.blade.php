@@ -476,29 +476,29 @@
                 <div class="col-md-12 grid-margin">
                     <div class="row">
                         <div class="col-12 col-xl-5 mb-4 mb-xl-0">
-                            <h4 class="font-weight-bold">Hi, Welcomeback!</h4>
+                            <h4 class="font-weight-bold">🖐, Welcomeback!</h4>
                             <h4 class="font-weight-normal mb-0">Getfund-act Dashboard,</h4>
                         </div>
                         <div class="col-12 col-xl-7">
                             <div class="d-flex align-items-center justify-content-between flex-wrap">
                                 <div class="border-right pr-4 mb-3 mb-xl-0">
-                                    <p class="text-muted">Balance total</p>
-                                    <h4 class="mb-0 font-weight-bold">{{ $Count_dispo_amount }}FCFA</h4>
+                                    <p class="text-muted">Balance totale</p>
+                                    <h4 class="mb-0 font-weight-bold">{{ $Count_dispo_amount }}XOF</h4>
                                 </div>
                                 <div class="border-right pr-4 mb-3 mb-xl-0">
                                     <p class="text-muted">Aujourd'hui</p>
-                                    <h4 class="mb-0 font-weight-bold">{{ $Count_dispo_amount_today }}FCFA</h4>
+                                    <h4 class="mb-0 font-weight-bold">{{ $Count_dispo_amount_today }}XOF</h4>
                                 </div>
                                 <div class="border-right pr-4 mb-3 mb-xl-0">
-                                    <p class="text-muted">Paiement</p>
-                                    <h4 class="mb-0 font-weight-bold">4006</h4>
+                                    <p class="text-muted">Rétrait effectué</p>
+                                    <h4 class="mb-0 font-weight-bold">{{$all_withdrawal ?? '0'}}XOF</h4>
                                 </div>
                                 <div class="pr-3 mb-3 mb-xl-0 d-none">
                                     <p class="text-muted">Downloadsd</p>
                                     <h4 class="mb-0 font-weight-bold">4006</h4>
                                 </div>
                                 <div class="mb-3 mb-xl-0">
-                                    <a href="/logout" class="btn btn-warning rounded-0 text-white">Deconexion</a>
+                                    <a href="/logout" class="btn btn-warning rounded-0 text-white">Déconnexion</a>
                                 </div>
                             </div>
                         </div>
@@ -551,10 +551,10 @@
                 <div class="col-md-3 grid-margin stretch-card">
                     <div style="background-color: #27293d !important" class="card">
                         <div class="card-body">
-                            <p class="card-title text-md-center text-xl-left text-white">Montant disponible</p>
+                            <p class="card-title text-md-center text-xl-left text-white">Rétrait demandé en cours</p>
                             <div
                                 class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                                <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0 text-white">{{ $Count_dispo_amount }}FCFA</h3>
+                                <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0 text-white">{{ $all_withdraw_amount ?? '0' }}XOF</h3>
                                 <i style="color: white !important" class="ti-layers-alt icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                             </div>
                             <p class="mb-0 mt-2 text-success d-none">22.00%<span class="text-black ml-1"><small>(30
