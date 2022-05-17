@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Profile;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
@@ -27,7 +28,16 @@ class LoginController extends Controller
         ])){
 
             if(Auth::user()->user_type =="Personne"){
-                return redirect('/my_space');
+                //verify if user exist on profile model and then redirect to profile page 
+                $profile = Profile::where('user_id',Auth::user()->id)->first();
+                if($profile){
+                    return redirect('/my_space');
+                    
+                }else{
+                    return redirect('/profile');
+                }
+
+                
             } 
             elseif(Auth::user()->user_type =="Organisation"){
                 return redirect('/my_org');
