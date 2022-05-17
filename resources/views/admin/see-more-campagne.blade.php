@@ -96,10 +96,10 @@
                                 <div class="d-flex justify-content-between">
                                     
                                     
-                                    <a data-fancybox="gallery" data-caption="Caption Images 1" href="{{ asset('storage/UserDocument/'.$campagnePost->file_vignette) }}">
+                                    <a data-fancybox="gallery" data-caption="Image de vignette" href="{{ asset('storage/UserDocument/'.$campagnePost->file_vignette) }}">
                                         <img width="400" height="300" src="{{ asset('storage/UserDocument/'.$campagnePost->file_vignette) }}" alt="" srcset="">
                                     </a>
-                                    <a data-fancybox="gallery" data-caption="Caption Images 2" href="{{ asset('storage/UserDocument/'.$campagnePost->file_couverture) }}">
+                                    <a data-fancybox="gallery" data-caption="Image de couverture" href="{{ asset('storage/UserDocument/'.$campagnePost->file_couverture) }}">
                                         <img width="400" height="300" src="{{ asset('storage/UserDocument/'.$campagnePost->file_couverture) }}" alt="" srcset="">
                                     </a>
                                     

@@ -27,7 +27,7 @@ class JuryController extends Controller
         Mail::to($email)->send($mailable);
         $notification_gobi = array(
           'title' => 'Succès',
-          'sending' => "Lec compte a été validé avec succès",
+          'sending' => "Le compte a été validé avec succès",
           'type' => 'success',
   
           );
@@ -47,7 +47,7 @@ class JuryController extends Controller
             Mail::to($email)->send($mailable);
             $notification_gobi = array(
               'title' => 'Succès',
-              'sending' => "Lec compte a été désactivé avec succès",
+              'sending' => "Le compte a été désactivé avec succès",
               'type' => 'success',
       
               );
@@ -62,7 +62,7 @@ class JuryController extends Controller
         //dele the user from the database confirlation message
         $notification_gobi = array(
           'title' => 'Succès',
-          'sending' => "Lec compte a été supprimé avec succès",
+          'sending' => "Le compte a été supprimé avec succès",
           'type' => 'success',
   
           );

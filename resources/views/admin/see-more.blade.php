@@ -24,6 +24,8 @@
         position: absolute;
         top: 0;
         z-index: 1;
+        
+        
     }
 
     figure.profile-picture {
@@ -139,26 +141,39 @@
         position: absolute;
         z-index: 5;
     }
+    .profile-banner img{
+        
+    max-width: 100%;
+    max-height: 120%;
+
+    }
 
 </style>
 @section('content')
     <header> 
         <figure class="profile-banner">
             <!-- <img style="width: 1429px !important; height:300px" src="https://unsplash.it/975/300" alt="Profile banner" /> -->
-            <img style="width: 1429px !important; height:300px" src="{{asset('assets/img/banner/bg.jpg')}}" alt="Profile banner" />
+            <a data-fancybox="gallery" data-caption="Bannière" href="{{asset('assets/img/banner/ban.jpg')}}">
+                <img styles="width: 1429px !important; height:300px" src="{{asset('assets/img/banner/ban.jpg')}}" alt="Profile banner" />
+            </a>
         </figure>
         @if ($usersCount != 0 AND $users->photo != null)
             <img class="profile-photo" src="{{asset('assets/img/profile/'.$users->photo)}}" alt="Profile Photo" />
-        <figure class="profile-picture" style="background-image: url('{{ asset('storage/UserDocument/' . $users->photo) }}')">
-        </figure>
+        <a data-fancybox="gallery" data-caption="Profile" href="{{ asset('storage/UserDocument/' . $users->photo) }}">
+            <figure class="profile-picture" style="background-image: url('{{ asset('storage/UserDocument/' . $users->photo) }}')">
+            </figure>
+        </a>
         @else
-        <figure class="profile-picture" style="background-image: url('{{ asset('assets/gobi_avatar.png') }}')">
-        </figure>
+        
+        <a data-fancybox="gallery" data-caption="Profile" href="{{ asset('assets/gobi_avatar.png') }}">
+            <figure class="profile-picture" style="background-image: url('{{ asset('assets/gobi_avatar.png') }}')">
+            </figure>
+        </a>
         @endif
-        <div class="profile-stats">
+        <div style="background-color: #e15b1b" class="profile-stats">
             <ul>
                 <li>{{$hisCampagnes->count()}} <span>Campagnes</span></li>
-                <li>{{$solde ?? '0'}}XOF <span>Soldes</span></li>
+                <li>{{$user_solde ?? '0'}}XOF <span>Soldes</span></li>
                 <li>{{$lastLogin ?? ''}}<span>Dernière session</span></li>
                 
             </ul>
