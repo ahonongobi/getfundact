@@ -113,7 +113,8 @@ class AppServiceProvider extends ServiceProvider
             //get last 3 users id function
             $view->with('last_users', User::orderBy('id','DESC')->take(3)->get());
 
-            $view->with('last_users', );
+            //get last 3 user where user_type = admin
+            $view->with('last_admin', User::where('user_type','Admin')->orderBy('id','DESC')->take(3)->get());
 
             
             if (!(Auth::check())) {
