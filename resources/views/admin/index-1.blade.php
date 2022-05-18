@@ -213,9 +213,61 @@
                             </div>
                         </div>
                     </div>--}}
+                    
                 </div>
 
 
             </div>
+            <div id="container"></div>
         </div>
+        
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script type="text/javascript">
+    var users =  <?php echo json_encode($users) ?>;
+   
+    Highcharts.chart('container', {
+        title: {
+            text: 'Croissance Nouvaux utilisateurs, 2022'
+        },
+        subtitle: {
+            text: ''
+        },
+         xAxis: {
+            categories: ['Jan', 'Fev', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Au', 'Sep', 'Oct', 'Nov', 'Dec']
+        },
+        yAxis: {
+            title: {
+                text: 'Nombre de nouveaux utilisateurs'
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+        plotOptions: {
+            series: {
+                allowPointSelect: true
+            }
+        },
+        series: [{
+            name: 'Nouveaux utilisateurs',
+            data: users
+        }],
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    legend: {
+                        layout: 'horizontal',
+                        align: 'center',
+                        verticalAlign: 'bottom'
+                    }
+                }
+            }]
+        }
+    });
+    </script>
     @endsection

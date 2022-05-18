@@ -6,6 +6,7 @@ use App\Models\Campagne;
 use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -14,7 +15,14 @@ class AdminController extends Controller
     }
 
     public function index2(){
-        return view('admin.index-1');
+        //return view('admin.index-1');
+        //charts repports Monthly new Register Users
+        $users = User::select(DB::raw("COUNT(*) as count"))
+                    ->whereYear('created_at', date('Y'))
+                    ->groupBy(DB::raw("Month(created_at)"))
+                    ->pluck('count');
+
+        return view('admin.index-1', compact('users'));      
     }
 
     public function withdarwalView(){
