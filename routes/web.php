@@ -135,7 +135,9 @@ Route::any('/checkout',[ContrubutionController::class,'checkout']);
 Route::get('/my_org_social',[OrgController::class,'index']);
 Route::get('my_space_social',[MainController::class,'indexUserDash']);
 //route 
-//admin
+//midelware auth
+Route::group(["middleware"=>"auth"],function(){
+    //admin
 Route::get('/administration',[AdminController::class,'index']);
 Route::get('/withdarwal',[AdminController::class, 'withdarwalView']);
 Route::get('/campagnes-inactif',[AdminController::class,'campagnes_inactif']);
@@ -162,6 +164,7 @@ Route::get('/unpay/{id}',[JuryController::class,'unpay']);
 
 //Search in admin Route
 Route::post('search',[AdminController::class,'search']);
+});
 
 
 //kkiapay
