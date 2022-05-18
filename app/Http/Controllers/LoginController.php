@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Historique;
 use App\Models\Profile;
 use App\Models\User;
+use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -34,10 +35,13 @@ class LoginController extends Controller
                 if($profile){
                     //call getUserInfo function
                    $this->getUserInfo();
+                   //call touchUpdatedAt
+                     $this->touchUpdatedAt();
                     return redirect('/my_space');
                     
                 }else{
                     $this->getUserInfo();
+                    $this->touchUpdatedAt();
                     return redirect('/profile');
                 }
 
@@ -45,12 +49,14 @@ class LoginController extends Controller
             } 
             elseif(Auth::user()->user_type =="Organisation"){
                 $this->getUserInfo();
+                $this->touchUpdatedAt();
                 return redirect('/my_org');
             } 
 
             elseif(Auth::user()->user_type =="Admin"){
                 
                     $this->getUserInfo();
+                    $this->touchUpdatedAt();
                     return redirect('/dashboard-interface');
                 
             }
@@ -195,7 +201,14 @@ class LoginController extends Controller
         
         return redirect('/');
     }
-
+    //updated user session
+    public function touchUpdatedAt(){
+        if (Auth::check()) {
+            $user = User::find(Auth::user()->id);
+            $user->updated_at = Carbon::now();
+            $user->update();
+        }
+    }
     //get user info controller ip adress, mac, country, devices, email, user_id
     public function getUserInfo(){
         if (Auth::check()) {
@@ -245,4 +258,7 @@ class LoginController extends Controller
             $historique->save();
         }
     }
+
+    // touch updated_at colun when user is connected
+    
 }

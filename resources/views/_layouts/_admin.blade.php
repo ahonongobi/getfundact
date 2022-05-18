@@ -86,37 +86,15 @@
                 <img src="{{asset('assets/avatar7.png')}}" alt="image" class="profile-pic">
             </div>
             <div class="preview-item-content flex-grow">
-              <h6 class="preview-subject ellipsis font-weight-normal">David Grey
+              <h6 class="preview-subject ellipsis font-weight-normal">Gobi robot
               </h6>
               <p class="font-weight-light small-text text-muted mb-0">
-                The meeting is cancelled
+                Welcome dear {{Auth::user()->name}}
               </p>
             </div>
           </a>
-          <a class="dropdown-item preview-item">
-            <div class="preview-thumbnail">
-                <img src="assets/images/faces/face2.jpg" alt="image" class="profile-pic">
-            </div>
-            <div class="preview-item-content flex-grow">
-              <h6 class="preview-subject ellipsis font-weight-normal">Tim Cook
-              </h6>
-              <p class="font-weight-light small-text text-muted mb-0">
-                New product launch
-              </p>
-            </div>
-          </a>
-          <a class="dropdown-item preview-item">
-            <div class="preview-thumbnail">
-                <img src="assets/images/faces/face3.jpg" alt="image" class="profile-pic">
-            </div>
-            <div class="preview-item-content flex-grow">
-              <h6 class="preview-subject ellipsis font-weight-normal"> Johnson
-              </h6>
-              <p class="font-weight-light small-text text-muted mb-0">
-                Upcoming board meeting
-              </p>
-            </div>
-          </a>
+          
+          
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -133,9 +111,13 @@
               </div>
             </div>
             <div class="preview-item-content">
-              <h6 class="preview-subject font-weight-normal">Application Error</h6>
+              <h6 class="preview-subject font-weight-normal">Dernière session</h6>
               <p class="font-weight-light small-text mb-0 text-muted">
-                Just now
+               {{-- last login based on updated at on User model using carbon diffForHumans --}}
+                        @php
+                            \Carbon\Carbon::setLocale('fr');
+                        @endphp
+                      {{Auth::user()->updated_at->diffForHumans()}}
               </p>
             </div>
           </a>
@@ -210,149 +192,88 @@
     </div>
   </div>
 </div>
-<div style="background-color: #302c51 !important" id="right-sidebar" class="settings-panel">
+<div id="right-sidebar" class="settings-panel">
   <i class="settings-close ti-close"></i>
   <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
     <li class="nav-item">
-      <a class="nav-link active" id="todo-tab" data-toggle="tab" href="#todo-section" role="tab" aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
+      <a class="nav-link active" id="todo-tab" data-toggle="tab" href="#todo-section" role="tab" aria-controls="todo-section" aria-expanded="true">HISTORIQUE</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="chats-tab" data-toggle="tab" href="#chats-section" role="tab" aria-controls="chats-section">CHATS</a>
+      <a class="nav-link" id="chats-tab" data-toggle="tab" href="#chats-section" role="tab" aria-controls="chats-section">NOTIFICATIONS</a>
     </li>
   </ul>
   <div class="tab-content" id="setting-content">
     <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel" aria-labelledby="todo-section">
      <div class="p-3">
-      <div class="list-wrapper">
-        <ul class="d-flex flex-column-reverse todo-list todo-list-custom">
-          <li>
-            <div class="form-check form-check-flat">
-              <label class="form-check-label">
-                <input class="checkbox" type="checkbox">
-                Meeting with Urban Team
-              </label>
-            </div>
-            <i class="remove ti-close"></i>
-          </li>
-          <li class="completed">
-            <div class="form-check form-check-flat">
-              <label class="form-check-label">
-                <input class="checkbox" type="checkbox" checked>
-                Duplicate a project for new customer
-              </label>
-            </div>
-            <i class="remove ti-close"></i>
-          </li>
-          <li>
-            <div class="form-check form-check-flat">
-              <label class="form-check-label">
-                <input class="checkbox" type="checkbox">
-                Project meeting with CEO
-              </label>
-            </div>
-            <i class="remove ti-close"></i>
-          </li>
-          <li class="completed">
-            <div class="form-check form-check-flat">
-              <label class="form-check-label">
-                <input class="checkbox" type="checkbox" checked>
-                Follow up of team zilla
-              </label>
-            </div>
-            <i class="remove ti-close"></i>
-          </li>
-          <li>
-            <div class="form-check form-check-flat">
-              <label class="form-check-label">
-                <input class="checkbox" type="checkbox">
-                Level up for Antony
-              </label>
-            </div>
-            <i class="remove ti-close"></i>
-          </li>
-        </ul>
-      </div>
-      <div class="add-items d-flex mb-0 mt-2">
-        <input type="text" class="form-control todo-list-input"  placeholder="Add new task">
-        <button class="add btn btn-icon text-primary todo-list-add-btn bg-transparent"><i class="ti-location-arrow"></i></button>
-      </div>
-     </div>
-      <h4 class="px-3 text-muted mt-5 font-weight-light mb-0">Events</h4>
-      <div class="events pt-4 px-3">
-        <div class="wrapper d-flex mb-2">
-          <i class="ti-control-record text-primary mr-2"></i>
-          <span>Feb 11 2018</span>
-        </div>
-        <p class="mb-0 font-weight-thin text-gray">Creating component page build a js</p>
-        <p class="text-gray mb-0">The total number of sessions</p>
-      </div>
-      <div class="events pt-4 px-3">
-        <div class="wrapper d-flex mb-2">
-          <i class="ti-control-record text-primary mr-2"></i>
-          <span>Feb 7 2018</span>
-        </div>
-        <p class="mb-0 font-weight-thin text-gray">Meeting with Alisa</p>
-        <p class="text-gray mb-0 ">Call Sarah Graves</p>
-      </div>
-    </div>
-    <!-- To do section tab ends -->
-    <div class="tab-pane fade" id="chats-section" role="tabpanel" aria-labelledby="chats-section">
-      <div class="d-flex align-items-center justify-content-between border-bottom">
-        <p class="settings-heading border-top-0 mb-3 pl-3 pt-0 border-bottom-0 pb-0">Friends</p>
-        <small class="settings-heading border-top-0 mb-3 pt-0 border-bottom-0 pb-0 pr-3 font-weight-normal">See All</small>
-      </div>
       <ul class="chat-list">
+        {{--  btn danger to clear historique --}}
+        <a class="btn btn-danger text-white d-flex justify-content-center">Effacer l'historique</a>
+        @foreach ($historique as $item)
         <li class="list active">
+          <div class="profile"><img src="{{asset('assets/img/banner/Exclamation_mark_red.png')}}" alt="image"><span class="online"></span></div>
+          <div class="info">
+            <p>{{ $item->email }}</p>
+            <p>{{ $item->created_at->diffForHumans() }}</p>
+          </div>
+                        @php
+                            \Carbon\Carbon::setLocale('fr');
+                        @endphp
+                      
+          <small class="text-muted my-auto"></small>
+        </li>
+        @endforeach
+        {{--<li class="list active">
           <div class="profile"><img src="assets/images/faces/face1.jpg" alt="image"><span class="online"></span></div>
           <div class="info">
             <p>Thomas Douglas</p>
             <p>Available</p>
           </div>
           <small class="text-muted my-auto">19 min</small>
-        </li>
-        <li class="list">
-          <div class="profile"><img src="assets/images/faces/face2.jpg" alt="image"><span class="offline"></span></div>
+        </li>--}}
+      </ul>
+      
+     </div>
+      <h4 class="px-3 text-muted mt-5 font-weight-light mb-0">LES TACHES RECENTES</h4>
+      
+      <div class="events pt-4 px-3">
+        <div class="wrapper d-flex mb-2">
+          <i class="ti-control-record text-primary mr-2"></i>
+          <span>Il y 5h</span>
+        </div>
+        <p class="mb-0 font-weight-thin text-gray">abyssiniea@gmail.com</p>
+        <p class="text-gray mb-0 ">Suppression d'utilisateur</p>
+      </div>
+    </div>
+    <!-- To do section tab ends -->
+    <div class="tab-pane fade" id="chats-section" role="tabpanel" aria-labelledby="chats-section">
+      <div class="d-flex align-items-center justify-content-between border-bottom">
+        <p class="settings-heading border-top-0 mb-3 pl-3 pt-0 border-bottom-0 pb-0"></p>
+        <small class="settings-heading border-top-0 mb-3 pt-0 border-bottom-0 pb-0 pr-3 font-weight-normal">...</small>
+      </div>
+     
+      <ul class="chat-list">
+        @foreach ($historique as $item)
+        <li class="list active">
+          <div class="profile"><img src="{{asset('assets/img/banner/Exclamation_mark_red.png')}}" alt="image"><span class="online"></span></div>
           <div class="info">
-            <div class="wrapper d-flex">
-              <p>Catherine</p>
-            </div>
-            <p>Away</p>
+            <p>{{ $item->email }}</p>
+            <p>{{ $item->created_at->diffForHumans() }}</p>
           </div>
-          <div class="badge badge-success badge-pill my-auto mx-2">4</div>
-          <small class="text-muted my-auto">23 min</small>
+                        @php
+                            \Carbon\Carbon::setLocale('fr');
+                        @endphp
+                      
+          <small class="text-muted my-auto"></small>
         </li>
-        <li class="list">
-          <div class="profile"><img src="assets/images/faces/face3.jpg" alt="image"><span class="online"></span></div>
+        @endforeach
+        {{--<li class="list active">
+          <div class="profile"><img src="assets/images/faces/face1.jpg" alt="image"><span class="online"></span></div>
           <div class="info">
-            <p>Daniel Russell</p>
+            <p>Thomas Douglas</p>
             <p>Available</p>
           </div>
-          <small class="text-muted my-auto">14 min</small>
-        </li>
-        <li class="list">
-          <div class="profile"><img src="{{asset('assets/avatar7.png')}}" alt="image"><span class="offline"></span></div>
-          <div class="info">
-            <p>James Richardson</p>
-            <p>Away</p>
-          </div>
-          <small class="text-muted my-auto">2 min</small>
-        </li>
-        <li class="list">
-          <div class="profile"><img src="assets/images/faces/face5.jpg" alt="image"><span class="online"></span></div>
-          <div class="info">
-            <p>Madeline Kennedy</p>
-            <p>Available</p>
-          </div>
-          <small class="text-muted my-auto">5 min</small>
-        </li>
-        <li class="list">
-          <div class="profile"><img src="assets/images/faces/face6.jpg" alt="image"><span class="online"></span></div>
-          <div class="info">
-            <p>Sarah Graves</p>
-            <p>Available</p>
-          </div>
-          <small class="text-muted my-auto">47 min</small>
-        </li>
+          <small class="text-muted my-auto">19 min</small>
+        </li>--}}
       </ul>
     </div>
     <!-- chat tab ends -->
