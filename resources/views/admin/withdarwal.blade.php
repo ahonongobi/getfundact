@@ -19,6 +19,8 @@
                                                 <th>ID utilisateur</th>
                                                 <th>ID campagne-Nom campagne</th>
                                                 <th>Montant</th>
+                                                <th>Montant à récévoir(-20%)</th>
+                                                <th>%20 bénéfices</th>
                                                 <th>Date</th>
                                                 
                                                 <th>Etat </th>
@@ -38,6 +40,23 @@
                                                 
                                             @else
                                                <td>{{$item->montant}}XOF</td> 
+                                            @endif
+                                            
+                                            @if ($item->montant == null)
+                                            <td>0XOF</td>
+                                                
+                                            @else
+                                              {{-- redux 20% of montant --}}
+                                              <td>{{$item->montant-($item->montant*0.2)}}XOF</td> 
+                                              
+                                            @endif
+                                            @if ($item->montant == null)
+                                            <td>0XOF</td>
+                                                
+                                            @else
+                                              {{-- redux 20% of montant --}}
+                                              <td>{{($item->montant*0.2)}}XOF</td> 
+                                              
                                             @endif
                                             <td>{{$item->created_at}}</td>
                                             @if ($item->statut ==1)
@@ -96,6 +115,8 @@
                                                 <th>ID utilisateur</th>
                                                 <th>ID campagne-Nom campagne</th>
                                                 <th>Montant</th>
+                                                <th>Montant à récévoir(-20%)</th>
+                                                <th>%20 bénéfices</th>
                                                 <th>Date</th>
                                                 
                                                 <th>Etat </th>
@@ -116,6 +137,24 @@
                                             @else
                                                <td>{{$item->montant}}XOF</td> 
                                             @endif
+                                            {{-- calcul redux 20% of montant --}}
+                                            @if ($item->montant == null)
+                                            <td>0XOF</td>
+                                                
+                                            @else
+                                              {{-- redux 20% of montant --}}
+                                              <td>{{$item->montant-($item->montant*0.2)}}XOF</td> 
+                                              
+                                            @endif
+                                            @if ($item->montant == null)
+                                            <td>0XOF</td>
+                                                
+                                            @else
+                                              {{-- redux 20% of montant --}}
+                                              <td>{{($item->montant*0.2)}}XOF</td> 
+                                              
+                                            @endif
+                                            {{-- end calcul redux 20% of montant --}}
                                             <td>{{$item->created_at}}</td>
                                             @if ($item->statut ==1)
                                             <td class="font-weight-medium text-success">Déja soldé</td>
@@ -174,6 +213,8 @@
                                                 <th>ID utilisateur</th>
                                                 <th>ID campagne-Nom campagne</th>
                                                 <th>Montant</th>
+                                                <th>Montant à récévoir(-20%)</th>
+                                                <th>%20 bénéfices</th>
                                                 <th>Date</th>
                                                 
                                                 <th>Etat </th>
@@ -193,6 +234,24 @@
                                             @else
                                                <td>{{$item->montant}}XOF</td> 
                                             @endif
+                                            {{-- calcul redux 20% of montant --}}
+                                            @if ($item->montant == null)
+                                            <td>0XOF</td>
+                                                
+                                            @else
+                                              {{-- redux 20% of montant --}}
+                                              <td>{{$item->montant-($item->montant*0.2)}}XOF</td> 
+                                              
+                                            @endif
+                                            @if ($item->montant == null)
+                                            <td>0XOF</td>
+                                                
+                                            @else
+                                              {{-- redux 20% of montant --}}
+                                              <td>{{($item->montant*0.2)}}XOF</td> 
+                                              
+                                            @endif
+                                            {{-- end calcul redux 20% of montant --}}
                                             <td>{{$item->created_at}}</td>
                                             @if ($item->statut ==1)
                                             <td class="font-weight-medium text-success">Déja soldé</td>
