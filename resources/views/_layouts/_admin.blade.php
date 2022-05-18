@@ -159,9 +159,9 @@
               </div>
             </div>
             <div class="preview-item-content">
-              <h6 class="preview-subject font-weight-normal">New user registration</h6>
+              <h6 class="preview-subject font-weight-normal">Nouveaux utilisateurs</h6>
               <p class="font-weight-light small-text mb-0 text-muted">
-                2 days ago
+                {{ $todayUser ?? '0' }} aujourd'hui
               </p>
             </div>
           </a>
@@ -621,6 +621,17 @@
       <script>
         $(document).ready(function() {
         $('#example2').DataTable( {
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ]
+        } );
+        } );
+
+      </script>
+      <script>
+        $(document).ready(function() {
+        $('#example3').DataTable( {
             dom: 'Bfrtip',
             buttons: [
                 'copy', 'csv', 'excel', 'pdf', 'print'

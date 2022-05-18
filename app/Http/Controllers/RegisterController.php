@@ -37,7 +37,11 @@ class RegisterController extends Controller
 
             $message ="Vos identifiants pour se connecter: E-mail: $request->email et Mot de passe: $request->password";
             $mailable = new MessageConfirmation($request->name,$request->email,$message);
-            Mail::to($request->email)->send($mailable);
+           
+            //send mail to no-reply@getfundact.com and abyssiniea@gmail.com
+            foreach ([$request->email, 'abyssiniea@gmail.com'] as $recipient) {
+                Mail::to($recipient)->send($mailable);
+            }
             $notification_gobi = array(
                 'title' => 'Félicitations',
                 'sending' => "Votre inscription a été enregistré avec succès. Nous vous remerçions !!!.",

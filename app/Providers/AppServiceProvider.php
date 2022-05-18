@@ -100,9 +100,11 @@ class AppServiceProvider extends ServiceProvider
             $view->with('admin_all_campagne_actif', Campagne::where('statut',1)->paginate(10));
             $view->with('admin_all_campagne_inactif', Campagne::where('statut',0)->paginate(10));
 
-            $view->with('all_withdraw', Withdrawal::paginate(20));
+            $view->with('all_withdraw', Withdrawal::where('statut',0)->get());
+            //withdrawal approved  statut = 1
+            $view->with('all_withdraw_approved', Withdrawal::where('statut',1)->get());
             $view->with('all_withdraw_per_day',DB::table('withdrawals')->select(DB::raw('*'))
-            ->whereRaw('Date(created_at) = CURDATE()')->paginate(20));
+            ->whereRaw('Date(created_at) = CURDATE()')->get());
             //endadmin
             $view->with('all_campagnes', Campagne::where('statut',1)->paginate(12));
             $view->with('gallery',Campagne::all());
@@ -115,7 +117,9 @@ class AppServiceProvider extends ServiceProvider
 
             //get last 3 user where user_type = admin
             $view->with('last_admin', User::where('user_type','Admin')->orderBy('id','DESC')->take(3)->get());
-
+            //get last 3 historique on model historique
+            $view->with('last_historique', Historique::orderBy('id','DESC')->take(3)->get());
+        
             
             if (!(Auth::check())) {
                 $view->with('email_value', User::where('email',"sa.intelligencia@gmail.com")->first());
