@@ -18,9 +18,10 @@
                 </div>
 
                 <div class="row">
+                    
                     <div class="d-flex justify-content-between mb-3">
                         @if ($campagnePost->statut==0)
-                        <a href="{{ url('activePost/'.$campagnePost->id) }}" class="btn btn-success ml-3 text-white">Activer </a>
+                        <a href="{{ url('activePost/'.$campagnePost->id) }}" onclick="showSwal('auto-close')" class="btn btn-success ml-3 text-white">Activer </a>
 
                         @else
                         {{-- onclick for confirmation before delete  --}}

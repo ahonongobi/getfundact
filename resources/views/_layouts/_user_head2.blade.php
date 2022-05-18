@@ -304,7 +304,7 @@
                             
                             <img style="width: 300px" src="{{asset('assets/img/logogetf.png')}}" alt="Logo">
                         </a>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat vero, magni est placeat neque, repellat maxime a dolore</p>
+                        <p>"Il est indispensable de se lancer dans une levée de fonds quand on a fait la preuve de son concept ou a minima de sa capacité à exécuter" <br>Jean Patrice ANCIAUX</p>
                         <ul>
                             <li><a href="#" target="_blank"><i class="icofont-facebook"></i></a></li>
                             <li><a href="#" target="_blank"><i class="icofont-twitter"></i></a></li>
