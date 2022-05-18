@@ -39,8 +39,8 @@
 
     } else if (type === 'auto-close') {
       swal({
-        title: 'Auto close alert!',
-        text: 'I will close in 2 seconds.',
+        title: 'Ce action est impossible pour vous!',
+        text: "Seulement l'administrateur permanent peut le faire",
         timer: 2000,
         button: false
       }).then(

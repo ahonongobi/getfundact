@@ -41,6 +41,23 @@
       font-family: 'Nunito', sans-serif;
       font-family: 'Open Sans', sans-serif;
      }
+
+     .toastbox {
+      width: 280px;
+      padding: 10px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      text-align: center;
+      border-radius: 4px;
+      position: fixed;
+      top: 105%;
+      -webkit-transition: transform 0.3s linear;
+      transition: transform 0.3s linear;
+    }
+    .toastbox.toast-tox--active {
+      -webkit-transform: translateY(-150px);
+      transform: translateY(-150px);
+    }
    </style>
   </head>
 <body id="element" data-base-url="">
@@ -208,7 +225,7 @@
      <div class="p-3">
       <ul class="chat-list">
         {{--  btn danger to clear historique --}}
-        <a class="btn btn-danger text-white d-flex justify-content-center">Effacer l'historique</a>
+        <a onclick="showSwal('auto-close')"  class="btn btn-danger text-white d-flex justify-content-center">Effacer l'historique</a>
         @foreach ($historique as $item)
         <li class="list active">
           <div class="profile"><img src="{{asset('assets/img/banner/Exclamation_mark_red.png')}}" alt="image"><span class="online"></span></div>
@@ -420,7 +437,7 @@
                                     <h4 class="mb-0 font-weight-bold">4006</h4>
                                 </div>
                                 <div class="mb-3 mb-xl-0">
-                                    <a href="/logout" class="btn btn-warning rounded-0 text-white">Déconnexion</a>
+                                    <a href="/logout" class="btn btn-warning rounded-0 text-white"> <i class="ti-power-off"></i> Déconnexion</a>
                                 </div>
                             </div>
                         </div>
@@ -486,6 +503,7 @@
                 </div>
             </div>
 @yield('content')
+<span class="toastbox" role="alert"></span>
 
 <footer class="footer">
     <div class="container-fluid clearfix">
@@ -530,10 +548,12 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
       <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
       <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
-
+      <script src="{{asset('admin/assets/js/copied.js')}}"></script>
+      <script src="{{asset('admin/assets/js/copied2.js')}}"></script>
+      <script src="{{asset('admin/assets/js/copied3.js')}}"></script>
       <!-- <script src="../assets/js/alerts.js"></script> -->
       <script src="{{asset('admin/assets/js/alerts.js')}}"></script>
-      <script>
+      <script> 
         $(document).ready(function() {
         $('#example').DataTable( {
             dom: 'Bfrtip',
@@ -651,6 +671,7 @@
         });
       </script>
       <!--end fancybox-->
+      
       <script>
 
          

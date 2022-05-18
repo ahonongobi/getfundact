@@ -24,8 +24,8 @@
         position: absolute;
         top: 0;
         z-index: 1;
-        
-        
+
+
     }
 
     figure.profile-picture {
@@ -141,47 +141,50 @@
         position: absolute;
         z-index: 5;
     }
-    .profile-banner img{
-        
-    max-width: 100%;
-    max-height: 120%;
+
+    .profile-banner img {
+
+        max-width: 100%;
+        max-height: 120%;
 
     }
 
 </style>
 @section('content')
-    <header> 
+    <header>
         <figure class="profile-banner">
             <!-- <img style="width: 1429px !important; height:300px" src="https://unsplash.it/975/300" alt="Profile banner" /> -->
-            <a data-fancybox="gallery" data-caption="Bannière" href="{{asset('assets/img/banner/ban.jpg')}}">
-                <img styles="width: 1429px !important; height:300px" src="{{asset('assets/img/banner/ban.jpg')}}" alt="Profile banner" />
+            <a data-fancybox="gallery" data-caption="Bannière" href="{{ asset('assets/img/banner/ban.jpg') }}">
+                <img styles="width: 1429px !important; height:300px" src="{{ asset('assets/img/banner/ban.jpg') }}"
+                    alt="Profile banner" />
             </a>
         </figure>
-        @if ($usersCount != 0 AND $users->photo != null)
-            <img class="profile-photo" src="{{asset('assets/img/profile/'.$users->photo)}}" alt="Profile Photo" />
-        <a data-fancybox="gallery" data-caption="Profile" href="{{ asset('storage/UserDocument/' . $users->photo) }}">
-            <figure class="profile-picture" style="background-image: url('{{ asset('storage/UserDocument/' . $users->photo) }}')">
-            </figure>
-        </a>
+        @if ($usersCount != 0 and $users->photo != null)
+            <img class="profile-photo" src="{{ asset('assets/img/profile/' . $users->photo) }}" alt="Profile Photo" />
+            <a data-fancybox="gallery" data-caption="Profile" href="{{ asset('storage/UserDocument/' . $users->photo) }}">
+                <figure class="profile-picture"
+                    style="background-image: url('{{ asset('storage/UserDocument/' . $users->photo) }}')">
+                </figure>
+            </a>
         @else
-        
-        <a data-fancybox="gallery" data-caption="Profile" href="{{ asset('assets/gobi_avatar.png') }}">
-            <figure class="profile-picture" style="background-image: url('{{ asset('assets/gobi_avatar.png') }}')">
-            </figure>
-        </a>
+            <a data-fancybox="gallery" data-caption="Profile" href="{{ asset('assets/gobi_avatar.png') }}">
+                <figure class="profile-picture" style="background-image: url('{{ asset('assets/gobi_avatar.png') }}')">
+                </figure>
+            </a>
         @endif
         <div style="background-color: #e15b1b" class="profile-stats">
             <ul>
-                <li>{{$hisCampagnes->count()}} <span>Campagnes</span></li>
-                <li>{{$user_solde ?? '0'}}XOF <span>Soldes</span></li>
-                <li>{{$lastLogin ?? ''}}<span>Dernière session</span></li>
-                
+                <li>{{ $hisCampagnes->count() }} <span>Campagnes</span></li>
+                <li>{{ $user_solde ?? '0' }}XOF <span>Soldes</span></li>
+                <li>{{ $lastLogin ?? '' }}<span>Dernière session</span></li>
+
             </ul>
             <a style="background-color:red !important" href="javascript:void(0);" class="follow btn btn-danger">
                 Suspendre
             </a>
         </div>
-        <h1>{{$users->nom_prenoms ?? 'non rensigné' }} <small> memebre depuis {{$users->created_at ?? 'non rensigné' }}</small></h1>
+        <h1>{{ $users->nom_prenoms ?? 'non rensigné' }} <small> memebre depuis
+                {{ $users->created_at ?? 'non rensigné' }}</small></h1>
     </header>
     <div class="row">
 
@@ -241,15 +244,45 @@
                         </tr>
                         <tr>
                             <td>Iban</td>
-                            <td>{{ $users->iban ?? 'non rensigné' }}</td>
+                            <td>{{ $users->iban ?? 'non rensigné' }}
+                                {{-- copy icon to copy to clipboard --}}
+                                <a href="javascript:void(0);" class="copy-to-clipboard"
+                                    data-clipboard-text="{{ $users->iban ?? 'non rensigné' }}" data-toggle="tooltip"
+                                    data-placement="top" title="Copier">
+                                    <i class="ti-clipboard"></i>
+
+                                </a>
+                                <input type="hidden" name="copyIban" id="copyIban" value="{{ $users->iban ?? 'non rensigné' }}">
+                            </td>
+
                         </tr>
+                        
                         <tr>
                             <td>Bic</td>
-                            <td>{{ $users->bic ?? 'non rensigné' }}</td>
+                            <td>
+                                {{ $users->bic ?? 'non rensigné' }}
+                                {{-- copy icon to copy to clipboard --}}
+                                <a href="javascript:void(0);" class="copy-to-clipboard2"
+                                    data-clipboard-text="{{ $users->bic ?? 'non rensigné' }}" data-toggle="tooltip"
+                                    data-placement="top" title="Copier">
+                                    <i class="ti-clipboard"></i>
+
+                                </a>
+                               
+                                <input type="hidden" name="copyIban" id="copyBic" value="{{ $users->bic ?? 'non rensigné' }}">
+                            </td>
                         </tr>
                         <tr>
                             <td>Nom de banque</td>
-                            <td>{{ $users->nom_banque ?? 'non rensigné' }}</td>
+                            <td>{{ $users->nom_banque ?? 'non rensigné' }}
+                                {{-- copy icon to copy to clipboard --}}
+                                <a href="javascript:void(0);" class="copy-to-clipboard3"
+                                    data-clipboard-text="{{ $users->nom_banque ?? 'non rensigné' }}"
+                                    data-toggle="tooltip" data-placement="top" title="Copier">
+                                    <i class="ti-clipboard"></i>
+                                </a>
+                                <input type="hidden" name="copyIban" id="copyBanque" value="{{ $users->nom_banque ?? 'non rensigné' }}">
+                            </td>
                         </tr>
                         <tr>
                             <td>Code agence</td>
@@ -259,16 +292,18 @@
 
                     <div class="d-flex justify-content-between">
                         @if ($usersCount != 0)
-                            {{--<a href="{{ asset('storage/UserDocument/' . $users->photo) }}">
+                            {{-- <a href="{{ asset('storage/UserDocument/' . $users->photo) }}">
 
                                 <img style="width: 200px; height:200px;"
                                     src="{{ asset('storage/UserDocument/' . $users->photo) }}" alt="" srcset="">
-                            </a>--}}
-                            <a data-fancybox="gallery" data-caption="Carte nationale d'identité face" href="{{ asset('storage/UserDocument/' . $users->cni) }}">
+                            </a> --}}
+                            <a data-fancybox="gallery" data-caption="Carte nationale d'identité face"
+                                href="{{ asset('storage/UserDocument/' . $users->cni) }}">
                                 <img width="600" height="300" src="{{ asset('storage/UserDocument/' . $users->cni) }}"
                                     alt="" srcset="">
                             </a>
-                            <a data-fancybox="gallery" data-caption="Carte nationale d'identité arrière" href="{{ asset('storage/UserDocument/' . $users->s_cni) }}">
+                            <a data-fancybox="gallery" data-caption="Carte nationale d'identité arrière"
+                                href="{{ asset('storage/UserDocument/' . $users->s_cni) }}">
                                 <img width="600" height="300" src="{{ asset('storage/UserDocument/' . $users->s_cni) }}"
                                     alt="" srcset="">
                             </a>
@@ -306,47 +341,48 @@
                             </thead>
                             <tbody>
                                 @foreach ($hisCampagnes as $item)
-                                <tr>
-                                    <td>{{ $item->name }}</td>
-                                    <td>{{ $item->categories }}</td>
-                                    <td>{{ $item->duree }}</td>
-                                    <td>{{ $item->montant_v }}XOF</td>
-                                    <td>{{ $item->montant_cotise }}XOF</td>
-                
-                                    <td>{{ $item->name_b }}</td>
-                                    <td>{{ $item->hashtag }}</td>
-                                    <td>{{ $item->keys_word }}</td>
-                                    @if ($item->statut == 1)
-                                        <td class="font-weight-medium text-success">Actif</td>
-                                    @elseif($item->statut == 0)
-                                        <td class="font-weight-medium text-warning">Inactif</td>
-                                    @elseif($item->statut == 2)
-                                        <td class="font-weight-medium text-danger">Supprimer</td>
-                                    @endif
-                                    <td>
-                                        <p data-placement="top" data-toggle="tooltip" title="voir plus"><a
-                                                href="{{ url('see-more-campagne/' . $item->id) }}" class="btn btn-primary btn-lg"
-                                                data-title="Voir" data-target="#edit"><span class="ti-eye"></span></a></p>
-                                    </td>
-                                    <td>
-                                        <p data-placement="top" data-toggle="tooltip" title="Supprimer"><button class="btn btn-danger btn-lg"
-                                                data-title="Supprimer" data-toggle="modal" data-target="#delete"><span
-                                                    class="ti-trash"></span></button></p>
-                                    </td>
-                                    <td>
-                                        <p data-placement="top" data-toggle="tooltip" title="campagne actif"><button
-                                                class="btn btn-success btn-lg" data-title="Valider" data-toggle="modal"
-                                                data-target="#delete"><span class="ti-check"></span></button></p>
-                                    </td>
-                
-                                </tr>
+                                    <tr>
+                                        <td>{{ $item->name }}</td>
+                                        <td>{{ $item->categories }}</td>
+                                        <td>{{ $item->duree }}</td>
+                                        <td>{{ $item->montant_v }}XOF</td>
+                                        <td>{{ $item->montant_cotise }}XOF</td>
+
+                                        <td>{{ $item->name_b }}</td>
+                                        <td>{{ $item->hashtag }}</td>
+                                        <td>{{ $item->keys_word }}</td>
+                                        @if ($item->statut == 1)
+                                            <td class="font-weight-medium text-success">Actif</td>
+                                        @elseif($item->statut == 0)
+                                            <td class="font-weight-medium text-warning">Inactif</td>
+                                        @elseif($item->statut == 2)
+                                            <td class="font-weight-medium text-danger">Supprimer</td>
+                                        @endif
+                                        <td>
+                                            <p data-placement="top" data-toggle="tooltip" title="voir plus"><a
+                                                    href="{{ url('see-more-campagne/' . $item->id) }}"
+                                                    class="btn btn-primary btn-lg" data-title="Voir"
+                                                    data-target="#edit"><span class="ti-eye"></span></a></p>
+                                        </td>
+                                        <td>
+                                            <p data-placement="top" data-toggle="tooltip" title="Supprimer"><button
+                                                    class="btn btn-danger btn-lg" data-title="Supprimer" data-toggle="modal"
+                                                    data-target="#delete"><span class="ti-trash"></span></button></p>
+                                        </td>
+                                        <td>
+                                            <p data-placement="top" data-toggle="tooltip" title="campagne actif"><button
+                                                    class="btn btn-success btn-lg" data-title="Valider" data-toggle="modal"
+                                                    data-target="#delete"><span class="ti-check"></span></button></p>
+                                        </td>
+
+                                    </tr>
                                 @endforeach
 
 
                             </tbody>
                         </table>
                     </div>
-                    {{--<div class="d-flex justify-content-center"> {!! $hisCampagnes->links() !!}</div>--}}
+                    {{-- <div class="d-flex justify-content-center"> {!! $hisCampagnes->links() !!}</div> --}}
 
                 </div>
             </div>
