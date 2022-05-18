@@ -82,7 +82,7 @@
                 <i class="ti-search"></i>
               </span>
             </div>
-            <input type="text" name="search" class="form-control" id="navbar-search-input" placeholder="Rechercher (id user, email, nom )" aria-label="search" aria-describedby="search">
+            <input type="text" name="search" class="form-control" id="navbar-search-input" placeholder="Rechercher(email, nom )" aria-label="search" aria-describedby="search">
             
           </div>
           
@@ -313,21 +313,21 @@
       </li>
       <li class="nav-item ">
         <a class="nav-link" href="/campagnes-actif">
-          <i class="ti-settings menu-icon"></i>
+          <i class="ti-unlock menu-icon"></i>
           <span class="menu-title">Campagnes actifs</span>
         </a>
       </li>
 
       <li class="nav-item ">
         <a class="nav-link" href="/campagnes-inactif">
-          <i class="ti-settings menu-icon"></i>
+          <i class="ti-lock menu-icon"></i>
           <span class="menu-title">Campagnes inactif</span>
         </a>
       </li>
   
     <li class="nav-item ">
       <a class="nav-link" href="/withdarwal">
-        <i class="ti-settings menu-icon"></i>
+        <i class="ti-reload menu-icon"></i>
         <span class="menu-title">Retrait</span>
       </a>
     </li>
@@ -480,7 +480,7 @@
                             <div
                                 class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                                 <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0 text-white">{{ $todayUser }}</h3>
-                                <i style="color: white !important" class="ti-agenda icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
+                                <i style="color: white !important" class="ti-id-badge icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                             </div>
                             <p class="mb-0 mt-2 text-success d-none">10.00%<span class="text-black ml-1"><small>(30
                                         days)</small></span></p>
@@ -494,7 +494,8 @@
                             <div
                                 class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                                 <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0 text-white">{{ $all_withdraw_amount ?? '0' }}XOF</h3>
-                                <i style="color: white !important" class="ti-layers-alt icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
+                                {{-- icon ti-layers-alt   --}}
+                                <i style="color: white !important" class="ti-money icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                             </div>
                             <p class="mb-0 mt-2 text-success d-none">22.00%<span class="text-black ml-1"><small>(30
                                         days)</small></span></p>

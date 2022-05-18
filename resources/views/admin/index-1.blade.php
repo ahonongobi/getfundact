@@ -79,7 +79,7 @@
                                                                     <h5 class="mb-0 d-none">35.54%</h5>
                                                                 </div>
                                                             </div>
-                                                            <p class="text-white font-weight-light pr-lg-2 pr-xl-5">The
+                                                            <p class="text-white font-weight-light pr-lg-2 pr-xl-5">
                                                                </p>
                                                         </div>
                                                     </div>
@@ -107,7 +107,7 @@
                                                                     <h5 class="mb-0">0.056%</h5>
                                                                 </div>
                                                             </div>
-                                                            <p class="text-white font-weight-light pr-lg-2 pr-xl-5">The
+                                                            <p class="text-white font-weight-light pr-lg-2 pr-xl-5">
                                                                 </p>
                                                         </div>
                                                     </div>

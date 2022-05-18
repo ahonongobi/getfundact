@@ -22,7 +22,8 @@
                                                 <th>Date</th>
                                                 
                                                 <th>Etat </th>
-                                                <th>Action </th>
+                                                <th>Valider</th>
+                                                <th>Voir</th>
                                                 
                                             </tr>
                                         </thead>
@@ -49,21 +50,24 @@
                                             @endif
                                             @if ($item->statut ==0)
                                             <td>
-
+                                                <p data-placement="top" data-toggle="tooltip" title="Cliquer pour valider">
                                                 <a onclick="return confirm('Voulez vous vraiment confirmer le paiement?')" href="{{ url('pay/'.$item->id) }}" class="btn btn-danger rounded-0 text-white"><i class="ti-close"></i></a>
-
+                                                </p>
                                             </td>
                                             @endif
 
                                             @if ($item->statut ==1)
                                             <td>
-
+                                                <p data-placement="top" data-toggle="tooltip" title="Paiement valider aujourd'hui">
                                                 <a onclick="return confirm('Voulez vous vraiment annuler le paiement?')" href="{{ url('unpay/'.$item->id) }}" class="btn btn-warning rounded-0 text-white"><i class="ti-check"></i></a>
-
+                                                </p>
                                             </td>
                                             @endif
                                            
-                                            
+                                            <td>
+                                                
+                                                <p data-placement="top" data-toggle="tooltip" title="voir plus sur l'utilisateur"><a href="{{ url('see-more/' . $item->id_user) }}" class="btn btn-primary btn-lg" data-title="Voir"  data-target="#edit" ><span class="ti-eye"></span></a></p>
+                                            </td>
                                             
                                         </tr>  
                                           @endforeach
@@ -95,7 +99,8 @@
                                                 <th>Date</th>
                                                 
                                                 <th>Etat </th>
-                                                <th>Action </th>
+                                                <th>Valider </th>
+                                                <th>Voir </th>
                                                 
                                             </tr>
                                         </thead>
@@ -122,22 +127,25 @@
                                             @endif
                                             @if ($item->statut ==0)
                                             <td>
-
+                                                <p data-placement="top" data-toggle="tooltip" title="Cliquer pour valider">
                                                 <a onclick="return confirm('Voulez vous vraiment confirmer le paiement?')" href="{{ url('pay/'.$item->id) }}" class="btn btn-danger rounded-0 text-white"><i class="ti-close"></i></a>
-
+                                                </p>
                                             </td>
                                             @endif
 
                                             @if ($item->statut ==1)
                                             <td>
-
-                                                <a onclick="return confirm('Voulez vous vraiment annuler le paiement?')" href="{{ url('unpay/'.$item->id) }}" class="btn btn-warning rounded-0 text-white"><i class="ti-check"></i></a>
-
+                                               <p data-placement="top" data-toggle="tooltip" title="voir plus sur l'utilisateur">
+                                                <a data-title="Voir"  data-target="#edit" onclick="return confirm('Voulez vous vraiment annuler le paiement?')" href="{{ url('unpay/'.$item->id) }}" class="btn btn-warning rounded-0 text-white"><i class="ti-check"></i></a>
+                                                </p>
                                             </td>
                                             @endif
+                                            {{-- see more button --}}
+                                            <td>
+                                                
+                                                <p data-placement="top" data-toggle="tooltip" title="voir plus sur l'utilisateur"><a href="{{ url('see-more/' . $item->id_user) }}" class="btn btn-primary btn-lg" data-title="Voir"  data-target="#edit" ><span class="ti-eye"></span></a></p>
+                                            </td>
                                            
-                                            
-                                            
                                         </tr>  
                                           @endforeach
                                             
@@ -196,17 +204,17 @@
                                             @endif
                                             @if ($item->statut ==0)
                                             <td>
-
+                                                <p data-placement="top" data-toggle="tooltip" title="Paiement valider">
                                                 <a onclick="return confirm('Voulez vous vraiment confirmer le paiement?')" href="{{ url('pay/'.$item->id) }}" class="btn btn-danger rounded-0 text-white"><i class="ti-close"></i></a>
-
+                                                </p>
                                             </td>
                                             @endif
 
                                             @if ($item->statut ==1)
                                             <td>
-
+                                                <p data-placement="top" data-toggle="tooltip" title="Paiement valider déja">
                                                 <a onclick="return confirm('Voulez vous vraiment annuler le paiement?')" href="{{ url('unpay/'.$item->id) }}" class="btn btn-warning rounded-0 text-white"><i class="ti-check"></i></a>
-
+                                                </p>
                                             </td>
                                             @endif
                                            
