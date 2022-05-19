@@ -32,7 +32,7 @@ return [
     'google' => [
         'client_id' => '512700811198-nccfvus15ldkho56jesjg8j2bqq3gp48.apps.googleusercontent.com',
         'client_secret' => 'DS7PDo4K1gUfIphFY2xNDo_n',
-        'redirect' => 'http://localhost:8000/auth/google/callback',
+        'redirect' => 'https://getfundact.com/auth/google/callback',
     ],
 
     'facebook' => [
