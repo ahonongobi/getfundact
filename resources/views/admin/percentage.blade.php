@@ -54,13 +54,13 @@
        @csrf
         <fieldset>
           <div class="form-group">
-            <input class="form-control" type="text" name="pourcentage" placeholder="Ajouter la valeur pourcentage ex: 10" />
+            <input required class="form-control" type="text" name="pourcentage" placeholder="Ajouter la valeur pourcentage ex: 10" />
           </div>
           <div class="form-group">
             <input class="form-control" type="text" name="messagae" placeholder="Message spécifique ? ecrivez ici" />
           </div>
           
-          <button class="btn btn-primary next action-button float-left" type="submit" name="next" value="Next" />Mettre en application</button>
+          <button style='background-color:#302c51 !important' class="btn btn-primary next action-button float-left" type="submit" name="next" value="Next" />Mettre en application</button>
         </fieldset>
         
         

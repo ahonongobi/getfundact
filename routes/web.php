@@ -58,7 +58,10 @@ Route::get('/why-choose-us', function () {
 Route::get('/sucess', function () {
     return view('sucess');
 });
-
+//404 page not found function
+Route::get('*', function () {
+    return view('404');
+});
 
 Route::get('login',[LoginController::class,'view'])->name('login');
 Route::get('register',[RegisterController::class,'view'])->name('regiter');
