@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Campagne;
+use App\Models\Pourcentage;
 use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -69,4 +70,13 @@ class AdminController extends Controller
         ->orWhere("name", "LIKE" ,'%'.$request->input("search").'%')->orWhere("surname", "LIKE" ,'%'.$request->input("search").'%')->orWhere("user_type", "LIKE" ,'%'.$request->input("search").'%')->paginate(40);
         return view('admin.search', compact('searchs'));
     }
+    //pourcenrage function
+    public function percentage(){
+        //retrieve data from database order by id DESC using Pourcentage Model
+        $pourcentages = Pourcentage::orderBy('id', 'DESC')->get();
+        return view('admin.percentage', compact('pourcentages'));
+       //return view pourcenrage
+       
+    }
+    
 }

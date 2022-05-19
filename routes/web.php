@@ -17,6 +17,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\WithdrawalController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\PourcentageController;
 use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
@@ -164,6 +165,12 @@ Route::get('/unpay/{id}',[JuryController::class,'unpay']);
 
 //Search in admin Route
 Route::post('search',[AdminController::class,'search']);
+//POurcenrage route 
+Route::get('/percentage',[AdminController::class,'percentage']);
+//post route of percentage
+Route::post('/percentage',[PourcentageController::class,'percentagePost']);
+// create admin.percentage.delete route
+Route::get('/percentage/delete/{id}',[PourcentageController::class,'percentageDelete'])->name('admin.percentage.delete');
 });
 
 

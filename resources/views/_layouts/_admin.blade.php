@@ -340,6 +340,13 @@
         <span class="menu-title">Notifications</span>
       </a>
     </li>
+
+    <li class="nav-item ">
+      <a class="nav-link" href="{{ url('percentage') }}">
+        <i class="ti-stats-down menu-icon"></i>
+        <span class="menu-title">Pourcentage</span>
+      </a>
+    </li>
     
     <li class="nav-item ">
         <a class="nav-link" href="/logout">
