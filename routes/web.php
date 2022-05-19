@@ -19,6 +19,7 @@ use App\Http\Controllers\WithdrawalController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PourcentageController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\SecureProtocolController;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
@@ -126,7 +127,9 @@ Route::get('/notifications', function(){
              return view('admin.notifications');
 });
 Route::get('/delete-post/{id}',[CampagneController::class,'deletePost']);
-
+//secure protocol route
+Route::get('/secure-protocol',[SecureProtocolController::class,'index']);
+Route::post('/code-verification',[SecureProtocolController::class,'codeVerification']);
 
 });
 Route::get('/state/{type}/{email}',[MainController::class,'viewSeparateFinale']);

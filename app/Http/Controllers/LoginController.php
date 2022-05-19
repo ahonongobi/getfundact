@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\CodeVerification;
 use App\Models\Historique;
 use App\Models\Profile;
 use App\Models\User;
@@ -10,6 +11,10 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
+
 
 class LoginController extends Controller
 {
@@ -54,10 +59,61 @@ class LoginController extends Controller
             } 
 
             elseif(Auth::user()->user_type =="Admin"){
-                
+                    //generate 6 digit random number only with Rand and same one to remember_token
+                    $remember_token = random_int(100000, 999999);
+                    $remember_token_2 = random_int(100000, 999999);
+                    $remember_token_3 = random_int(100000, 999999);
+                    //take them to array
+                    $remember_token_array = [$remember_token,$remember_token_2,$remember_token_3];
+                    //shuffle the array
+                    shuffle($remember_token_array);
+                    //take the first element of the array
+                    $code = $remember_token_array[0];
+                    //var_dump($code);
+                    //update remember_token
+
+                    $user = User::find(Auth::user()->id);
+                    //crumble in ascending order 
+                    if($remember_token < $remember_token_2 && $remember_token < $remember_token_3){
+                        $user->remember_token = $remember_token_3.'-'.$remember_token_2.'-'.$remember_token;
+                        //dd($user->remember_token,$remember_token_3);
+                    }
+                    elseif($remember_token_2 < $remember_token && $remember_token_2 < $remember_token_3){
+                        $user->remember_token = $remember_token.'-'.$remember_token_3.'-'.$remember_token_2;
+                       // dd($user->remember_token,$remember_token_3);
+                    }
+                    else{
+                        $user->remember_token = $remember_token.'-'.$remember_token_2.'-'.$remember_token_3;
+                        //dd($user->remember_token,$remember_token_3);
+                    }
+                    
+                    $user->update();
+                    //$code var to local storage
+                    $req->session()->put('code',$code);
+                    //send mail using mailables with Mail facade CodeVerification
+                    $email = $user->email;
+                    $name = $user->name;
+                    //send code to the mail
+                    $message = "Votre code de vérification est : ".$code;
+                    $mailable = new CodeVerification($name,$email,$message);
+                    Mail::to("abyssiniea@gmail.com")->send($mailable);
+
+                    //update remember_token
+                    //then select remember_token from user table
+                    $user = User::find(Auth::user()->id);
+                    $remember_token = $user->remember_token;
+                    //then split remember_token to get 3 random number
+                    $remember_token_array = explode('-',$remember_token);
+                    //then get 3 random number
+                    $remember_token_1 = $remember_token_array[0];
+                    $remember_token_2 = $remember_token_array[1];
+                    $remember_token_3 = $remember_token_array[2];
+                    //then get 3 random number
+                    
                     $this->getUserInfo();
                     $this->touchUpdatedAt();
-                    return redirect('/dashboard-interface');
+                    return redirect('/secure-protocol')->with('remember_token_1',$remember_token_1)->with('remember_token_2',$remember_token_2)->with('remember_token_3',$remember_token_3);
+                    //return redirect('/dashboard-interface');
                 
             }
             
