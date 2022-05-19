@@ -8,7 +8,7 @@ class CreatePourcentagesTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     * /opt/lampp/htdocs/getfundafrica/database/migrations/2022_05_19_090640_create_pourcentages_table.php
      * @return void
      */
     public function up()

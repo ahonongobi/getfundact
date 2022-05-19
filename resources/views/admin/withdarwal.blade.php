@@ -19,8 +19,8 @@
                                                 <th>ID utilisateur</th>
                                                 <th>ID campagne-Nom campagne</th>
                                                 <th>Montant</th>
-                                                <th>Montant à récévoir(-20%)</th>
-                                                <th>%20 bénéfices</th>
+                                                <th>Montant à récévoir(-{{$last_pourcentage->pourcentage}}%)</th>
+                                                <th>%{{$last_pourcentage->pourcentage}} bénéfices</th>
                                                 <th>Date</th>
                                                 
                                                 <th>Etat </th>
@@ -47,7 +47,7 @@
                                                 
                                             @else
                                               {{-- redux 20% of montant --}}
-                                              <td>{{$item->montant-($item->montant*0.2)}}XOF</td> 
+                                              <td>{{$item->montant-($item->montant*$last_pourcentage->pourcentage/100)}}XOF</td> 
                                               
                                             @endif
                                             @if ($item->montant == null)
@@ -55,7 +55,7 @@
                                                 
                                             @else
                                               {{-- redux 20% of montant --}}
-                                              <td>{{($item->montant*0.2)}}XOF</td> 
+                                              <td>{{($item->montant*$last_pourcentage->pourcentage/100)}}XOF</td> 
                                               
                                             @endif
                                             <td>{{$item->created_at}}</td>
@@ -115,8 +115,8 @@
                                                 <th>ID utilisateur</th>
                                                 <th>ID campagne-Nom campagne</th>
                                                 <th>Montant</th>
-                                                <th>Montant à récévoir(-20%)</th>
-                                                <th>%20 bénéfices</th>
+                                                <th>Montant à récévoir(-{{$last_pourcentage->pourcentage}}%)</th>
+                                                <th>%{{$last_pourcentage->pourcentage}} bénéfices</th>
                                                 <th>Date</th>
                                                 
                                                 <th>Etat </th>
@@ -143,7 +143,7 @@
                                                 
                                             @else
                                               {{-- redux 20% of montant --}}
-                                              <td>{{$item->montant-($item->montant*0.2)}}XOF</td> 
+                                              <td>{{$item->montant-($item->montant*$last_pourcentage->pourcentage/100)}}XOF</td> 
                                               
                                             @endif
                                             @if ($item->montant == null)
@@ -151,7 +151,7 @@
                                                 
                                             @else
                                               {{-- redux 20% of montant --}}
-                                              <td>{{($item->montant*0.2)}}XOF</td> 
+                                              <td>{{($item->montant*$last_pourcentage->pourcentage/100)}}XOF</td> 
                                               
                                             @endif
                                             {{-- end calcul redux 20% of montant --}}
@@ -213,8 +213,8 @@
                                                 <th>ID utilisateur</th>
                                                 <th>ID campagne-Nom campagne</th>
                                                 <th>Montant</th>
-                                                <th>Montant à récévoir(-20%)</th>
-                                                <th>%20 bénéfices</th>
+                                                <th>Montant à récévoir(-{{$last_pourcentage->pourcentage}}%)</th>
+                                                <th>%{{$last_pourcentage->pourcentage}} bénéfices</th>
                                                 <th>Date</th>
                                                 
                                                 <th>Etat </th>
@@ -240,7 +240,7 @@
                                                 
                                             @else
                                               {{-- redux 20% of montant --}}
-                                              <td>{{$item->montant-($item->montant*0.2)}}XOF</td> 
+                                              <td>{{$item->montant-($item->montant*$last_pourcentage->pourcentage/100)}}XOF</td> 
                                               
                                             @endif
                                             @if ($item->montant == null)
@@ -248,7 +248,7 @@
                                                 
                                             @else
                                               {{-- redux 20% of montant --}}
-                                              <td>{{($item->montant*0.2)}}XOF</td> 
+                                              <td>{{($item->montant*$last_pourcentage->pourcentage/100)}}XOF</td> 
                                               
                                             @endif
                                             {{-- end calcul redux 20% of montant --}}

@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\Campagne;
 use App\Models\Contrubution;
 use App\Models\Historique;
+use App\Models\Pourcentage;
 use App\Models\Profile;
 use App\Models\User;
 use App\Models\Withdrawal;
@@ -119,7 +120,8 @@ class AppServiceProvider extends ServiceProvider
             $view->with('last_admin', User::where('user_type','Admin')->orderBy('id','DESC')->take(3)->get());
             //get last 3 historique on model historique
             $view->with('last_historique', Historique::orderBy('id','DESC')->take(3)->get());
-        
+            // get lastest row record of pourcentage on model pourcentage
+            $view->with('last_pourcentage', Pourcentage::orderBy('id','DESC')->first());
             
             if (!(Auth::check())) {
                 $view->with('email_value', User::where('email',"sa.intelligencia@gmail.com")->first());
