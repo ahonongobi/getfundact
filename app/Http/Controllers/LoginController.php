@@ -252,8 +252,10 @@ class LoginController extends Controller
             $mac = str_replace('	', '', $mac);
             $mac = str_replace('	', '', $mac);
             $mac = str_replace('	', '', $mac);
-            $historique->mac = $mac;
-           
+             //get user computer name
+            $computer_name = shell_exec('hostname');
+            $historique->mac = $mac.' '.$computer_name;
+            
             // end send ip and country to historique table using histotique model
             $historique->save();
         }
