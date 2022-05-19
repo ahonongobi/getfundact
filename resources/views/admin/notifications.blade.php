@@ -16,7 +16,7 @@
         <i class="mdi mdi-alert-circle"></i> Warning! Better check yourself, you're not looking too good. </div>--}}
         @foreach ($historique as $item)
         <div class="alert alert-fill-danger" role="alert">
-          <i class="mdi mdi-alert-circle"></i>IP: {{$item->ip ?? ''}} |Devices: {{$item->devices ?? ''}} | E-mail: {{$item->email ?? ''}} | Pays: {{$item->country ?? ''}} | On date : {{$item->created_at ?? ""}}
+          <i class="mdi mdi-alert-circle"></i>IP: {{$item->ip ?? ''}}|Mac/Computer user: {{$item->mac ?? ''}} |Devices: {{$item->devices ?? ''}} | E-mail: {{$item->email ?? ''}} | Pays: {{$item->country ?? ''}} | On date : {{$item->created_at ?? ""}}
         </div>
         @endforeach
       
