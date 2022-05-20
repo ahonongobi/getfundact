@@ -3,6 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="GetfundAct est une plateforme de cagnotte en ligne internationale, qui permet à des groupes, à  des associations et à  des communautés de récolter des fonds auprès des  personnes éparpillées dans le Monde et ainsi de se mobiliser pour un proche, un collègue ou d’agir solidairement pour des causes environnementales, sociales, culturelles…">
+	    <meta name="description"  content="Getfund action  est un site internet  qui permet de collecter des fonds auprès du grand public pour financer un projet.">
+	     <meta  name="keywords" content="getfundact, getfund action,  collecte de funds , Crowdfunding afrique, Crowdfunding  benin ,Financement participatif, intellegencia si , Gboyou Guillaume Lewis,Ahonon Goby Parfait, Crowdfunding africa">
+
+        
 
         <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
 
@@ -31,7 +36,11 @@
         <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
         <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
         <title>GetFund action, soutenez la communauté</title>
-        <link rel="icon" type="image/png" href="{{('assets/img/favicon.png')}}">
+        {{--<link rel="icon" type="image/png" href="{{('assets/img/favicon.png')}}">--}}
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+        <link rel="manifest" href="/favicon_io/site.webmanifest">
         <script src="{{asset('assets/ckeditor/ckeditor.js')}}" ></script>
         <style>
             body{
@@ -73,30 +82,48 @@
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
+                                    {{-- heck if profile is completed and cni is not null, s_cni, is not null, iban is not nulln bic is not null --}}
+                                    @if ((!$check_if_user_complete_profile == 0))    
                                     <a href="{{ url('profile') }}" class="nav-link dropdown-toggle active">MON PROFIL 
                                     
                                     </a>
+                                    @else 
+                                    <a onclick="accountArchived()" class="nav-link dropdown-toggle">MON PROFIL
+                                    </a>
+                                    @endif
                                   
                                 </li>
 
                                 <li class="nav-item">
+                                    @if ((!$check_if_user_complete_profile == 0))  
                                     <a href="{{ route('my-campagne') }}" class="nav-link dropdown-toggle ">MES CAMAPAGNES 
                                     
                                     </a>
+                                    @else
+                                    <a onclick="accountArchived()" class="nav-link dropdown-toggle">MES CAMAPAGNES
+                                    </a>
+                                    @endif
                                   
                                 </li>
 
 
 
                                 <li class="nav-item">
+                                    @if ((!$check_if_user_complete_profile == 0))
                                     <a href="{{ url('contributions') }}" class="nav-link dropdown-toggle ">MES COMTRIBUTIONS 
                                     
                                     </a>
+                                    @else
+                                    <a onclick="accountArchived()" class="nav-link dropdown-toggle">MES COMTRIBUTIONS
+                                    </a>
+                                    @endif
+                                    
                                   
                                 </li>
 
                               
                                 <li class="nav-item">
+
                                     <a href="{{ url('logout') }}" class="nav-link ">SE DECONNECTER 
                                     <i class="icofont-power"></i>
                                     </a>
@@ -106,10 +133,18 @@
                             
                             </ul>
                             <div class="side-nav">
+                                @if ((!$check_if_user_complete_profile == 0))
                                 <a class="donate-btn" href="{{ url('campagne') }}">
                                     DEMARER
                                     <i class="icofont-heart-alt"></i>
                                 </a>
+                                @else
+                                <a onclick="accountArchived()" class="donate-btn">
+                                    DEMARER
+                                    <i class="icofont-heart-alt"></i>
+                                </a>
+                                @endif
+
                             </div>
                         </div>
                     </nav> 
@@ -297,9 +332,10 @@
   @yield('content')
 
 
-  <footer class="footer-area pt-100">
+  <footer class="footer-area">
+      {{-- set pt-100 to take the height large if you want. --}}
     <div class="container">
-        <div class="row">
+        {{--<div class="row">
             <div class="col-sm-6 col-lg-6">
                 <div class="footer-item">
                     <div class="footer-logo">
@@ -363,7 +399,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--}}
         <div class="copyright-area">
             <p>Copyright ©2021- <script>document.write(new Date().getFullYear())</script>  GETFUND ACT. Développé  par 
                 <a href="https://intelligencia-si.com/" target="_blank">Intelligencia SI</a> | <a href="">Notice légale et confidentialité</a>
@@ -371,24 +407,43 @@
 
         </div>
     </div>
-    <script  type="text/javascript">
-        var config = {
-          phone :" 22991357584",
-          call :"Chattez avec nous",
-          position :"ww-right",
-          size : "ww-normal",
-          text : "GetfundAct est une plateforme de cagnotte en ligne internationale, qui permet à des groupes, des associations et des communautés de récolter des fonds auprès de personnes éparpillées dans le Monde et ainsi de se mobiliser pour un proche, un collègue ou d’agir solidairement pour des causes environnementales, sociales, culturelles…",
-          type: "ww-standard",
-          brand: "Getfund action",
-          subtitle: "",
-          welcome: "Salut, en quoi nous pouvons vous aider ?"
-        };
-        var proto = document.location.protocol, host = "cloudfront.net", url = proto + "//d3kzab8jj16n2f." + host;
-          var s = document.createElement("script"); s.type = "text/javascript"; s.async = true; s.src = url + "/v2/main.js";
-      
-          s.onload = function () { tmWidgetInit(config) };
-          var x = document.getElementsByTagName("script")[0]; x.parentNode.insertBefore(s, x);
-      </script>
+  
+    <script>
+    var url = 'https://wati-integration-service.clare.ai/ShopifyWidget/shopifyWidget.js?10582';
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = url;
+    var options = {
+  "enabled":true,
+  "chatButtonSetting":{
+      "backgroundColor":"#E15C1b", 
+      "ctaText":"Démarer..",
+      "borderRadius":"50",
+      "marginLeft":"0",
+      "marginBottom":"50",
+      "marginRight":"50",
+      "position":"right"
+  },
+  "brandSetting":{
+      "brandName":"Getfund Action",
+      "brandSubTitle":"Lewis Guillaume ",
+      "brandImg":"https://www.getfundact.com/assets/img/favicon.png",
+      "welcomeText":"Bonjour !\nComment puis-je vous aider ? \n Nous vous assistons pour la création de votre campagne. ",
+      "messageText":" Salut ! Comment ça marche ?",
+      "backgroundColor":"#302c51",
+      "ctaText":"Nous écrire..",
+      "borderRadius":"25",
+      "autoShow":true,
+      "phoneNumber":"22994696763"
+  }
+};
+    s.onload = function() {
+        CreateWhatsappChatWidget(options);
+    };
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
+</script>
 </footer>
 
 
@@ -654,6 +709,25 @@ $('.select2button').select2button();
         });
     }
 </script>
-
+ <script>
+     //swal warning function accountArchived() 
+        function accountArchived() {
+            swal({
+                title: "Compte inactif",
+                text: "Veuillez renseigner les informations au niveau de votre profil et confirmer votre identité en soumettant une copie de votre carte d'identité ou passeport dans l'onglet <identité> afin que le compte activé. ",
+                type: "warning",
+                showCancelButton: false,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "OK",
+                closeOnConfirm: false
+            },
+            function(isConfirm){
+                if (isConfirm) {
+                    //close the swal
+                    window.location.href = "/profile";
+                }
+            });
+        }
+ </script>
 </body>
 </html>

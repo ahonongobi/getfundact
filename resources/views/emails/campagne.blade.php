@@ -23,7 +23,7 @@ Les boutons de réseaux sociaux sur votre page Getfund action permettent à tout
 **J'agrémente la page de la cagnotte** \
 Ajouter une photo de profil sur votre page de cagnotte la rendra plus dynamique (se rendre à la page et cliquer sur modifier la cagnotte). Si vous disposez d'une vidéo fun, amusant ou émouvant, insérez son lien YouTube ou vidéo dans le formulaire de modification de votre cagnotte. Notez que vous devrez être connecté à votre compte Getfund Action pour effectuer toutes ces modifications.
 
-Nous vous remercions d'avoir choisi Getfund Action pour votre campagne. Lien de votre campagne :<a style='cursor:pointer;' target='_blank' href='https://getfundact.com/getfund-donation-details/{{$id}}/{{$name}}'>https://getfundact.com/getfund-donation-details/{{$id}}/{{$name}}</a> \
+Nous vous remercions d'avoir choisi Getfund Action pour votre campagne. Lien de votre campagne :<a style='cursor:pointer;' target='_blank' href='https://getfundact.com/collecte/{{$id}}'>https://getfundact.com/collecte/{{$id}}</a> \
 C'est à vous! Bonne chance!
 
 L'équipe Getfundact

@@ -22,6 +22,8 @@ class ContrubutionController extends Controller
         //dd($request->id_author);
         $okToSendMoney = new Contrubution();
         $okToSendMoney->id_user = Auth::user()->id ?? '0';
+        //send id_secret_campagne 
+        $okToSendMoney->id_secret_campagne  = $request->id_secret_campagne ?? '0';
         
         if (Auth::check()) {
             $takeProfile = Profile::where('user_id',Auth::user()->id)->first();

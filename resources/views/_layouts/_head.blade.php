@@ -34,7 +34,12 @@
         <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/theme-dark.css')}}">
         <title>GetFund action, soutenez la communauté</title>
-        <link rel="icon" type="image/png" href="assets/img/favicon.png">
+        {{--<link rel="icon" type="image/png" href="{{('assets/img/favicon.png')}}">--}}
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+        <link rel="manifest" href="/favicon_io/site.webmanifest">
+        
         <style>
             a, .nav-item{
                 font-family: montserrat !important;
@@ -287,6 +292,44 @@
         </div>
     </div>
 </footer>
+
+
+<script>
+    var url = 'https://wati-integration-service.clare.ai/ShopifyWidget/shopifyWidget.js?10582';
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = url;
+    var options = {
+  "enabled":true,
+  "chatButtonSetting":{
+      "backgroundColor":"#E15C1b", 
+      "ctaText":"Démarer..",
+      "borderRadius":"50",
+      "marginLeft":"0",
+      "marginBottom":"50",
+      "marginRight":"50",
+      "position":"right"
+  },
+  "brandSetting":{
+      "brandName":"Getfund Action",
+      "brandSubTitle":"Lewis Guillaume ",
+      "brandImg":"https://www.getfundact.com/assets/img/favicon.png",
+      "welcomeText":"Bonjour !\nComment puis-je vous aider ? \n Nous vous assistons pour la création de votre campagne. ",
+      "messageText":" Salut ! Comment ça marche ?",
+      "backgroundColor":"#302c51",
+      "ctaText":"Nous écrire..",
+      "borderRadius":"25",
+      "autoShow":true,
+      "phoneNumber":"22994696763"
+  }
+};
+    s.onload = function() {
+        CreateWhatsappChatWidget(options);
+    };
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
+</script>
 
 
 <div class="go-top">

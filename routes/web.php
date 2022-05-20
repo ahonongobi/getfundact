@@ -135,6 +135,8 @@ Route::post('/code-verification',[SecureProtocolController::class,'codeVerificat
 Route::get('/state/{type}/{email}',[MainController::class,'viewSeparateFinale']);
 Route::get('/separate/{email}',[MainController::class,'viewSeparate'])->name('separate');
 Route::get('/getfund-donation-details/{id}/{name}',[MainController::class,'donationDetails'])->name('donation-details');
+Route::get('/collecte/{id}',[MainController::class,'donationDetailsWithoutName'])->name('WithoutName');
+
 Route::post('/contribution',[ContrubutionController::class,'sendMoney']);
 Route::any('/checkout',[ContrubutionController::class,'checkout']);
 

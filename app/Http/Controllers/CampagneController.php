@@ -22,6 +22,8 @@ class CampagneController extends Controller
        $add_campagne = new Campagne();
         
        $add_campagne->user_id = Auth::user()->id;
+	   //generate random init code to id_secret
+	   $add_campagne->id_secret = random_int(100000, 999999);
        $add_campagne->categories = $request->categories;
        $add_campagne->name = $request->name;
        $add_campagne->duree = $request->duree;
@@ -72,7 +74,7 @@ class CampagneController extends Controller
 
                 $taken_id = Campagne::where('user_id',Auth::user()->id)->latest()->first();
                 //dd($taken_id);
-                $id = $taken_id->id;
+                $id = $taken_id->id_secret;
                 $message =" :<a style='cursor:pointer;' target='_blank' href='https://getfundact.com/getfund-donation-details/$id/$request->name'>https://getfundact.com/getfund-donation-details/$id/$request->name</a>";
                 
                 $mailable = new Confirmation($request->name,$request->name_b,$message,$id);

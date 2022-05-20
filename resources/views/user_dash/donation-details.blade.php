@@ -99,6 +99,7 @@
                         <input type="hidden" value="{{ $details->id }}" name="id_campagne">
                         <input type="hidden" value="{{ $details->user_id }}" name="id_author">
                         <input type="hidden" value="{{ $details->name }}" name="nom_du_porteur">
+                        <input type="hidden" value="{{ $details->id_secret_campagne }}" name="id_secret_campagne">
                         <div class="form-radio-area">
                             
 
@@ -184,6 +185,7 @@
                         <input type="hidden" value="{{ $details->id }}" name="id_campagne">
                         <input type="hidden" value="{{ $details->user_id }}" name="id_author">
                         <input type="hidden" value="{{ $details->name }}" name="nom_du_porteur">
+                        <input type="hidden" value="{{ $details->id_secret_campagne }}" name="id_secret_campagne">
                         <div class="form-radio-area">
                             
 

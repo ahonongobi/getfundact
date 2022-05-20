@@ -123,7 +123,7 @@ class LoginController extends Controller
                     $this->getUserInfo();
                     $this->touchUpdatedAt();
                     $this->sumMontantCotise();
-                    return redirect('/my_space');
+                    //return redirect('/my_space');
                     return redirect('/profile');
                 }
             } elseif (Auth::user()->user_type == "Organisation") {
