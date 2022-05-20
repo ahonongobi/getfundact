@@ -1,5 +1,9 @@
 @extends('_layouts._head')
-
+<style>
+    .sub-title, h2, ul li {
+        font-family: montserrat;
+    }
+</style>
 @section('content')
 
 
@@ -14,12 +18,12 @@
                 <div class="d-table-cell">
                     <div class="container">
                         <div class="banner-content">
-                            <span>COTISEZ EN TOUTE SECURITE A TRAVERS LE MONDE</span>
-                            <h1>Une collecte de fonds de confiance pour tous les moments de vie.</h1>
-                            <p>Faites-vous aider. Exprimez votre générosité. Démarrez en à peine 5 minutes</p>
+                            <span style="font-family: montserrat;">COTISEZ EN TOUTE SECURITE A TRAVERS LE MONDE</span>
+                            <h1 style="font-family: montserrat; ">Une collecte de fonds de confiance pour tous les moments de vie.</h1>
+                            <p style="font-family: montserrat; ">Faites-vous aider. Exprimez votre générosité. Démarrez en à peine 5 minutes</p>
                             <div class="banner-btn-area">
-                                <a class="common-btn banner-btn" href="#">Démarrer un campagne</a>
-                                <a class="common-btn" href="#">Comment ça marche ?</a>
+                                <a style="font-family: montserrat; " class="common-btn banner-btn" href="#">Démarrer un campagne</a>
+                                <a style="font-family: montserrat; " class="common-btn" href="#">Comment ça marche ?</a>
                             </div>
                         </div>
                     </div>
@@ -116,9 +120,9 @@
                 <div class="about-content">
                     <div class="section-title">
                         
-                        <h2>GETFUND ACTION</h2>
+                        <h2 style="font-family: montserrat;">GETFUND ACTION</h2>
                     </div>
-                    <p>GETFUND ACT, la plateforme de campagne en ligne gratuite, a décidé de créer une campagne en ligne qui brise les barrières des devises. De ce fait, il vous sera possible de créer ou de participer à une campagne en ligne, quelque soit votre devise. Vous pouvez créer, gratuitement, une campagne.</p>
+                    <p style="font-family: montserrat;">GETFUND ACT, la plateforme de campagne en ligne gratuite, a décidé de créer une campagne en ligne qui brise les barrières des devises. De ce fait, il vous sera possible de créer ou de participer à une campagne en ligne, quelque soit votre devise. Vous pouvez créer, gratuitement, une campagne.</p>
                     <ul>
                         <li>
                             <span>01</span>
@@ -404,7 +408,7 @@
                         <div class="benefit-item">
                             <i class="flaticon-house"></i>
                             <h3>Humanitaire</h3>
-                            <p>Faites un don ou lancez une collecte de fonds pour aider un proche.
+                            <p style="font-family: montserrat;">Faites un don ou lancez une collecte de fonds pour aider un proche.
 </p>
                         </div>
                     </div>

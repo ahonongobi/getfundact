@@ -32,6 +32,16 @@
         <link rel="stylesheet" href="{{asset('assets/css/theme-dark.css')}}">
         <title>GetFund action, soutenez la communauté</title>
         <link rel="icon" type="image/png" href="assets/img/favicon.png">
+        <style>
+            a, .nav-item{
+                font-family: montserrat !important;
+            }
+            footer{
+                font-family: montserrat !important;
+            }
+            
+
+        </style>
     </head>
     <body style="font-family: montserrat; ">
 
