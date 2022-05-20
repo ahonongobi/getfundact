@@ -17,6 +17,8 @@ class CreateWithdrawalsTable extends Migration
             $table->id();
             $table->integer('id_user');
             $table->integer('id_campagne');
+            $table->string('payment_method');
+            $table->string('if_number')->nullable();
             $table->string('nom_campagne');
             $table->string('montant');
             $table->timestamps();

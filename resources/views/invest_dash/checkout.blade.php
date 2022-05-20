@@ -119,5 +119,4 @@
     
 </div>
 <script src="https://cdn.kkiapay.me/k.js"></script>
-
-   @stop
+@stop

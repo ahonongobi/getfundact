@@ -403,7 +403,8 @@
         </div>
       </div>
       --}}
-  
+     {{-- if session has Session::get('montant') and Session::get('campagne_id_data')  --}}
+    @if (Session::has('montant') && Session::has('campagne_id_data'))
       <div class="container">
         <div class="row">
             
@@ -422,9 +423,11 @@
           
         <form method="POST" action="{{ url('withdrawal') }}">
             @csrf
-            <input type="hidden" name="nom_campagne" value="Not defined">
+            <input type="hidden" name="nom_campagne" value="{{Session::get('campagne_name_data')}}">
             <input type="hidden" name="montant" value="{{Session::get('montant')}}">
-            <input type="hidden" name="id" value="{{ $withdrawalinfo->id  ?? ''}}">
+            <input type="hidden" name="id" value="{{Session::get('campagne_id_data')}}">
+            {{-- virement bancaire as payment_method input hidden --}}
+            <input type="hidden" name="payment_method" value="virement_bancaire">
 
         <div class="container">
             
@@ -489,6 +492,11 @@
         <form method="POST" action="{{ url('withdrawal') }}">
             @csrf
             <input type="hidden" name="montant" value="{{Session::get('montant')}}">
+            {{-- mtn as payment_method input hidden --}}
+            <input type="hidden" name="payment_method" value="mtn">
+            <input type="hidden" name="id" value="{{Session::get('campagne_id_data')}}">
+            {{-- nom_campagne --}}
+            <input type="hidden" name="nom_campagne" value="{{Session::get('campagne_name_data')}}">
         <div class="container">
             
             <div class="top-part"></div>
@@ -504,7 +512,7 @@
                     <div class="annual-plan">
                         <h2>Numero Mtn Mobile Money</h2>
                         <div class="input-group">
-                            <input value="" class="form-control" type="text" name="nom_campagne" id="text-1542372332072" required="required" placeholder="Num mtn">
+                            <input  class="form-control" type="text" name="if_number" id="text-1542372332072" required="required" placeholder="Num mtn">
                             <label for="text-1542372332072">Num mtn</label>
                             <div class="req-mark">!</div>
                         </div>
@@ -544,6 +552,12 @@
         <form method="POST" action="{{ url('withdrawal') }}">
             @csrf
             <input type="hidden" name="montant" value="{{Session::get('montant')}}">
+            {{-- mmov as payment_method input hidden --}}
+            <input type="hidden" name="payment_method" value="mmov">
+            <input type="hidden" name="id" value="{{Session::get('campagne_id_data')}}">
+            {{-- nom_campagne --}}
+            {{-- nom_campagne --}}
+            <input type="hidden" name="nom_campagne" value="{{Session::get('campagne_name_data')}}">
         <div class="container">
             
             <div class="top-part"></div>
@@ -559,7 +573,7 @@
                     <div class="annual-plan">
                         <h2>Numero Moov Money</h2>
                         <div class="input-group">
-                            <input value="" class="form-control" type="text" name="nom_campagne" id="text-1542372332072" required="required" placeholder="Num moov">
+                            <input class="form-control" type="text" name="if_number" id="text-1542372332072" required="required" placeholder="Num moov">
                             <label for="text-1542372332072">Num moov</label>
                             <div class="req-mark">!</div>
                         </div>
@@ -593,5 +607,7 @@
         </div>
     </form>
     </div>
+    @endif
+ 
     {{-- end Moov div --}}
 @endsection

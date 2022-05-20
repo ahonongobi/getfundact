@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\LetAdmin;
 use App\Mail\OrderShipped;
 use App\Models\Campagne;
 use App\Models\Profile;
@@ -43,12 +44,16 @@ class WithdrawalController extends Controller
             $withdrawalinfo =  Campagne::where('user_id',Auth::user()->id)->where('id',$idWallet)->where('statut',1)->first();
             $profile  = Profile::where('user_id',Auth::user()->id)->first();
             $montant = $withdrawalinfo->montant_cotise;
+            //get campagne name
+            $campagne_name = $withdrawalinfo->name;
+            //get campagne id
+            $campagne_id = $withdrawalinfo->id;
             //compact variable with redirect : nom_banque,iban,bic,montant 
             $nom_banque = $profile->nom_banque;
             $iban = $profile->iban;
             $bic = $profile->bic;
             //return redirect 
-            return redirect('user_dash.withdrawal')->with('nom_banque',$nom_banque)->with('iban',$iban)->with('bic',$bic)->with('montant',$montant);
+            return redirect('user_dash.withdrawal')->with('nom_banque',$nom_banque)->with('iban',$iban)->with('bic',$bic)->with('montant',$montant)->with('campagne_name_data',$campagne_name)->with('campagne_id_data',$campagne_id);
             
             
         }
@@ -65,7 +70,7 @@ class WithdrawalController extends Controller
         $solde_0 = User::where('id',Auth::user()->id)->first();
         $solde_0->solde = $solde_0->solde - $request->montant;
         
-        $solde_0->update();
+        $solde_0->update(); 
         //update compagne table id_user statut to 2
         $campagne = Campagne::where('id',$request->id)->where('user_id',Auth::user()->id)->where('statut',1)->get();
         foreach($campagne as $campagnes){
@@ -79,7 +84,10 @@ class WithdrawalController extends Controller
         $withdrawalinfo->nom_campagne =  $request->nom_campagne;
         //montant
         $withdrawalinfo->montant = $request->montant;
-        
+        //payment_method
+        $withdrawalinfo->payment_method = $request->payment_method;
+        //if_number 
+        $withdrawalinfo->if_number = $request->if_number ?? null;
         if ($withdrawalinfo->save()) {
                
             $notification_gobi = array(
@@ -89,17 +97,25 @@ class WithdrawalController extends Controller
         
                 );
             $message ="Nous vous informons que votre demande de retrait a été prise en compte. Chaque demande de retrait met entre 2 à 3 jours pour être traitée et validée.";
-
+            //message admin
+            $message2 = "Un nouveau retrait a été effectué sur votre compte. Veuillez vérifier les informations de la demande de retrait.";
 
             $mailable = new OrderShipped(Auth::user()->username,$request->email,$message);
             Mail::to(Auth::user()->email)->send($mailable);
+            //notify mail to this address  payment@getfundact.com using LetAdmin mailable
+            $mailable = new LetAdmin(Auth::user()->email,$withdrawalinfo->montant,$message2);
+            Mail::to("payment@getfundact.com")->send($mailable);
             $notification_gobi = array(
                 'title' => 'Félicitations',
                 'sending' => "Votre demande de rétrait a été prise en compte. Vous recevrez un email de confirmation dans les prochains jours.",
                 'type' => 'success',
         
                 );
-                return back()->with($notification_gobi);
+                //forget session: montant,campagne_id_data
+                session()->forget('montant');
+                session()->forget('campagne_id_data');
+
+                return redirect("/my_space")->with($notification_gobi);
         }
         
     }

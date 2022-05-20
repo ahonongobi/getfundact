@@ -16,6 +16,7 @@ class CreateContrubutionsTable extends Migration
         Schema::create('contrubutions', function (Blueprint $table) {
             $table->id();
             $table->integer('id_user');
+            $table->string('id_secret_campagne');
             $table->integer('id_campagnes');
             $table->integer('id_author');
             $table->string('nom_du_porteur');
