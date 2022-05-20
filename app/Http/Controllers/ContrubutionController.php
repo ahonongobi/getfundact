@@ -65,7 +65,7 @@ class ContrubutionController extends Controller
                     //$updateContrubution = Contrubution::where('email',$request->email)->update(['states_payment'=>1]);
                     $notification_gobi = array(
                         'title' => 'Féliciations',
-                        'sending' => "Votre contribution est parvenue avec succès. Merci pour votre esprit de bénévolat au sein de la société.",
+                        'sending' => "Votre contribution est parvenue avec succès. Merci pour votre esprit de partage et solidarité.",
                         'type' => 'success',
                 
                         );

@@ -18,11 +18,11 @@ class ContactController extends Controller
             Mail::to($email)->send($mailable);
                 $Yes = "Yes";
                 $titre = "Super";
-                $messages = "Nous avons bien reçu votre message. un de nos assistant vous contactera dans quelques minutes.";
+                $messages = "Nous avons bien reçu votre message. Un de nos assistant vous contactera dans quelques minutes.";
                 $type = "success";
                 $notification_gobi = array(
                     'title' => 'Envoyé',
-                    'sending' => "Nous avons bien reçu votre message. un de nos assistant vous contactera dans quelques minutes.",
+                    'sending' => "Nous avons bien reçu votre message. Un de nos assistant vous contactera dans quelques minutes.",
                     'type' => 'success',
             
                     );

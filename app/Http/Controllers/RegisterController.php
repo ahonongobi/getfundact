@@ -44,7 +44,7 @@ class RegisterController extends Controller
             }
             $notification_gobi = array(
                 'title' => 'Félicitations',
-                'sending' => "Votre inscription a été enregistré avec succès. Nous vous remerçions !!!.",
+                'sending' => "Votre inscription a été enregistrée avec succès. Nous vous remercions. !!!.",
                 'type' => 'success',
         
                 );

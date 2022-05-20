@@ -37,12 +37,12 @@ class ForgotPasswordController extends Controller
 
             $message->to($request->email);
 
-            $message->subject('Réinitialisation de votre mot de passe');
+            $message->subject('Réinitialisation de votre mot de passe ');
         });
         
         $notification_gobi = array(
             'title' => 'Envoyé',
-            'sending' => "Nous vous avons envoyé un lien pour réinitialiser votre mot de passe par votre email.",
+            'sending' => "Nous vous avons envoyé un lien pour réinitialiser votre mot de passe par e-mail.",
             'type' => 'success',
     
             );

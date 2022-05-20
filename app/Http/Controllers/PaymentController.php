@@ -27,7 +27,7 @@ class PaymentController extends Controller
            $updateContrubution = Contrubution::where('email',$email)->orderBy('id','desc')->first()->update(['states_payment'=>1]);
             $notification_gobi = array(
                 'title' => 'Féliciations',
-                'sending' => "Votre contribution est parvenue avec succès. Merci pour votre contribution au sein de la société.",
+                'sending' => "Votre contribution est parvenue avec succès. Merci pour votre contribution.",
                 'type' => 'success',
         
                 );

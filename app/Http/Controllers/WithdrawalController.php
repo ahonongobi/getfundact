@@ -84,11 +84,11 @@ class WithdrawalController extends Controller
                
             $notification_gobi = array(
                 'title' => 'Félicitations',
-                'sending' => 'Les informations de votre rétrait enrégistré avec succès. votre sous vous parviendra en peu de temps. Soyez patient!!',
+                'sending' => 'Les informations de votre rétrait enrégistrées avec succès. Votre sous vous parviendra en peu de temps. Soyez patient!!',
                 'type' => 'success',
         
                 );
-            $message ="Nous vous informons que votre demande de retrait a été prise en compte. Chaque demande de retrait met entre 3 et 5 jours pour être traitée et validée.";
+            $message ="Nous vous informons que votre demande de retrait a été prise en compte. Chaque demande de retrait met entre 2 à 3 jours pour être traitée et validée.";
 
 
             $mailable = new OrderShipped(Auth::user()->username,$request->email,$message);

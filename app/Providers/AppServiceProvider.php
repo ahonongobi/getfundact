@@ -78,7 +78,9 @@ class AppServiceProvider extends ServiceProvider
                 $view->with('count_contribution_for_you', Contrubution::where('id_author',Auth::user()->id)->where('states_payment',1)->count());
                 $view->with('count_all_campagnes', Campagne::where('statut',1)->count());
                 $view->with('count_your_contribution_amount_for_you', Contrubution::where('id_author',Auth::user()->id)->where('states_payment',1)->sum('montant'));
-
+                //montant asked for user by all his campagne on campagne table and campagne statut = 1
+                $view->with('montant_asked_for_you', Campagne::where('user_id',Auth::user()->id)->where('statut',1)->sum('montant_v'));
+                
                 $view->with('check_if_user_complete_profile', Profile::where('user_id',Auth::user()->id)->count());
                 $view->with('profile_data', Profile::where('user_id',Auth::user()->id)->first());
                 $view->with('email_value', User::where('id',Auth::user()->id)->first());

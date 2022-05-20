@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SecureProtocolController extends Controller
 {
@@ -12,9 +13,17 @@ class SecureProtocolController extends Controller
     //post function to verify if $request value is equal to  session value code
     public function codeVerification(Request $request){
         if($request->code == session()->get('code')){
-            return redirect('/dashboard-interface');
-            //forget session code
+            // return according to the user role: Admin, Particulier or Organisation
             session()->forget('code');
+            if (Auth::user()->user_type == "Personne") {
+                return redirect('/my_space');
+            } elseif(Auth::user()->user_type == "Organisation") {
+                return redirect('/my_org');
+            } elseif(Auth::user()->user_type == "Admin"){
+                return redirect('/dashboard-interface');
+            }
+            //forget session code
+            
         }else{
             $notification_gobi = array(
                 'title' => 'Désolé',
@@ -24,6 +33,7 @@ class SecureProtocolController extends Controller
                 );
                 //forget session code
                 session()->forget('code');
+
             return redirect('/login')->with($notification_gobi);
             //return redirect('/secure-protocol');
         }

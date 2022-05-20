@@ -13,7 +13,7 @@
                 <div class="about-content">
                     <div class="section-title">
                         <span class="sub-title">COTISEZ EN TOUTE SECURITE A TRAVERS LE MONDE ENTIER PUIS DEPENSEZ</span>
-                        <h2>We're for social causes</h2>
+                        <h2>GETFUND ACTION</h2>
                     </div>
                     <p>GETFUND ACT, la plateforme de campagne en ligne gratuite, a décidé de créer une campagne en ligne qui brise les barrières des devises. De ce fait, il vous sera possible de créer ou de participer à une campagne en ligne, quelque soit votre devise. Vous pouvez créer, gratuitement, une campagne.</p>
                     <ul>

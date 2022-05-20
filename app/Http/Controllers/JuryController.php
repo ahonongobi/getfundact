@@ -125,7 +125,7 @@ class JuryController extends Controller
         DB::update("UPDATE withdrawals SET statut=? WHERE id=?",[
             1,$id
         ]);
-        return back()->with('success','Campagnes désactivée avec succès!!!');
+        return back()->with('success','Campagne désactivée avec succès!!!');
       }
 
 
@@ -134,7 +134,7 @@ class JuryController extends Controller
         DB::update("UPDATE withdrawals SET statut=? WHERE id=?",[
             0,$id
         ]);
-        return back()->with('success','Campagnes désactivée avec succès!!!');
+        return back()->with('success','Campagne désactivée avec succès!!!');
       }
      
 }

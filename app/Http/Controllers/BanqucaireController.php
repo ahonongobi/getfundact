@@ -43,7 +43,7 @@ class BanqucaireController extends Controller
         if ($send) {
             $notification_gobi = array(
             'title' => 'Félicitations',
-            'sending' => 'Les informations du profile enrégistré ave succès.',
+            'sending' => 'Les informations du profil enrégistrés avec succès.',
             'type' => 'success',
     
             );

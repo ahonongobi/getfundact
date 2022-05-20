@@ -73,14 +73,14 @@ class CampagneController extends Controller
                 $taken_id = Campagne::where('user_id',Auth::user()->id)->latest()->first();
                 //dd($taken_id);
                 $id = $taken_id->id;
-                $message ="Nous vous remercions d'avoir choisi Getfund Action pour votre campagne. Lien de votre campagne :<a style='cursor:pointer;' target='_blank' href='https://getfundact.com/getfund-donation-details/$id/$request->name'>https://getfundact.com/getfund-donation-details/$id/$request->name</a>";
+                $message =" :<a style='cursor:pointer;' target='_blank' href='https://getfundact.com/getfund-donation-details/$id/$request->name'>https://getfundact.com/getfund-donation-details/$id/$request->name</a>";
                 
                 $mailable = new Confirmation($request->name,$request->name_b,$message,$id);
                 Mail::to(Auth::user()->email)->send($mailable);
 
                 $notification_gobi = array(
                 'title' => 'Félicitations',
-                'sending' => 'Les informations de la campagne ont été enrégistré ave succès.',
+                'sending' => 'Les informations de la campagne ont été enrégistré avec succès.',
                 'type' => 'success',
         
                 );
@@ -109,7 +109,7 @@ class CampagneController extends Controller
         DB::update("UPDATE campagnes SET user_id=? WHERE id=?",[
             0,$id
         ]);
-        return back()->with('success','Campagnes supprimée avec succès!!!');
+        return back()->with('success','Campagne supprimée avec succès!!!');
        
     }
  

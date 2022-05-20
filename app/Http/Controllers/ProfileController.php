@@ -51,7 +51,7 @@ class ProfileController extends Controller
                 if ($send->save()) {
                     $notification_gobi = array(
                         'title' => 'Félicitations',
-                        'sending' => 'Les informations du profile enrégistré ave succès.',
+                        'sending' => 'Les informations du profil enrégistrées ave succès.',
                         'type' => 'success',
 
                     );
@@ -71,7 +71,7 @@ class ProfileController extends Controller
                 if ($send->save()) {
                     $notification_gobi = array(
                         'title' => 'Félicitations',
-                        'sending' => 'Les informations du profile enrégistré ave succès.',
+                        'sending' => 'Les informations du profil enrégistrées ave succès.',
                         'type' => 'success',
 
                     );
@@ -115,7 +115,7 @@ class ProfileController extends Controller
                 if ($send->update()) {
                     $notification_gobi = array(
                         'title' => 'Félicitations',
-                        'sending' => 'Les informations du profile enrégistrée ave succès.',
+                        'sending' => 'Les informations du profil enrégistrées avec succès.',
                         'type' => 'success',
 
                     );
@@ -133,7 +133,7 @@ class ProfileController extends Controller
                 if ($send->save()) {
                     $notification_gobi = array(
                         'title' => 'Félicitations',
-                        'sending' => 'Les informations du profile enrégistré ave succès.',
+                        'sending' => 'Les informations du profil enrégistrées avec succès.',
                         'type' => 'success',
 
                     );

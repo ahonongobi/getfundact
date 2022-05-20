@@ -237,7 +237,7 @@
                                 <a href="#">MONTANT DEMANDÉ</a>
                             </h3>
                             <p></p>
-                            <a class="feature-btn" href="#">{{ $count_your_contribution_amount_for_you }} FCFA</a>
+                            <a class="feature-btn" href="#">{{ $montant_asked_for_you ?? '0' }} FCFA</a>
                         </div>
                     </div>
                     <div class="col-sm-6 offset-sm-3 offset-lg-0 col-lg-4">
