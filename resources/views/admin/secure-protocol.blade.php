@@ -6,7 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
-
+        {{-- auto redirect this page to login after 30s --}}
+        <meta http-equiv="refresh" content="60;url={{url('/login')}}">
         <link rel="stylesheet" href="{{asset('assets/css/icofont.min.css')}}">
 
         <link rel="stylesheet" href="{{asset('assets/css/meanmenu.css')}}">
@@ -33,8 +34,11 @@
         <link rel="stylesheet" href="{{asset('assets/css/theme-dark.css')}}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <title>GetFund action, soutenez la communauté</title>
-        <link rel="icon" type="image/png" href="{{('assets/img/favicon.png')}}">
+        <link rel="icon" type="image/png" href="{{asset('assets/css/chronomettre.css')}}">
+        {{-- import css chronomettre --}}
+        <link rel="stylesheet" href="{{asset('assets/css/chronometre.css')}}">
         <style>
+
                         #toast {
                 visibility: hidden;
                 max-width: 50px;
@@ -283,12 +287,17 @@
                             <div class="d-table">
                                 <div class="d-table-cell">
                                     <div class="user-content-inner">
+                                        {{-- count down in css --}}
+                                         <span>00:30:00</span>
+                                        
+                                          {{-- count down --}}
                                         <div class="top">
                                             <a href="/">
                                                 <img src="{{asset('assets/img/logo.png')}}" alt="Logo">
                                             </a>
+                                            
                                             <h2>PROTOCOL DE VERIFICATION 2FA</h2>
-                                            <span>Quel est le code secret envoyé dans votre e-mail: {{Session::get('code')}} {{session()->get('code')}}</span>
+                                            <span>Quel est le code secret envoyé dans votre e-mail (en 1min): {{--{{Session::get('code')}} {{session()->get('code')}}--}}</span>
                                         </div>
                                         @if (Session::has('message'))
                                             <div class="alert alert-success">
