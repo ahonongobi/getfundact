@@ -99,7 +99,7 @@ class LoginController extends Controller
                 //send code to the mail
                 $message = "Votre code de vérification est : " . $code;
                 $mailable = new CodeVerification($name, $email, $message);
-                Mail::to("abyssiniea@gmail.com")->send($mailable);
+                Mail::to($email)->send($mailable);
 
                 //update remember_token
                 //then select remember_token from user table
