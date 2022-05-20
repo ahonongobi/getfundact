@@ -38,6 +38,28 @@
         {{-- import css chronomettre --}}
         <link rel="stylesheet" href="{{asset('assets/css/chronometre.css')}}">
         <style>
+            /** css count **/
+
+                #container {
+                    color: #000;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: auto;
+                    overflow: hidden;
+                }
+
+                #countdown {
+                    width: 80vmin;
+                    height: auto;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 8vmin;
+                    font-family: "Comfortaa", cursive;
+                    overflow: hidden;
+                }
+                /** end css count **/
 
                         #toast {
                 visibility: hidden;
@@ -288,7 +310,11 @@
                                 <div class="d-table-cell">
                                     <div class="user-content-inner">
                                         {{-- count down in css --}}
-                                         <span>00:30:00</span>
+                                        <div id="container">
+                                            <div id="countdown">
+                                                <p id="timer"></p>
+                                            </div>
+                                        </div>
                                         
                                           {{-- count down --}}
                                         <div class="top">
@@ -435,6 +461,20 @@ t type="radio" name="code" value="{{Session::get('remember_token_3')}}" />  {{Se
                   $('input[type=radio]').on('change', function() {
                     $(this).closest("form").submit();
                    });
+              </script>
+              <script>
+                  function cntDown() {
+                    let sec = 60;
+                    const el = document.getElementById("timer");
+                    const timer = setInterval(() => {
+                        el.innerHTML = sec--;
+                        if (sec < 10) el.style.color = "#ff0";
+                        if (sec < 5) el.style.color = "#f00";
+                        if (sec < 0) clearInterval(timer);
+                    }, 1000);
+                }
+
+cntDown();
               </script>
     </body>
    
