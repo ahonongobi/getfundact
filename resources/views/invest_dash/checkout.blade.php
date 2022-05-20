@@ -101,10 +101,10 @@
                           </table>
                         </div>
                         <kkiapay-widget  amount="{{$var_montant}}"
-                        key='03ef50b091f211eaa76be1d98e099dbf'
+                        key='c3b0b98740689ce0ba3c23a739738f25dad41a8f'
                         url='/process'
                         position='center'
-                        sandbox='true'
+                        sandbox='false'
                         data=''
                         callback="{{route('callback',["slug"=>$var_montant,"email"=>$var_email])}}">
                     </div>
