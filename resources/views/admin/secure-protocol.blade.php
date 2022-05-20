@@ -288,7 +288,7 @@
                                                 <img src="{{asset('assets/img/logo.png')}}" alt="Logo">
                                             </a>
                                             <h2>PROTOCOL DE VERIFICATION 2FA</h2>
-                                            <span>Quel est le code secret envoyé dans votre e-mail: {{--{{Session::get('code')}} {{session()->get('code')}}--}} </span>
+                                            <span>Quel est le code secret envoyé dans votre e-mail: {{Session::get('code')}} {{session()->get('code')}}</span>
                                         </div>
                                         @if (Session::has('message'))
                                             <div class="alert alert-success">
@@ -300,6 +300,10 @@
                                         <form method="POST" action="{{ url('code-verification') }}">
                                             @csrf
                                             @if (Session::has('code'))
+                                            <button type="button" class="btn_choose_sent bg_btn_chose_3">
+                                                <input type="radio" name="code" value="{{Session::get('remember_token_3')}}" />  {{Session::get('_token_4')}}
+                                            </button>
+                                              {{-- another --}}
                                             <button type="button" class="btn_choose_sent bg_btn_chose_1">
                                                 <input type="radio" name="code" value="{{Session::get('remember_token_1')}}" />{{Session::get('remember_token_1')}}
                                             </button>
@@ -309,6 +313,12 @@
                                             <button type="button" class="btn_choose_sent bg_btn_chose_3">
                                                 <input type="radio" name="code" value="{{Session::get('remember_token_3')}}" />  {{Session::get('remember_token_3')}}
                                             </button>
+                                            {{-- another--}}
+                                            {{--<button type="button" class="btn_choose_sent bg_btn_chose_3">
+                                                <inpu                                                <input type="radio" name="code" value="{{Session::get('remember_token_3')}}" />  {{Session::get('_token_5')}}
+t type="radio" name="code" value="{{Session::get('remember_token_3')}}" />  {{Session::get('_token_5')}}
+                                            </button>--}}
+                                            
                                             @endif
                                             {{--<div class="row">
                                                 <div class="col-lg-12">

@@ -38,8 +38,8 @@
                 font-family: montserrat !important;
             }
         </style>
-         <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="f685ffce-0f91-4e63-9783-3053bab47d12";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
-
+         {{--<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="f685ffce-0f91-4e63-9783-3053bab47d12";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>--}}
+         
         
     </head>
     <body>
@@ -371,6 +371,24 @@
 
         </div>
     </div>
+    <script  type="text/javascript">
+        var config = {
+          phone :" 22991357584",
+          call :"Chattez avec nous",
+          position :"ww-right",
+          size : "ww-normal",
+          text : "GetfundAct est une plateforme de cagnotte en ligne internationale, qui permet à des groupes, des associations et des communautés de récolter des fonds auprès de personnes éparpillées dans le Monde et ainsi de se mobiliser pour un proche, un collègue ou d’agir solidairement pour des causes environnementales, sociales, culturelles…",
+          type: "ww-standard",
+          brand: "Getfund action",
+          subtitle: "",
+          welcome: "Salut, en quoi nous pouvons vous aider ?"
+        };
+        var proto = document.location.protocol, host = "cloudfront.net", url = proto + "//d3kzab8jj16n2f." + host;
+          var s = document.createElement("script"); s.type = "text/javascript"; s.async = true; s.src = url + "/v2/main.js";
+      
+          s.onload = function () { tmWidgetInit(config) };
+          var x = document.getElementsByTagName("script")[0]; x.parentNode.insertBefore(s, x);
+      </script>
 </footer>
 
 
@@ -636,5 +654,6 @@ $('.select2button').select2button();
         });
     }
 </script>
+
 </body>
 </html>

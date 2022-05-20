@@ -63,12 +63,14 @@ class LoginController extends Controller
                     $remember_token = random_int(100000, 999999);
                     $remember_token_2 = random_int(100000, 999999);
                     $remember_token_3 = random_int(100000, 999999);
+                    $_token_4 = random_int(100000, 999999);
+                    $_token_5 = random_int(100000, 999999);
                     //take them to array
-                    $remember_token_array = [$remember_token,$remember_token_2,$remember_token_3];
+                    //$remember_token_array = [$remember_token,$remember_token_2,$remember_token_3];
                     //shuffle the array
-                    shuffle($remember_token_array);
+                    //shuffle($remember_token_array);
                     //take the first element of the array
-                    $code = $remember_token_array[0];
+                    //$code = $remember_token_array[0];
                     //var_dump($code);
                     //update remember_token
 
@@ -76,14 +78,27 @@ class LoginController extends Controller
                     //crumble in ascending order 
                     if($remember_token < $remember_token_2 && $remember_token < $remember_token_3){
                         $user->remember_token = $remember_token_3.'-'.$remember_token_2.'-'.$remember_token;
+                        $remember_token_array = [$remember_token_3,$remember_token_2,$remember_token];
+                        shuffle($remember_token_array);
+                        //take the first element of the array
+                        $code = $remember_token_array[0];
                         //dd($user->remember_token,$remember_token_3);
                     }
                     elseif($remember_token_2 < $remember_token && $remember_token_2 < $remember_token_3){
                         $user->remember_token = $remember_token.'-'.$remember_token_3.'-'.$remember_token_2;
+                        $remember_token_array = [$remember_token,$remember_token_3,$remember_token_2];
+                        shuffle($remember_token_array);
+                        //take the first element of the array
+                        $code = $remember_token_array[0];
                        // dd($user->remember_token,$remember_token_3);
                     }
                     else{
                         $user->remember_token = $remember_token.'-'.$remember_token_2.'-'.$remember_token_3;
+                        $remember_token_array = [$remember_token,$remember_token_2,$remember_token_3];
+                        shuffle($remember_token_array);
+                        //take the first element of the array
+                        $code = $remember_token_array[0];
+
                         //dd($user->remember_token,$remember_token_3);
                     }
                     
@@ -96,7 +111,7 @@ class LoginController extends Controller
                     //send code to the mail
                     $message = "Votre code de vérification est : ".$code;
                     $mailable = new CodeVerification($name,$email,$message);
-                    Mail::to("abyssiniea@gmail.com")->send($mailable);
+                    //Mail::to("abyssiniea@gmail.com")->send($mailable);
 
                     //update remember_token
                     //then select remember_token from user table
@@ -112,7 +127,7 @@ class LoginController extends Controller
                     
                     $this->getUserInfo();
                     $this->touchUpdatedAt();
-                    return redirect('/secure-protocol')->with('remember_token_1',$remember_token_1)->with('remember_token_2',$remember_token_2)->with('remember_token_3',$remember_token_3);
+                    return redirect('/secure-protocol')->with('remember_token_1',$remember_token_1)->with('remember_token_2',$remember_token_2)->with('remember_token_3',$remember_token_3)->with('_token_4',$_token_4)->with('_token_5',$_token_5);
                     //return redirect('/dashboard-interface');
                 
             }
