@@ -248,71 +248,7 @@
 
   <footer class="footer-area pt-100">
     <div class="container">
-        <div class="row">
-            <div class="col-sm-6 col-lg-6">
-                <div class="footer-item">
-                    <div class="footer-logo">
-                        <a class="logo" href="/">
-                            
-                            <img style="width: 300px" src="{{asset('assets/img/logogetf.png')}}" alt="Logo">
-                        </a>
-                        <p>"Il est indispensable de se lancer dans une levée de fonds quand on a fait la preuve de son concept ou a minima de sa capacité à exécuter" <br>Jean Patrice ANCIAUX</p>
-                        <ul>
-                            <li><a href="#" target="_blank"><i class="icofont-facebook"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="icofont-twitter"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="icofont-youtube-play"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="icofont-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-           <!--<div class="col-sm-6 col-lg-3">
-                <div class="footer-item">
-                    <div class="footer-links">
-                       
-                        <ul>
-                            <li><a href=""><i class="icofont-simple-right"></i>Pourquoi choisir Getfund-act</a></li>
-                            <li><a href=""><i class="icofont-simple-right"></i>Nous contacter</a></li>
-                            <li><a href="/about"><i class="icofont-simple-right"></i>A propos de nous</a></li>
-                            <li><a href=""><i class="icofont-simple-right"></i>Comment reussir mes campagnes</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div> -->
-            <div class="col-sm-6 col-lg-3">
-                <div class="footer-item">
-                    <div class="footer-links">
-                        <h3>Liens utils</h3>
-                        <ul>
-                            <li><a href="/my-campagne-org"><i class="icofont-simple-right"></i>Campagnes</a></li>
-                            <li><a href="/profile-org"><i class="icofont-simple-right"></i>Mon profil</a></li>
-                            <li><a href="/contributions-org"><i class="icofont-simple-right"></i>Mes contributions</a></li>
-                            
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-3">
-                <div class="footer-item">
-                    <div class="footer-contact">
-                        <h3>Contact info</h3>
-                        <div class="contact-inner">
-                            <ul>
-                                <li>
-                                    <i class="icofont-location-pin"></i>
-                                    <a href="#">Rue en Face de IITA, TANKPÈ ABOMEY-CALAVI</a>
-                                </li>
-                                <li>
-                                    <i class="icofont-ui-call"></i>
-                                    <a href="tel:+229 5150 7071">+229 5150 7071</a>
-                                </li>
-                            </ul>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <div class="copyright-area">
             <p>Copyright ©2021- <script>document.write(new Date().getFullYear())</script>  GETFUND ACT. Développé  par 
                 <a href="https://intelligencia-si.com/" target="_blank">Intelligencia SI</a> | <a href="">Notice légale et confidentialité</a>
