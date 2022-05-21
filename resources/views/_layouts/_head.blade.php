@@ -196,7 +196,7 @@
                             </ul>
                             <div class="side-nav">
                                 <a class="donate-btn" href="{{ url('login') }}">
-                                    DEMARER
+                                DÉMARRER
                                     <i class="icofont-heart-alt"></i>
                                 </a>
                             </div>
@@ -246,7 +246,7 @@
                         <ul>
                             <li><a href="/all-campagnes"><i class="icofont-simple-right"></i>Exemples de cagnotte</a></li>
                             <li><a href="/faq"><i class="icofont-simple-right"></i>FAQ/Aide</a></li>
-                            <li><a href="/faq"><i class="icofont-simple-right"></i>Evenements</a></li>
+                            <li><a href="/#"><i class="icofont-simple-right"></i>Evenements</a></li>
                             <li><a href="/faq"><i class="icofont-simple-right"></i>Don</a></li>
                         </ul>
                     </div>
@@ -255,7 +255,7 @@
             <div class="col-sm-6 col-lg-3">
                 <div class="footer-item">
                     <div class="footer-contact">
-                        <h3>Contact info</h3>
+                        <h3>Contact</h3>
                         <div class="contact-inner">
                             <ul>
                                 <li>
@@ -285,8 +285,8 @@
             </div>
         </div>
         <div class="copyright-area">
-            <p>Copyright ©2021- <script>document.write(new Date().getFullYear())</script> GETFUND ACT. Développé  par 
-                <a href="https://intelligencia-tech.com/" target="_blank">Intelligencia SI</a> | <a href="/termes">Notice légale et confidentialité</a>
+            <p>Copyright ©2021 - <script>document.write(new Date().getFullYear())</script> GETFUND ACTION. Développé  par 
+                <a href="https://intelligencia-si.com/" target="_blank">Intelligencia SI</a> | <a href="/termes">Notice légale et confidentialité</a>
             </p>
 
         </div>

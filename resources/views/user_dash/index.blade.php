@@ -15,29 +15,29 @@
                         <span class="sub-title">COTISEZ EN TOUTE SECURITE A TRAVERS LE MONDE ENTIER PUIS DEPENSEZ</span>
                         <h2>GETFUND ACTION</h2>
                     </div>
-                    <p>GETFUND ACT, la plateforme de campagne en ligne gratuite, a décidé de créer une campagne en ligne qui brise les barrières des devises. De ce fait, il vous sera possible de créer ou de participer à une campagne en ligne, quelque soit votre devise. Vous pouvez créer, gratuitement, une campagne.</p>
+                    <p>GETFUND ACTION , Une plateforme qui permet à vos contributeurs de choisir collectivement de financer directement et de manière traçable vos projets identifiés.</p>
                     <ul>
                         <li>
                             <span>01</span>
-                           Créez gratuitement et facilement une cagnotte.
+                           Créez gratuitement et facilement une campagne.
                         </li>
                         <li>
                             <span>02</span>
-                            Partagez la cagnotte avec vos amis, vos proches etc.
+                            Partagez la campagne avec vos amis, vos proches , sur des reseaux sociaux,  etc.
                         </li>
                         <li>
                             <span>03</span>
-                            Collectez l’argent des participants par carte bancaire.
+                            Collectez l’argent des participants par carte bancaire et par mobile money .
                         </li>
                         <li>
                             <span>04</span>
-                            Dépensez ou transférez les fonds partout dans le monde.
+                            Recevez les fonds collectés sur votre compte bancaire ou sur votre compte mobile money puis exécuter votre projet.
                         </li>
                     </ul>
                     <div class="about-btn-area">
                         {{-- withdrawal url --}}
                         <a class="common-btn about-btn" href="{{ url('list-withdrawal') }}">Demander un rétrait</a>
-                        <a class="common-btn" href="#">COMMENT ÇA MARCHE</a>
+                        <a class="common-btn" href="#">Comment ça marche</a>
                     </div>
                 </div>
             </div>
@@ -60,7 +60,7 @@
     <div class="container">
         <div class="section-title">
             <span class="sub-title">GETFUND ACTION</span>
-            <h2>Campagnes publics</h2>
+            <h2>Campagnes publiques</h2>
    
         </div>
         <div class="row">

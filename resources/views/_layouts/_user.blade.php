@@ -135,12 +135,12 @@
                             <div class="side-nav">
                                 @if ((!$check_if_user_complete_profile == 0))
                                 <a class="donate-btn" href="{{ url('campagne') }}">
-                                    DEMARER
+                                    DÉMARRER
                                     <i class="icofont-heart-alt"></i>
                                 </a>
                                 @else
                                 <a onclick="accountArchived()" class="donate-btn">
-                                    DEMARER
+                                DÉMARRER
                                     <i class="icofont-heart-alt"></i>
                                 </a>
                                 @endif
@@ -194,7 +194,7 @@
                             </ul>
                             <div class="side-nav">
                                 <a class="donate-btn" href="{{ url('login') }}">
-                                    DEMARER
+                                DÉMARRER
                                     <i class="icofont-heart-alt"></i>
                                 </a>
                             </div>
@@ -730,5 +730,79 @@ $('.select2button').select2button();
         }
         //end of scrpit
  </script>
+    <script>
+        function readURL(input) {
+    if (input.files && input.files[0]) {
+
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+        $('.image-upload-wrap').hide();
+
+        $('.file-upload-image').attr('src', e.target.result);
+        $('.file-upload-content').show();
+
+        $('.image-title').html(input.files[0].name);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+
+    } else {
+        removeUpload();
+    }
+    }
+
+    function removeUpload() {
+    $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+    $('.file-upload-content').hide();
+    $('.image-upload-wrap').show();
+    }
+    $('.image-upload-wrap').bind('dragover', function () {
+            $('.image-upload-wrap').addClass('image-dropping');
+        });
+        $('.image-upload-wrap').bind('dragleave', function () {
+            $('.image-upload-wrap').removeClass('image-dropping');
+    });
+ 
+    </script>
+    <script>
+        //here same script, but change attribute name as in profile.blade.php file
+        function readURL2(input2) {
+    if (input2.files && input2.files[0]) {
+            
+            var reader = new FileReader();
+    
+            reader.onload = function(e) {
+            $('.image-upload-wrap2').hide();
+    
+            $('.file-upload-image2').attr('src', e.target.result);
+            $('.file-upload-content2').show();
+    
+            $('.image-title2').html(input2.files[0].name);
+            };
+    
+            reader.readAsDataURL(input2.files[0]);
+    
+        } else {
+            removeUpload2();
+        }
+        }
+        //then make removeUpload2() function
+        function removeUpload2() {  
+        $('.file-upload-input2').replaceWith($('.file-upload-input2').clone());
+        $('.file-upload-content2').hide();
+        $('.image-upload-wrap2').show();
+        }
+        $('.image-upload-wrap2').bind('dragover', function () {
+            $('.image-upload-wrap2').addClass('image-dropping');
+        });
+        $('.image-upload-wrap2').bind('dragleave', function () {
+            $('.image-upload-wrap2').removeClass('image-dropping');
+        });
+        
+
+    </script>
+
+        
 </body>
 </html>

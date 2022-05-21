@@ -20,10 +20,10 @@
                         <div class="banner-content">
                             <span style="font-family: montserrat;">COTISEZ EN TOUTE SECURITE A TRAVERS LE MONDE</span>
                             <h1 style="font-family: montserrat; ">Une collecte de fonds de confiance pour tous les moments de vie.</h1>
-                            <p style="font-family: montserrat; ">Faites-vous aider. Exprimez votre générosité. Démarrez-en un seul clic.</p>
+                            <p style="font-family: montserrat; ">Faites-vous aider. Exprimez votre générosité. Démarrer en un seul clic.</p>
                             <div class="banner-btn-area">
-                                <a style="font-family: montserrat; " class="common-btn banner-btn" href="#">Démarrer une campagne</a>
-                                <a style="font-family: montserrat; " class="common-btn" href="#">Comment ça marche ?</a>
+                                <a style="font-family: montserrat; " class="common-btn banner-btn" href="{{ url('login') }}">Démarrer une campagne</a>
+                                <a style="font-family: montserrat; " class="common-btn" href="/how-work">Comment ça marche ?</a>
                             </div>
                         </div>
                     </div>
@@ -40,10 +40,10 @@
                         <div class="banner-content">
                             <span>COTISEZ EN TOUTE SECURITE A TRAVERS LE MONDE</span>
                             <h1>Une collecte de fonds de confiance pour tous les moments de vie.</h1>
-                            <p>Faites-vous aider. Exprimez votre générosité. Démarrez-en un seul clic.</p>
+                            <p>Faites-vous aider. Exprimez votre générosité. Démarrer en un seul clic.</p>
                             <div class="banner-btn-area">
-                                <a class="common-btn banner-btn" href="#">Démarrer une campagne</a>
-                                <a class="common-btn" href="#">Comment ça marche ?</a>
+                                <a style="font-family: montserrat; " class="common-btn banner-btn" href="{{ url('login') }}">Démarrer une campagne</a>
+                                <a style="font-family: montserrat; " class="common-btn" href="/how-work">Comment ça marche ?</a>
                             </div>
                         </div>
                     </div>
@@ -60,10 +60,10 @@
                         <div class="banner-content">
                             <span>COTISEZ EN TOUTE SECURITE A TRAVERS LE MONDE</span>
                             <h1>Une collecte de fonds de confiance pour tous les moments de vie.</h1>
-                            <p>Faites-vous aider. Exprimez votre générosité. Démarrez-en un seul clic.</p>
+                            <p>Faites-vous aider. Exprimez votre générosité. Démarrer en un seul clic.</p>
                             <div class="banner-btn-area">
-                                <a class="common-btn banner-btn" href="#">Démarrer un campagne</a>
-                                <a class="common-btn" href="#">Comment ça marche ?</a>
+                                <a style="font-family: montserrat; " class="common-btn banner-btn" href="{{ url('login') }}">Démarrer une campagne</a>
+                                <a style="font-family: montserrat; " class="common-btn" href="/how-work">Comment ça marche ?</a>
                             </div>
                         </div>
                     </div>
@@ -117,33 +117,34 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
-                <div class="about-content">
+            <div class="about-content">
                     <div class="section-title">
-                        
-                        <h2 style="font-family: montserrat;">GETFUND ACTION</h2>
+                        <span class="sub-title">COTISEZ EN TOUTE SÉCURITÉ A TRAVERS LE MONDE POUR VOTRE CAUSE</span>
+                        <h2>GETFUND ACTION</h2>
                     </div>
-                    <p style="font-family: montserrat;">GETFUND ACT, la plateforme de campagne en ligne gratuite, a décidé de créer une campagne en ligne qui brise les barrières des devises. De ce fait, il vous sera possible de créer ou de participer à une campagne en ligne, quelque soit votre devise. Vous pouvez créer, gratuitement, une campagne.</p>
+                    <p>GETFUND ACTION , Une plateforme qui permet à vos contributeurs de choisir collectivement de financer directement et de manière traçable vos projets identifiés.</p>
                     <ul>
                         <li>
                             <span>01</span>
-                            Créez gratuitement et facilement une cagnotte.
+                           Créez gratuitement et facilement une campagne.
                         </li>
                         <li>
                             <span>02</span>
-                            Partagez la cagnotte avec vos amis, vos proches etc.
+                            Partagez la campagne avec vos amis, vos proches , sur des reseaux sociaux,  etc.
                         </li>
                         <li>
                             <span>03</span>
-                            Collectez l’argent des participants par carte bancaire.
+                            Collectez l’argent des participants par carte bancaire et par mobile money .
                         </li>
                         <li>
                             <span>04</span>
-                            Dépensez ou transférez les fonds partout dans le monde.
+                            Recevez les fonds collectés sur votre compte bancaire ou sur votre compte mobile money puis exécuter votre projet.
                         </li>
                     </ul>
                     <div class="about-btn-area">
-                        <a class="common-btn about-btn" href="/login">Lancer une campapagne</a>
-                        <a class="common-btn" href="/about">En savoir plus</a>
+                        {{-- withdrawal url --}}
+                        <a class="common-btn about-btn" href="{{ url('list-withdrawal') }}">Demander un rétrait</a>
+                        <a class="common-btn" href="/how-work">Comment ça marche</a>
                     </div>
                 </div>
             </div>

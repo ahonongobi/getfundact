@@ -1,4 +1,6 @@
 @extends('_layouts._user')
+{{--link css fileinput file --}}
+<link rel="stylesheet" href="{{asset('assets/css/fileinput.css')}}">
 <style>
     .tabset>input[type="radio"] {
         position: absolute;
@@ -383,11 +385,11 @@
                             @csrf
                             <div class="row">
                                 <container class="col-md-12">
-                                    <div>
-                                        <img src="{{asset('assets/img/kyc.png')}}" height="200" alt="" srcset="">
+                                    <div class="d-flex justify-content-center">
+                                        <img  src="{{asset('assets/img/kyc.png')}}" height="200" alt="" srcset="">
                                     </div>
                                     
-                                    <div class="col-lg-12 mb-4">
+                                    {{--<div class="col-lg-12 mb-4">
                                         <div class="form-group">
                                             <label for="">* Document officiel (CNI ou Justificatif de domicile)
                                             </label>
@@ -409,19 +411,69 @@
                                             @endif
                                             </span>
                                         </div>
-                                    </div>
+                                    </div>--}}
                     
-                                    
+                                    {{--start here another aspct of file input for the same form--}}
+                        <div class="file-upload col-lg-12 mb-2">
+                            <button  class="file-upload-btn text-uppercase" type="button" onclick="$('.file-upload-input').trigger( 'click' )">AJOUTER Document officiel (CNI ou Justificatif de domicile)</button>
+                          
+                            <div class="image-upload-wrap">
+                              <input class="file-upload-input" type='file' name="file" onchange="readURL(this);" accept="image/*" />
+                              <div class="drag-text">
+                                <h3>glisser et déposez ou sélectionnez ajouter une image</h3>
+                              </div>
+                            </div>
+                            <div class="file-upload-content">
+                              <img class="file-upload-image" src="#" alt="your image" />
+                              <div class="image-title-wrap">
+                                <button type="button" onclick="removeUpload()" class="remove-image">Supprimer <span class="image-title">L'mage</span></button>
+                              </div>
+                            </div>
+                            <span class="text-danger">
+                                @if ($errors->has('file'))
+                                {{$errors->first('file')}}
+                            @endif
+                            </span>
+                        </div>
+
+                          {{-- do the same thing but change attribute --}}
+                            <div class="file-upload col-lg-12 mb-2">
+                                <button  class="file-upload-btn text-uppercase" type="button" onclick="$('.file-upload-input2').trigger( 'click' )">AJOUTER Document officiel secondaire (Verso de la CNI, le cas échéant)</button>
+                            
+                                <div class="image-upload-wrap2">
+                                <input class="file-upload-input2" type='file' name="file2" onchange="readURL2(this);" accept="image/*" />
+                                <div class="drag-text2">
+                                    <h3>glisser et déposez ou sélectionnez ajouter une image</h3>
+                                </div>
+                                </div>
+                                <div class="file-upload-content2">
+                                <img class="file-upload-image2" src="#" alt="your image" />
+                                <div class="image-title-wrap">
+                                    <button type="button" onclick="removeUpload2()" class="remove-image">Supprimer <span class="image-title2">L'image</span></button>
+                                </div>
+                                </div>
+                                <span class="text-danger">
+                                    @if ($errors->has('file2'))
+                                    {{$errors->first('file2')}}
+                                @endif
+                                </span>
+                            </div>
+                            {{-- end here --}}
+                          
+                         {{--end here another aspct of file input for the same form--}}
                                    
                                 </container>
                                 
             
                                 
                             </div>
+                            
                             <div class="col-lg-12">
                                 <button type="submit" class="btn common-btn">Sauvegarder les modifications</button>
                             </div>
                         </form>
+
+                                              
                     </div>
                 </section>
             </div>
@@ -430,5 +482,5 @@
 
 
     </div>
-
+   
 @endsection
