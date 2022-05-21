@@ -476,6 +476,11 @@
 
 cntDown();
               </script>
+              <script>
+                  var parent = $("#chnage-position");
+                  setInterval(() => parent.prepend(parent.children().last()), 3000)
+
+              </script>
     </body>
    
 
