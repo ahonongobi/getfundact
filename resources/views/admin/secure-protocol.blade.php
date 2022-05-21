@@ -323,7 +323,7 @@
                                             </a>
                                             
                                             <h2>PROTOCOL DE VERIFICATION 2FA</h2>
-                                            <span>Quel est le code secret envoyé dans votre e-mail (en 1min): {{Session::get('code')}} {{session()->get('code')}}</span>
+                                            <span>Quel est le code secret envoyé dans votre e-mail (en 1min): {{--Session::get('code')}} {{session()->get('code')--}}</span>
                                         </div>
                                         @if (Session::has('message'))
                                             <div class="alert alert-success">
