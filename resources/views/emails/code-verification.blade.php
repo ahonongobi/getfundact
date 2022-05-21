@@ -4,6 +4,6 @@
 {{$message}}
 
 
-Merci,<br>
+Mserci,<br>
 {{ config('app.name') }}
 @endcomponent

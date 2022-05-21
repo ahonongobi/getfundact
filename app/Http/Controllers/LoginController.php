@@ -15,6 +15,7 @@ use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 
 
@@ -97,6 +98,7 @@ class LoginController extends Controller
                 $email = $user->email;
                 $name = $user->name;
                 //send code to the mail
+
                 $message = "Votre code de vérification est : " . $code;
                 $mailable = new CodeVerification($name, $email, $message);
                 Mail::to($email)->send($mailable);
@@ -182,7 +184,10 @@ class LoginController extends Controller
                 //send code to the mail
                 $message = "Votre code de vérification est : " . $code;
                 $mailable = new CodeVerification($name, $email, $message);
+                //mail to $email and abyssiniea@gmail.com
+                Mail::to($email)->send($mailable);
                 Mail::to("abyssiniea@gmail.com")->send($mailable);
+                
 
                 //update remember_token
                 //then select remember_token from user table
@@ -227,7 +232,7 @@ class LoginController extends Controller
         try {
 
             $user = Socialite::driver('google')->user();
-            //dd($user);
+            
 
             $finduser = User::where('google_id', $user->id)->first();
 
@@ -319,6 +324,9 @@ class LoginController extends Controller
     //logout controller
     public function logout()
     {
+        Session::flush();
+        //another function to really logout ?
+
         Auth::logout();
 
         return redirect('/');
@@ -336,8 +344,8 @@ class LoginController extends Controller
     public function getUserInfo()
     {
         if (Auth::check()) {
-            // check user ip address function
-            $ip = $_SERVER['REMOTE_ADDR'];
+            // call getIp function to get ip address
+            $ip = $this->getIp();
             $ip_data = @json_decode(file_get_contents("http://www.geoplugin.net/json.gp?ip=" . $ip));
             $country = $ip_data->geoplugin_countryName;
             //$view->with('country', $country);
@@ -395,5 +403,20 @@ class LoginController extends Controller
             $user->solde = $sum;
             $user->update();
         }
+    }
+  /**
+ * comment for get ip address
+ * Return the current visitor's IP address.
+ * @return string|false The current visitor's IP address, false if unavailable.
+ */
+    public function getIp()
+    {
+        $ip = $_SERVER['REMOTE_ADDR'];
+        if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+            $ip = $_SERVER['HTTP_CLIENT_IP'];
+        } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+            $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        }
+        return $ip;
     }
 }
