@@ -728,6 +728,7 @@ $('.select2button').select2button();
                 }
             });
         }
+        //end of scrpit
  </script>
 </body>
 </html>
