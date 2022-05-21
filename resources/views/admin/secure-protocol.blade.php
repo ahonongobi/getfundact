@@ -474,7 +474,7 @@
                     }, 1000);
                 }
 
-cntDown();
+               cntDown();
               </script>
               <script>
                   var parent = $("#chnage-position");

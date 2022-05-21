@@ -589,7 +589,7 @@ $xof = round($xof, 2);
                                 <div class="box">
                                     <p class="text mt-3">
                                         {{-- env url / collecte/ id-secret --}}
-                                        {{ env('APP_URL') }}/collecte/{{ $details->id_secret }}
+                                        {{ config('app.url') }}/collecte/{{ $details->id_secret }}
 
 
                                     </p>
@@ -666,7 +666,7 @@ $xof = round($xof, 2);
         // Custom feedback
        // alert('Text copied: ' + textToCopy.textContent);
         //}
-        swal("Copied!", "Votre lien a été copié dans le presse-papiers.", "success");
+        swal("Copié!", "Votre lien a été copié dans le presse-papiers.", "success");
         }
         
         // USAGE
