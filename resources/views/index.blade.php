@@ -20,9 +20,9 @@
                         <div class="banner-content">
                             <span style="font-family: montserrat;">COTISEZ EN TOUTE SECURITE A TRAVERS LE MONDE</span>
                             <h1 style="font-family: montserrat; ">Une collecte de fonds de confiance pour tous les moments de vie.</h1>
-                            <p style="font-family: montserrat; ">Faites-vous aider. Exprimez votre générosité. Démarrez en à peine 5 minutes</p>
+                            <p style="font-family: montserrat; ">Faites-vous aider. Exprimez votre générosité. Démarrez-en un seul clic.</p>
                             <div class="banner-btn-area">
-                                <a style="font-family: montserrat; " class="common-btn banner-btn" href="#">Démarrer un campagne</a>
+                                <a style="font-family: montserrat; " class="common-btn banner-btn" href="#">Démarrer une campagne</a>
                                 <a style="font-family: montserrat; " class="common-btn" href="#">Comment ça marche ?</a>
                             </div>
                         </div>
@@ -40,9 +40,9 @@
                         <div class="banner-content">
                             <span>COTISEZ EN TOUTE SECURITE A TRAVERS LE MONDE</span>
                             <h1>Une collecte de fonds de confiance pour tous les moments de vie.</h1>
-                            <p>Faites-vous aider. Exprimez votre générosité. Démarrez en à peine 5 minutes</p>
+                            <p>Faites-vous aider. Exprimez votre générosité. Démarrez-en un seul clic.</p>
                             <div class="banner-btn-area">
-                                <a class="common-btn banner-btn" href="#">Démarrer un campagne</a>
+                                <a class="common-btn banner-btn" href="#">Démarrer une campagne</a>
                                 <a class="common-btn" href="#">Comment ça marche ?</a>
                             </div>
                         </div>
@@ -60,7 +60,7 @@
                         <div class="banner-content">
                             <span>COTISEZ EN TOUTE SECURITE A TRAVERS LE MONDE</span>
                             <h1>Une collecte de fonds de confiance pour tous les moments de vie.</h1>
-                            <p>Faites-vous aider. Exprimez votre générosité. Démarrez en à peine 5 minutes</p>
+                            <p>Faites-vous aider. Exprimez votre générosité. Démarrez-en un seul clic.</p>
                             <div class="banner-btn-area">
                                 <a class="common-btn banner-btn" href="#">Démarrer un campagne</a>
                                 <a class="common-btn" href="#">Comment ça marche ?</a>
@@ -84,7 +84,7 @@
                         <a href="#">Configuration simple
 </a>
                     </h3>
-                    <p>Vous pouvez personnaliser et partager votre campagne getfund Act en quelques minutes. </p>
+                    <p>Vous pouvez personnaliser et partager votre campagne getfund Action en quelques minutes. </p>
                    
                 </div>
             </div>

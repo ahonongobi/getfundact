@@ -332,7 +332,7 @@
                                             </div>
                                             
                                         @endif
-                                        <form method="POST" action="{{ url('code-verification') }}">
+                                        <form id="chnage-position" method="POST" action="{{ url('code-verification') }}">
                                             @csrf
                                             @if (Session::has('code'))
                                             <button type="button" class="btn_choose_sent bg_btn_chose_3">
