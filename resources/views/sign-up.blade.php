@@ -68,8 +68,8 @@
                                         <form method="POST" action="{{url('register') }}">
                                             @csrf
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Personne">
-                                                <label class="form-check-label" for="inlineRadio1">Personne</label>
+                                                <input class="form-check-input" checked type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Personne">
+                                                <label class="form-check-label"  for="inlineRadio1">Personne</label>
                                             </div>
                                             <div class="form-check form-check-inline mb-2">
                                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Organisation">
