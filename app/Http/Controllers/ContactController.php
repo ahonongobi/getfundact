@@ -20,12 +20,19 @@ class ContactController extends Controller
                 $titre = "Super";
                 $messages = "Nous avons bien reçu votre message. Un de nos assistant vous contactera dans quelques minutes.";
                 $type = "success";
+                $text = "success";
                 $notification_gobi = array(
                     'title' => 'Envoyé',
                     'sending' => "Nous avons bien reçu votre message. Un de nos assistant vous contactera dans quelques minutes.",
                     'type' => 'success',
+                    'success' => true,
             
                     );
-                return back()->with($notification_gobi);
+                    //if send, return ajax response to use that in  contact-form-script.js
+                    return response()->json([
+                        'status' => true,
+                        'message' => 'Nous avons bien reçu votre message. Un de nos assistant vous contactera dans quelques minutes.',
+                    ]);
+                     //return back()->with($notification_gobi);
     }
 }

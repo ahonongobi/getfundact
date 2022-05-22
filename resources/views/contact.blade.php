@@ -39,8 +39,10 @@
                         <div class="contact-info">
                             <i class="icofont-ui-call"></i>
                             <span>Phone:</span>
-                            <a href="tel:+123456789">+123-456-789</a>
-                            <a href="tel:+548658956">+548-658-956</a>
+                            <a href="tel:+229 5150 7071">+229 5150 7071
+                            </a>
+                            <a href="tel:+229 6474 5149">+229 6474 5149
+                            </a>
                         </div>
                     </div>
                     <div class="col-sm-6 offset-sm-3 offset-lg-0 col-lg-4">
@@ -114,7 +116,7 @@
                             </div>
                         </div>
                         <div class="col-lg-12">
-                            <button type="submit" class="btn common-btn">
+                            <button id="sendMessage" type="submit" class="btn common-btn">
                                 Envoyer message
                             </button>
                             <div id="msgSubmit" class="h3 text-center hidden"></div>
