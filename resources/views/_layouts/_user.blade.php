@@ -44,6 +44,7 @@
             body{
                 font-family: montserrat !important;
             }
+            
         </style>
          {{--<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="f685ffce-0f91-4e63-9783-3053bab47d12";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>--}}
          
@@ -213,7 +214,7 @@
                 <div class="d-table-cell">
                     <div class="container">
                         <div class="title-item">
-                            <h2>{{$details->name ?? 'GETFUND ACTION'}}</h2>
+                            <h2 class="gradient-heading">{{$details->name ?? 'GETFUND ACTION'}}</h2>
                             <ul>
                                 <li>
                                     @if (Auth::check())
@@ -489,6 +490,7 @@
 	$(this).addClass('active').siblings().removeClass('active');
 	
 	$('#tab-'+tabID).addClass('active').siblings().removeClass('active');
+       
 });
  </script>
 
@@ -801,7 +803,10 @@ $('.select2button').select2button();
         
 
     </script>
+    <script>
+        
 
+    </script>
         
 </body>
 </html>
