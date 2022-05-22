@@ -88,6 +88,7 @@
             noneditable_noneditable_class: "mceNonEditable",
             toolbar_mode: 'sliding',
             contextmenu: "link image imagetools table",
+            //make in french language the tinymce editor
         });
 
 
@@ -180,6 +181,11 @@
             noneditable_noneditable_class: "mceNonEditable",
             toolbar_mode: 'sliding',
             contextmenu: "link image imagetools table",
+
+            //make in french language the tinymce editor
+            language: 'fr_FR',
+
+
         });
     
 

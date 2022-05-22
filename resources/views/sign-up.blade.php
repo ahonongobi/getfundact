@@ -25,7 +25,7 @@
         <link rel="stylesheet" href="{{asset('assets/css/odometer.min.css')}}">
 
         <link rel="stylesheet" href="{{asset('assets/css/nice-select.min.css')}}">
-
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
         <link rel="stylesheet" href="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css">
         <link rel="stylesheet" href="{{asset('assets/css/theme-dark.css')}}">
@@ -102,7 +102,14 @@
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
-                                                        <input type="password"  name="password" class="form-control" placeholder="Mot de passe">
+                                                        <input type="password" id="password-field"  name="password" class="form-control" placeholder="Mot de passe">
+                                                        <span 
+                                                        style="float: right;
+                                                        margin-left: -30px;
+                                                        margin-right: 20px;
+                                                        margin-top: -30px;
+                                                        position: relative;
+                                                        z-index: 2;" toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                                                         @if ($errors->has('password'))
                                                         <span class="text-danger">{{  $errors->first('password') }}</span>
                                                         @endif
@@ -186,6 +193,18 @@
             @endif
             
           })
+            </script>
+            <script>
+                $(".toggle-password").click(function() {
+
+                $(this).toggleClass("fa-eye fa-eye-slash");
+                var input = $($(this).attr("toggle"));
+                if (input.attr("type") == "password") {
+                input.attr("type", "text");
+                } else {
+                input.attr("type", "password");
+                }
+                });
             </script>
     </body>
 

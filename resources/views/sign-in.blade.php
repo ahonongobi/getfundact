@@ -28,6 +28,7 @@
 
         <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
         <link rel="stylesheet" href="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
         <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/theme-dark.css')}}">
@@ -183,7 +184,14 @@
                                                 </div>
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
-                                                        <input type="password" required name="password" class="form-control" placeholder="MOT DE PASSE">
+                                                        <input type="password" id="password-field" required name="password" class="form-control" placeholder="MOT DE PASSE">
+                                                        <span 
+                                                        style="float: right;
+                                                        margin-left: -30px;
+                                                        margin-right: 20px;
+                                                        margin-top: -30px;
+                                                        position: relative;
+                                                        z-index: 2;" toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12">
@@ -275,6 +283,20 @@
                   x.className = "show";
                   setTimeout(function(){ x.className = x.className.replace("show", ""); }, 8000);
           }
+              </script>
+
+              <script>
+                $(document).ready(function(){
+                  $('.toggle-password').on('click', function() {
+                    $(this).toggleClass('fa-eye fa-eye-slash');
+                    var input = $($(this).attr('toggle'));
+                    if (input.attr('type') == 'password') {
+                      input.attr('type', 'text');
+                    } else {
+                      input.attr('type', 'password');
+                    }
+                  });
+                });
               </script>
     </body>
    

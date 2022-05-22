@@ -47,13 +47,13 @@
 
     .tabset>label:hover,
     .tabset>input:focus+label {
-        color: #06c;
+        color: #E15C1b;
     }
 
     .tabset>label:hover::after,
     .tabset>input:focus+label::after,
     .tabset>input:checked+label::after {
-        background: #06c;
+        background: #E15C1b;
     }
 
     .tabset>input:checked+label {
@@ -81,6 +81,108 @@
     .tabset {
         max-width: 65em;
     }
+    /** design input css **/
+                :root {
+            --primary: #191919;
+            --secondary: #f26db6;
+            --ternary: #310273;
+            --background: #f1f1f1;
+            --gray: #e1eeff7f;
+            --white: #fff;
+            }
+
+            input {
+            outline-style: none;
+            box-shadow: none;
+            border-color: transparent;
+            border-radius: 8px;
+            filter: drop-shadow(5px 5px 1px #E15C1b);
+            height: 52px;
+            font-size: 32px;
+            }
+
+            input:invalid {
+            animation: shake 300ms;
+            border: solid 1px red;
+            filter: drop-shadow(5px 5px 1px red);
+            }
+
+            input:invalid::after {
+            content: "Error text input";
+            font-size: 28px;
+            color: red;
+            }
+
+            input:invalid + span::after {
+            content: "So digite string";
+            color: red;
+            position: relative;
+            top: 8px;
+            }
+
+            .box {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            }
+
+            @keyframes shake {
+            25% {
+                transform: translateX(4px);
+            }
+            50% {
+                transform: translateX(-4px);
+            }
+            75% {
+                transform: translateX(4px);
+            }
+            }
+            /**style file input **/
+            .file-input {
+            box-sizing: border-box;
+            display: inline-block;
+            text-align: left;
+            background: #E15C1b;
+            padding: 16px;
+            width: 100%;
+            position: relative;
+            border-radius: 3px;
+            }
+
+            .file-input > [type='file'] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            z-index: 10;
+            cursor: pointer;
+            }
+
+            .file-input > .button {
+            display: inline-block;
+            cursor: pointer;
+            background: #fff;
+            padding: 8px 16px;
+            border-radius: 2px;
+            margin-right: 8px;
+            }
+
+            .file-input:hover > .button {
+            background: dodgerblue;
+            color: white;
+            }
+
+            .file-input > .label {
+            color: #fff;
+            white-space: nowrap;
+            opacity: .8;
+            }
+
+            .file-input.-chosen > .label {
+            opacity: 1;
+            }
 
 </style>
 @section('content') 
@@ -104,14 +206,18 @@
                 <section id="marzen" class="tab-panel">
                     <div class="row align-items-center">
             
-                        <form method="POST" enctype="multipart/form-data" action="{{ url('addProfile') }}">
+                        <form  method="POST" enctype="multipart/form-data" action="{{ url('addProfile') }}">
                             @csrf
                             <div class="row">
                                 <container class="col-md-6">
-                                    
+                                    {{--<div class="box">
+                                        <input type="text" pattern="[A-z]*" title="So digite string">
+                                        <span></span>
+                                        </input>
+                                    </div>--}}
                                     <div class="col-lg-12 mb-2">
                                         <div class="form-group">
-                                            <input type="text" required value="{{ $profile_data->nom_prenoms ?? '' }}" name="nom_prenoms" class="form-control" placeholder="** Nom complet (prénom nom)">
+                                            <input type="text" required value="{{ $profile_data->nom_prenoms ?? '' }}" name="nom_prenoms" id="nom_prenoms" class="form-control" placeholder="** Nom complet (prénom nom)">
                                             <span class="text-danger">
                                                 @if ($errors->has('nom_prenoms'))
                                                     {{$errors->first('nom_prenoms')}}
@@ -122,7 +228,7 @@
                                     <div class="col-lg-12 mb-2">
                                         <div class="form-group">
                                             @if (isset($profile_data->date_naissance))
-                                            <input type="text" required value="{{ substr($profile_data->date_naissance,0,10) ?? '' }}" name="date_naissance" class="form-control" placeholder="** Date de naissance">
+                                            <input type="text" required value="{{ substr($profile_data->date_naissance,0,10) ?? '' }}" name="date_naissance" id="date_naissance" class="form-control" placeholder="** Date de naissance">
 
                                             @else
                                             <input type="date" required value="" name="date_naissance" class="form-control" placeholder="** Date de naissance">
@@ -137,7 +243,7 @@
                                     </div>
                                     <div class="col-lg-12 mb-2">
                                         <div class="form-group">
-                                            <input type="text" required value="{{ $profile_data->nationanlite ?? '' }}" name="nationanlite" class="form-control" placeholder="** Nationalité">
+                                            <input type="text" required value="{{ $profile_data->nationanlite ?? '' }}" name="nationanlite" id="nationanlite" class="form-control" placeholder="** Nationalité">
                                             <span class="text-danger">
                                                 @if ($errors->has('nationalite'))
                                                     {{$errors->first('nationalite')}}
@@ -148,7 +254,7 @@
             
                                     <div class="col-lg-12 mb-2">
                                         <div class="form-group">
-                                            <input type="text" required name="pays" value="{{ $profile_data->pays ?? '' }}" class="form-control" placeholder="** Pays de résidence">
+                                            <input type="text" required name="pays" id="pays" value="{{ $profile_data->pays ?? '' }}" class="form-control" placeholder="** Pays de résidence">
                                             <span class="text-danger">
                                                 @if ($errors->has('pays'))
                                                     {{$errors->first('pays')}}
@@ -159,7 +265,7 @@
             
                                     <div class="col-lg-12 mb-2">
                                         <div class="form-group">
-                                            <input type="email" required name="email" readonly value="{{ Auth::user()->email ?? '' }}" class="form-control" placeholder="* Email">
+                                            <input type="email" required name="email" id="email" readonly value="{{ Auth::user()->email ?? '' }}" class="form-control" placeholder="* Email">
                                             <span class="text-danger">
                                                 @if ($errors->has('email'))
                                                     {{$errors->first('email')}}
@@ -170,7 +276,7 @@
             
                                     <div class="col-lg-12 mb-2">
                                         <div class="form-group">
-                                            <input type="number" required name="tel" value="{{ $profile_data->tel ?? '' }}" class="form-control" placeholder="Numéro de téléphone">
+                                            <input type="number" required name="tel" id="tel" value="{{ $profile_data->tel ?? '' }}" class="form-control" placeholder="Numéro de téléphone">
                                             <span class="text-danger">
                                                 @if ($errors->has('tel'))
                                                     {{$errors->first('tel')}}
@@ -179,16 +285,16 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
-                                        <button type="submit" class="btn common-btn">Enregistrer</button>
+                                        <button type="submit" id="" class="btn common-btn">Enregistrer</button>
                                     </div>
                                 </container>
             
                                 <container class="col-md-6">
-                                    <center>
+                                    <div class="">
                                         @if (isset($profile_data->photo))
                                         <div class="col-lg-12 mb-2">
-                                            <div class="form-group">
-                                                <img src="{{ asset('storage/UserDocument/'.$profile_data->photo) }}" alt="" width="150" height="150" class="img-fluid">
+                                            <div class="d-flex justify-content-center">
+                                                <img src="{{ asset('storage/UserDocument/'.$profile_data->photo) }}" alt="" width="200" height="200" class="img-fluid">
                                             </div>
                                         </div>
                                         @else
@@ -197,8 +303,8 @@
                                         @endif
                                         
                                         
-                                    </center>                                   
-                                     <div class="col-lg-12 mb-2">
+                                    </div>                                   
+                                     {{--<div class="col-lg-12 mb-2">
                                         <div class="form-group">
                                             <input type="file" name="file" class="form-control">
                                             <span class="text-danger">
@@ -207,6 +313,16 @@
                                                 @endif
                                             </span>
                                         </div>
+                                    </div>--}}
+                                    <div class='file-input'>
+                                        <input name="file" type='file'>
+                                        <span class='button'>Chosir la photo (profile)</span>
+                                        <span class='label' data-js-label>Aucun fichier sélectionner</label>
+                                            <span class="text-danger">
+                                                @if ($errors->has('file'))
+                                                    {{$errors->first('file')}}
+                                                @endif
+                                            </span>
                                     </div>
                                 
                                 </container>
@@ -301,7 +417,7 @@
             
                                 <container class="col-md-6">
                                     
-                                    <div class="form-group">
+                                    <div class="form-group mb-4">
                                         <label for="">Iban</label>
                                         <input type="text" value="{{ $profile_data->iban ?? '' }}"  name="iban" class="form-control">
                                         <span class="text-danger">
@@ -310,7 +426,7 @@
                                             @endif
                                         </span>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group mb-4">
                                         <label for="">BIC</label>
                                         <input type="text" value="{{ $profile_data->bic ?? '' }}"  name="bic" class="form-control">
                                         <span class="text-danger">

@@ -7,8 +7,6 @@
 	    <meta name="description"  content="Getfund action  est un site internet  qui permet de collecter des fonds auprès du grand public pour financer un projet.">
 	     <meta  name="keywords" content="getfundact, getfund action,  collecte de funds , Crowdfunding afrique, Crowdfunding  benin ,Financement participatif, intellegencia si , Gboyou Guillaume Lewis,Ahonon Goby Parfait, Crowdfunding africa">
 
-        
-
         <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
 
         <link rel="stylesheet" href="{{asset('assets/css/icofont.min.css')}}">
@@ -480,6 +478,7 @@
 <script src="{{asset('assets/js/custom.js')}}"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <script src="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js"></script>
+{{--<script src="{{asset('assets/js/profile-form.js')}}"></script>--}}
 
 
  <script>

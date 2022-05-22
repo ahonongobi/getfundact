@@ -302,9 +302,9 @@
   @endif
 
 @yield('content')
-<footer class="footer-area pt-100">
+<footer class="footer-area">
     <div class="container">
-        <div class="row">
+        {{--<div class="row">
             <div class="col-sm-6 col-lg-6">
                 <div class="footer-item">
                     <div class="footer-logo">
@@ -368,7 +368,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--}}
         <div class="copyright-area">
             <p>Copyright ©2021- <script>document.write(new Date().getFullYear())</script>  GETFUND ACT. Développé  par 
                 <a href="https://intelligencia-si.com/" target="_blank">Intelligencia SI</a> | <a href="">Notice légale et confidentialité</a>
