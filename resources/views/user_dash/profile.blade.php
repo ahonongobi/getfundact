@@ -114,7 +114,7 @@
             }
 
             input:invalid + span::after {
-            content: "So digite string";
+            content: "Rensigner le champ";
             color: red;
             position: relative;
             top: 8px;

@@ -556,6 +556,16 @@ function updateThumbnail(dropZoneElement, file) {
 }
 
 </script>
+<script>
+	$(document).ready(function(){
+        //id="modalshow" click, show modal
+        $('#modalshow').click(function(){
+            
+            $("#myModal").modal('show');
+        });
+		
+	});
+</script>
 </body>
 
 </html>

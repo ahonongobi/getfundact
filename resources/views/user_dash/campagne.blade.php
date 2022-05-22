@@ -283,7 +283,10 @@
                                 <small class="text-muted">
                                     Copier-Coller le lien "ifrmae" d une vidéo Viméo ou Youtube qui présente votre cagnotte. Votre
                                     vidéo doit être courte pour captiver vos potentiels contributeurs mais complète afin de
-                                    dire d éclairer au mieux sur votre cagnotte.
+                                    dire d éclairer au mieux sur votre cagnotte. Comment copier le lien iframe de votre video Youtube, si vous ne le savez pas fait: cliquez 👉
+                                    {{-- modal a target--}}
+                                    <a href="#" id="modalshow">ici</a>
+                                    {{-- modal a target--}}
                                 </small>
                             </div>
                         </div>
@@ -399,6 +402,28 @@
     </div>
     </div>
 
+{{-- then make modal according to the below a target ans display this -> 
+    <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/4378ae6bdb5d44b398de9f906896803d" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div> --}}
+    <!-- Modal -->
+    <div class="m-4">
+        <div id="myModal" class="modal fade" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Comment copier le lien iframe de votre vidéo Youtube</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/4378ae6bdb5d44b398de9f906896803d" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                        {{--<button type="button" class="btn btn-primary">Save changes</button>--}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     {{-- footer - --}}
 @endsection
