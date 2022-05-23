@@ -14,8 +14,67 @@
             </div>
         </div>
     @endif
-
-    <table id="example" class="display nowrap" style="width:100%">
+    {{-- display  today user registration--}}
+       <h2 style="color:#302c51">Aujourd'hui</h2>
+        <table id="example_today" class="display nowrap" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>E-mail</th>
+                    <th>Date</th>
+                    <th>Solde</th>
+                    <th>Last session</th>
+                    <th>Statut</th>
+                    <th>Voir</th>
+                    <th>Suppr.</th>
+                    <th>Etat</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($all_users_today as $item)
+                <tr>
+                    <td>{{ $item->name }} {{ $item->surname }}</td>
+                    <td>{{ $item->email }}</td>
+                    <td>{{ $item->created_at }}</td>
+                    <!-- if solde is null 0  -->
+                    @if ($item->solde==null)
+                    <td>0 XOF</td>
+                    @else
+                    <td>{{ $item->solde }}XOF</td>
+                    @endif
+                    @php
+                     \Carbon\Carbon::setLocale('fr');
+                    @endphp
+                    <td>{{ \Carbon\Carbon::parse($item->updated_at)->diffForHumans() }}</td>
+                    
+                    @if ($item->states == 1)
+                    <td class="font-weight-medium text-success">Actif</td>
+                    @elseif($item->states == 0)
+                        <td class="font-weight-medium text-warning">Inactif</td>
+                    @elseif($item->states == 2)
+                        <td class="font-weight-medium text-danger">Supprimer</td>
+                    @endif
+                    <td><p data-placement="top" data-toggle="tooltip" title="voir plus"><a href="{{ url('see-more/' . $item->id) }}" class="btn btn-primary btn-lg" data-title="voir"  data-target="#edit" ><span class="ti-eye"></span></a></p></td>
+                    <td><p data-placement="top" data-toggle="tooltip" title="Supprimer"><a onclick="return confirm('Cette action est irreversible')" href="{{ url('delete/' . $item->id) }}" class="btn btn-danger btn-lg" data-title="Supprimer"  data-target="#delete" ><span class="ti-trash"></span></a></p></td>
+    
+                    <!-- if states = 0 and else -->
+                    @if ($item->states == 0)
+                    <td><p data-placement="top" data-toggle="tooltip" title="Invalide"><a href="{{ url('valider/' . $item->id) }}" class="btn btn-danger btn-lg" data-title="invalide"  data-target="#delete" ><span class="ti-close"></span></a></p></td>
+                    @else
+                    <td><p data-placement="top" data-toggle="tooltip" title="Valide"><a href="{{ url('unvalider/' . $item->id) }}" class="btn btn-success btn-lg" data-title="Valide"  data-target="#delete" ><span class="ti-check"></span></a></p></td>
+                    @endif
+                    
+    
+                </tr>
+                @endforeach
+                
+            </tbody>
+            
+        </table>
+    
+    <h2 style="color:#302c51">Tous</h2>
+    {{--  end today user registration--}}
+    <table id="example" class="display nowrap mt-3" style="width:100%;">
         <thead>
             <tr>
                 <th>Nom</th>

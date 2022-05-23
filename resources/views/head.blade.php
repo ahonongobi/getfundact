@@ -80,13 +80,13 @@
                                         <i class="icofont-youtube-play"></i>
                                     </a>
                                 </li>
-                                <li>
+                                {{--<li>
                                     <a href="#" target="_blank">
                                         <i class="icofont-instagram"></i>
                                     </a>
-                                </li>
+                                </li>--}}
                                  <li>
-                                    <a href="#" target="_blank">
+                                    <a href="/login" target="_blank">
                                         <i class="icofont-user"></i>
                                     </a>
                                 </li>
@@ -94,9 +94,9 @@
                             <div class="language">
                                 <select>
                                     <option>English</option>
-                                    <option>العربيّة</option>
+                                    {{--<option>العربيّة</option>
                                     <option>Deutsch</option>
-                                    <option>Português</option>
+                                    <option>Português</option>--}}
                                 </select>
                             </div>
                             <div class="header-search">

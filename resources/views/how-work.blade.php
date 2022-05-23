@@ -13,7 +13,7 @@
                                     <a href="/">ACCUEIL</a>
                                 </li>
                                 <li>
-                                    <span style="font-family: montserrat;">GETFUND ACT</span>
+                                    <span style="font-family: montserrat;">GETFUND ACTION</span>
                                 </li>
                             </ul>
                         </div>
@@ -28,7 +28,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="about-img">
-                            <img src="assets/img/about/about-main1.jpg" alt="About">
+                        <img src="{{asset('assets/img/ccm.png')}}" alt="How work">
                         </div>
                     </div>
                     <div class="col-lg-6">

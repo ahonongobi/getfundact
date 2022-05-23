@@ -27,8 +27,9 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                        <div class="about-img">
-                            <img src="assets/img/about/about-main1.jpg" alt="About">
+                    <div class="">
+                            <img src="{{asset('assets/img/hand2.png')}}" alt="Benefit">
+                         
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -37,7 +38,10 @@
                                 <span class="sub-title" style="font-family: montserrat;">A PROPOS DE NOUS</span>
                                 <h2 style="font-family: montserrat;">Nous sommes pour de bonne cause</h2>
                             </div>
-                            <p class="about-span" style="font-family: montserrat; text-align: justify;">GetfundAct développer par la société   <b> INTELLIGENCIA SI </b> est une plateforme de cagnotte en ligne internationale, qui permet à des groupes, des associations et des communautés de récolter des fonds auprès de personnes éparpillées dans le Monde et ainsi de se mobiliser pour un proche, un collègue ou d’agir solidairement pour des causes environnementales, sociales, culturelles.
+                            <p class="" style="font-family: montserrat; text-align: justify;">GetfundAct développer par la société   <b> INTELLIGENCIA SI </b> est une plateforme de 
+                            cagnotte en ligne internationale, qui permet à des groupes, des associations et des communautés de 
+                             récolter des fonds auprès de personnes éparpillées dans le Monde et ainsi de se mobiliser pour un
+                              proche, un collègue ou d’agir solidairement pour des causes environnementales, sociales, culturelles.
 </p>
                             <p style="font-family: montserrat; text-align: justify;">Nous avons configuré ce portail pour gérer certains cas graves qui nécessitaient une attention urgente, où ces personnes n'avaient aucun moyen de résoudre le problème financier. Par conséquent, GetfundAct aide à faire campagne pour un fonds afin d'offrir une solution grâce au financement participatif.</p>
                             <p style="font-family: montserrat; text-align: justify;">GetfundAct vous aide à créer rapidement une campagne et à raconter votre histoire de collecte de fonds. Vous pouvez collecter des fonds en tant qu'individu ou inviter d'autres personnes à se joindre à votre équipe de collecte de fonds. Chaque campagne doit contenir une raison puissante derrière l'idée, des récompenses passionnantes et uniques et un affichage accrocheur. Connaître ces points est extrêmement essentiel pour créer une campagne réussie.</p>
@@ -137,45 +141,33 @@
                             <h2 style="font-family: montserrat;">Notre Mission</h2>
                             <p style="font-family: montserrat; text-align: justify;">Notre mission est de créer une opportunité de financement que 
                             certaines petites entreprises n'ont peut-être pas reçue de manière traditionnelle. Rendre le financement participatif ou 
-                            sociofinancement accessible à tous. Les initiatives courantes de financement participatif basées sur les dons comprennent : :</p>
+                            sociofinancement accessible à tous. Les initiatives courantes de financement participatif basées sur les dons comprennent :</p>
                         </div>
                         <div class="row" >
-                            <div class="col-sm-6 col-sm-6">
-                                <div class="benefit-item">
-                                    <i class="flaticon-house"></i>
-                                    <h3 style="font-family: montserrat;">Collecte de fonds pour les secours en cas de catastrophe</h3>
-                                </div>
+
+
+                        <div class="footer-item" style="color: #000;">
+                            <div class="footer-links" >
+                             
+                               <ul style="color: #000;">
+                                <li><a href="" style="color: #000;"><i class="icofont-simple-right"></i>Collecte de fonds pour les secours en cas de catastrophe</a></li>
+                                    <li><a href="" style="color: #000;"><i class="icofont-simple-right"></i>Les organismes de bienfaisance</a></li>
+                                    <li><a href="" style="color: #000;"> <i class="icofont-simple-right"></i>Organisations à but non-lucratif</a></li>
+                                    <li><a href="" style="color: #000;"><i class="icofont-simple-right"></i>Factures médicales</a></li>
+                                    <li><a href="" style="color: #000;"><i class="icofont-simple-right"></i>Les aides scolaires</a></li>
+                                    <li><a href="" style="color: #000;"><i class="icofont-simple-right"></i>Financement de vos projets de création ou reprise et de développement d'activité... etc</a></li>
+                                </ul>
                             </div>
-                            <div class="col-sm-6 col-sm-6">
-                                <div class="benefit-item two">
-                                    <i class="flaticon-hospital"></i>
-                                    <h3 style="font-family: montserrat;">Les organismes de bienfaisance</h3>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-sm-6">
-                                <div class="benefit-item three">
-                                    <i class="flaticon-fast-food"></i>
-                                    <h3 style="font-family: montserrat;">Organisations à but non-lucratif</h3>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-sm-6">
-                                <div class="benefit-item four">
-                                    <i class="flaticon-graduation-cap"></i>
-                                    <h3 style="font-family: montserrat;">Factures médicales</h3>
-                                </div>
-                            </div>
+                        </div>
+                       
+
                         </div>
                     </div>
                     
                      <div class="col-lg-6">
-                        <div class="benefit-img">
-                            <img src="assets/img/benefit-main1.jpg" alt="Benefit">
-                            <img src="assets/img/benefit-shape1.png" alt="Benefit">
-                            <div class="video-wrap">
-                                <button class="js-modal-btn" data-video-id="uemObN8_dcw">
-                                    <i class="icofont-ui-play"></i>
-                                </button>
-                            </div>
+                        <div class="">
+                            <img src="{{asset('assets/img/monimages.png')}}" alt="Benefit">
+                         
                         </div>
                     </div>
                 </div>
@@ -186,9 +178,9 @@
         <section class="team-area four pt-100 pb-70">
             <div class="container">
                 <div class="section-title">
-                    <span class="sub-title" style="font-family: montserrat;">Equipe</span>
+                    
                     <h2 style="font-family: montserrat;">Notre equipe</h2>
-                    <p style="font-family: montserrat;">We exist for non-profits, social enterprises, community groups, activists,lorem politicians and individual citizens that are making.</p>
+                    <p style="font-family: montserrat;">Notre équipe vous accompagne dans le financement participatif de vos projets entrepreneurials ou associatifs.</p>
                 </div>
                 <div class="row">
                     <div class="col-sm-4 col-lg-3">

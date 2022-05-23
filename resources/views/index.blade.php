@@ -119,11 +119,13 @@
             <div class="col-lg-6">
             <div class="about-content">
                     <div class="section-title">
-                        <span class="sub-title">COTISEZ EN TOUTE SÉCURITÉ A TRAVERS LE MONDE POUR VOTRE CAUSE</span>
+                        <span class="sub-title">FINANCEZ VOTRE PROJET AVEC LES DONS</span>
                         <h2>GETFUND ACTION</h2>
                     </div>
                     <p>GETFUND ACTION , Une plateforme qui permet à vos contributeurs de choisir collectivement de financer directement et de manière traçable vos projets identifiés.</p>
                     <ul>
+
+                       
                         <li>
                             <span>01</span>
                            Créez gratuitement et facilement une campagne.
@@ -167,7 +169,7 @@
     <div class="container">
         <div class="section-title">
             <span class="sub-title">GETFUND ACTION</span>
-            <h2>Principales collectes de fonds</h2>
+            <h2>Et si vous investissiez dans un projet à impact positif ?</h2>
    
         </div>
         <div class="row">
@@ -392,7 +394,7 @@
                     <img src="assets/img/benefit-shape1.png" alt="Benefit">
                     <div class="video-wrap">
                         <button class="js-modal-btn" data-video-id="uemObN8_dcw">
-                            <i class="icofont-ui-play"></i>
+                            <i class="icofont-ui-play"></i> 
                         </button>
                     </div>
                 </div>

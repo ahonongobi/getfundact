@@ -16,9 +16,11 @@
                                     <table id="example" class="table table-striped table-borderless">
                                         <thead>
                                             <tr>
-                                                <th>ID utilisateur</th>
-                                                <th>ID campagne-Nom campagne</th>
+                                                <th>ID</th>
+                                                <th>(id)Nom campagne</th>
                                                 <th>Montant</th>
+                                                <th>Getway</th>
+                                                <th>Mobile Money</th>
                                                 <th>Montant à récévoir(-{{$last_pourcentage->pourcentage}}%)</th>
                                                 <th>%{{$last_pourcentage->pourcentage}} bénéfices</th>
                                                 <th>Date</th>
@@ -41,6 +43,19 @@
                                             @else
                                                <td>{{$item->montant}}XOF</td> 
                                             @endif
+                                             {{-- if payment_method is null then -- else montant $item->payment_method --}}
+                                             @if ($item->payment_method == null)
+                                             <td>--</td>
+                                             @else
+                                             <td>{{$item->payment_method}}</td>
+                                             @endif
+                                                {{-- if if_number is null then -- else montant $item->if_number --}}
+                                                @if ($item->if_number == null)
+                                                <td>--</td>
+                                                @else
+                                                <td>{{$item->if_number}}</td>
+                                                @endif
+                                                
                                             
                                             @if ($item->montant == null)
                                             <td>0XOF</td>
@@ -112,9 +127,12 @@
                                     <table id="example2" class="table table-striped table-borderless">
                                         <thead>
                                             <tr>
-                                                <th>ID utilisateur</th>
-                                                <th>ID campagne-Nom campagne</th>
+                                                <th>ID user</th>
+                                                <th>(id)Nom campagne</th>
                                                 <th>Montant</th>
+                                                
+                                                <th>Getway</th>
+                                                <th>Mobile Money</th>
                                                 <th>Montant à récévoir(-{{$last_pourcentage->pourcentage}}%)</th>
                                                 <th>%{{$last_pourcentage->pourcentage}} bénéfices</th>
                                                 <th>Date</th>
@@ -136,6 +154,18 @@
                                                 
                                             @else
                                                <td>{{$item->montant}}XOF</td> 
+                                            @endif
+                                             {{-- if payment_method is null then -- else montant $item->payment_method --}}
+                                            @if ($item->payment_method == null)
+                                            <td>--</td>
+                                            @else
+                                            <td>{{$item->payment_method}}</td>
+                                            @endif
+                                            {{-- if if_number is null then -- else montant $item->if_number --}}
+                                            @if ($item->if_number == null)
+                                            <td>--</td>
+                                            @else
+                                            <td>{{$item->if_number}}</td>
                                             @endif
                                             {{-- calcul redux 20% of montant --}}
                                             @if ($item->montant == null)
@@ -210,9 +240,11 @@
                                     <table id="example3" class="table table-striped table-borderless">
                                         <thead>
                                             <tr>
-                                                <th>ID utilisateur</th>
-                                                <th>ID campagne-Nom campagne</th>
+                                                <th>ID user</th>
+                                                <th>(id)campagne</th>
                                                 <th>Montant</th>
+                                                <th>Getway</th>
+                                                <th>Mobile Money</th>
                                                 <th>Montant à récévoir(-{{$last_pourcentage->pourcentage}}%)</th>
                                                 <th>%{{$last_pourcentage->pourcentage}} bénéfices</th>
                                                 <th>Date</th>
@@ -234,6 +266,20 @@
                                             @else
                                                <td>{{$item->montant}}XOF</td> 
                                             @endif
+                                            {{-- if payment_method is null then -- else montant $item->payment_method --}}
+                                            @if ($item->payment_method == null)
+                                            <td>--</td>
+                                            @else
+                                            <td>{{$item->payment_method}}</td>
+                                            @endif
+                                            {{-- if if_number is null then -- else montant $item->if_number --}}
+                                            @if ($item->if_number == null)
+                                            <td>--</td>
+                                            @else
+                                            <td>{{$item->if_number}}</td>
+                                            @endif
+                                            {{-- calcul redux 20% of montant --}}
+                                            {{-- calcul redux 20% of montant --}}
                                             {{-- calcul redux 20% of montant --}}
                                             @if ($item->montant == null)
                                             <td>0XOF</td>

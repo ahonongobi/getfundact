@@ -102,13 +102,13 @@
                                         <i class="icofont-youtube-play"></i>
                                     </a>
                                 </li>
-                                <li>
+                                {{--<li>
                                     <a href="#" target="_blank">
                                         <i class="icofont-instagram"></i>
                                     </a>
-                                </li>
+                                </li>--}}
                                  <li>
-                                    <a href="#" target="_blank">
+                                    <a href="{{url('login')}}" target="_blank">
                                         <i class="icofont-user"></i>
                                     </a>
                                 </li>
@@ -116,9 +116,9 @@
                             <div  class="language">
                                 <select>
                                     <option>English</option>
-                                    <option>العربيّة</option>
+                                    {{--<option>العربيّة</option>
                                     <option>Deutsch</option>
-                                    <option>Português</option>
+                                    <option>Português</option>--}}
                                 </select>
                             </div>
                             <div class="header-search">
@@ -223,7 +223,7 @@
                             <li><a href="#" target="_blank"><i class="icofont-facebook"></i></a></li>
                             <li><a href="#" target="_blank"><i class="icofont-twitter"></i></a></li>
                             <li><a href="#" target="_blank"><i class="icofont-youtube-play"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="icofont-instagram"></i></a></li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -306,11 +306,11 @@
   "enabled":true,
   "chatButtonSetting":{
       "backgroundColor":"#E15C1b", 
-      "ctaText":"Démarer..",
+      "ctaText":"Démarrer..",
       "borderRadius":"50",
       "marginLeft":"0",
-      "marginBottom":"50",
-      "marginRight":"50",
+      "marginBottom":"25",
+      "marginRight":"25",
       "position":"right"
   },
   "brandSetting":{

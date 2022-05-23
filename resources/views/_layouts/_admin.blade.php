@@ -181,9 +181,9 @@
             <i class="ti-settings text-primary"></i>
            Paramèttre
           </a>
-          <a  href="/logout" class="dropdown-item">
+          <a onclick="isloggedingOut();" class="dropdown-item">
             <i class="ti-power-off text-primary"></i>
-            Se decpnnecter
+            Se deconnecter
           </a>
         </div>
       </li>
@@ -354,7 +354,7 @@
     </li>
     
     <li class="nav-item ">
-        <a class="nav-link" href="/logout">
+        <a class="nav-link" onclick="isloggedingOut();">
           <i class="ti-power-off menu-icon"></i>
           <span class="menu-title">Deconnexion </span>
         </a>
@@ -449,7 +449,7 @@
                                     <h4 class="mb-0 font-weight-bold">4006</h4>
                                 </div>
                                 <div class="mb-3 mb-xl-0">
-                                    <a href="/logout" class="btn btn-warning rounded-0 text-white"> <i class="ti-power-off"></i> Déconnexion</a>
+                                    <a onclick="isloggedingOut();" class="btn btn-warning rounded-0 text-white"> <i class="ti-power-off"></i> Déconnexion</a>
                                 </div>
                             </div>
                         </div>
@@ -669,6 +669,40 @@
 
       </script>
       <script>
+        $(document).ready(function() {
+        $('#example_today').DataTable( {
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ],
+            //language french
+            "language": {
+                "sProcessing":     "Traitement en cours...",
+                "sSearch":         "Rechercher&nbsp;:",
+                "sLengthMenu":     "Afficher _MENU_ &eacute;l&eacute;ments",
+                "sInfo":           "Affichage de l'&eacute;l&eacute;ment _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments",
+                "sInfoEmpty":      "Affichage de l'&eacute;l&eacute;ment 0 &agrave; 0 sur 0 &eacute;l&eacute;ment",
+                "sInfoFiltered":   "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
+                "sInfoPostFix":    "",
+                "sLoadingRecords": "Chargement en cours...",
+                "sZeroRecords":    "Aucun &eacute;l&eacute;ment &agrave; afficher",
+                "sEmptyTable":     "Aucune donn&eacute;e disponible dans le tableau",
+                "oPaginate": {
+                    "sFirst":      "Premier",
+                    "sPrevious":   "Pr&eacute;c&eacute;dent",
+                    "sNext":       "Suivant",
+                    "sLast":       "Dernier"
+                },
+                "oAria": {
+                    "sSortAscending":  ": activer pour trier la colonne par ordre croissant",
+                    "sSortDescending": ": activer pour trier la colonne par ordre d&eacute;croissant"
+                }
+            }
+        } );
+        } );
+
+      </script>
+      <script>
         // Fancybox Config
         $('[data-fancybox="gallery"]').fancybox({
           buttons: [
@@ -706,6 +740,31 @@
         
       })
     
+    </script>
+    <script>
+      //swal warning function isloggedingOut();for logout or not 
+      function isloggedingOut() {
+            swal({
+                title: "Êtes-vous sûr de vouloir vous déconnecter?",
+                text: "Vous allez être déconnecté de votre compte",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Oui",
+                cancelButtonText: "Non",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            },
+            function(isConfirm){
+                if (isConfirm) {
+                    //close the swal
+                    window.location.href = "/logout";
+                } else {
+                    swal("Annulé", "Vous êtes toujours connecté", "error");
+                }
+            });
+        }
+
     </script>
   </body>
   

@@ -30,6 +30,7 @@
         <link rel="stylesheet" href="{{asset('assets/css/theme-dark.css')}}">
 
         <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+        
         <link rel="stylesheet" href="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css">
         <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
         <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
@@ -123,7 +124,7 @@
                               
                                 <li class="nav-item">
 
-                                    <a href="{{ url('logout') }}" class="nav-link ">SE DECONNECTER 
+                                    <a style="cursor: pointer;" onclick="isloggedingOut()" class="nav-link ">SE DECONNECTER 
                                     <i class="icofont-power"></i>
                                     </a>
                                   
@@ -730,6 +731,33 @@ $('.select2button').select2button();
             });
         }
         //end of scrpit
+ </script>
+ <script>
+        //swal warning function isloggedingOut() to logout or not
+        function isloggedingOut() {
+            swal({
+                title: "Êtes-vous sûr de vouloir vous déconnecter?",
+                text: "Vous allez être déconnecté de votre compte",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Oui",
+                cancelButtonText: "Non",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            },
+            function(isConfirm){
+                if (isConfirm) {
+                    //close the swal
+                    window.location.href = "/logout";
+                } else {
+                    swal("Annulé", "Vous êtes toujours connecté", "error");
+                }
+            });
+        }
+
+            
+            //end of scrpit
  </script>
     <script>
         function readURL(input) {

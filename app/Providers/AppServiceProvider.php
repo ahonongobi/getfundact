@@ -96,7 +96,11 @@ class AppServiceProvider extends ServiceProvider
 
             }       
             //admin
-            $view->with('all_users', User::orderBy('id','DESC')->paginate(20));
+            //select all_users from user table from the last inserted to first
+            $view->with('all_users', User::orderBy('created_at','desc')->get());
+            //$view->with('all_users', User::orderBy('id','DESC')->get());
+            //select all user today registration by DESC
+            $view->with('all_users_today', User::whereDate('created_at', date('Y-m-d'))->get());
             $view->with('count_all_campagne', Campagne::count());
             $view->with('Countall_users', User::count());
             $view->with('todayUser', DB::table('users')->select(DB::raw('*'))
@@ -107,10 +111,11 @@ class AppServiceProvider extends ServiceProvider
             ->whereRaw('Date(created_at) = CURDATE()')->sum('montant_cotise'));
             $view->with('admin_all_campagne_actif', Campagne::where('statut',1)->paginate(10));
             $view->with('admin_all_campagne_inactif', Campagne::where('statut',0)->paginate(10));
-
-            $view->with('all_withdraw', Withdrawal::where('statut',0)->get());
+            // all_withdraw order by id desc
+            
+            $view->with('all_withdraw', Withdrawal::orderBy('id','DESC')->get());
             //withdrawal approved  statut = 1
-            $view->with('all_withdraw_approved', Withdrawal::where('statut',1)->get());
+            $view->with('all_withdraw_approved', Withdrawal::orderBy('id','DESC')->where('statut',1)->get());
             $view->with('all_withdraw_per_day',DB::table('withdrawals')->select(DB::raw('*'))
             ->whereRaw('Date(created_at) = CURDATE()')->get());
             //endadmin
