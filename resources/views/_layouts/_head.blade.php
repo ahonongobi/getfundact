@@ -266,7 +266,13 @@
                                 </li>
                                 <li>
                                     <i class="icofont-ui-call"></i>
-                                    <a href="tel:+229 5150 7071">+229 5150 7071</a>
+                                    <a href="tel:+229 5150 7071">+229 5150 7071  / +229 94696763</a>
+                                </li>
+
+                                <li>
+                                    <i class="icofont-ui-message"></i>
+                                    <a href="">conctact@getfund-act.com  <br/>
+                                    contact@intelligencia-si.com    </a>
                                 </li>
                             </ul>
                         </div>

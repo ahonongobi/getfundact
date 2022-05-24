@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 
+
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -144,5 +146,57 @@ class AppServiceProvider extends ServiceProvider
 
 
         });
+       
+        // make X-XSS-Protection,contentTypeOptions,frameOptions, poweredBy,downloadOptions,X-Permitted-Cross-Domain header functionality in all view
+        view()->composer('*', function ($view) {
+            $view->with('X_XSS_Protection', '1; mode=block');
+            $view->with('contentTypeOptions', 'nosniff');
+            $view->with('frameOptions', 'SAMEORIGIN');
+            $view->with('poweredBy', 'Intelligencia-SI');
+            $view->with('downloadOptions', 'noopen');
+            $view->with('X_Permitted_Cross_Domain', 'X-Permitted-Cross-Domain');
+        });
+        
+        
+
     }
+     //function to force user to https online and not localhost
+    public function forceSSL()
+    {
+        return redirect()->to('https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'])->send();
+    }
+    // X-XSS-Protection function
+    public function xssProtection()
+    {
+        return response()->header('X-XSS-Protection', '1; mode=block');
+    }
+    // X-Content-Type-Options function
+    public function contentTypeOptions()
+    {
+        return response()->header('X-Content-Type-Options', 'nosniff');
+    }
+    // X-Frame-Options function
+    public function frameOptions()
+    {
+        return response()->header('X-Frame-Options', 'SAMEORIGIN');
+    }
+    // X-Powered-By function
+    public function poweredBy()
+    {
+        return response()->header('X-Powered-By', 'Intelligencia-SI');
+    }
+    // X-Download-Options function
+    public function downloadOptions()
+    {
+        return response()->header('X-Download-Options', 'noopen');
+    }
+    // X-Permitted-Cross-Domain-Policies function
+    public function permittedCrossDomainPolicies()
+    {
+        return response()->header('X-Permitted-Cross-Domain-Policies', 'none');
+    }                           
+    
+
+
+
 }

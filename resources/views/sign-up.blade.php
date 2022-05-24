@@ -32,6 +32,9 @@
         <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
         <title>GetFund action, soutenez la communauté</title>
         <link rel="icon" type="image/png" href="{{('assets/img/favicon.png')}}">
+        <style>
+            
+        </style>
     </head>
     <body>
 
@@ -69,11 +72,17 @@
                                             @csrf
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" checked type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Personne">
-                                                <label class="form-check-label"  for="inlineRadio1">Personne</label>
+                                                <label  class="form-check-label"  for="inlineRadio1">Personne 
+                                                    {{-- make tooltip --}}
+                                                    <i style="position: relative;display:inline-block" title="Créer et collecter des fonds"  class="icofont-exclamation-circle"></i>
+                                                    
+    
+                                                 </label>
+                                                 
                                             </div>
                                             <div class="form-check form-check-inline mb-2">
                                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Organisation">
-                                                <label class="form-check-label" for="inlineRadio2">Organisation</label>
+                                                <label class="form-check-label" for="inlineRadio2">Organisation<i title="Contribuer à des campagnes"  class="icofont-exclamation-circle"></i></label>
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-6">
