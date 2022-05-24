@@ -22,7 +22,7 @@
         <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.min.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/owl.theme.default.min.css')}}">
         <!-- google captcha cdn link -->
-        <script src='https://www.google.com/recaptcha/api.js?render=6Lf7BRggAAAAAPMcZGJG2VKqRH6gUMbZZC59vuL6'></script>
+        <script src='https://www.google.com/recaptcha/api.js'></script>
 
         <link rel="stylesheet" href="{{asset('assets/css/odometer.min.css')}}">
 
@@ -129,7 +129,7 @@
                                                 {{-- google captcha button --}}
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
-                                                        <div class="g-recaptcha" data-sitekey="6Lf7BRggAAAAAPMcZGJG2VKqRH6gUMbZZC59vuL6"></div>
+                                                        <div class="g-recaptcha" data-sitekey="6LeeEhggAAAAAL-qD_4NYscaIFN7kJ8qs_jKsjmK"></div>
                                                         @if ($errors->has('g-recaptcha-response'))
                                                         <span class="text-danger">{{  $errors->first('g-recaptcha-response') }}</span>
                                                         @endif
