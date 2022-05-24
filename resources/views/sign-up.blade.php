@@ -128,7 +128,7 @@
                                                 {{-- google captcha button --}}
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
-                                                        <div class="g-recaptcha" data-sitekey="6Lf7BRggAAAAAGl98NCGgW84vhfchs_IiTMyoZcm"></div>
+                                                        <div class="g-recaptcha" data-sitekey="6Lf7BRggAAAAAPMcZGJG2VKqRH6gUMbZZC59vuL6"></div>
                                                         @if ($errors->has('g-recaptcha-response'))
                                                         <span class="text-danger">{{  $errors->first('g-recaptcha-response') }}</span>
                                                         @endif
