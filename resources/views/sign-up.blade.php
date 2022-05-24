@@ -21,7 +21,8 @@
         
         <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.min.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/owl.theme.default.min.css')}}">
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <!-- google captcha cdn link -->
+        <script src='https://www.google.com/recaptcha/api.js?render=6Lf7BRggAAAAAPMcZGJG2VKqRH6gUMbZZC59vuL6'></script>
 
         <link rel="stylesheet" href="{{asset('assets/css/odometer.min.css')}}">
 
