@@ -21,6 +21,7 @@
         
         <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.min.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/owl.theme.default.min.css')}}">
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
         <link rel="stylesheet" href="{{asset('assets/css/odometer.min.css')}}">
 
@@ -121,6 +122,15 @@
                                                         z-index: 2;" toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                                                         @if ($errors->has('password'))
                                                         <span class="text-danger">{{  $errors->first('password') }}</span>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                                {{-- google captcha button --}}
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <div class="g-recaptcha" data-sitekey="6Lf7BRggAAAAAGl98NCGgW84vhfchs_IiTMyoZcm"></div>
+                                                        @if ($errors->has('g-recaptcha-response'))
+                                                        <span class="text-danger">{{  $errors->first('g-recaptcha-response') }}</span>
                                                         @endif
                                                     </div>
                                                 </div>
