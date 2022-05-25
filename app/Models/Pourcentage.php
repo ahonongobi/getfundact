@@ -9,4 +9,5 @@ class Pourcentage extends Model
 {
     use HasFactory;
     protected $table = 'pourcentages';
+    protected $guarded = [];
 }

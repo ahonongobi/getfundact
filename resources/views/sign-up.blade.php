@@ -35,7 +35,7 @@
         <title>GetFund action, soutenez la communauté</title>
         <link rel="icon" type="image/png" href="{{('assets/img/favicon.png')}}">
         <style>
-            
+           
         </style>
     </head>
     <body>

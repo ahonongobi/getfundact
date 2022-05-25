@@ -9,4 +9,5 @@ class Checkout extends Model
 {
     use HasFactory;
     protected $table="checkouts";
+    protected $guarded = [];
 }

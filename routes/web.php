@@ -89,7 +89,7 @@ Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPa
 Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
 //end here password forget 
 //middleware route
-Route::group(["middleware"=>"auth"],function(){
+Route::group(["middleware"=>["auth","throttle:uploads"]],function(){
 Route::get('my_space',[MainController::class,'indexUserDash']);
 Route::get('campagne',[MainController::class,'indexCampagne']);
 Route::get('profile',[MainController::class,'profile']);
@@ -144,8 +144,10 @@ Route::any('/checkout',[ContrubutionController::class,'checkout']);
 Route::get('/my_org_social',[OrgController::class,'index']);
 Route::get('my_space_social',[MainController::class,'indexUserDash']);
 //route 
-//midelware auth
-Route::group(["middleware"=>"auth"],function(){
+//midelware auth and throttle:uploads
+
+
+Route::group(["middleware"=>["auth","throttle:uploads"]],function(){
     //admin
 Route::get('/administration',[AdminController::class,'index']);
 Route::get('/withdarwal',[AdminController::class, 'withdarwalView']);

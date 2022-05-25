@@ -9,4 +9,5 @@ class Withdrawal extends Model
 {
     use HasFactory;
     protected $table = "withdrawals";
+    protected $guarded = [];
 }

@@ -9,4 +9,5 @@ class Historique extends Model
 {
     use HasFactory;
     protected $table ="historiques";
+    protected $guarded = [];
 }

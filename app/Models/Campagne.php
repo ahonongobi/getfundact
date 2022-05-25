@@ -10,4 +10,6 @@ class Campagne extends Model
     use HasFactory;
 
     protected $table = "campagnes";
+    //make guarded field
+    protected $guarded = [];
 }
