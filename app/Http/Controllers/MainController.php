@@ -66,11 +66,19 @@ class MainController extends Controller
     }
 
     public function donationDetails($id,$name){
-        $count_contribution=Contrubution::where('id_campagnes',$id)->count();
-        $count_contribution_amount= Contrubution::where('id_campagnes',$id)->sum('montant');
-        $details = Campagne::where('id',$id)->first();
-        $contributeur = Contrubution::where('id_campagnes',$id)->where('states_payment',1)->paginate(10);
-        $contributeur_count = Contrubution::where('id_campagnes',$id)->where('states_payment',1)->count();
+        $simpleString = $id;
+        $ciphering = 'AES-128-CTR';
+        $iv_lenght = openssl_cipher_iv_length($ciphering);
+        $option = 0;
+        $decryption_iv = '1234567891011121';
+        $decryption_key = 'abyssinie';
+        $decryption = openssl_decrypt($id,$ciphering,$decryption_key,$option,$decryption_iv);
+         
+        $count_contribution=Contrubution::where('id_campagnes',$decryption)->count();
+        $count_contribution_amount= Contrubution::where('id_campagnes',$decryption)->sum('montant');
+        $details = Campagne::where('id',$decryption)->first();
+        $contributeur = Contrubution::where('id_campagnes',$decryption)->where('states_payment',1)->paginate(10);
+        $contributeur_count = Contrubution::where('id_campagnes',$decryption)->where('states_payment',1)->count();
         return view('user_dash.donation-details',compact('details','contributeur','count_contribution','count_contribution_amount','contributeur_count'));
     }
     //donationDetailsWithoutName 
@@ -85,9 +93,10 @@ class MainController extends Controller
     public function donationDetailsOrg($id,$name){
         $details = Campagne::where('id',$id)->first();
         $count_contribution_for_you = Contrubution::where('id_author',Auth::user()->id)->where('states_payment',1)->count();
-        $contributeur = Contrubution::where('id_campagnes',$id)->paginate();
+        $contributeur = Contrubution::where('id_campagnes',$id)->where('states_payment',1)->paginate(10);
+        $contributeur_count = Contrubution::where('id_campagnes',$id)->where('states_payment',1)->count();
 
-        return view('invest_dash.donation-details',compact('details','contributeur','count_contribution_for_you'));
+        return view('invest_dash.donation-details',compact('details','contributeur','count_contribution_for_you','contributeur_count'));
     }
 
     public function contributions(){

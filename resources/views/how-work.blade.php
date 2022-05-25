@@ -35,12 +35,29 @@
                         <div class="about-content">
                             <div class="section-title">
                                 <span class="sub-title" style="font-family: montserrat;">COMMENT ÇA MARCHE ?</span>
-                                <h2 style="font-family: montserrat;">Nous sommes pour de bonne cause</h2>
+                                <h2 style="font-family: montserrat;">Comment ça marche ?</h2>
                             </div>
-                            <span class="about-span" style="font-family: montserrat; text-align: justify;">GetfundAct est une plateforme de cagnotte en ligne internationale, qui permet à des groupes, des associations et des communautés de récolter des fonds auprès de personnes éparpillées dans le Monde et ainsi de se mobiliser pour un proche, un collègue ou d’agir solidairement pour des causes environnementales, sociales, culturelles…
+                            <span class="about-span" style="font-family: montserrat; text-align: justify;">Getfund Act se révèle comme le site par excellence pour particulier, groupe ou association qui veulent lancer une campagne en ligne.
+Procédez au démarrage de votre campagne 
                             </span>
-                            <p style="font-family: montserrat; text-align: justify;">Nous avons configuré ce portail pour gérer certains cas graves qui nécessitaient une attention urgente, où ces personnes n'avaient aucun moyen de résoudre le problème financier. Par conséquent, GetfundAct aide à faire campagne pour un fonds afin d'offrir une solution grâce au financement participatif.</p>
-                            <p style="font-family: montserrat; text-align: justify;">GetfundAct vous aide à créer rapidement une campagne et à raconter votre histoire de collecte de fonds. Vous pouvez collecter des fonds en tant qu'individu ou inviter d'autres personnes à se joindre à votre équipe de collecte de fonds. Chaque campagne doit contenir une raison puissante derrière l'idée, des récompenses passionnantes et uniques et un affichage accrocheur. Connaître ces points est extrêmement essentiel pour créer une campagne réussie.</p>
+                            <p>  <ul>
+	<li>Fixer le but de votre campagne</li>
+	<li>Relater votre histoire</li>
+	<li>Mettez en plus une photo ou plusieurs photos</li>
+</ul></p>
+                            <p style="font-family: montserrat; text-align: justify;">Faites le partage de votre campagne avec votre famille et vos amis</p>
+                            <ul>
+	<li>Transmettez des e-mails</li>
+	<li>Transmettez des SMS</li>
+	<li>Distribuez-la sur les réseaux sociaux</li>
+</ul>
+                            <p style="font-family: montserrat; text-align: justify;">Assurez la gestion des dons.</p>
+
+                            <ul>
+	<li>Recevez volontiers les dons</li>
+	<li>Soyez reconnaissant envers les donateurs</li>
+	<li>Procéder au retrait des fonds</li>
+</ul> 
                         </div>
                     </div>
                 </div>

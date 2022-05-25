@@ -1,3 +1,15 @@
+{{-- get real value of dollar and Xof online --}}
+{{-- i'm power abyssinie[gobi]stack --}}
+@php 
+$dollar = file_get_contents('https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=XOF&apikey=ZQJXQZQJXQZQJXQZ');
+$dollar = json_decode($dollar, true);
+$dollar = $dollar['Realtime Currency Exchange Rate']['5. Exchange Rate'];
+$dollar = round($dollar, 2);
+$xof = file_get_contents('https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=XOF&to_currency=USD&apikey=ZQJXQZQJXQZQJXQZ');
+$xof = json_decode($xof, true);
+$xof = $xof['Realtime Currency Exchange Rate']['5. Exchange Rate'];
+$xof = round($xof, 2);
+@endphp
 @extends('_layouts._invest')
 
 
@@ -144,7 +156,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>
-                                        <i class="icofont-dollar"></i>
+                                        <i class="icofont-money"></i>
                                     </label>
                                     <input onInput="edValueKeyPress()" id="invest" type="number" min="0" name="montant" class="form-control" placeholder="FCFA 100.00">
                                     <span class="text-danger">
@@ -154,6 +166,7 @@
                                     </span>
                                 </div>
                                 <div class="calculatrice">
+                                    <span>1 USD = {{ $dollar }} XOF </span>
                                     <span>Equivalent en $ (dollar):</span> <span id="for_th_day">$0</span>
                                 </div>
                                 <div class="text-center">
@@ -271,7 +284,7 @@
                         </div>
                     </div>
                     <div class="instagram widget-item">
-                        <h3>ont contribués</h3>
+                        <h3>{{$contributeur_count ?? '0' }} ont contribués</h3>
                         <div class="row m-0">
 
                             @foreach ($contributeur as $contribuable)
@@ -336,7 +349,7 @@
 <script>
     function edValueKeyPress() {
 			var x = document.getElementById("invest").value;
-            document.getElementById("for_th_day").innerHTML =   (x*584.87) +"FCFA";        
+            document.getElementById("for_th_day").innerHTML =   (x*{{$dollar}}) +"FCFA";        
 		}
 </script>
 @stop

@@ -141,10 +141,7 @@ class AppServiceProvider extends ServiceProvider
                 $view->with('email_value', User::where('email',"sa.intelligencia@gmail.com")->first());
                 $view->with('auth_id', "sa.intelligencia@gmail.com");
             }
-            
-
-
-
+        
         });
        
         // make X-XSS-Protection,contentTypeOptions,frameOptions, poweredBy,downloadOptions,X-Permitted-Cross-Domain header functionality in all view

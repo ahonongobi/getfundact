@@ -69,8 +69,18 @@
             <div class="col-sm-6 col-lg-4">
                 <div class="donation-item">
                     <div class="img">
+                        {{-- openssl encrypt de id --}}
+                        @php
+                        $simpleString = $item->id;
+                        $ciphering = 'AES-128-CTR';
+                        $iv_lenght = openssl_cipher_iv_length($ciphering);
+                        $option = 0;
+                        $encryption_iv = '1234567891011121';
+                        $encryption_key = 'abyssinie';
+                        $encryption = openssl_encrypt($simpleString,$ciphering,$encryption_key,$option,$encryption_iv);
+                        @endphp
                         <img style="height: 400px !important" src="{{asset('storage/UserDocument/'.$item->file_vignette)}}" alt="Donation">
-                        <a class="common-btn" href="{{ url('donation-details/'.$item->id.'/'.$item->name_b) }}">Contribuer</a>
+                        <a class="common-btn" href="{{ url('donation-details/'.$encryption.'/'.$item->name_b) }}">Contribuer</a>
                     </div>
                     <div class="inner">
                         <div class="top">

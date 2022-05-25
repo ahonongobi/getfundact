@@ -186,3 +186,7 @@ Route::get('/percentage/delete/{id}',[PourcentageController::class,'percentageDe
 
 //kkiapay
 Route::get('callback/{slug}/{email}', [PaymentController::class, 'callback'])->name('callback');
+
+
+
+

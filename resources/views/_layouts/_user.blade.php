@@ -418,11 +418,11 @@
   "enabled":true,
   "chatButtonSetting":{
       "backgroundColor":"#E15C1b", 
-      "ctaText":"Démarer..",
+      "ctaText":"Démarrer..",
       "borderRadius":"50",
       "marginLeft":"0",
-      "marginBottom":"50",
-      "marginRight":"50",
+      "marginBottom":"25",
+      "marginRight":"25",
       "position":"right"
   },
   "brandSetting":{

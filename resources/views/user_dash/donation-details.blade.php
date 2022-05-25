@@ -207,7 +207,7 @@ $xof = round($xof, 2);
                                         </div>
                                         <div class="form-group">
                                             <label>
-                                                <i class="icofont-dollar"></i>
+                                                <i class="icofont-money"></i>
                                             </label>
                                             <input onInput="edValueKeyPress()" type="number" id="invest" min="0"
                                                 name="montant" class="form-control" placeholder="FCFA 100.00">
