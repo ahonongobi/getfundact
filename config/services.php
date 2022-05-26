@@ -36,9 +36,9 @@ return [
     ],
 
     'facebook' => [
-        'client_id' => env('FACEBOOK_CLIENT_ID'),
-        'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
-        'redirect' => env('FACEBOOK_CALLBACK_URL'),
+        'client_id' => '775679230442836',
+        'client_secret' => 'be50ffbd67663d539df5336188c6c377',
+        'redirect' => 'https://getfundact.com/auth/facebook/callback',
     ],
 
 
