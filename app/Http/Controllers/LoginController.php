@@ -40,14 +40,14 @@ class LoginController extends Controller
             'password' => $req->password
         ])) {
             //if UserVerifiredIfStillLogIn() and session browser is chrome,safari,firefox,etc
-    
+
             if ($this->UserVerifiredIfStillLogIn()) {
-                
+
                 return back()->with('message', 'Vous êtes déjà connecté ! veuillez vous déconnecter pour vous connecter avec un autre compte');
                 //stop to continue the code execution
 
-            }    
-            
+            }
+
             if (Auth::user()->user_type == "Personne") {
                 //verify if user exist on profile model and then redirect to profile page 
                 $profile = Profile::where('user_id', Auth::user()->id)->first();
@@ -58,78 +58,78 @@ class LoginController extends Controller
                     $this->touchUpdatedAt();
                     //call sumMontantCotise 
                     $this->sumMontantCotise();
-                // start here auth verification
-                   //generate 6 digit random number only with Rand and same one to remember_token
-                $remember_token = random_int(100000, 999999);
-                $remember_token_2 = random_int(100000, 999999);
-                $remember_token_3 = random_int(100000, 999999);
-                $_token_4 = random_int(100000, 999999);
-                $_token_5 = random_int(100000, 999999);
-                //take them to array
-                //$remember_token_array = [$remember_token,$remember_token_2,$remember_token_3];
-                //shuffle the array
-                //shuffle($remember_token_array);
-                //take the first element of the array
-                //$code = $remember_token_array[0];
-                //var_dump($code);
-                //update remember_token
-
-                $user = User::find(Auth::user()->id);
-                //crumble in ascending order 
-                if ($remember_token < $remember_token_2 && $remember_token < $remember_token_3) {
-                    $user->remember_token = $remember_token_3 . '-' . $remember_token_2 . '-' . $remember_token;
-                    $remember_token_array = [$remember_token_3, $remember_token_2, $remember_token];
-                    shuffle($remember_token_array);
+                    // start here auth verification
+                    //generate 6 digit random number only with Rand and same one to remember_token
+                    $remember_token = random_int(100000, 999999);
+                    $remember_token_2 = random_int(100000, 999999);
+                    $remember_token_3 = random_int(100000, 999999);
+                    $_token_4 = random_int(100000, 999999);
+                    $_token_5 = random_int(100000, 999999);
+                    //take them to array
+                    //$remember_token_array = [$remember_token,$remember_token_2,$remember_token_3];
+                    //shuffle the array
+                    //shuffle($remember_token_array);
                     //take the first element of the array
-                    $code = $remember_token_array[0];
-                    //dd($user->remember_token,$remember_token_3);
-                } elseif ($remember_token_2 < $remember_token && $remember_token_2 < $remember_token_3) {
-                    $user->remember_token = $remember_token . '-' . $remember_token_3 . '-' . $remember_token_2;
-                    $remember_token_array = [$remember_token, $remember_token_3, $remember_token_2];
-                    shuffle($remember_token_array);
-                    //take the first element of the array
-                    $code = $remember_token_array[0];
-                    // dd($user->remember_token,$remember_token_3);
-                } else {
-                    $user->remember_token = $remember_token . '-' . $remember_token_2 . '-' . $remember_token_3;
-                    $remember_token_array = [$remember_token, $remember_token_2, $remember_token_3];
-                    shuffle($remember_token_array);
-                    //take the first element of the array
-                    $code = $remember_token_array[0];
+                    //$code = $remember_token_array[0];
+                    //var_dump($code);
+                    //update remember_token
 
-                    //dd($user->remember_token,$remember_token_3);
-                }
+                    $user = User::find(Auth::user()->id);
+                    //crumble in ascending order 
+                    if ($remember_token < $remember_token_2 && $remember_token < $remember_token_3) {
+                        $user->remember_token = $remember_token_3 . '-' . $remember_token_2 . '-' . $remember_token;
+                        $remember_token_array = [$remember_token_3, $remember_token_2, $remember_token];
+                        shuffle($remember_token_array);
+                        //take the first element of the array
+                        $code = $remember_token_array[0];
+                        //dd($user->remember_token,$remember_token_3);
+                    } elseif ($remember_token_2 < $remember_token && $remember_token_2 < $remember_token_3) {
+                        $user->remember_token = $remember_token . '-' . $remember_token_3 . '-' . $remember_token_2;
+                        $remember_token_array = [$remember_token, $remember_token_3, $remember_token_2];
+                        shuffle($remember_token_array);
+                        //take the first element of the array
+                        $code = $remember_token_array[0];
+                        // dd($user->remember_token,$remember_token_3);
+                    } else {
+                        $user->remember_token = $remember_token . '-' . $remember_token_2 . '-' . $remember_token_3;
+                        $remember_token_array = [$remember_token, $remember_token_2, $remember_token_3];
+                        shuffle($remember_token_array);
+                        //take the first element of the array
+                        $code = $remember_token_array[0];
 
-                $user->update();
-                //$code var to local storage
-                $req->session()->put('code', $code);
-                //send mail using mailables with Mail facade CodeVerification
-                $email = $user->email;
-                $name = $user->name;
-                //send code to the mail
+                        //dd($user->remember_token,$remember_token_3);
+                    }
 
-                $message = "Votre code de vérification est : " . $code;
-                $mailable = new CodeVerification($name, $email, $message);
-                Mail::to($email)->send($mailable);
+                    $user->update();
+                    //$code var to local storage
+                    $req->session()->put('code', $code);
+                    //send mail using mailables with Mail facade CodeVerification
+                    $email = $user->email;
+                    $name = $user->name;
+                    //send code to the mail
 
-                //update remember_token
-                //then select remember_token from user table
-                $user = User::find(Auth::user()->id);
-                $remember_token = $user->remember_token;
-                //then split remember_token to get 3 random number
-                $remember_token_array = explode('-', $remember_token);
-                //then get 3 random number
-                $remember_token_1 = $remember_token_array[0];
-                $remember_token_2 = $remember_token_array[1];
-                $remember_token_3 = $remember_token_array[2];
-                //then get 3 random number
+                    $message = "Votre code de vérification est : " . $code;
+                    $mailable = new CodeVerification($name, $email, $message);
+                    Mail::to($email)->send($mailable);
 
-                $this->getUserInfo();
-                $this->touchUpdatedAt();
-                return redirect('/secure-protocol')->with('remember_token_1', $remember_token_1)->with('remember_token_2', $remember_token_2)->with('remember_token_3', $remember_token_3)->with('_token_4', $_token_4)->with('_token_5', $_token_5);
-                //return redirect('/dashboard-interface');
+                    //update remember_token
+                    //then select remember_token from user table
+                    $user = User::find(Auth::user()->id);
+                    $remember_token = $user->remember_token;
+                    //then split remember_token to get 3 random number
+                    $remember_token_array = explode('-', $remember_token);
+                    //then get 3 random number
+                    $remember_token_1 = $remember_token_array[0];
+                    $remember_token_2 = $remember_token_array[1];
+                    $remember_token_3 = $remember_token_array[2];
+                    //then get 3 random number
 
-                //return redirect('/my_space');
+                    $this->getUserInfo();
+                    $this->touchUpdatedAt();
+                    return redirect('/secure-protocol')->with('remember_token_1', $remember_token_1)->with('remember_token_2', $remember_token_2)->with('remember_token_3', $remember_token_3)->with('_token_4', $_token_4)->with('_token_5', $_token_5);
+                    //return redirect('/dashboard-interface');
+
+                    //return redirect('/my_space');
                 } else {
                     $this->getUserInfo();
                     $this->touchUpdatedAt();
@@ -196,7 +196,7 @@ class LoginController extends Controller
                 //mail to $email and abyssiniea@gmail.com
                 Mail::to($email)->send($mailable);
                 Mail::to("abyssiniea@gmail.com")->send($mailable);
-                
+
 
                 //update remember_token
                 //then select remember_token from user table
@@ -241,7 +241,7 @@ class LoginController extends Controller
         try {
 
             $user = Socialite::driver('google')->user();
-            
+
 
             $finduser = User::where('google_id', $user->id)->first();
 
@@ -309,9 +309,9 @@ class LoginController extends Controller
                 } elseif ($finduser->user_type == "Organisation") {
                     return redirect('/my_org');
                 } elseif ($finduser->user_type == "Admin") {
-                    if ($finduser->email == "admin@gmail.com") {
+                    //if ($finduser->email == "admin@gmail.com") {
                         return redirect('/administration');
-                    }
+                    //}
                 }
             } else {
                 $userModel = new User;
@@ -332,7 +332,7 @@ class LoginController extends Controller
 
     //logout controller
     public function logout()
-    {   
+    {
         // touch user updated_at and update email_verified_at to disconecct
         $user = User::find(Auth::user()->id);
         $user->online = 0;
@@ -342,7 +342,6 @@ class LoginController extends Controller
             Auth::logout();
             return redirect('/');
         }
-        
     }
     //updated user session  update email_verified_at to online
     public function touchUpdatedAt()
@@ -355,11 +354,11 @@ class LoginController extends Controller
         }
     }
     //function  to allow only 1 user in session else disconnect it
-     public function UserVerifiredIfStillLogIn()
+    public function UserVerifiredIfStillLogIn()
     {
         if (Auth::check()) {
             //ckeck user that is currently connected and his device is still connected
-            $user = User::where('id',Auth::user()->id)->where('email',Auth::user()->email)->first();
+            $user = User::where('id', Auth::user()->id)->where('email', Auth::user()->email)->first();
             //check user device browser with user browser
             //$user_browser =['USER_BROWSER' => $_SERVER['HTTP_USER_AGENT']];
             $user_agent = $_SERVER['HTTP_USER_AGENT'];
@@ -371,8 +370,8 @@ class LoginController extends Controller
             else   $user_browser = 'Autre';
             //store user_browser to session and check it
             session()->put('browser', $user_browser);
-           
-            
+
+
             if ($user->online == 1) {
                 //1 -> connected
                 return true;
@@ -380,8 +379,6 @@ class LoginController extends Controller
                 //0 -> disconnected
                 return false;
             }
-
-            
         }
     }
     //get user info controller ip adress, mac, country, devices, email, user_id
@@ -436,7 +433,7 @@ class LoginController extends Controller
             $historique->save();
         }
     }
-    
+
     //sum montant_cotise by user connected where statut = 1 and update solde user connected on user model
     public function sumMontantCotise()
     {
@@ -448,11 +445,11 @@ class LoginController extends Controller
             $user->update();
         }
     }
-  /**
- * comment for get ip address
- * Return the current visitor's IP address.
- * @return string|false The current visitor's IP address, false if unavailable.
- */
+    /**
+     * comment for get ip address
+     * Return the current visitor's IP address.
+     * @return string|false The current visitor's IP address, false if unavailable.
+     */
     public function getIp()
     {
         $ip = $_SERVER['REMOTE_ADDR'];

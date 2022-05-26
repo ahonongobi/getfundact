@@ -27,6 +27,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
+            <ul class="accordion">
             <li>
                         <a>
                             Comment fonctionne Getfund Act ?
@@ -69,6 +70,7 @@ La manière dont chaque personne gère sa compagne Getfund Act nous surprend ré
                         </a>
                         <p>Affirmatif. Afin de permettre à ce qu’un parent ou un(e) amie (e) accède en toute sécurité aux fonds collectés dans le cadre d’une campagne, Getfund Act a procédé à une mise en place d’un moyen simple, fiable et sécurisé. Ainsi, avec Getfund Act, ce récipiendaire peut retirer directement les fonds collectés. Seulement que dans ce cas, vous ne pouvez pas demander un versement par chèque, c’est à ce dernier d’indiquer ses coordonnées bancaires pour le retrait.</p>
                     </li>
+</u>
             </div>
             <div class="col-lg-6">
                 <ul class="accordion">

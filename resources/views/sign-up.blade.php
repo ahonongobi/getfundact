@@ -146,7 +146,7 @@
                                             </p>
                                             <h4>OU</h4>
                                             <ul>
-                                                <li><a class="d-none" href="{{url('auth/facebook') }}" target="_blank"><i class="icofont-facebook"></i>Se connecter avec facebook</a></li>
+                                                <li><a class="" href="{{url('auth/facebook') }}" target="_blank"><i class="icofont-facebook"></i>Se connecter avec facebook</a></li>
                                                 <li><a href="{{ url('auth/google') }}"><i class="icofont-google-plus"></i>Se connetcer avec google</a></li>
                                             </ul>
                                         </div>
