@@ -70,13 +70,7 @@ La manière dont chaque personne gère sa compagne Getfund Act nous surprend ré
                         </a>
                         <p>Affirmatif. Afin de permettre à ce qu’un parent ou un(e) amie (e) accède en toute sécurité aux fonds collectés dans le cadre d’une campagne, Getfund Act a procédé à une mise en place d’un moyen simple, fiable et sécurisé. Ainsi, avec Getfund Act, ce récipiendaire peut retirer directement les fonds collectés. Seulement que dans ce cas, vous ne pouvez pas demander un versement par chèque, c’est à ce dernier d’indiquer ses coordonnées bancaires pour le retrait.</p>
                     </li>
-</u>
-            </div>
-            <div class="col-lg-6">
-                <ul class="accordion">
-                 
-
-                       <li>
+                    <li>
                         <a>
                             Suis-je soumis à un délai dans le temps pour retirer mes fonds ?
                             <i class="icofont-plus"></i>
@@ -84,6 +78,13 @@ La manière dont chaque personne gère sa compagne Getfund Act nous surprend ré
                         </a>
                         <p>En ce qui concerne les fonds collectés, elles peuvent rester en ligne durant le temps que vous souhaitez. Toutefois, vous avez l’obligation de les retirer dans un délai donné. Passé ce délai, comme il est souligné dans nos CGV, nous allons procéder au remboursement des fonds aux donateurs. Avant la fin du délai prescrit, vous avez le choix entre retirer la collecte de fonds et arrêter les dons. Toutefois, il faut souligner que certains organisateurs préfèrent laisser leur collecte active histoire de revivre les commentaires et les soutiens qu’ils ont reçus. </p>
                     </li>
+</u>
+            </div>
+            <div class="col-lg-6">
+                <ul class="accordion">
+                 
+
+                   
 
                        <li>
                         <a>
