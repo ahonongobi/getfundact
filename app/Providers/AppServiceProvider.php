@@ -152,9 +152,24 @@ class AppServiceProvider extends ServiceProvider
             $view->with('poweredBy', 'Intelligencia-SI');
             $view->with('downloadOptions', 'noopen');
             $view->with('X_Permitted_Cross_Domain', 'X-Permitted-Cross-Domain');
+            //forceSSL  call
+            $view->with('forceSSL', function () {
+                return [
+                    'forceSSL' => true,
+                    'httpsPort' => 443,
+                    'httpsOnly' => true,
+                    'secureCookies' => true,
+                    'secureOnly' => true,
+                    'secureProxyHeaders' => true,
+                    'forceHttps' => true,
+                    'redirect' => true,
+                    'redirectCode' => 301,
+                ];
+            });
+
         });
         
-        
+        $this->forceSSL();
 
     }
      //function to force user to https online and not localhost
