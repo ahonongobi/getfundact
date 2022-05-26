@@ -26,21 +26,73 @@
         <div class="about-area pt-100 pb-70">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="about-img">
-                            <img src="assets/img/about/about-main1.jpg" alt="About">
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
+                  
+                <div class="col-lg-12">
                         <div class="about-content">
                             <div class="section-title">
                                 <span class="sub-title" style="font-family: montserrat;">COMMENT REUSSIR MES CAMPAGNES ?</span>
                                 <h2 style="font-family: montserrat;">Nous sommes pour de bonne cause</h2>
                             </div>
-                            <span class="about-span" style="font-family: montserrat; text-align: justify;">GetfundAct est une plateforme de cagnotte en ligne internationale, qui permet à des groupes, des associations et des communautés de récolter des fonds auprès de personnes éparpillées dans le Monde et ainsi de se mobiliser pour un proche, un collègue ou d’agir solidairement pour des causes environnementales, sociales, culturelles…
-                            </span>
-                            <p style="font-family: montserrat; text-align: justify;">Nous avons configuré ce portail pour gérer certains cas graves qui nécessitaient une attention urgente, où ces personnes n'avaient aucun moyen de résoudre le problème financier. Par conséquent, GetfundAct aide à faire campagne pour un fonds afin d'offrir une solution grâce au financement participatif.</p>
-                            <p style="font-family: montserrat; text-align: justify;">GetfundAct vous aide à créer rapidement une campagne et à raconter votre histoire de collecte de fonds. Vous pouvez collecter des fonds en tant qu'individu ou inviter d'autres personnes à se joindre à votre équipe de collecte de fonds. Chaque campagne doit contenir une raison puissante derrière l'idée, des récompenses passionnantes et uniques et un affichage accrocheur. Connaître ces points est extrêmement essentiel pour créer une campagne réussie.</p>
+                           
+                            <p style="font-family: montserrat; text-align: justify;">
+                             <span class="about-span" style="font-family: montserrat; text-align: justify;">Comment réussir mes campagnes?
+                            </span>	
+                          La réussite d’une campagne en ligne dépend essentiellement de trois points. D’abord, de l’objectif que vous souhaitez atteindre. Ensuite, de la volonté ardente de réussir qui vous anime. Et enfin, du défi auquel vous ferez face. Dans tous les cas, la réussite d’une campagne nécessite une préparation appliquée. À cet effet, découvrez ici, les 7 pistes de la réussite d’une campagne. </p>
+
+
+
+                            <p style="font-family: montserrat; text-align: justify;">
+                             <span class="about-span" style="font-family: montserrat; text-align: justify;">Préciser clairement vos intentions
+                            </span>	
+                            Pour réussir une campagne, vous devez renseigner vos contributeurs sur les objectifs de cette campagne. Sur ce, il sera question de leur expliquer concrètement les raisons pour lesquelles leurs participations sont sollicitées. Il sera également question de leur souligner les étapes qui suivront le financement de la campagne.</p>
+
+
+
+                             <p style="font-family: montserrat; text-align: justify;">
+                             <span class="about-span" style="font-family: montserrat; text-align: justify;">Apporter des informations détaillées sur l’usage des fonds
+                            </span>	
+                           La réussite de certains types de campagnes participatives comme un projet associatif, une communauté, un mariage, un anniversaire…, exige des détails précis sur la gestion qui sera faite de la collecte. Pour cette raison, l’usage des fonds doit être empreint d’une transparence et d’une cohérence irréprochable. Ainsi, assurez-vous que les indications concernant le nombre de postes que vous précisez correspondent au montant que vous envisagez de collecter. De grâce, gardez toujours à l’esprit que recourir à la participation de vos proches et/ou du public n’est pas à prendre à la légère.</p>
+
+
+
+
+                             <p style="font-family: montserrat; text-align: justify;">
+                             <span class="about-span" style="font-family: montserrat; text-align: justify;">Rappeler les contributeurs
+                            </span>	
+                            Afin de pouvoir optimiser la collecte, il est crucial de relancer ceux qui n’ont pas encore manifesté leurs contributions. En revanche, sied-il de préciser que cette action résulte de la nature de la campagne. À titre d’exemple, vous gagnerez à ne pas trop insister lorsqu’il s’agit d’un mariage. </p>
+
+
+
+
+                            <p style="font-family: montserrat; text-align: justify;">
+                             <span class="about-span" style="font-family: montserrat; text-align: justify;">Partager sur les réseaux sociaux
+                            </span>	
+                           Compte tenu de la notoriété du réseau social Facebook, il est normal qu’il soit le choix idéal pour partager votre campagne. Déjà, avec les boutons des réseaux sociaux qui se trouvent sur la page de campagne de Getfund Act, vous avez la possibilité de partager la campagne directement sur Facebook. Toutefois, ne vous limitez pas qu’à ce réseau social. En dehors de Facebook, vous pouvez également maximiser vos chances en partageant la campagne sur d’autres médias sociaux comme Tweeter, Instagram, etc. S’il s’agit d’une campagne à destination du public, n’hésitez pas à solliciter vos soutiens et vos contributeurs à faire pareil.  </p>
+
+
+                            <p style="font-family: montserrat; text-align: justify;">
+                             <span class="about-span" style="font-family: montserrat; text-align: justify;">Rendre la page de la campagne plus agréable
+                            </span>	
+                           Pour qu’une campagne soit couronnée de succès, il faut qu’elle soit dynamique. À ce sujet, il vous suffit d’ajouter au descriptif de votre campagne une ou plusieurs photos et le tour est joué. Pour le faire, vous n’avez qu’à vous rendre sur la page de la campagne, ensuite appuyez sur modifier la campagne et enfin insérer une image dans le descriptif. Au cas où vous posséderiez par hasard une vidéo YouTube ou Viméo, intéressante, amusante ou touchante, n’hésitez pas à insérer son lien dans le formulaire de votre campagne. Bien évidemment, vous devez préalablement vous connecter sur Getfund Act avant d’effectuer toute modification. 
+Dans le cas des projets qui font appel aux financements du public, vous gagnerez à réaliser une vidéo présentant votre campagne, car cela dynamise encore plus votre projet. Notez quand même que la vidéo en question se doit de rester dans une marge de 2 minutes au plus et doit pouvoir accrocher l’esprit.  </p>
+
+
+
+                            <p style="font-family: montserrat; text-align: justify;">
+                             <span class="about-span" style="font-family: montserrat; text-align: justify;">Solliciter vos amis pour le partage de votre campagne
+                            </span>	
+                           	 Lorsque vous disposez d’un site pour le projet ou l’événement dont vous réalisez une campagne, vous pouvez obtenir sur la page de votre campagne un code qui servira à la rendre accessible sur votre site. Pour y arriver, il vous suffit de copier-coller ledit code sur le site. Cela permettra à vos amis d’être informés de votre campagne. </p>
+
+
+
+
+                              <p style="font-family: montserrat; text-align: justify;">
+                             <span class="about-span" style="font-family: montserrat; text-align: justify;">Maximiser la durée de la collecte
+                            </span>	
+                            Au cours de votre collecte, vous avez comme obligation de rassembler bon nombre de personnes autour de votre campagne. Ainsi, prenez le temps nécessaire pour parvenir à votre objectif sans vous mettre la pression. Dans le même temps, cela ne doit aucunement donner lieu à une largesse totale quitte à faire perdurer la collecte. Bien au contraire, vous devez faire le nécessaire pour maintenir la collecte dans une certaine dynamique et selon un rythme adéquat pour toujours motiver les contributeurs potentiels. 
+Cela dit, retenez qu’une collecte qui dure longtemps ne signifie forcément pas qu’elle peut réussir à tous les coups. Dans la plupart des cas, les collectes atteignent un sommet pointu d’activité en début et à la fin. La règle sur Getfund Act est qu’une collecte bénéficie d’une durée de 60 jours au maximum.     </p>
+
+                            
                         </div>
                     </div>
                 </div>

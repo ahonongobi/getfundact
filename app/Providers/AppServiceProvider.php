@@ -168,9 +168,8 @@ class AppServiceProvider extends ServiceProvider
             });
 
         });
+    
         
-        $this->forceSSL();
-
     }
      //function to force user to https online and not localhost
     public function forceSSL()
