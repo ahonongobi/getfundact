@@ -166,7 +166,7 @@ $xof = round($xof, 2);
                                     </span>
                                 </div>
                                 <div class="calculatrice">
-                                    <span>1 USD = {{ $dollar }} XOF </span>
+                                    <span>1 USD = {{ $dollar ?? "" }} XOF </span>
                                     <span>Equivalent en $ (dollar):</span> <span id="for_th_day">$0</span>
                                 </div>
                                 <div class="text-center">

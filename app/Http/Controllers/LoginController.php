@@ -32,13 +32,22 @@ class LoginController extends Controller
             'email' => ['required'],
             'password' => ['required'],
         ]);
-
+        //clear auth session
+        Auth::logout();
 
         if (Auth::attempt([
             'email' => $req->email,
             'password' => $req->password
         ])) {
+            //if UserVerifiredIfStillLogIn() and session browser is chrome,safari,firefox,etc
+    
+            if ($this->UserVerifiredIfStillLogIn()) {
+                
+                return back()->with('message', 'Vous êtes déjà connecté ! veuillez vous déconnecter pour vous connecter avec un autre compte');
+                //stop to continue the code execution
 
+            }    
+            
             if (Auth::user()->user_type == "Personne") {
                 //verify if user exist on profile model and then redirect to profile page 
                 $profile = Profile::where('user_id', Auth::user()->id)->first();
@@ -323,21 +332,56 @@ class LoginController extends Controller
 
     //logout controller
     public function logout()
-    {
-        Session::flush();
-        //another function to really logout ?
-
-        Auth::logout();
-
-        return redirect('/');
+    {   
+        // touch user updated_at and update email_verified_at to disconecct
+        $user = User::find(Auth::user()->id);
+        $user->online = 0;
+        if ($user->update()) {
+            Session::flush();
+            //another function to really logout ?
+            Auth::logout();
+            return redirect('/');
+        }
+        
     }
-    //updated user session
+    //updated user session  update email_verified_at to online
     public function touchUpdatedAt()
     {
         if (Auth::check()) {
             $user = User::find(Auth::user()->id);
             $user->updated_at = Carbon::now();
+            $user->online = 1;
             $user->update();
+        }
+    }
+    //function  to allow only 1 user in session else disconnect it
+     public function UserVerifiredIfStillLogIn()
+    {
+        if (Auth::check()) {
+            //ckeck user that is currently connected and his device is still connected
+            $user = User::where('id',Auth::user()->id)->where('email',Auth::user()->email)->first();
+            //check user device browser with user browser
+            //$user_browser =['USER_BROWSER' => $_SERVER['HTTP_USER_AGENT']];
+            $user_agent = $_SERVER['HTTP_USER_AGENT'];
+            if (strpos($user_agent, 'Firefox') !== false) $user_browser = 'Firefox';
+            elseif (strpos($user_agent, 'Opera') !== false) $user_browser = 'Opera';
+            elseif (strpos($user_agent, 'Chrome') !== false) $user_browser = 'Chrome';
+            elseif (strpos($user_agent, 'MSIE') !== false)  $user_browser = 'Internet Explorer';
+            elseif (strpos($user_agent, 'Safari') !== false) $user_browser = 'Safari';
+            else   $user_browser = 'Autre';
+            //store user_browser to session and check it
+            session()->put('browser', $user_browser);
+           
+            
+            if ($user->online == 1) {
+                //1 -> connected
+                return true;
+            } else {
+                //0 -> disconnected
+                return false;
+            }
+
+            
         }
     }
     //get user info controller ip adress, mac, country, devices, email, user_id

@@ -166,7 +166,7 @@
                                             <a href="/">
                                                 <img src="{{asset('assets/img/logo.png')}}" alt="Logo">
                                             </a>
-                                            <h2>ESPACE MEMBRE</h2>
+                                            <h2> <i class="fa fa-lock"></i> ESPACE MEMBRE</h2>
                                         </div>
                                         @if (Session::has('message'))
                                             <div class="alert alert-success">
@@ -208,7 +208,7 @@
                                             </p>
                                             <h4>OU</h4>
                                             <ul>
-                                                <li><a class="d-none" href="{{url('auth/facebook') }}" target="_blank"><i class="icofont-facebook"></i>SE CONNECTER  AVEC FACEBOOK</a></li>
+                                                <li><a class="" href="{{url('auth/facebook') }}" target="_blank"><i class="icofont-facebook"></i>SE CONNECTER  AVEC FACEBOOK</a></li>
                                                 <li><a href="{{ url('auth/google') }}" target="_blank"><i class="icofont-google-plus"></i>SE CONNECTER  AVEC GOOGLE</a></li>
                                             </ul>
                                         </div>

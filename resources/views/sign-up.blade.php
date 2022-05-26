@@ -68,7 +68,7 @@
                                             <a href="/">
                                                 <img src="{{asset('assets/img/logo.png')}}" alt="Logo">
                                             </a>
-                                            <h2>CRÉATION DE COMPTE </h2>
+                                            <h2> <i class="fa fa-user"></i> CRÉATION DE COMPTE </h2>
                                         </div>
                                         <form method="POST" action="{{url('register') }}">
                                             @csrf
