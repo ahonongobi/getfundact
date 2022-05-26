@@ -27,20 +27,49 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                        <div class="about-img">
-                            <img src="assets/img/about/about-main1.jpg" alt="About">
-                        </div>
+                        
+                            <img src="{{asset('assets/img/logo-intelligencia.png')}}" alt="About">
+                        
                     </div>
                     <div class="col-lg-6">
                         <div class="about-content">
                             <div class="section-title">
-                                <span class="sub-title" style="font-family: montserrat;">POURQUOI NOUS CHOISIR ?</span>
+                                <span class="sub-title" style="font-family: montserrat;">Pourquoi choisir Getfund Act ?</span>
                                 <h2 style="font-family: montserrat;">Nous sommes pour de bonne cause</h2>
                             </div>
-                            <span class="about-span" style="font-family: montserrat; text-align: justify;">GetfundAct est une plateforme de cagnotte en ligne internationale, qui permet à des groupes, des associations et des communautés de récolter des fonds auprès de personnes éparpillées dans le Monde et ainsi de se mobiliser pour un proche, un collègue ou d’agir solidairement pour des causes environnementales, sociales, culturelles…
+                            
+
+
+                            <p style="font-family: montserrat; text-align: justify;">
+                            <span class="about-span" style="font-family: montserrat; text-align: justify;">Sécurité
                             </span>
-                            <p style="font-family: montserrat; text-align: justify;">Nous avons configuré ce portail pour gérer certains cas graves qui nécessitaient une attention urgente, où ces personnes n'avaient aucun moyen de résoudre le problème financier. Par conséquent, GetfundAct aide à faire campagne pour un fonds afin d'offrir une solution grâce au financement participatif.</p>
-                            <p style="font-family: montserrat; text-align: justify;">GetfundAct vous aide à créer rapidement une campagne et à raconter votre histoire de collecte de fonds. Vous pouvez collecter des fonds en tant qu'individu ou inviter d'autres personnes à se joindre à votre équipe de collecte de fonds. Chaque campagne doit contenir une raison puissante derrière l'idée, des récompenses passionnantes et uniques et un affichage accrocheur. Connaître ces points est extrêmement essentiel pour créer une campagne réussie.</p>
+                            En choisissant Getfund Act, vous vous garantissez une sécurité dans toutes vos démarches. D’entrée, vous profitez d’une navigation sécurisée basée sur le chiffrement https. Au moyen de Mangopay, Crédit Mutuel Arkea et Payline, toutes les informations concernant vos paiements sont également sécurisées. Il en est de même pour vos fonds et cagnottes qui jouissent aussi d’une sécurité sans faille.</p>
+
+
+
+                               <p style="font-family: montserrat; text-align: justify;">
+                            <span class="about-span" style="font-family: montserrat; text-align: justify;">Fiabilité
+                            </span>
+                          La gestion de Getfund Act est assurée par une entreprise Informatique  Béninoise <strong>INTELLIGENCIA SI</strong> enregistrée au registre des PME. N° RCCM : RB/ABC/21 B 4866 ,N° IFU : 3202113672200 ,N° Déclaration d’établissement (DGT) : 0021084-ABC. Elle jouit donc de tous les droits lui garantissant de proposer ces services. </p>
+
+
+
+
+
+                               <p style="font-family: montserrat; text-align: justify;">
+                            <span class="about-span" style="font-family: montserrat; text-align: justify;">Accessible
+                            </span>
+                        Getfund Act est accessible à tout le monde. Avec nous, vous pouvez réaliser des campagnes dans n'importe quel pays. Peu importe le pays, il est possible de retirer ses fonds sur des comptes en toute aisance. La devise disponible pour le moment est le franc CFA (XOF) mais travaillons pour intégrer d'autres devises dans l'avenir.  </p>
+
+
+
+
+
+                           
+                               <p style="font-family: montserrat; text-align: justify;">
+                            <span class="about-span" style="font-family: montserrat; text-align: justify;">Accessible
+                            </span>
+                        Getfund Act participe à l’émergence de l’Afrique. Et ce, à travers ses soutiens dans le but de promouvoir l’entrepreneuriat des jeunes. Pour cela, nous prélevons sur nos cagnottes une commission qui est mise à contribution pour satisfaire cette cause. Getfund Act se présente ainsi comme un acteur engagé pour la promotion des entreprises des jeunes africains.   </p>
                         </div>
                     </div>
                 </div>
