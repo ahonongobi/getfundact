@@ -69,7 +69,7 @@ $xof = round($xof, 2) ?? '';
                         <div class="details-img">
                             <h3 style="text-transform: uppercase; font-family:montserrat;">A Propos et description</h3>
                             <div>
-                                @if ($item->file_vignette==null)
+                                @if ($details->file_vignette==null)
                                 <img id="mobile_img" src="{{ asset('assets/img/banniere.jpg') }}"
                                 alt="Details">
                                 @else
