@@ -75,6 +75,7 @@ class MainController extends Controller
         $decryption = openssl_decrypt($id,$ciphering,$decryption_key,$option,$decryption_iv);
         //go to profile table and get the email,photo,nom_prenoms based on id  on model Profile
         $profile = Profile::where('id',$decryption)->first();
+        $profile_count = Profile::where('id',$decryption)->count() ?? 0;
 
         $count_contribution=Contrubution::where('id_campagnes',$decryption)->count();
         $count_contribution_amount= Contrubution::where('id_campagnes',$decryption)->sum('montant');
@@ -83,7 +84,7 @@ class MainController extends Controller
         $contributeur_count = Contrubution::where('id_campagnes',$decryption)->where('states_payment',1)->count();
         
         $contributeur_message = Contrubution::orderBy('id','DESC')->where('id_campagnes',$decryption)->where('message','!=',null)->where('states_payment',1)->get();
-        return view('user_dash.donation-details',compact('details','contributeur','count_contribution','count_contribution_amount','contributeur_count','contributeur_message','simpleString','profile','name'));
+        return view('user_dash.donation-details',compact('details','contributeur','count_contribution','count_contribution_amount','contributeur_count','contributeur_message','simpleString','profile','name','profile_count'));
     }
     //donationDetailsWithoutName 
     public function donationDetailsWithoutName ($id){

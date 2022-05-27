@@ -145,7 +145,7 @@ $xof = round($xof, 2) ?? '';
                         </div>
                         {{-- message de soutien --}}
                         <div class="details-comment">
-                            @if ($contributeur_message->count()!=0)
+                            @if ((count($contributeur_message))!=0)
                             <h3>Messages de soutien ({{$contributeur_message->count() ?? '0'}})</h3>
                             @endif
                             
@@ -187,7 +187,7 @@ $xof = round($xof, 2) ?? '';
                                     
                                     @endforeach      
                             </ul>
-                            @if ($contributeur_message->count()>3)
+                            @if ((count($contributeur_message))>3)
                             <a style="text-decoration:underline;color:#ff6015; cursor: pointer; font-weight:bold" class="moreless-button">Lire plus</a>
                             @endif
                         </div>
@@ -508,7 +508,7 @@ $xof = round($xof, 2) ?? '';
                         </div>
                         {{--  admin info comming soon---}}
                         <div class="admin widget-item">
-                            @if ($profile->count() > 0)
+                            @if ($profile_count > 0)
                                 <img style="width: 100px; height:100px;" src="{{ asset('storage/UserDocument/'.$profile->photo) }}" alt="admin">
                                 
                             @else
