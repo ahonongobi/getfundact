@@ -522,7 +522,7 @@ $xof = round($xof, 2) ?? '';
                                 <img style="width: 100px; height:100px;" src="{{ asset('storage/UserDocument/'.$profile->photo) }}" alt="admin">
                                 
                             @else
-                            <img src="{{asset('assets/avatar7.png')}}" alt="Admin">
+                            <img style="width: 100px; height:100px;" src="{{asset('assets/avatar7.png')}}" alt="Admin">
                             @endif
                             
                             <h4>{{$profile->nom_prenoms ?? ''}}</h4>
