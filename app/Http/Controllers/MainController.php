@@ -73,13 +73,17 @@ class MainController extends Controller
         $decryption_iv = '1234567891011121';
         $decryption_key = 'abyssinie';
         $decryption = openssl_decrypt($id,$ciphering,$decryption_key,$option,$decryption_iv);
-         
+        //go to profile table and get the email,photo,nom_prenoms based on id  on model Profile
+        $profile = Profile::where('id',$decryption)->first();
+
         $count_contribution=Contrubution::where('id_campagnes',$decryption)->count();
         $count_contribution_amount= Contrubution::where('id_campagnes',$decryption)->sum('montant');
         $details = Campagne::where('id',$decryption)->first();
         $contributeur = Contrubution::where('id_campagnes',$decryption)->where('states_payment',1)->paginate(10);
         $contributeur_count = Contrubution::where('id_campagnes',$decryption)->where('states_payment',1)->count();
-        return view('user_dash.donation-details',compact('details','contributeur','count_contribution','count_contribution_amount','contributeur_count'));
+        
+        $contributeur_message = Contrubution::orderBy('id','DESC')->where('id_campagnes',$decryption)->where('message','!=',null)->where('states_payment',1)->get();
+        return view('user_dash.donation-details',compact('details','contributeur','count_contribution','count_contribution_amount','contributeur_count','contributeur_message','simpleString','profile','name'));
     }
     //donationDetailsWithoutName 
     public function donationDetailsWithoutName ($id){
@@ -88,15 +92,18 @@ class MainController extends Controller
         $details = Campagne::where('id_secret',$id)->first();
         $contributeur = Contrubution::where('id_secret_campagne',$id)->where('states_payment',1)->paginate(10);
         $contributeur_count = Contrubution::where('id_secret_campagne',$id)->where('states_payment',1)->count();
-        return view('user_dash.donation-details',compact('details','contributeur','count_contribution','count_contribution_amount','contributeur_count'));
+        //select contributeur message where states_payment = 1, id_campagne = id , message is not null
+        $contributeur_message = Contrubution::where('id_secret_campagne',$id)->where('message','!=',null)->where('states_payment',1)->get();
+
+        return view('user_dash.donation-details',compact('details','contributeur','count_contribution','count_contribution_amount','contributeur_count','contributeur_message'));
     }
     public function donationDetailsOrg($id,$name){
         $details = Campagne::where('id',$id)->first();
         $count_contribution_for_you = Contrubution::where('id_author',Auth::user()->id)->where('states_payment',1)->count();
         $contributeur = Contrubution::where('id_campagnes',$id)->where('states_payment',1)->paginate(10);
         $contributeur_count = Contrubution::where('id_campagnes',$id)->where('states_payment',1)->count();
-
-        return view('invest_dash.donation-details',compact('details','contributeur','count_contribution_for_you','contributeur_count'));
+        $contributeur_message = Contrubution::where('id_campagnes',$id)->where('message','!=',null)->where('states_payment',1)->get();
+        return view('invest_dash.donation-details',compact('details','contributeur','count_contribution_for_you','contributeur_count','contributeur_message'));
     }
 
     public function contributions(){

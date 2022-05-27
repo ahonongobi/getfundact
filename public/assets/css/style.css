@@ -2888,7 +2888,7 @@ ul {
 }
 .blog-details-area .details-item .details-comment ul li:last-child {
     margin-bottom: 0;
-    margin-left: 70px;
+    /**margin-left: 70px; **/
 }
 .blog-details-area .details-item .details-comment ul li img {
     position: absolute;

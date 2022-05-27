@@ -63,7 +63,10 @@ Route::get('/sucess', function () {
 Route::get('*', function () {
     return view('404');
 });
-
+//tarifs page 
+Route::get('/tarifs', function () {
+    return view('tarifs');
+});
 Route::get('login',[LoginController::class,'view'])->name('login');
 Route::get('register',[RegisterController::class,'view'])->name('regiter');
 Route::get('about',[MainController::class,'view'])->name('about');

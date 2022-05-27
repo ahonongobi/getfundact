@@ -27,6 +27,8 @@ class CreateContrubutionsTable extends Migration
             $table->string('numero');
             $table->string('montant');
             $table->string('payment');
+            $table->string('states_payment');
+            $table->string('message');
             $table->timestamps();
         });
     }

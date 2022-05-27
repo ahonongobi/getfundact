@@ -82,10 +82,6 @@ La manière dont chaque personne gère sa compagne Getfund Act nous surprend ré
             </div>
             <div class="col-lg-6">
                 <ul class="accordion">
-                 
-
-                   
-
                        <li>
                         <a>
                            Qu’arrive-t-il en cas d’objectif non atteint ? 

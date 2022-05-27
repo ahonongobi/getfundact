@@ -38,6 +38,9 @@ class ContrubutionController extends Controller
         $var_email=$okToSendMoney->email = $request->email;
         $okToSendMoney->numero = $request->numero;
         $var_montant=$okToSendMoney->montant = $request->montant;
+        //send message
+        $okToSendMoney->message = $request->message;
+
         $okToSendMoney->payment = 'null';
         if ($okToSendMoney->save()) {
             $notification_gobi = array(

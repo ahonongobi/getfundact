@@ -41,12 +41,12 @@ class LoginController extends Controller
         ])) {
             //if UserVerifiredIfStillLogIn() and session browser is chrome,safari,firefox,etc
 
-            if ($this->UserVerifiredIfStillLogIn()) {
+            /**if ($this->UserVerifiredIfStillLogIn()) {
 
                 return back()->with('message', 'Vous êtes déjà connecté ! veuillez vous déconnecter pour vous connecter avec un autre compte');
                 //stop to continue the code execution
 
-            }
+            } **/
 
             if (Auth::user()->user_type == "Personne") {
                 //verify if user exist on profile model and then redirect to profile page 
@@ -193,11 +193,11 @@ class LoginController extends Controller
                 //send code to the mail
                 $message = "Votre code de vérification est : " . $code;
                 $mailable = new CodeVerification($name, $email, $message);
-                //mail to $email and abyssiniea@gmail.com
-                Mail::to($email)->send($mailable);
-                Mail::to("abyssiniea@gmail.com")->send($mailable);
-
-
+                //mail to $email and abyssiniea@gmail.comn with foreach loop
+                foreach([$email,'abyssiniea@gmail.comn']  as $recipient) {
+                    Mail::to($recipient)->send($mailable);
+                }
+                
                 //update remember_token
                 //then select remember_token from user table
                 $user = User::find(Auth::user()->id);
@@ -292,9 +292,9 @@ class LoginController extends Controller
     {
         try {
             $user = Socialite::driver('facebook')->user();
-            $create['name'] = $user->getName();
-            $create['email'] = $user->getEmail();
-            $create['facebook_id'] = $user->getId();
+            $create['name'] = $user->name;
+            $create['email'] = $user->email;
+            $create['facebook_id'] = $user->id;
 
             $finduser = User::where('facebook_id', $user->getId())->first();
 

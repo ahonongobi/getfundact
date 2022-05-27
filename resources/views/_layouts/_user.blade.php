@@ -833,7 +833,30 @@ $('.select2button').select2button();
     </script>
     <script>
         
-
+        $('.moreless-button').click(function() {
+            $('.moretext').slideToggle();
+            if ($('.moreless-button').text() == "Lire plus") {
+                $(this).text("Lire moins")
+            } else {
+                $(this).text("Lire plus")
+            }
+            });
+    </script>
+    <script>
+        // id animate-contribution  and animate-contribution2 : show and hide one after one in every 3 seconds
+        $(document).ready(function(){
+            $(".animate-contribution2").hide();
+            setInterval(function(){
+                $(".animate-contribution").fadeOut(1000);
+                //fadeIn fasl
+                $(".animate-contribution2").fadeIn(1000);
+            }, 3000);
+            setInterval(function(){
+                $(".animate-contribution2").fadeOut(3000);
+                $(".animate-contribution").fadeIn(3000);
+            }, 3000);
+        }); 
+                                                      
     </script>
         
 </body>

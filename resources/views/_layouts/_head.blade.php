@@ -249,7 +249,7 @@
                             <li><a href="/all-campagnes"><i class="icofont-simple-right"></i>Exemples de cagnotte</a></li>
                             <li><a href="/faq"><i class="icofont-simple-right"></i>FAQ/Aide</a></li>
                             <li><a href="/#"><i class="icofont-simple-right"></i>Evenements</a></li>
-                            <li><a href="/faq"><i class="icofont-simple-right"></i>Don</a></li>
+                            <li><a href="/tarifs"><i class="icofont-simple-right"></i>Tarifs</a></li>
                         </ul>
                     </div>
                 </div>

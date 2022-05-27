@@ -1,19 +1,22 @@
 {{-- get real value of dollar and Xof online --}}
 {{-- i'm power abyssinie[gobi]stack --}}
 @php 
-$dollar = file_get_contents('https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=XOF&apikey=ZQJXQZQJXQZQJXQZ');
-$dollar = json_decode($dollar, true);
-$dollar = $dollar['Realtime Currency Exchange Rate']['5. Exchange Rate'];
-$dollar = round($dollar, 2);
-$xof = file_get_contents('https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=XOF&to_currency=USD&apikey=ZQJXQZQJXQZQJXQZ');
-$xof = json_decode($xof, true);
-$xof = $xof['Realtime Currency Exchange Rate']['5. Exchange Rate'];
-$xof = round($xof, 2);
+$dollar = file_get_contents('https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=XOF&apikey=ZQJXQZQJXQZQJXQZ') ?? '';
+$dollar = json_decode($dollar, true) ?? '';
+$dollar = $dollar['Realtime Currency Exchange Rate']['5. Exchange Rate'] ?? '';
+$dollar = round($dollar, 2) ?? '';
+$xof = file_get_contents('https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=XOF&to_currency=USD&apikey=ZQJXQZQJXQZQJXQZ') ?? '';
+$xof = json_decode($xof, true) ?? '';
+$xof = $xof['Realtime Currency Exchange Rate']['5. Exchange Rate'] ?? '';
+$xof = round($xof, 2) ?? '';
 @endphp
 
 @extends('_layouts._user')
 
 <style>
+    .moretext{
+        display: none;
+    }
     @media (max-width: 810px) {
         #mobile_img {
             height: auto !important;
@@ -58,7 +61,7 @@ $xof = round($xof, 2);
 </style>
 
 @section('content')
-    <div class="donation-details-area ptb-100">
+    <div class="donation-details-area blog-details-area ptb-100">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
@@ -95,7 +98,7 @@ $xof = round($xof, 2);
                                 {{-- <iframe width="420" height="315" src="https://www.youtube.com/embed/MNX7HgcWqHc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> --}}
                             </div>
                         @endif
-                        <div class="details-share">
+                        <div class="details-share mt-3">
                             <div class="row">
                                 <div class="col-sm-6 col-lg-6">
                                     <div class="left">
@@ -105,7 +108,7 @@ $xof = round($xof, 2);
                                             </li>
                                             <li>
                                                 <a
-                                                    href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:8000/donation-details/{{ url('donation-details/' . $details->id . '/' . $details->name_b) }}&display=popup">
+                                                    href="https://www.facebook.com/sharer/sharer.php?u=https://getfundact.com/donation-details/{{ url('donation-details/' . $details->id . '/' . $details->name_b) }}&display=popup">
                                                     <i class="icofont-facebook"></i>
                                                 </a>
                                             </li>
@@ -140,8 +143,57 @@ $xof = round($xof, 2);
                                 </div>
                             </div>
                         </div>
+                        {{-- message de soutien --}}
+                        <div class="details-comment">
+                            @if ($contributeur_message->count()!=0)
+                            <h3>Messages de soutien ({{$contributeur_message->count() ?? '0'}})</h3>
+                            @endif
+                            
+                            <ul>
+                                 @foreach ($contributeur_message as $item)
+                                 {{-- display only 4 first --}}
+                                    @if ($loop->iteration < 4)
+                                    <li>
+                                        <img style="width:80px;height:80px" src="{{asset('assets/user.png')}}" alt="Details">
+                                        <h4>{{$item->name.' '.$item->surname}}</h4>
+                                        {{-- carbon diffForHumas in french --}}
+                                        <span>{{$item->created_at->diffForHumans()}}</span>             
+                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, saepe veniam id quo repellat consectetur architecto iste eius, voluptas ad velit atque. Voluptate quas labore sapiente praesentium, autem ullam esse.</p>
+                                        <a href="#"></a>
+                                    </li>
+                                    @endif
+                                 {{--<li>
+                                    <img style="width:100px;height:100px" src="{{asset('assets/user.png')}}" alt="Details">
+                                    <h4>{{$item->name.''.$item->surname}}</h4>
+                                    {{-- carbon diffForHumas in french 
+                                    <span>{{$item->created_at->diffForHumans()}}</span>             
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, saepe veniam id quo repellat consectetur architecto iste eius, voluptas ad velit atque. Voluptate quas labore sapiente praesentium, autem ullam esse.</p>
+                                    <a href="#"></a>
+                                </li>--}}
+                                 @endforeach
+                                 {{-- foreacl latest except 4 first --}}
+                                    @foreach ($contributeur_message as $item)
+                                    {{-- display only 4 first --}}
+                                        @if ($loop->iteration > 3)
+                                        <li style="display: none" class="moretext">
+                                            <img style="width:80px;height:80px;" src="{{asset('assets/user.png')}}" alt="Details">
+                                            <h4>{{$item->name.' '.$item->surname}}</h4>
+                                            {{-- carbon diffForHumas in french --}}
+                                            <span>{{$item->created_at->diffForHumans()}}</span>             
+                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, saepe veniam id quo repellat consectetur architecto iste eius, voluptas ad velit atque. Voluptate quas labore sapiente praesentium, autem ullam esse.</p>
+                                            <a href="#"></a>
+                                        </li>
+                                        @endif
+                                    
+                                    @endforeach      
+                            </ul>
+                            @if ($contributeur_message->count()>3)
+                            <a style="text-decoration:underline;color:#ff6015; cursor: pointer; font-weight:bold" class="moreless-button">Lire plus</a>
+                            @endif
+                        </div>
+                        {{-- message de soutien --}}
                         <div class="details-payment">
-                            <h3>Contribution</h3>
+                            <h3>Contribution</h3> 
                             @if (Auth::check() and $details->user_id !== Auth::user()->id)
                                 <form method="POST" action="{{ url('contribution') }}">
                                     @csrf
@@ -214,6 +266,18 @@ $xof = round($xof, 2);
                                             <span class="text-danger">
                                                 @if ($errors->has('montant'))
                                                     {{ $errors->first('montant') }}
+                                                @endif
+                                            </span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>
+                                                <i class="icofont-ui-message"></i>
+                                            </label>
+                                            <textarea name="message" class="form-control"
+                                                placeholder="Message de soutien (facultatif)"></textarea>
+                                            <span class="text-danger">
+                                                @if ($errors->has('message'))
+                                                    {{ $errors->first('message') }}
                                                 @endif
                                             </span>
                                         </div>
@@ -307,6 +371,17 @@ $xof = round($xof, 2);
                                                 @endif
                                             </span>
                                         </div>
+                                        <div class="form-group">
+                                            <label>
+                                                <i class="icofont-ui-message"></i>
+                                            </label>
+                                            <textarea name="message" class="form-control"
+                                                placeholder="Message de soutien (facultatif)"></textarea>
+                                            <span class="text-danger">
+                                                @if ($errors->has('message'))
+                                                    {{ $errors->first('message') }}
+                                                @endif
+                                            </span>
                                         <div class="calculatrice">
                                             <span>1 USD = {{ $dollar }} XOF </span>
                                             <span>Equivalent en $ (dollar):</span> <span id="for_th_day">$0</span>
@@ -414,6 +489,7 @@ $xof = round($xof, 2);
 
 
                         </div>
+                        
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -430,6 +506,20 @@ $xof = round($xof, 2);
                                 </button>
                             </form>
                         </div>
+                        {{--  admin info comming soon---}}
+                        <div class="admin widget-item">
+                            @if ($profile->count() > 0)
+                                <img style="width: 100px; height:100px;" src="{{ asset('storage/UserDocument/'.$profile->photo) }}" alt="admin">
+                                
+                            @else
+                            <img src="{{asset('assets/avatar7.png')}}" alt="Admin">
+                            @endif
+                            
+                            <h4>{{$profile->nom_prenoms ?? ''}}</h4>
+                            <span>Autheur</span>
+                            
+                        </div>
+                       {{--  admin info comming soon---}}
                         <div class="post widget-item d-none">
                             <h3>Popular Post</h3>
                             <div class="post-inner">
@@ -492,6 +582,7 @@ $xof = round($xof, 2);
                                     </li>
                                 </ul>
                             </div>
+                            
                         </div>
 
                         <div class="common-right-content widget-item">
@@ -535,7 +626,8 @@ $xof = round($xof, 2);
                             @if ($contributeur_count == 0)
                                 <h3>Aucunes contributions</h3>
                             @else
-                                <h3>{{ $contributeur_count }} personnes ont contribués</h3>
+                                <h3 class="animate-contribution">{{ $contributeur_count }} personnes ont contribués</h3>
+                                <h6 class="animate-contribution2"> <i style="font-size: 50px" class="icofont-map-pins"></i> Cagnotte organiséé près de chez vous</h6>
                             @endif
 
                             <div class="row m-0">
@@ -580,6 +672,8 @@ $xof = round($xof, 2);
                                 </div>
 
                             </div>
+
+                           
                         </div>
 
                         <div class="">
@@ -598,6 +692,8 @@ $xof = round($xof, 2);
                                     </button>
                                 </div>
                             </section>
+
+                             
                             
 
                         </div>
