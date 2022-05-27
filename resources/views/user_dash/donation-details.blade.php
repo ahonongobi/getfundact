@@ -519,7 +519,7 @@ $xof = round($xof, 2) ?? '';
                         {{--  admin info comming soon---}}
                         <div class="admin widget-item">
                             @if ($profile_count > 0)
-                                <img style="width: 100px; height:100px;" src="{{ asset('storage/UserDocument/'.$profile[0]->photo) }}" alt="admin">
+                                <img style="width: 100px; height:100px;" src="{{ asset('storage/UserDocument/'.$photo) }}" alt="admin">
                                 
                             @else
                             <img style="width: 100px; height:100px;" src="{{asset('assets/avatar7.png')}}" alt="Admin">

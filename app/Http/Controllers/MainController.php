@@ -79,10 +79,11 @@ class MainController extends Controller
 
         //go to profile table and get the email,photo,nom_prenoms based on id  on model Profile to user_id
         $profile = DB::select("SELECT email,photo,nom_prenoms FROM profiles WHERE user_id = ?",[$user_id[0]->user_id]) ?? null;
+        //get photo
 
         //count if user existe in the table profile
         $profile_count = DB::select("SELECT COUNT(*) as count FROM profiles WHERE user_id = ?",[$user_id[0]->user_id]) ?? null;
-
+        $photo = $profile[0]->photo ?? 'default.png';
         //$profile_count = Profile::where('user_id',$decryption)->count() ?? 0;
         
         $count_contribution=Contrubution::where('id_campagnes',$decryption)->count();
@@ -92,7 +93,7 @@ class MainController extends Controller
         $contributeur_count = Contrubution::where('id_campagnes',$decryption)->where('states_payment',1)->count();
         
         $contributeur_message = Contrubution::orderBy('id','DESC')->where('id_campagnes',$decryption)->where('message','!=',null)->where('states_payment',1)->get();
-        return view('user_dash.donation-details',compact('details','contributeur','count_contribution','count_contribution_amount','contributeur_count','contributeur_message','simpleString','profile','name','profile_count'));
+        return view('user_dash.donation-details',compact('details','contributeur','count_contribution','count_contribution_amount','contributeur_count','contributeur_message','simpleString','profile','name','profile_count','photo'));
     }
     //donationDetailsWithoutName 
     public function donationDetailsWithoutName ($id){
@@ -103,8 +104,17 @@ class MainController extends Controller
         $contributeur_count = Contrubution::where('id_secret_campagne',$id)->where('states_payment',1)->count();
         //select contributeur message where states_payment = 1, id_campagne = id , message is not null
         $contributeur_message = Contrubution::where('id_secret_campagne',$id)->where('message','!=',null)->where('states_payment',1)->get();
+        
+        ///
+        $user_id = DB::select("SELECT user_id FROM campagnes WHERE id_secret = ?",[$id]) ?? null;
+        //go to profile table and get the email,photo,nom_prenoms based on id  on model Profile to user_id
+        $profile = DB::select("SELECT email,photo,nom_prenoms FROM profiles WHERE user_id = ?",[$user_id[0]->user_id]) ?? null;
+        //get photo
 
-        return view('user_dash.donation-details',compact('details','contributeur','count_contribution','count_contribution_amount','contributeur_count','contributeur_message'));
+        //count if user existe in the table profile
+        $profile_count = DB::select("SELECT COUNT(*) as count FROM profiles WHERE user_id = ?",[$user_id[0]->user_id]) ?? null;
+        $photo = $profile[0]->photo ?? 'default.png';
+        return view('user_dash.donation-details',compact('details','contributeur','count_contribution','count_contribution_amount','contributeur_count','contributeur_message','profile','photo','profile_count'));
     }
     public function donationDetailsOrg($id,$name){
         $details = Campagne::where('id',$id)->first();
