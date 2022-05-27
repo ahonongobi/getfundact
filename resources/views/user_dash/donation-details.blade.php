@@ -302,7 +302,7 @@ $xof = round($xof, 2) ?? '';
                                 </form>
                             @endif
 
-                            @if (!Auth::check())
+                            @if(!Auth::check())
                                 <form method="POST" action="{{ url('contribution') }}">
                                     @csrf
                                     <input type="hidden" value="{{ $details->id }}" name="id_campagne">
@@ -388,6 +388,7 @@ $xof = round($xof, 2) ?? '';
                                                     {{ $errors->first('message') }}
                                                 @endif
                                             </span>
+                                        </div>
                                         <div class="calculatrice">
                                             <span>1 USD = {{ $dollar }} XOF </span>
                                             <span>Equivalent en $ (dollar):</span> <span id="for_th_day">$0</span>
@@ -402,6 +403,7 @@ $xof = round($xof, 2) ?? '';
 
                                 </form>
                             @endif
+                       
                             {{-- @elseif($email_value->email != $auth_id)
                     
                     <form method="POST" action="{{ url('contribution') }}">
@@ -489,12 +491,14 @@ $xof = round($xof, 2) ?? '';
                     
                        
                     @else --}}
+                    
                             @if (Auth::check() and $details->user_id == Auth::user()->id)
                                 Vous ne pouvez pas contribur a votre propre offre.
                             @endif
-
+                                    
 
                         </div>
+
                         
                     </div>
                 </div>
