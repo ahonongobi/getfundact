@@ -66,6 +66,7 @@ class MainController extends Controller
     }
 
     public function donationDetails($id,$name){
+        //$id is the id of the campagne
         $simpleString = $id;
         $ciphering = 'AES-128-CTR';
         $iv_lenght = openssl_cipher_iv_length($ciphering);
@@ -73,10 +74,17 @@ class MainController extends Controller
         $decryption_iv = '1234567891011121';
         $decryption_key = 'abyssinie';
         $decryption = openssl_decrypt($id,$ciphering,$decryption_key,$option,$decryption_iv);
-        //go to profile table and get the email,photo,nom_prenoms based on id  on model Profile
-        $profile = Profile::where('id',$decryption)->first();
-        $profile_count = Profile::where('id',$decryption)->count() ?? 0;
+        //select user_id from campagne where id = $decryption
+        $user_id = DB::select("SELECT user_id FROM campagnes WHERE id = ?",[$decryption]);
 
+        //go to profile table and get the email,photo,nom_prenoms based on id  on model Profile to user_id
+        $profile = DB::select("SELECT email,photo,nom_prenoms FROM profiles WHERE user_id = ?",[$user_id[0]->user_id]) ?? null;
+
+        //count if user existe in the table profile
+        $profile_count = DB::select("SELECT COUNT(*) as count FROM profiles WHERE user_id = ?",[$user_id[0]->user_id]) ?? null;
+
+        //$profile_count = Profile::where('user_id',$decryption)->count() ?? 0;
+        
         $count_contribution=Contrubution::where('id_campagnes',$decryption)->count();
         $count_contribution_amount= Contrubution::where('id_campagnes',$decryption)->sum('montant');
         $details = Campagne::where('id',$decryption)->first();
