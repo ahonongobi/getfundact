@@ -215,7 +215,12 @@
                 <div class="d-table-cell">
                     <div class="container">
                         <div class="title-item">
-                            <h2 class="gradient-heading">{{$details->name ?? 'GETFUND ACTION'}}</h2>
+                            {{--if details name is not set --}}
+                            @if (!isset($details->name))
+                            <h2 class="gradient-heading">GETFUND ACTION</h2>
+                            @else
+                            <h2 class="gradient-heading-gobi">{{$details->name ?? 'GETFUND ACTION'}}</h2>
+                            @endif
                             <ul>
                                 <li>
                                     @if (Auth::check())
