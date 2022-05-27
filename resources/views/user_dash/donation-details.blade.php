@@ -69,8 +69,14 @@ $xof = round($xof, 2) ?? '';
                         <div class="details-img">
                             <h3 style="text-transform: uppercase; font-family:montserrat;">A Propos et description</h3>
                             <div>
-                                <img id="mobile_img" src="{{ asset('storage/UserDocument/' . $details->file_vignette) }}"
-                                    alt="Details">
+                                @if ($item->file_vignette==null)
+                                <img id="mobile_img" src="{{ asset('assets/img/banniere.jpg') }}"
+                                alt="Details">
+                                @else
+                                <img id="mobile_img" src="{{ asset('storage/UserDocument/'.$details->file_vignette) }}"
+                                alt="Details">
+                                @endif
+                                
                             </div>
                             <h2 style="text-transform: uppercase; font-family:montserrat;">{{ $details->name }}</h2>
                             <p>
