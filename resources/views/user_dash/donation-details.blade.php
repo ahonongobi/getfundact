@@ -164,7 +164,7 @@ $xof = round($xof, 2) ?? '';
                                         <h4>{{$item->name.' '.$item->surname}}</h4>
                                         {{-- carbon diffForHumas in french --}}
                                         <span>{{$item->created_at->diffForHumans()}}</span>             
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, saepe veniam id quo repellat consectetur architecto iste eius, voluptas ad velit atque. Voluptate quas labore sapiente praesentium, autem ullam esse.</p>
+                                        <p>{{$item->message}}</p>
                                         <a href="#"></a>
                                     </li>
                                     @endif
