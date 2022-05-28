@@ -114,12 +114,39 @@
                                 </li>
                             </ul>
                             <div  class="language">
-                                <select>
-                                    <option>English</option>
-                                    {{--<option>العربيّة</option>
-                                    <option>Deutsch</option>
-                                    <option>Português</option>--}}
-                                </select>
+                                <form action="">
+                                    <select id="dynamic_select">
+                                        <option selected disabled>Catégoties</option>
+                                        <option value="Soutien pour proche">Soutien pour proche</option>
+                                        <option value="Anniversaire">Anniversaire</option>
+                                        <option value="Associatif">Associatif</option>
+        
+                                        <option value="Bicycling">Vélos</option>
+                                        <option value="Entertainment">Divertissement</option>
+                                        <option value="Environment">Environnement</option>
+                                        <option value="Evènement">Evénément</option>
+                                        
+                                        <option value="Familial">Familial</option>
+                                        <option value="Humanitaire">Humanitaire</option>
+                                        <option value="Mariage">Mariage</option>
+                                        <option value="Mobility">Mobilité</option>
+                                        <option value="Recreation">Récréation</option>
+                                        <option value="Restoration">Restoration</option>
+                                        <option value="Schools">Ecole</option>
+                                        
+                                        <option value="Sports">Sports</option>
+                                        <option value="Streetscapes">Streetscapes</option>
+                                        <option value="Technology">Technologie</option>
+                                        <option value="Tontine">Tontine</option>
+                                        <option value="Transit">Transit</option>
+                                        <option value="Voyage">Effectuer un Voyage</option>
+                                        
+                                        <option value="Autres">Autres</option>
+                                            {{--<option>العربيّة</option>
+                                            <option>Deutsch</option>
+                                            <option>Português</option>--}}
+                                        </select>
+                                </form>
                             </div>
                             <div class="header-search">
                                 <i id="search-btn" class="icofont-search-2"></i>
@@ -216,7 +243,7 @@
                 <div class="footer-item">
                     <div class="footer-logo">
                         <a class="logo" href="/">
-                            <img src="assets/img/logogetf.png" alt="Logo">
+                            <img src="{{asset('assets/img/logogetf.png')}}" alt="Logo">
                         </a>
                         <p>"Il est indispensable de se lancer dans une levée de fonds quand on a fait la preuve de son concept ou a minima de sa capacité à exécuter" <br>Jean Patrice ANCIAUX</p>
                         <ul>
@@ -436,6 +463,18 @@
     
   })
 
+</script>
+<script>
+    //go to campagne/select value page on select
+    $(document).ready(function(){
+        $('#dynamic_select').change(function(){
+            var campagne = $(this).val();
+            if(campagne){
+                window.location.href = '/campagnes/'+campagne;
+            }
+            
+        })
+    })
 </script>
 </body>
 </html>
