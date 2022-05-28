@@ -4,7 +4,41 @@
     .sub-title, h2, ul li {
         font-family: montserrat;
     }
-    
+    button {
+  cursor: pointer;
+  outline: none;
+}
+a.outline {
+  position: relative;
+  z-index: 3;
+  background: transparent;
+  color: #1172c4;
+  font-size: 14px;
+  border-color: #1172c4;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 22px;
+  padding: 10px 40px;
+  text-transform: uppercase;
+  transition: all 0.2s linear;
+}
+a.outline:hover {
+  color: white;
+  background: #1172c4;
+  border-color: white;
+  transition: all 0.2s linear;
+}
+a.green-white {
+  font-weight: 700;
+  color: #ff6015;
+  border-color: #ff6015;
+  background: transparent;
+}
+a.green-white:hover {
+  color: white;
+  background: #ff6015;
+  border-color: #ff6015;
+}
 </style>
 
 @section('content')
@@ -170,6 +204,28 @@
 
 <section id="donations-area" class="donations-area two pt-100 pb-70">
     <div class="container">
+        <span class="d-flex justify-content-between mb-3">
+            <a href="{{url('campagnes/Anniversaire')}}" type="submit" class="outline green-white">Anniversaire</a>
+            <a href="{{url('campagnes/Soutien pour proche')}}" type="submit" class="outline green-white">Soutien pour proche</a>
+            <a href="{{url('campagnes/Technologie')}}" type="submit" class="outline green-white">Technologie</a>
+            {{-- duplicate ten --}}
+            <a href="{{url('campagnes/Medical')}}" type="submit" class="outline green-white">Medical</a>
+            <a href="{{url('campagnes/Ecole')}}" type="submit" class="outline green-white">Ecole</a>
+            <a href="{{url('campagnes/Sport')}}" type="submit" class="outline green-white">Sport</a>
+
+            
+        </span>
+        <span class="d-flex justify-content-between mb-3">
+            <a href="{{url('campagnes/Associatif')}}" type="submit" class="outline green-white">Associatif</a>
+            <a href="{{url('campagnes/Tontine')}}" type="submit" class="outline green-white">Tontine</a>
+            <a href="{{url('campagnes/Humanitaire')}}" type="submit" class="outline green-white">Humanitaire</a>
+            {{-- duplicate ten --}}
+            <a href="{{url('campagnes/Familliale')}}" type="submit" class="outline green-white">Familliale</a>
+            <a href="{{url('campagnes/Mobilité')}}" type="submit" class="outline green-white">Mobilité</a>
+            <a href="{{url('campagnes/Effectuer un Voyage')}}" type="submit" class="outline green-white">Effectuer un Voyage</a>
+
+            
+        </span>
         <div class="section-title">
             <span class="sub-title">GETFUND ACTION</span>
             <h2>Et si vous investissiez dans un projet à impact positif ?</h2>
