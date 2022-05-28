@@ -367,7 +367,7 @@
 </script>
 
 
-<div class="go-top">
+<div class="go-top d-none">
     <i class="icofont-arrow-up"></i>
     <i class="icofont-arrow-up"></i>
 </div>
