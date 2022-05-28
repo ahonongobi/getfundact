@@ -301,7 +301,7 @@ class LoginController extends Controller
 
 
             if ($finduser) {
-                dd($finduser);
+                //dd($finduser);
                 Auth::login($finduser);
 
                 if ($finduser->user_type == "Personne") {
