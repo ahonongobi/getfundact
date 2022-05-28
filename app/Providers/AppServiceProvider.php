@@ -121,7 +121,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('all_withdraw_per_day',DB::table('withdrawals')->select(DB::raw('*'))
             ->whereRaw('Date(created_at) = CURDATE()')->get());
             //endadmin
-            $view->with('all_campagnes', Campagne::where('statut',1)->paginate(12));
+            $view->with('all_campagnes', Campagne::where('statut',1)->paginate(6));
             $view->with('gallery',Campagne::all());
             //get all montant of withdrawal by user where statut 0
             $view->with('all_withdraw_amount', Withdrawal::where('statut',0)->sum('montant'));

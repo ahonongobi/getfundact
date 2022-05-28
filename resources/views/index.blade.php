@@ -1,9 +1,12 @@
 @extends('_layouts._head')
+
 <style>
     .sub-title, h2, ul li {
         font-family: montserrat;
     }
+    
 </style>
+
 @section('content')
 
 
