@@ -52,7 +52,7 @@ class MainController extends Controller
     public function viewSeparateFinale($type,$email){
                  if ($type=='particulier') {
                     DB::update("UPDATE users SET user_type=? WHERE email=?",[
-                      'Particulier',$email
+                      'Personne',$email
                     ]);
 
                     return redirect('/my_space_social');
