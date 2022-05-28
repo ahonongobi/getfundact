@@ -116,7 +116,7 @@
                             <div  class="language">
                                 <form action="">
                                     <select id="dynamic_select">
-                                        <option selected disabled>Catégoties</option>
+                                        <option selected disabled>Catégories</option>
                                         <option value="Soutien pour proche">Soutien pour proche</option>
                                         <option value="Anniversaire">Anniversaire</option>
                                         <option value="Associatif">Associatif</option>
