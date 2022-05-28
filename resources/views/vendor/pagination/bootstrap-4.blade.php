@@ -6,9 +6,7 @@
 			border-color: #ff6015 !important;
         
 		}
-         a{
-            border-radius: 20% !important;
-        }
+         
 	
 </style>
 @if ($paginator->hasPages())
