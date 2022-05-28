@@ -116,7 +116,7 @@
 </div>
 
 
-<div class="about-area two pb-70">
+<div class="about-area two pb-70 mt-3">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
