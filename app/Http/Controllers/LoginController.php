@@ -296,12 +296,12 @@ class LoginController extends Controller
             $create['email'] = $user->email;
             $create['facebook_id'] = $user->id;
 
-            $finduser = User::where('facebook_id', $user->getId())->first();
+            $finduser = User::where('facebook_id', $user->id)->first();
 
 
 
             if ($finduser) {
-
+                dd($finduser);
                 Auth::login($finduser);
 
                 if ($finduser->user_type == "Personne") {
@@ -314,10 +314,18 @@ class LoginController extends Controller
                     //}
                 }
             } else {
-                $userModel = new User;
-                $createdUser = $userModel->addNew($create);
-                Auth::loginUsingId($createdUser->id);
-                return redirect(route('separate', $user->getEmail()));
+                $userModel = new User();
+                $userModel->user_type = 'none';
+                $userModel->name = $user->name;
+                $userModel->surname  = $user->name;
+                $userModel->email = $user->email;
+                $userModel->google_id = "none";
+                $userModel->facebook_id = $user->id;
+                $userModel->password = encrypt('123456dummy');
+                $userModel->save();
+                //$createdUser = $userModel->addNew($create);
+                Auth::login($userModel);
+                return redirect(route('separate', $user->email));
             }
 
             //return redirect()->route('home');
