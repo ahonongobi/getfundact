@@ -406,7 +406,7 @@ a.green-white:hover {
                                 @endphp</li>
                                 <li>Montant visé: {{$item->montant_v}} FCFA</li>
                                 --}}
-                                <li style="font-weight: bold">
+                                <li style="font-weight: bold;font-size: 15px;">
                                     @php 
                                     if($item->montant_cotise==0)
                                     echo "XOF 0";
