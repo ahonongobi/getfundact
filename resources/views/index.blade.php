@@ -415,7 +415,7 @@ a.green-white:hover {
                                         echo 'XOF '.number_format((float)$item->montant_cotise,2,'.','');
                                     }
                                     @endphp 
-                                    amassés  sur XOF{{$item->montant_v}}
+                                    amassés / XOF{{$item->montant_v}}
                                     
                                 </li>
                                 <li> </li>
