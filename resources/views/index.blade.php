@@ -301,8 +301,13 @@ a.green-white:hover {
                                 @endphp
                                 
                             </p>
+                            
                         </div>
                         <div class="bottom">
+                            {{-- diffFormHuman --}}
+                            <p>Dernier don : {{
+                                $item->updated_at->diffForHumans()
+                                }} </p>
                             <div style="height: 15px;" class="progress">
                                 @php
                                     $xpercent = 100*$item->montant_cotise/$item->montant_v;
@@ -387,8 +392,11 @@ a.green-white:hover {
                             @endif
 
                             --}}
-                            <ul>
-                                   <li>Montant contribué:  @php
+                            
+                            <ul style="width: 100% !important">
+
+                                   {{-- laste affichage 
+                                    <li>Montant contribué:  @php
                                     if($item->montant_cotise==0)
                                     echo "0 FCFA";
 
@@ -397,6 +405,21 @@ a.green-white:hover {
                                     }
                                 @endphp</li>
                                 <li>Montant visé: {{$item->montant_v}} FCFA</li>
+                                --}}
+                                <li style="font-weight: bold">
+                                    @php 
+                                    if($item->montant_cotise==0)
+                                    echo "XOF 0";
+
+                                    else {
+                                        echo 'XOF '.number_format((float)$item->montant_cotise,2,'.','');
+                                    }
+                                    @endphp 
+                                    amassés  sur XOF{{$item->montant_v}}
+                                    
+                                </li>
+                                <li> </li>
+                                
                             </ul>
                            {{--<h4>Contributions: 
                                 <span>60 personnes</span>

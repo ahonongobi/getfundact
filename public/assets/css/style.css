@@ -1093,11 +1093,11 @@ ul {
     margin-bottom: 18px;
 }
 .donation-item .bottom ul li {
-    display: inline-block;
+    display: flex;
     -webkit-box-flex: 0;
     -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-    max-width: 50%;
+    /** flex: 0 0 50%; **/
+    max-width: 100%;
     -webkit-transition: 0.5s all ease;
     transition: 0.5s all ease;
 }
