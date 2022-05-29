@@ -39,6 +39,25 @@ a.green-white:hover {
   background: #ff6015;
   border-color: #ff6015;
 }
+.element, .element2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+/** on mobile then make it a column */
+@media (max-width: 767px) {
+    .element, .element2{
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+@media (max-width: 767px) {
+    .element {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
 </style>
 
 @section('content')
@@ -204,7 +223,7 @@ a.green-white:hover {
 
 <section id="donations-area" class="donations-area two pt-100 pb-70">
     <div class="container">
-        <span class="d-flex justify-content-between mb-3">
+        <span  class="element mb-3">
             <a href="{{url('campagnes/Anniversaire')}}" type="submit" class="outline green-white">Anniversaire</a>
             <a href="{{url('campagnes/Soutien pour proche')}}" type="submit" class="outline green-white">Soutien pour proche</a>
             <a href="{{url('campagnes/Technologie')}}" type="submit" class="outline green-white">Technologie</a>
@@ -215,7 +234,7 @@ a.green-white:hover {
 
             
         </span>
-        <span class="d-flex justify-content-between mb-3">
+        <span class="element2 mb-3 mt-3">
             <a href="{{url('campagnes/Associatif')}}" type="submit" class="outline green-white">Associatif</a>
             <a href="{{url('campagnes/Tontine')}}" type="submit" class="outline green-white">Tontine</a>
             <a href="{{url('campagnes/Humanitaire')}}" type="submit" class="outline green-white">Humanitaire</a>
