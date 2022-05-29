@@ -255,7 +255,7 @@ a.green-white:hover {
             {{-- duplicate ten --}}
             <a href="{{url('campagnes/Familliale')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-people"></i>Familliale</a>
             <a href="{{url('campagnes/Mobilité')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-ui-travel"></i>Mobilité</a>
-            <a href="{{url('campagnes/Effectuer un Voyage')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-travelling"></i>Voyage</a>
+            <a href="{{url('campagnes/Effectuer un Voyage')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-airplane-alt"></i>Voyage</a>
 
             
         </span>
