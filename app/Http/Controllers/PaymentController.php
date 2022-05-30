@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Campagne;
 use App\Models\Checkout;
 use App\Models\Contrubution;
 use Illuminate\Http\Request;
@@ -26,10 +27,11 @@ class PaymentController extends Controller
            //select id_campagnes where email = $email lastly on table contrubution 
             $id_campagne = DB::table('contrubutions')->where('email', $email)->orderBy('id', 'desc')->first();
             $id_campagne = $id_campagne->id_campagnes ?? '0';
+            //dd($id_campagne);
             if($id_campagne != '0'){
                 //update updated at campagne where id = $id_campagne with eloquent
-                $campagne = Contrubution::find($id_campagne);
-                $campagne->updated_at = date('Y-m-d H:i:s');
+                $campagne = Campagne::find($id_campagne);
+                $campagne->last_donation = date('Y-m-d H:i:s');
                 $campagne->update();
 
 

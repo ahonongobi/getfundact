@@ -305,9 +305,32 @@ a.green-white:hover {
                         </div>
                         <div class="bottom">
                             {{-- diffFormHuman --}}
-                            <p>Dernier don : {{
-                                $item->updated_at->diffForHumans()
-                                }} </p>
+                            @php
+                               //passe to carbon last_donation and display according to diffFormHuman
+                               //set carbon to french
+                                 $carbon = Carbon\Carbon::now();
+                                 $carbon->setLocale('fr');
+                                 
+                                 $last_donation = Carbon\Carbon::parse($item->last_donation);
+                                    $now = Carbon\Carbon::now();
+                                    $diffFormHuman = $last_donation->diffForHumans($now);
+                                    $diffFormHuman = str_replace('il y a ','il y a',$diffFormHuman);
+                                    $diffFormHuman = str_replace('avant','',$diffFormHuman);
+                                    $diffFormHuman = str_replace('mois','mois',$diffFormHuman);
+                                    $diffFormHuman = str_replace('jour','jour',$diffFormHuman);
+                                    $diffFormHuman = str_replace('heure','heure',$diffFormHuman);
+                                    $diffFormHuman = str_replace('minute','minute',$diffFormHuman);
+                                    $diffFormHuman = str_replace('seconde','seconde',$diffFormHuman);    
+
+                            @endphp
+                            @if ($item->last_donation!=null)
+                            <p>Dernier don : Il y a {{
+                                $diffFormHuman
+                               }} </p>
+                            @else
+                            <p>Dernier don : aucun</p>
+                            @endif
+                            
                             <div style="height: 15px;" class="progress">
                                 @php
                                     $xpercent = 100*$item->montant_cotise/$item->montant_v;

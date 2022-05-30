@@ -8,14 +8,14 @@
                 <div class="d-table-cell">
                     <div class="container">
                         <div class="title-item">
-                            <h2>Mentions légales et confidentialité des données
-                            </h2>
+                            <h2>Conditions générales d'utilisation</h2>
+</h2>
                             <ul>
                                 <li>
                                     <a href="/">Accueil</a>
                                 </li>
                                 <li>
-                                    <span>Mentions légales et confidentialité des données
+                                    <span>Conditions générales d'utilisation</span>
 </span>
                                 </li>
                             </ul>

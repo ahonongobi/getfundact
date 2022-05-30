@@ -49,6 +49,9 @@ Route::get('/contact', function () {
 Route::get('/termes', function () {
     return view('termes');
 });
+Route::get('/cgu', function () {
+    return view('cgu');
+});
 Route::get('/how-work', function () {
     return view('how-work');
 });
