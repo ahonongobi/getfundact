@@ -407,7 +407,7 @@
         </div>--}}
         <div class="copyright-area">
             <p>Copyright ©2021- <script>document.write(new Date().getFullYear())</script>  GETFUND ACT. Développé  par 
-                <a href="https://intelligencia-si.com/" target="_blank">Intelligencia SI</a> | <a href="">Notice légale et confidentialité</a>
+                <a href="https://intelligencia-si.com/" target="_blank">Intelligencia SI</a> | <a href="/termes">Notice légale et confidentialité</a>  | <a href="/cgv">Conditions générales d'utilisations</a>
             </p>
 
         </div>

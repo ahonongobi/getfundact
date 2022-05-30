@@ -217,7 +217,7 @@ a.green-white:hover {
                     </ul>
                     <div class="about-btn-area">
                         {{-- withdrawal url --}}
-                        <a class="common-btn about-btn" href="{{ url('list-withdrawal') }}">Demander un rétrait</a>
+                        <a class="common-btn about-btn" href="{{ url('login') }}">Commencer votre getfund-act</a>
                         <a class="common-btn" href="/how-work">Comment ça marche</a>
                     </div>
                 </div>

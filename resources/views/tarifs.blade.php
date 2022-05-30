@@ -27,8 +27,8 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                        <div class="about-img">
-                        <img src="{{asset('assets/img/ccm.png')}}" alt="How work">
+                        <div class="abjout-img">
+                        <img src="{{asset('assets/img/8-3.jpg')}}" alt="How work">
                         </div>
                     </div>
                     <div class="col-lg-6">
