@@ -439,7 +439,7 @@
       "backgroundColor":"#302c51",
       "ctaText":"Nous écrire..",
       "borderRadius":"25",
-      "autoShow":true,
+      "autoShow":false,
       "phoneNumber":"22994696763"
   }
 };
@@ -737,7 +737,7 @@ $('.select2button').select2button();
         }
         //end of scrpit
  </script>
- <script>
+ <script> 
         //swal warning function isloggedingOut() to logout or not
         function isloggedingOut() {
             swal({
@@ -763,6 +763,32 @@ $('.select2button').select2button();
 
             
             //end of scrpit
+ </script>
+ <script>
+     //swal warning to deleteCampagne 
+        function deleteCampagne(idCampagne) {
+            swal({
+                title: "Êtes-vous sûr de vouloir supprimer cette campagne?",
+                text: "Vous ne pourrez pas récupérer cette campagne",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Oui",
+                cancelButtonText: "Non",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            },
+            function(isConfirm){
+                if (isConfirm) {
+                    //close the swal
+                    window.location.href = "/delete-post/" + idCampagne;
+                } else {
+                    swal("Annulé", "Suppression annulée", "error");
+                }
+            });
+        }
+        //end of scrpit
+
  </script>
     <script>
         function readURL(input) {

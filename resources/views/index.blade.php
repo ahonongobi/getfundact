@@ -293,7 +293,7 @@ a.green-white:hover {
                         <div class="top">
                             <a class="tags" href="#">#{{$item->categories}}</a>
                             <h3>
-                                <a href="{{ url('getfund-donation-details/'.$item->id.'/'.$item->name_b) }}">{{$item->name}}</a>
+                                <a href="{{ url('getfund-donation-details/'.$encryption.'/'.$item->name_b) }}">{{$item->name}}</a>
                             </h3>
                             <p>
                                 @php
@@ -438,7 +438,7 @@ a.green-white:hover {
                                         echo 'XOF '.number_format((float)$item->montant_cotise,2,'.','');
                                     }
                                     @endphp 
-                                    amassés / XOF{{$item->montant_v}}
+                                    collectés / XOF{{$item->montant_v}}
                                     
                                 </li>
                                 <li> </li>

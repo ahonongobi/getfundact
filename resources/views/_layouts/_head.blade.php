@@ -298,7 +298,7 @@
 
                                 <li>
                                     <i class="icofont-ui-message"></i>
-                                    <a href="">conctact@getfund-act.com  <br/>
+                                    <a href="">conctact@getfundact.com  <br/>
                                     contact@intelligencia-si.com    </a>
                                 </li>
                             </ul>
