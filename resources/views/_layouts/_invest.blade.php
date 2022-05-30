@@ -62,7 +62,7 @@
 
             <div class="mobile-nav">
                 <a href="{{ url('my_org') }}" class="logo">
-                    <img style="width: 300px; height:80px;" src="{{asset('assets/img/logogetf.png')}}" alt="Logo">
+                    <img style="width: 300px; height:auto;" src="{{asset('assets/img/logogetf.png')}}" alt="Logo">
                 </a>
             </div>
 
@@ -71,7 +71,7 @@
                     @if(Auth::check())
                     <nav class="navbar navbar-expand-md navbar-light">
                         <a class="navbar-brand" href="{{ url('my_org') }}">
-                            <img style="width: 300px; height:80px;" src="{{asset('assets/img/logo.png')}}" alt="Logo">
+                            <img style="width: 300px; height:auto;" src="{{asset('assets/img/logo.png')}}" alt="Logo">
                         </a>
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                             <ul class="navbar-nav">
@@ -117,7 +117,7 @@
                     @else
                     <nav class="navbar navbar-expand-md navbar-light">
                         <a class="navbar-brand" href="/">
-                            <img style="width:300px;height:80px;" src="{{asset('assets/img/logo.png')}}" alt="Logo">
+                            <img style="width:300px;height:auto;" src="{{asset('assets/img/logo.png')}}" alt="Logo">
                         </a>
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                             <ul class="navbar-nav">

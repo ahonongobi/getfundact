@@ -23,8 +23,24 @@ class PaymentController extends Controller
         $sendMoney->amount =  $slug;
          
         if ($sendMoney->save()) {
+           //select id_campagnes where email = $email lastly on table contrubution 
+            $id_campagne = DB::table('contrubutions')->where('email', $email)->orderBy('id', 'desc')->first();
+            $id_campagne = $id_campagne->id_campagnes ?? '0';
+            if($id_campagne != '0'){
+                //update updated at campagne where id = $id_campagne with eloquent
+                $campagne = Contrubution::find($id_campagne);
+                $campagne->updated_at = date('Y-m-d H:i:s');
+                $campagne->update();
 
-           $updateContrubution = Contrubution::where('email',$email)->orderBy('id','desc')->first()->update(['states_payment'=>1]);
+
+            } else {
+                //insert into table campagne
+                die('error, ups ! Quelque chose s\'est mal passé');
+            }
+
+            
+
+            $updateContrubution = Contrubution::where('email',$email)->orderBy('id','desc')->first()->update(['states_payment'=>1]);
             $notification_gobi = array(
                 'title' => 'Féliciations',
                 'sending' => "Votre contribution est parvenue avec succès. Merci pour votre contribution.",

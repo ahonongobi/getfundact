@@ -86,7 +86,7 @@
                         <div class="top">
                             <a class="tags" href="#">#{{$item->categories}}</a>
                             <h3>
-                                <a href="{{ url('donation-details/'.$item->id.'/'.$item->name_b) }}">{{$item->name}}</a>
+                                <a href="{{ url('donation-details/'.$encryption.'/'.$item->name_b) }}">{{$item->name}}</a>
                             </h3>
                             <p>
                                 @php
