@@ -509,6 +509,7 @@ $xof = round($xof, 2) ?? '';
                                 \Carbon\Carbon::setLocale('fr');
                             @endphp
                             <span>Actif {{ $details->created_at->diffForHumans() }} </span>
+                            
                             <form class="d-none">
                                 <input type="text" class="form-control" placeholder="Search...">
                                 <button type="submit" class="btn">
@@ -712,6 +713,7 @@ $xof = round($xof, 2) ?? '';
                                         <img src="https://s2.svgbox.net/octicons.svg?ic=copy" alt="Icon">
                                     </button>
                                 </div>
+                                
                             </section>
 
                              

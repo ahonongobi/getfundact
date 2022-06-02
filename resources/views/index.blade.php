@@ -263,6 +263,7 @@ a.green-white:hover {
             <a href="{{url('campagnes/Technologie')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-help-robot"> </i>Technologie</a>
             {{-- duplicate ten --}}
             <a href="{{url('campagnes/Medical')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-hospital"> </i>Medical</a>
+            
 
             
         </span>

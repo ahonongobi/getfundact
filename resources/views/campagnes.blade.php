@@ -1,11 +1,113 @@
 @extends('_layouts._head')
+<style>
+    a.outline {
+  position: relative;
+  z-index: 3;
+  background: transparent;
+  color: #1172c4;
+  font-size: 14px;
+  border-color: #1172c4;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 22px;
+  padding: 10px 40px;
+  text-transform: uppercase;
+  transition: all 0.2s linear;
+}
+a.outline:hover {
+  color: white;.element
+  background: #1172c4;
+  border-color: white;
+  transition: all 0.2s linear;
+}
+a.green-white {
+  font-weight: 700;
+  color: #ff6015;
+  border-color: #ff6015;
+  background: transparent;
+}
+a.green-white:hover {
+  color: white;
+  background: #ff6015;
+  border-color: #ff6015;
+}
+.element2{
+    display: flex;
+    
+    flex-direction: row;
+    justify-content: space-between; 
+    width: 100%;
+    margin: 0 auto;
+    
 
+}
+.element {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; 
+    width: 100%;
+    margin: 5px;
+    
+
+}
+/** on mobile then make it a column */
+@media (max-width: 767px) {
+    .element, .element2{
+        flex-direction: column;
+        flex: 50%;
+        
+    }
+    .element a, .element2 a{
+        margin-bottom: 10px;
+        width: auto;
+        text-align: center;
+        justify-content: center;
+    }
+    
+}
+.language{
+    display: none !important;
+}
+</style>
 @section('content')
+    <div class="container mt-3 bg-white pt-100">
+        <span  class="element mb-3">
+            <a href="{{url('campagnes/Anniversaire')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-birthday-cake"> </i> Anniversaire</a>
+            <a href="{{url('campagnes/Soutien pour proche')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-heart-alt"> </i>Soutien pour proche</a>
+            
+            <a href="{{url('campagnes/Ecole')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-education"> </i>Ecole</a>
+            <a href="{{url('campagnes/Sport')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-football"> </i>Sport</a>
+
+            
+        </span>
+        <span class="element2 mb-3 mt-3">
+            <a href="{{url('campagnes/Associatif')}}" type="submit"  class="outline green-white"><i style="font-size: 20px" class="icofont-money"> </i>Associatif</a>
+            <a href="{{url('campagnes/Tontine')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-money"></i>Tontine</a>
+            <a href="{{url('campagnes/Humanitaire')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-users-social"></i>Humanitaire</a>
+            {{-- duplicate ten --}}
+            <a href="{{url('campagnes/Familliale')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-people"></i>Familliale</a>
+            <a href="{{url('campagnes/Mobilité')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-ui-travel"></i>Mobilité</a>
+            <a href="{{url('campagnes/Effectuer un Voyage')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-airplane-alt"></i>Voyage</a>
+
+            
+        </span>
+        <span class="element2 mb-3 mt-3">
+            <a href="{{url('campagnes/Technologie')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-help-robot"> </i>Technologie</a>
+            {{-- duplicate ten --}}
+            <a href="{{url('campagnes/Medical')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-hospital"> </i>Medical</a>
+            
+
+            
+        </span>
+        {{-- category --}}
+        
+    </div>
     <section id="donations-area" class="donations-area two pt-100 pb-70">
-        <div class="container">
+        <div class="container mt-3">
+            
             <div class="section-title">
                 <span class="sub-title">GETFUND ACTION</span>
-                <h2>Principales collectes de fonds</h2>
+                <h2> Principales collectes de fonds</h2>
 
             </div>
             <div class="row">
