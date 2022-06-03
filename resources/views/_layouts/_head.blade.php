@@ -471,5 +471,21 @@
         })
     })
 </script>
+<script>
+   //autoplay youtube iframe on modal show
+    $(document).ready(function(){
+     $('#exampleModalToggle').on('shown.bs.modal', function () {
+        var videoSrc = $("#exampleModalToggle iframe").attr("src");
+         // set the video to autostart
+            $("#exampleModalToggle iframe").attr("src", videoSrc+"&amp;autoplay=1")
+            // clear the autoplay value when the modal hides       
+     });
+     // clear the autoplay value when the modal hides  
+        $('#exampleModalToggle').on('hide.bs.modal', function () {
+            var videoSrc = $("#exampleModalToggle iframe").attr("src");
+            $("#exampleModalToggle iframe").attr("src", videoSrc.replace("&amp;autoplay=1", ""));
+        });
+    })
+</script>
 </body>
 </html>

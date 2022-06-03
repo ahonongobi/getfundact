@@ -73,7 +73,30 @@ a.green-white:hover {
     }
     
 }
+/** -------------------------------------------------- */
 
+
+.modal-dialog {
+      max-width: 800px;
+      margin: 30px auto;
+  }
+
+
+
+.modal-body {
+  position:relative;
+  padding:0px;
+}
+.close {
+  position:absolute;
+  right:-30px;
+  top:0;
+  z-index:999;
+  font-size:2rem;
+  font-weight: normal;
+  color:#fff;
+  opacity:1;
+}
 </style>
 
 @section('content')
@@ -226,7 +249,7 @@ a.green-white:hover {
                 <div class="about-img">
                     <img src="assets/img/about/about-main2.jpg" alt="About">
                     <div class="video-wrap">
-                        <button class="js-modal-btn" data-video-id="uemObN8_dcw">
+                        <button class="js-modal-btn video-btn" data-bs-toggle="modal" href="#exampleModalToggle">
                             <i class="icofont-ui-play"></i>
                         </button>
                     </div>
@@ -236,7 +259,20 @@ a.green-white:hover {
     </div>
 </div>
 
+<!-- Modal start -->
+<!-- Button trigger modal -->
+  
+  <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/lPfUoROFGEM?controls=0" title="Getfund act" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+     
+    </div>
+  </div>
+</div>
 
+  
+  {{-- modal end here --}}
 <section id="donations-area" class="donations-area two pt-100 pb-70">
     <div class="container">
         <span  class="element mb-3">

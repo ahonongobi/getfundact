@@ -17,7 +17,8 @@ jQuery(
         });
         jQuery(".mean-menu").meanmenu({ meanScreenWidth: "991" });
         $("select").niceSelect();
-        $(".js-modal-btn").modalVideo();
+        //cette ligne ne bosse pas
+        $(".js-modal-btn_nada").modalVideo();
         new WOW().init();
         lightbox.option({
             resizeDuration: 200,
