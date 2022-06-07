@@ -38,8 +38,9 @@
                                 <h2 style="font-family: montserrat;">NOS TARIFS </h2>
                             </div>
                             <span class="about-span" style="font-family: montserrat; text-align: justify;">Getfund Act se révèle comme le site par excellence pour particulier, groupe ou association qui veulent lancer une campagne en ligne.
-Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus corporis obcaecati suscipit totam tenetur inventore maxime perferendis magnam eos sint impedit expedita, dolore iste quas hic, illo nostrum earum nobis!
-                            </span>
+
+                            Nous prenons 8 % du montant total collecté sur chaque campagne au Bénin et 10 % sur les campagnes des utilisateurs hors du Bénin.                            
+                        </span>
                             
                         </div>
                     </div>
