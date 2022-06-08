@@ -88,7 +88,7 @@
                             <ul>
                                 
                                 <li>
-                                    <a href="#" target="_blank">
+                                    <a href="https://web.facebook.com/getfundact/" target="_blank">
                                         <i class="icofont-facebook"></i>
                                     </a>
                                 </li>

@@ -186,7 +186,7 @@
                     <div class="col-sm-4 col-lg-3">
                         <div class="team-item">
                             <div class="top">
-                                <img src="assets/img/team/team1.jpg" alt="Team">
+                                <img style="height: 300px" src="assets/img/149071.png" alt="Team">
                                 <ul>
                                     <li><a href="#" target="_blank"><i class="icofont-facebook"></i></a></li>
                                     <li><a href="#" target="_blank"><i class="icofont-twitter"></i></a></li>
@@ -203,7 +203,7 @@
                     <div class="col-sm-4 col-lg-3">
                         <div class="team-item">
                             <div class="top">
-                                <img src="{{asset('assets/img/pp.jpeg')}}" alt="Team">
+                                <img  src="{{asset('assets/img/pp.jpeg')}}" alt="Team">
                                 <ul>
                                     <li><a href="#" target="_blank"><i class="icofont-facebook"></i></a></li>
                                     <li><a href="#" target="_blank"><i class="icofont-twitter"></i></a></li>
@@ -222,7 +222,7 @@
                     <div class="col-sm-4 col-lg-3">
                         <div class="team-item">
                             <div class="top">
-                                <img src="assets/img/team/team3.jpg" alt="Team">
+                                <img style="height: 300px" src="assets/img/149071.png" alt="Team">
                                 <ul>
                                     <li><a href="#" target="_blank"><i class="icofont-facebook"></i></a></li>
                                     <li><a href="#" target="_blank"><i class="icofont-twitter"></i></a></li>
@@ -240,7 +240,7 @@
                     <div class="col-sm-4 col-lg-3">
                         <div class="team-item">
                             <div class="top">
-                                <img src="assets/img/team/team3.jpg" alt="Team">
+                                <img style="height: 300px" src="assets/img/149071.png" alt="Team">
                                 <ul>
                                     <li><a href="#" target="_blank"><i class="icofont-facebook"></i></a></li>
                                     <li><a href="#" target="_blank"><i class="icofont-twitter"></i></a></li>
