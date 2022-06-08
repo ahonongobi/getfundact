@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\CampagneACtive;
 use App\Mail\MessageConfirmation;
+use App\Mail\Order;
 use App\Models\Campagne;
 use App\Models\User;
 use App\Models\Withdrawal;
@@ -126,12 +127,21 @@ class JuryController extends Controller
             1,$id
         ]);
         //send mail to user that his withdrawal is invalidated
-        $users = User::where('id',$user->user_id)->first();
+        $users = User::where('id',$user->id_user)->first();
         $email = $users->email;
         $name = $users->name;
-        $message = "Votre demande de retrait est validée";
-        $mailable = new CampagneACtive($name,$email,$message);
-        return back()->with('success','Campagne désactivée avec succès!!!');
+        //votre demande de retrait de 200XOF  a été validée
+        $message = "Votre demande de retrait de ".$user->montant."XOF a été validée";
+        $mailable = new Order($name,$email,$message);
+        Mail::to($email)->send($mailable);
+        $notification_gobi = array(
+          'title' => 'Succès',
+          'sending' => "Demande de retrait validée avec succès",
+          'type' => 'success',
+  
+          );
+        return back()->with($notification_gobi);
+       // return back()->with('success','Campagne désactivée avec succès!!!');
       }
 
 
