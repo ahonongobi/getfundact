@@ -261,7 +261,10 @@ a.green-white:hover {
 
 <!-- Modal start -->
 <!-- Button trigger modal -->
-  
+  <style>
+     /** set with and height on youtube iframe according to the device **/ 
+        
+  </style>
   <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">

@@ -292,8 +292,8 @@ $xof = round($xof, 2) ?? '';
                                             <div class="form-check">
                                                 <input required type="checkbox" class="form-check-input" id="exampleCheck1" name="accept">
                                                 <label class="form-check-label" for="exampleCheck1">
-                                                    <a style="text-decoration: none; color: #979797;" href="#">
-                                                        J'accepte les <a href="/cgu" style="color: #ff6015;">conditions d'utilisation</a> et la <a href="/termes" style="color: #ff6015;">politique de confidentialité</a>
+                                                    <a style="text-decoration: none; color: #979797;" href="/cgu">
+                                                        Je reconnais avoir pris connaissance du projet et s’engage  à  contribuer
                                                     </a>
                                                 </label>
         
@@ -406,8 +406,8 @@ $xof = round($xof, 2) ?? '';
                                             <div class="form-check">
                                                 <input required type="checkbox" class="form-check-input" id="exampleCheck1" name="accept">
                                                 <label class="form-check-label" for="exampleCheck1">
-                                                    <a style="text-decoration: none; color: #979797;" href="#">
-                                                        J'accepte les <a href="/cgu" style="color: #ff6015;">conditions d'utilisation</a> et la <a href="/termes" style="color: #ff6015;">politique de confidentialité</a>
+                                                    <a style="text-decoration: none; color: #979797;" href="/cgu">
+                                                        Je reconnais avoir pris connaissance du projet et s’engage  à  contribuer
                                                     </a>
                                                 </label>
         

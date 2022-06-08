@@ -119,4 +119,12 @@ class WithdrawalController extends Controller
         }
         
     }
+
+    //statut withdraal function: based  on model withdrawal
+    public function statut(){
+        $withdrawalinfo =  Withdrawal::where('id_user',Auth::user()->id)->get();
+        $withdrawalinfo_count =  Withdrawal::where('id_user',Auth::user()->id)->count();
+        $profile  = Profile::where('user_id',Auth::user()->id)->first();
+        return view('user_dash.statut-withdrawal',compact('withdrawalinfo','profile','withdrawalinfo_count'));
+    }
 }

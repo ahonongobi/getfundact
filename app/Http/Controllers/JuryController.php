@@ -125,6 +125,12 @@ class JuryController extends Controller
         DB::update("UPDATE withdrawals SET statut=? WHERE id=?",[
             1,$id
         ]);
+        //send mail to user that his withdrawal is invalidated
+        $users = User::where('id',$user->user_id)->first();
+        $email = $users->email;
+        $name = $users->name;
+        $message = "Votre demande de retrait est validée";
+        $mailable = new CampagneACtive($name,$email,$message);
         return back()->with('success','Campagne désactivée avec succès!!!');
       }
 

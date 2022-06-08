@@ -136,7 +136,7 @@ Route::get('/delete-post/{id}',[CampagneController::class,'deletePost']);
 //secure protocol route
 Route::get('/secure-protocol',[SecureProtocolController::class,'index']);
 Route::post('/code-verification',[SecureProtocolController::class,'codeVerification']);
-
+Route::get('/statut-withdrawal',[WithdrawalController::class,'statut']);
 });
 Route::get('/state/{type}/{email}',[MainController::class,'viewSeparateFinale']);
 Route::get('/separate/{email}',[MainController::class,'viewSeparate'])->name('separate');

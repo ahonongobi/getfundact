@@ -28,7 +28,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="abjout-img">
-                        <img src="{{asset('assets/img/8-3.jpg')}}" alt="How work">
+                        <img src="{{asset('assets/img/png-transparent-houari-boumediene-airport-1-2-3-tarif-text-label-rectangle.png')}}" alt="How work">
                         </div>
                     </div>
                     <div class="col-lg-6">
