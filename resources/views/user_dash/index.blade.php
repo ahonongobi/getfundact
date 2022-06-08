@@ -45,7 +45,7 @@
                 <div class="about-img">
                     <img src="assets/img/about/about-main2.jpg" alt="About">
                     <div class="video-wrap">
-                        <button class="js-modal-btn" data-video-id="uemObN8_dcw">
+                        <button class="js-modal-btn video-btn" data-bs-toggle="modal" href="#exampleModalToggle">
                             <i class="icofont-ui-play"></i>
                         </button>
                     </div>
@@ -253,4 +253,12 @@
         </div>
     </div>
 </section>
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+          <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/lPfUoROFGEM?controls=0" title="Getfund act" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       
+      </div>
+    </div>
+  </div>
 @endsection

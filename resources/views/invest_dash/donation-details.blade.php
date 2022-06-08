@@ -165,6 +165,28 @@ $xof = round($xof, 2);
                                         @endif
                                     </span>
                                 </div>
+                                <div class="calculatrice mb-3">
+                                    {{-- i accept and agree policy and privacy checkbox --}}
+                                    <div class="form-check">
+                                        <input required type="checkbox" class="form-check-input" id="exampleCheck1" name="accept">
+                                        <label class="form-check-label" for="exampleCheck1">
+                                            <a style="text-decoration: none; color: #979797;" href="#">
+                                                J'accepte les <a href="/cgu" style="color: #ff6015;">conditions d'utilisation</a> et la <a href="/termes" style="color: #ff6015;">politique de confidentialité</a>
+                                            </a>
+                                        </label>
+
+                                    </div>
+                                </div>
+                                <div class="calculatrice">
+                                    {{-- i accept and agree policy and privacy checkbox --}}
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="accept">
+                                        <label class="form-check-label" for="exampleCheck1">
+                                            <a href="#">I accept and agree policy and privacy checkbox</a>
+                                        </label>
+
+                                    </div>
+                                </div>
                                 <div class="calculatrice">
                                     <span>1 USD = {{ $dollar ?? "" }} XOF </span>
                                     <span>Equivalent en $ (dollar):</span> <span id="for_th_day">$0</span>

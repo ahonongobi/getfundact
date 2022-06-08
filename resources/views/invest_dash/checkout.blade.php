@@ -230,8 +230,8 @@
 
 
 
-    <script amount="1" callback="{{ route('callback', ['slug' => $var_montant, 'email' => $var_email]) }}" data="" url="/process"
-        position="center" theme="#ff6015" sandbox="true" key="03ef50b091f211eaa76be1d98e099dbf"
+    <script amount="{{$var_montant}}" callback="{{ route('callback', ['slug' => $var_montant, 'email' => $var_email]) }}" data="" url="/process"
+        position="center" theme="#ff6015" sandbox="false" key="c3b0b98740689ce0ba3c23a739738f25dad41a8f"
         src="https://cdn.kkiapay.me/k.js"></script>
 
 @stop
