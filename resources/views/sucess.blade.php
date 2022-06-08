@@ -31,7 +31,7 @@
                         <div class="about-content">
                             <div class="section-title">
                                 <span class="sub-title" style="font-family: montserrat;">COMMENT REUSSIR MES CAMPAGNES ?</span>
-                                <h2 style="font-family: montserrat;">Nous sommes pour de bonne cause</h2>
+                                <h2 style="font-family: montserrat;">Nous sommes là pour de bonne cause</h2>
                             </div>
                            
                             <p style="font-family: montserrat; text-align: justify;">

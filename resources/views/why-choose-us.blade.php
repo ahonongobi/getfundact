@@ -43,7 +43,7 @@
                             <p style="font-family: montserrat; text-align: justify;">
                             <span class="about-span" style="font-family: montserrat; text-align: justify;">Sécurité
                             </span>
-                            En choisissant Getfund Act, vous vous garantissez une sécurité dans toutes vos démarches. D’entrée, vous profitez d’une navigation sécurisée basée sur le chiffrement https. Au moyen de Mangopay, Crédit Mutuel Arkea et Payline, toutes les informations concernant vos paiements sont également sécurisées. Il en est de même pour vos fonds et cagnottes qui jouissent aussi d’une sécurité sans faille.</p>
+                            En choisissant Getfund Act, vous vous garantissez une sécurité dans toutes vos démarches. D’entrée, vous profitez d’une navigation sécurisée basée sur le chiffrement https. Au moyen de kkiapay, toutes les informations concernant vos paiements sont également sécurisées. Il en est de même pour vos fonds et cagnottes qui jouissent aussi d’une sécurité sans faille.</p>
 
 
 
@@ -59,7 +59,7 @@
                                <p style="font-family: montserrat; text-align: justify;">
                             <span class="about-span" style="font-family: montserrat; text-align: justify;">Accessible
                             </span>
-                        Getfund Act est accessible à tout le monde. Avec nous, vous pouvez réaliser des campagnes dans n'importe quel pays. Peu importe le pays, il est possible de retirer ses fonds sur des comptes en toute aisance. La devise disponible pour le moment est le franc CFA (XOF) mais travaillons pour intégrer d'autres devises dans l'avenir.  </p>
+                        Getfund Act est accessible à tout le monde. Avec nous, vous pouvez réaliser des campagnes dans n'importe quel pays. Peu importe le pays, il est possible de retirer ses fonds sur des comptes en toute aisance. La devise disponible pour le moment est le franc CFA (XOF) mais nous travaillons pour intégrer d'autres devises dans l'avenir.  </p>
 
 
 
@@ -67,7 +67,7 @@
 
                            
                                <p style="font-family: montserrat; text-align: justify;">
-                            <span class="about-span" style="font-family: montserrat; text-align: justify;">Accessible
+                            <span class="about-span" style="font-family: montserrat; text-align: justify;">Acteur engagé pour la promotion
                             </span>
                         Getfund Act participe à l’émergence de l’Afrique. Et ce, à travers ses soutiens dans le but de promouvoir l’entrepreneuriat des jeunes. Pour cela, nous prélevons sur nos cagnottes une commission qui est mise à contribution pour satisfaire cette cause. Getfund Act se présente ainsi comme un acteur engagé pour la promotion des entreprises des jeunes africains.   </p>
                         </div>

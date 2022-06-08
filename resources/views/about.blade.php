@@ -36,7 +36,7 @@
                         <div class="about-content">
                             <div class="section-title">
                                 <span class="sub-title" style="font-family: montserrat;">A PROPOS DE NOUS</span>
-                                <h2 style="font-family: montserrat;">Nous sommes pour de bonne cause</h2>
+                                <h2 style="font-family: montserrat;">Nous sommes là pour de bonne cause</h2>
                             </div>
                             <p class="" style="font-family: montserrat; text-align: justify;">GetfundAct développer par la société   <b> INTELLIGENCIA SI </b> est une plateforme de 
                             cagnotte en ligne internationale, qui permet à des groupes, des associations et des communautés de 
@@ -250,7 +250,7 @@
                             </div>
                             <div class="bottom">
                                 <h3>Johan mendal</h3>
-                                <span>Volunteer</span>
+                                <span>Sécurité informatique</span>
                             </div>
                         </div>
                     </div>
