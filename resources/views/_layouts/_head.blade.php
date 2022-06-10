@@ -242,7 +242,7 @@
                         </a>
                         <p>"Il est indispensable de se lancer dans une levée de fonds quand on a fait la preuve de son concept ou a minima de sa capacité à exécuter" <br>Jean Patrice ANCIAUX</p>
                         <ul>
-                            <li><a href="#" target="_blank"><i class="icofont-facebook"></i></a></li>
+                            <li><a href="https://web.facebook.com/getfundact/" target="_blank"><i class="icofont-facebook"></i></a></li>
                             <li><a href="#" target="_blank"><i class="icofont-twitter"></i></a></li>
                             <li><a href="#" target="_blank"><i class="icofont-youtube-play"></i></a></li>
                             
