@@ -99,7 +99,7 @@ class WithdrawalController extends Controller
             $message ="Nous vous informons que votre demande de retrait a été prise en compte. Chaque demande de retrait met entre 2 à 3 jours pour être traitée et validée.";
             //message admin and specify the amount
 
-            $message2 = "Un nouveau retrait de: ".$request->montant." XOF a été effectué sur votre compte. Veuillez vérifier les informations de la demande de retrait.";
+            $message2 = "Un nouveau retrait a été effectué sur votre compte. Veuillez vérifier les informations de la demande de retrait.";
 
             $mailable = new OrderShipped(Auth::user()->username,$request->email,$message);
             Mail::to(Auth::user()->email)->send($mailable);
