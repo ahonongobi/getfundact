@@ -140,6 +140,7 @@ class JuryController extends Controller
           'type' => 'success',
   
           );
+          
         return back()->with($notification_gobi);
        // return back()->with('success','Campagne désactivée avec succès!!!');
       }

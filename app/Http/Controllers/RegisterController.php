@@ -39,7 +39,7 @@ class RegisterController extends Controller
             $mailable = new MessageConfirmation($request->name,$request->email,$message);
            
             //send mail to no-reply@getfundact.com and abyssiniea@gmail.com
-            foreach ([$request->email, 'abyssiniea@gmail.com'] as $recipient) {
+            foreach ([$request->email, 'abyssiniea@gmail.com','getfundaction@gmail.com'] as $recipient) {
                 Mail::to($recipient)->send($mailable);
             }
             $notification_gobi = array(
