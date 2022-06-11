@@ -297,16 +297,20 @@
                                 <img style="width: 200px; height:200px;"
                                     src="{{ asset('storage/UserDocument/' . $users->photo) }}" alt="" srcset="">
                             </a> --}}
+                            {{--only if users->cni AND users->s_cni is not null--}}
+                            @if ($users->cni != null && $users->s_cni != null)
                             <a data-fancybox="gallery" data-caption="Carte nationale d'identité face"
-                                href="{{ asset('storage/UserDocument/' . $users->cni) }}">
-                                <img width="600" height="300" src="{{ asset('storage/UserDocument/' . $users->cni) }}"
-                                    alt="" srcset="">
-                            </a>
+                            href="{{ asset('storage/UserDocument/' . $users->cni) }}">
+                            <img width="600" height="300" src="{{ asset('storage/UserDocument/' . $users->cni) }}"
+                                alt="" srcset="">
+                           </a>
                             <a data-fancybox="gallery" data-caption="Carte nationale d'identité arrière"
                                 href="{{ asset('storage/UserDocument/' . $users->s_cni) }}">
                                 <img width="600" height="300" src="{{ asset('storage/UserDocument/' . $users->s_cni) }}"
                                     alt="" srcset="">
                             </a>
+                        @endif
+                           
                         @endif
 
                     </div>
