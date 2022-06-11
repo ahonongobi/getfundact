@@ -105,7 +105,8 @@ class AppServiceProvider extends ServiceProvider
             $view->with('all_users_today', User::whereDate('created_at', date('Y-m-d'))->get());
             //select  user that has registered in recent 1 months 
             $view->with('all_users_1months', User::whereBetween('created_at', [date('Y-m-d', strtotime('-1 months')), date('Y-m-d')])->get());
-            
+            //select  user that has registered in recent 1 weeks
+            $view->with('all_users_1weeks', User::whereBetween('created_at', [date('Y-m-d', strtotime('-1 weeks')), date('Y-m-d')])->get());
             $view->with('count_all_campagne', Campagne::count());
             $view->with('Countall_users', User::count());
             $view->with('todayUser', DB::table('users')->select(DB::raw('*'))

@@ -90,7 +90,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($all_users_1months as $item)
+            @foreach ($all_users_1weeks as $item)
             <tr>
                 <td>{{ $item->name }} {{ $item->surname }}</td>
                 <td>{{ $item->email }}</td>
