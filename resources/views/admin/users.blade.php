@@ -74,7 +74,7 @@
     
 
     {{-- display  latest 1 months registration--}}
-     <h2> 1 mois</h2>
+     <h2> 1 weeks</h2>
     <table id="example_1months" class="display nowrap" style="width:100%">
         <thead>
             <tr>
