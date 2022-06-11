@@ -315,8 +315,8 @@
                                         </div>
                                     </div>--}}
                                     <div class='file-input'>
-                                        <input name="file" type='file'>
-                                        <span class='button'>Chosir la photo (profile)</span>
+                                        <input accept="" name="file" type='file'>
+                                        <span class='button'>Chosir la photo (profile) en image</span>
                                         <span class='label' data-js-label>Aucun fichier sélectionner</label>
                                             <span class="text-danger">
                                                 @if ($errors->has('file'))

@@ -13,8 +13,6 @@ class CNIController extends Controller
             'file'=> 'required',
             'file2' => 'required','min:6','image',
             //'c_password' => 'min:6',
-
-
         ]);
         
         if($request->hasFile('file'))
