@@ -4,7 +4,7 @@
 <div class="about-area two pb-70">
     <div class="container">
         <center>
-            <h4>Ma cagnotte</h4>
+            <h4>Ma campagne</h4>
         </center>
         <div class="row align-items-center">
             @if ($errors->any())
@@ -124,30 +124,30 @@
                                 </style>
                                   
                                   <div class="col-lg-12 col-md-12 mt-3">
-                                    <label for="">Veuillez selectionner la catégories dans laquelle se trouve votre campagne:
+                                    <label for="">Veuillez selectionner la catégorie dans laquelle se trouve votre campagne:
                                     </label>
                                     <select name="categories" class="select2button mt-3">
                                         <option value="{{ $item->categories }}" selected>{{ $item->categories }}</option>
                                         <option value="Anniversaire">Anniversaire</option>
                                         <option value="Associatif">Associatif</option>
         
-                                        <option value="Bicycling">Bicycling</option>
+                                        
                                         <option value="Entertainment">Entertainment</option>
                                         <option value="Environment">Environment</option>
                                         <option value="Evènement">Evènement</option>
-                                        <option value="Event">Event</option>
+                                        
                                         <option value="Familial">Familial</option>
                                         <option value="Humanitaire">Humanitaire</option>
                                         <option value="Mariage">Mariage</option>
                                         <option value="Mobility">Mobility</option>
-                                        <option value="Recreation">Recreation</option>
-                                        <option value="Restoration">Restoration</option>
-                                        <option value="Schools">Schools</option>
+                                       
+                                        <option value="Restoration">Restauration</option>
+                                        <option value="Éducation">Éducation</option>
                                         <option value="Soutien pour proche">Soutien pour proche</option>
                                         <option value="Sports">Sports</option>
-                                        <option value="Streetscapes">Streetscapes</option>
+                                        
                                         <option value="Technology">Technology</option>
-                                        <option value="Tontine">Tontine</option>
+                                       
                                         <option value="Transit">Transit</option>
                                         <option value="Voyage">Voyage</option>
                                         <option value="Autres">Autres</option>
@@ -162,7 +162,7 @@
                         </div>
                         <div class="col-lg-12 mb-4">
                             <div class="form-group">
-                                <input type="text" value="{{ $item->name }}" required name="name" class="form-control" placeholder="Nom de la cagnotte">
+                                <input type="text" value="{{ $item->name }}" required name="name" class="form-control" placeholder="Nom de la campagne">
                             </div>
                         </div>
                         
@@ -180,7 +180,7 @@
                             <div class="form-group">
                                 <input type="number" value="{{ $item->montant_v }}" required name="montant_v" class="form-control" placeholder="* Montant visé - 0 si pas de montant précis">
                             </div>
-                            <input type="checkbox" name="hidden_cash" value="1" id=""> Ne pas Montrer le montant cumulé de la collecte
+                            <input type="checkbox" name="hidden_cash" value="1" id=""> Ne pas montrer le montant cumulé de la collecte
 
                         </div>
 
@@ -212,9 +212,9 @@
 
                         <div class="col-lg-12 mb-4 ">
                             <div class="form-group">
-                                <input type="text" value="{{ $item->keys_word }}" required name="keys_word" class="form-control" placeholder="* Mots Clés">
+                                <input type="text" value="{{ $item->keys_word }}" required name="keys_word" class="form-control" placeholder="* Mots cléfs">
                                 <smal class="text-muted">
-                                    Ajouter des mots-clés augmente les chances de découverte de votre projet dans les recherches. Mes mot-clés sont des mots qui décrivent le mieux votre projet. Si votre projet consiste à construire une école, 'Ecole', 'Construction', 'Education' seront des mots clés pertinents. Une liste de mots clés vous est proposée.
+                                    Ajouter des mots-cléfs augmente les chances de découverte de votre projet dans les recherches. Mes mot-cléfs sont des mots qui décrivent le mieux votre projet. Si votre projet consiste à construire une école, 'Ecole', 'Construction', 'Education' seront des mots cléfs pertinents. Une liste de mots cléfs vous est proposée.
                                 </smal>
                             </div>
                         </div>
@@ -227,7 +227,7 @@
                             <div class="form-group">
                                 <input type="text" value="{{ $item->video }}" required name="video" class="form-control" placeholder="**Vidéo (si vous avez une vidéo youtube de votre événement ou projet)">
                                 <small class="text-muted">
-                                    Copier-Coller le lien d une vidéo Viméo ou Youtube qui présente votre cagnotte. Votre vidéo doit être courte pour captiver vos potentiels contributeurs mais complète afin de dire d éclairer au mieux sur votre cagnotte.
+                                    Copier-Coller le lien d une vidéo Viméo ou Youtube qui présente votre campagne. Votre vidéo doit être courte pour captiver vos potentiels contributeurs mais complète afin de dire d éclairer au mieux sur votre campagne.
                                 </small>
                             </div>
                         </div> 
@@ -236,7 +236,7 @@
                             <img class="ml-3" style="height:400px;"  src="{{asset('storage/UserDocument/'. $item->file_vignette)}}" alt="" srcset="">
                         </div>
                         <!-- file drop zone 2 -->
-                        <label for="">Image de vignette (cagnotte publique)</label>
+                        <label for="">Image de vignette (campagne publique)</label>
                         <small class="text-muted">Télécharger une image de taille minimum 500x340(.jpg ou
                             .png).</small>
                         <div class="drop-zone col-lg-12 mb-4 ">
@@ -250,7 +250,7 @@
                         </div>
                         <!-- end file drop zone 2 -->
                          <!-- file drop zone 2 -->
-                         <label for="">Image de couverture de votre cagnotte</label>
+                         <label for="">Image de couverture de votre campagne</label>
                          <small class="text-muted">Télécharger une image de taille minimum 500x340(.jpg ou
                              .png).</small>
                          <div class="drop-zone col-lg-12 mb-4 ">
@@ -266,14 +266,14 @@
                          <!-- end file drop zone 2 -->
                         {{--<div class="col-lg-12 mb-4 ">
                             <div class="form-group">
-                                <label for="">Image de vignette (cagnotte publique)</label>
+                                <label for="">Image de vignette (campagne publique)</label>
                                 <input type="file"  name="file_vignette" class="form-control">
                                 <small class="text-muted">Télécharger une image de taille minimum 500x340(.jpg ou .png).</small>
                             </div>
                         </div>--}}
                         {{--<div class="col-lg-12 mb-4 ">
                             <div class="form-group">
-                                <label for="">Image de couverture de votre cagnotte</label>
+                                <label for="">Image de couverture de votre campagne</label>
                                 <input type="file" name="file_couverture" class="form-control">
                                 <small class="text-muted">Télécharger une image de taille minimum 500x340(.jpg ou .png).</small>
                             </div>
@@ -288,8 +288,8 @@
 
                         <div class="col-lg-12 mb-4 ">
                             <div class="form-group">
-                                <input type="text" value="{{ $item->hashtag }}" required name="hashtag" class="form-control" placeholder="Hashtag (pour cagnottes publiques)">
-                                <small class="text-muted">Hashtag (pour cagnottes publiques).</small>
+                                <input type="text" value="{{ $item->hashtag }}" required name="hashtag" class="form-control" placeholder="Hashtag (pour campagnes publiques)">
+                                <small class="text-muted">Hashtag (pour campagnes publiques).</small>
                             </div>
                         </div>
                         <h2 style="background-color: #e15b1a;" class="text-white mx-auto py-2 ml-5  d-flex justify-content-center">
@@ -318,7 +318,7 @@
 
                         <input type="checkbox" required name="" id="">J'ai vérifié que tout les champs sont remplis.
                         <div class="col-lg-12">
-                            <button type="submit" class="btn common-btn">SOUMETTRE LES INFORMATIONS MODIFIEES POUR VALIDATIONS</button>
+                            <button type="submit" class="btn common-btn">SOUMETTRE LES INFORMATIONS MODIFIEES POUR VALIDATION</button>
                         </div>
                     </container>
 

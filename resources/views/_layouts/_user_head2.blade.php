@@ -152,7 +152,7 @@
                       </ul>
                       <div class="side-nav">
                           <a class="donate-btn" href="{{ url('campagne') }}">
-                              DEMARER
+                              DÉMARRER
                               <i class="icofont-heart-alt"></i>
                           </a>
                       </div>
@@ -204,7 +204,7 @@
                       </ul>
                       <div class="side-nav">
                           <a class="donate-btn" href="{{ url('login') }}">
-                              DEMARER
+                              DÉMARRER
                               <i class="icofont-heart-alt"></i>
                           </a>
                       </div>
@@ -284,7 +284,7 @@
                   <div class="feature-item three">
                       <i class="flaticon-love"></i>
                       <h3>
-                          <a href="#">Contributions</a>
+                          <a href="#">CONTRIBUTIONS</a>
                       </h3>
                       <p></p>
                       <a class="feature-btn" href="#">{{$count_contribution_for_you}} donations déjà</a>
@@ -321,7 +321,7 @@
                   <div class="feature-item three">
                       <i class="flaticon-love"></i>
                       <h3>
-                          <a href="#">Contributions</a>
+                          <a href="#">CONTRIBUTIONS</a>
                       </h3>
                       <p></p>
                       <a class="feature-btn" href="#">{{$count_contribution}} donations déjà</a>

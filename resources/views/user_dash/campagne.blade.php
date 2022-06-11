@@ -18,7 +18,7 @@
     <div class="about-area two pb-70">
         <div class="container">
             <center>
-                <h4>Ma cagnotte</h4>
+                <h4>Ma campagne</h4>
             </center>
             <div class="row align-items-center">
 
@@ -138,13 +138,13 @@
 
 
                         <div class="col-lg-12 col-md-12 mt-3">
-                            <label for="">Veuillez selectionner la catégories dans laquelle se trouve votre campagne:
+                            <label for="">Veuillez selectionner la catégorie dans laquelle se trouve votre campagne:
                             </label>
                             <select name="categories" class="select2button mt-3">
                                 <option value="Anniversaire" selected>Anniversaire</option>
                                 <option value="Associatif">Associatif</option>
 
-                                <option value="Bicycling">Vélos</option>
+                                
                                 <option value="Entertainment">Divertissement</option>
                                 <option value="Environment">Environnement</option>
                                 <option value="Evènement">Evénément</option>
@@ -154,13 +154,13 @@
                                 <option value="Mariage">Mariage</option>
                                 <option value="Mobility">Mobilité</option>
                                 <option value="Recreation">Récréation</option>
-                                <option value="Restoration">Restoration</option>
-                                <option value="Schools">Ecole</option>
+                                <option value="Restauration">Restauration</option>
+                                <option value="Éducation">Éducation</option>
                                 
                                 <option value="Sports">Sports</option>
                                 <option value="Streetscapes">Streetscapes</option>
                                 <option value="Technology">Technologie</option>
-                                <option value="Tontine">Tontine</option>
+                                
                                 <option value="Transit">Transit</option>
                                 <option value="Voyage">Effectuer un Voyage</option>
                                 <option value="Soutien pour proche">Soutien pour proche</option>
@@ -201,7 +201,7 @@
                         <div class="col-lg-12 mb-4 mt-3">
                             <div class="form-group">
                                 <input type="text" value="{{ old('name') }}" required name="name" class="form-control"
-                                    placeholder="Nom de la cagnotte">
+                                    placeholder="Nom de la campagne">
                             </div>
                         </div>
 
@@ -238,7 +238,7 @@
                         <div class="col-lg-12 mb-4 ">
                             <div class="form-group">
                                 <input type="text" value="{{ old('where') }}" required name="where" class="form-control"
-                                    placeholder="* Où sera dépensée la collecte">
+                                    placeholder="* Où sera dépensée la collecte ?">
                             </div>
                         </div>
 
@@ -263,10 +263,10 @@
                                 <input type="text" value="{{ old('keys_word') }}" required name="keys_word"
                                     class="form-control" placeholder="* Mots Clés">
                                 <smal class="text-muted">
-                                    Ajouter des mots-clés augmente les chances de découverte de votre projet dans les
-                                    recherches. Mes mot-clés sont des mots qui décrivent le mieux votre projet. Si votre
+                                    Ajouter des mots-cléfs augmente les chances de découverte de votre projet dans les
+                                    recherches. Mes mot-cléfs sont des mots qui décrivent le mieux votre projet. Si votre
                                     projet consiste à construire une école, 'Ecole', 'Construction', 'Education' seront des
-                                    mots clés pertinents. Une liste de mots clés vous est proposée.
+                                    mots cléfs pertinents. Une liste de mots cléfs vous est proposée.
                                 </smal>
                             </div>
                         </div>
@@ -281,9 +281,9 @@
                                 <input type="text" value="{{ old('video') }}" required name="video" class="form-control"
                                     placeholder="**Vidéo (si vous avez une vidéo youtube de votre événement ou projet)">
                                 <small class="text-muted">
-                                    Copier-Coller le lien "ifrmae" d une vidéo Viméo ou Youtube qui présente votre cagnotte. Votre
+                                    Copier-Coller le lien "ifrmae" d une vidéo Viméo ou Youtube qui présente votre campagne. Votre
                                     vidéo doit être courte pour captiver vos potentiels contributeurs mais complète afin de
-                                    dire d éclairer au mieux sur votre cagnotte. Comment copier le lien iframe de votre video Youtube, si vous ne le savez pas fait: cliquez 👉
+                                    dire d éclairer au mieux sur votre campagne. Comment copier le lien iframe de votre video Youtube, si vous ne le savez pas faire: cliquez 👉
                                     {{-- modal a target--}}
                                     <a href="#" id="modalshow">ici</a>
                                     {{-- modal a target--}}
@@ -292,7 +292,7 @@
                         </div>
                         <!--<div class="col-lg-12 mb-4 ">
                                     <div class="form-group">
-                                        <label for="">Image de vignette (cagnotte publique)</label>
+                                        <label for="">Image de vignette (campagne publique)</label>
                                         <input type="file" required name="file_vignette" class="form-control">
                                         <small class="text-muted">Télécharger une image de taille minimum 500x340(.jpg ou
                                             .png).</small>
@@ -302,7 +302,7 @@
                         <!--- drop file zone -->
 
                         <!-- file drop zone 2 -->
-                        <label for="">Image de vignette (cagnotte publique)</label>
+                        <label for="">Image de vignette (campagne publique)</label>
                         <small class="text-muted">Télécharger une image de taille minimum 500x340(.jpg ou
                             .png).</small>
                         <div class="drop-zone col-lg-12 mb-4 ">
@@ -319,7 +319,7 @@
 
                         {{-- <div class="col-lg-12 mb-4 ">
                             <div class="form-group">
-                                <label for="">Image de couverture de votre cagnotte</label>
+                                <label for="">Image de couverture de votre campagne</label>
                                 <input type="file" required name="file_couverture" class="form-control">
                                 <small class="text-muted">Télécharger une image de taille minimum 500x340(.jpg ou
                                     .png).</small>
@@ -327,7 +327,7 @@
                         </div> --}}
 
                         <!-- file drop zone 2 -->
-                        <label for="">Image de couverture de votre cagnotte</label>
+                        <label for="">Image de couverture de votre campagne</label>
                         <small class="text-muted">Télécharger une image de taille minimum 500x340(.jpg ou
                             .png).</small>
                         <div class="drop-zone col-lg-12 mb-4 ">
@@ -346,15 +346,15 @@
                                     class="form-control"
                                     placeholder="Site Web (si vous avez une page web de votre événement ou projet)">
                                 <small class="text-muted">Copiez-collez le lien sur votre site web si vous en avez un./
-                                    <span class="text-danger">mettez # le cas écheant</span> </small>
+                                    <span class="text-danger">mettez # si n'avez pas</span> </small>
                             </div>
                         </div>
 
                         <div class="col-lg-12 mb-4 ">
                             <div class="form-group">
                                 <input type="text" value="{{ old('hashtag') }}" required name="hashtag"
-                                    class="form-control" placeholder="Hashtag (pour cagnottes publiques)">
-                                <small class="text-muted">Hashtag (pour cagnottes publiques).</small>
+                                    class="form-control" placeholder="Hashtag (pour campagnes publiques)">
+                                <small class="text-muted">Hashtag (pour campagnes publiques).</small>
                             </div>
                         </div>
                         <h2 style="background-color: #e15b1a;"
@@ -391,7 +391,7 @@
                         d'utilisation.
                         <div class="col-lg-12">
                             <button type="submit" class="btn common-btn">SOUMETTRE LES INFORMATIONS POUR
-                                VALIDATIONS</button>
+                                VALIDATION</button>
                         </div>
                     </container>
 
