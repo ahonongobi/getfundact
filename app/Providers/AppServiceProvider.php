@@ -73,6 +73,8 @@ class AppServiceProvider extends ServiceProvider
                 //also calculate 
                 $view->with('solde', Auth::user()->solde);
                 $view->with('campagnes', Campagne::where('user_id',Auth::user()->id)->get());
+                //Paginate all Random campagne 
+                
                 $view->with('all_campagnes', Campagne::where('statut',1)->paginate(12));
                 $view->with('contribution', Contrubution::where('id_author',Auth::user()->id)->where('states_payment',1)->paginate(10));
                 $view->with('your_contribution', Contrubution::where('id_user',Auth::user()->id)->where('states_payment',1)->get());
@@ -129,7 +131,10 @@ class AppServiceProvider extends ServiceProvider
             $view->with('all_withdraw_per_day',DB::table('withdrawals')->select(DB::raw('*'))
             ->whereRaw('Date(created_at) = CURDATE()')->get());
             //endadmin
-            $view->with('all_campagnes', Campagne::orderBy('id','DESC')->where('statut',1)->paginate(6));
+            //paginate all campagne in random order
+            $view->with('all_campagnes', Campagne::where('statut',1)->orderByRaw('RAND()')->paginate(6));
+            //paginate all campagne
+           // $view->with('all_campagnes', Campagne::orderBy('id','DESC')->where('statut',1)->paginate(6));
             $view->with('gallery',Campagne::all());
             //get all montant of withdrawal by user where statut 0
             $view->with('all_withdraw_amount', Withdrawal::where('statut',0)->sum('montant'));
