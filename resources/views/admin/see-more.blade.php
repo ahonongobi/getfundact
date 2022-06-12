@@ -151,6 +151,7 @@
 
 </style>
 @section('content')
+
     <header>
         <figure class="profile-banner">
             <!-- <img style="width: 1429px !important; height:300px" src="https://unsplash.it/975/300" alt="Profile banner" /> -->
@@ -179,8 +180,8 @@
                 <li>{{ $lastLogin ?? '' }}<span>Dernière session</span></li>
 
             </ul>
-            <a style="background-color:red !important" href="javascript:void(0);" class="follow btn btn-danger">
-                Suspendre
+            <a style="background-color:red !important" href="/send-reminder/{{$id}}" class="follow btn btn-danger">
+                Message de rappel
             </a>
         </div>
         <h1>{{ $users->nom_prenoms ?? 'non rensigné' }} <small> memebre depuis

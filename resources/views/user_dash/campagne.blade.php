@@ -158,11 +158,11 @@
                                 <option value="Éducation">Éducation</option>
                                 
                                 <option value="Sports">Sports</option>
-                                <option value="Streetscapes">Streetscapes</option>
+                                <option value="Santé">Santé</option>
                                 <option value="Technology">Technologie</option>
                                 
                                 <option value="Transit">Transit</option>
-                                <option value="Voyage">Effectuer un Voyage</option>
+                                <option value="Voyage">Voyage</option>
                                 <option value="Soutien pour proche">Soutien pour proche</option>
                                 <option value="Autres">Autres</option>
                             </select>
@@ -222,7 +222,7 @@
                                 <input type="number" value="{{ old('montant_v') }}" required name="montant_v"
                                     class="form-control" placeholder="* Montant visé - 0 si pas de montant précis">
                             </div>
-                            <input type="checkbox" name="hidden_cash" value="1" id=""> Ne pas Montrer le montant cumulé de
+                            <input type="checkbox" name="hidden_cash" value="1" id=""> Ne pas montrer le montant cumulé de
                             la collecte
 
                         </div>
@@ -261,7 +261,7 @@
                         <div class="col-lg-12 mb-4 ">
                             <div class="form-group">
                                 <input type="text" value="{{ old('keys_word') }}" required name="keys_word"
-                                    class="form-control" placeholder="* Mots Clés">
+                                    class="form-control" placeholder="* Mots Cléfs">
                                 <smal class="text-muted">
                                     Ajouter des mots-cléfs augmente les chances de découverte de votre projet dans les
                                     recherches. Mes mot-cléfs sont des mots qui décrivent le mieux votre projet. Si votre
@@ -387,7 +387,7 @@
                             </small>
                         </div>
 
-                        <input type="checkbox" required name="" id=""> En soumettant, vous acceptez les Conditions
+                        <input type="checkbox" required name="" id=""> En soumettant, vous acceptez les conditions
                         d'utilisation.
                         <div class="col-lg-12">
                             <button type="submit" class="btn common-btn">SOUMETTRE LES INFORMATIONS POUR

@@ -18,9 +18,9 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\WithdrawalController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PourcentageController;
+use App\Http\Controllers\ReminderEmailController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SecureProtocolController;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,6 +35,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+         
     return view('index');
 });
 // route for send data to database
@@ -137,6 +138,9 @@ Route::get('/delete-post/{id}',[CampagneController::class,'deletePost']);
 Route::get('/secure-protocol',[SecureProtocolController::class,'index']);
 Route::post('/code-verification',[SecureProtocolController::class,'codeVerification']);
 Route::get('/statut-withdrawal',[WithdrawalController::class,'statut']);
+
+//send reminer email route
+Route::get('/send-reminder/{id}',[ReminderEmailController::class,'sendReminderEmail']);
 });
 Route::get('/state/{type}/{email}',[MainController::class,'viewSeparateFinale']);
 Route::get('/separate/{email}',[MainController::class,'viewSeparate'])->name('separate');

@@ -231,7 +231,7 @@
                                             <input type="text" required value="{{ substr($profile_data->date_naissance,0,10) ?? '' }}" name="date_naissance" id="date_naissance" class="form-control" placeholder="** Date de naissance">
 
                                             @else
-                                            <input type="date" required value="" name="date_naissance" class="form-control" placeholder="** Date de naissance">
+                                            <input type="date" required value="" name="date_naissance" class="form-control" placeholder="** Date de naissance" title="Date de naissance">
                                             @endif
                                             
                                             <span class="text-danger">

@@ -7,12 +7,13 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class Order extends Mailable
+class ReminderEmail extends Mailable
 {
     use Queueable, SerializesModels;
     public $name;
     public $email;
     public $message;
+   
     /**
      * Create a new message instance.
      *
@@ -24,8 +25,6 @@ class Order extends Mailable
         $this->email = $email;
         $this->message = $message;
     }
-    
-
     /**
      * Build the message.
      *
@@ -33,6 +32,6 @@ class Order extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.order')->subject('Ne-pas-repondre Message important');
+        return $this->markdown('emails.reminder')->subject('Compte encore inactif');
     }
 }

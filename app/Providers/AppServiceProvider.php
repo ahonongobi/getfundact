@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Mail\Order;
+use App\Mail\ReminderEmail;
 use App\Models\Campagne;
 use App\Models\Contrubution;
 use App\Models\Historique;
@@ -9,9 +11,11 @@ use App\Models\Pourcentage;
 use App\Models\Profile;
 use App\Models\User;
 use App\Models\Withdrawal;
+use Carbon\Carbon;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 
@@ -172,9 +176,30 @@ class AppServiceProvider extends ServiceProvider
             });
 
         });
-    
-        
+      //here we send reminder email two day after registration  to all user who has not completed their profile
+        view()->composer('*', function ($view) {
+            //$this->sendReminderEmail();
+            $view->with('reminder_email', User::where('states',0)->where('created_at', '<', Carbon::now()->subDays(2))->get());
+        });
+           
     }
+    //then make sendReminderEmail function
+    public function sendReminderEmail(){
+        //get all users email two day after registration  to all user who has not completed their profile
+        
+           $users = User::where('states',0)->where('created_at', '<', Carbon::now()->subDays(2))->get();
+              foreach ($users as $user) {
+                 // var_dump($user->email);
+                 $name = $user->name;
+                 $email = $user->email;
+                 $message = "Bonjour, vous n'avez pas completé votre profil, veuillez le compléter dans votre espace personnel";
+                 $mailable = new Order($name,$email,$message);
+                 Mail::to($email)->send($mailable);
+               // Mail::to($user->email)->send(new ReminderEmail($user->name,$user->surname,$user->email));
+              }             
+
+    }
+
      //function to force user to https online and not localhost
     public function forceSSL()
     {

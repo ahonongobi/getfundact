@@ -149,8 +149,8 @@
                                         <option value="Anniversaire">Anniversaire</option>
                                         <option value="Associatif">Associatif</option>
         
-                                        <option value="Bicycling">Vélos</option>
-                                        <option value="Entertainment">Divertissement</option>
+                                        
+                                        <option value="Divertissement">Divertissement</option>
                                         <option value="Environment">Environnement</option>
                                         <option value="Evènement">Evénément</option>
                                         
@@ -158,16 +158,17 @@
                                         <option value="Humanitaire">Humanitaire</option>
                                         <option value="Mariage">Mariage</option>
                                         <option value="Mobility">Mobilité</option>
-                                        <option value="Recreation">Récréation</option>
-                                        <option value="Restoration">Restoration</option>
-                                        <option value="Schools">Ecole</option>
+                                        
+                                        <option value="Restoration">Restauration</option>
+                                        <option value="Éducation">Éducation</option>
                                         
                                         <option value="Sports">Sports</option>
-                                        <option value="Streetscapes">Streetscapes</option>
+                                        <option value="Santé">Santé</option>
+                                        
                                         <option value="Technology">Technologie</option>
-                                        <option value="Tontine">Tontine</option>
+                                        
                                         <option value="Transit">Transit</option>
-                                        <option value="Voyage">Effectuer un Voyage</option>
+                                        <option value="Voyage"> Voyage</option>
                                         
                                         <option value="Autres">Autres</option>
                                             {{--<option>العربيّة</option>
@@ -184,7 +185,7 @@
                                             <i id="close-btn" class="icofont-close"></i>
                                             <form method="POST" action="{{url('search-compagn')}}">
                                                 @csrf
-                                                <input type="text" name="search" class="form-control" placeholder="Tapez catgorie ou un mot clé..."/>
+                                                <input type="text" name="search" class="form-control" placeholder="Tapez une  catgorie ou un mot cléfs..."/>
                                                 <button type="submit" class="btn">Réchercher</button>
                                             </form>
                                         </div>

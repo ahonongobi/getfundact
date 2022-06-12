@@ -2,10 +2,6 @@
 
 @section('content')
 
-
-
-
-
 <div class="about-area two pb-70">
     <div class="container">
         <div class="row align-items-center">

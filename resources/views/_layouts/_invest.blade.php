@@ -191,7 +191,7 @@
                             </ul>
                             <div class="side-nav">
                                 <a class="donate-btn" href="{{ url('login') }}">
-                                    DEMARER
+                                    DÉMARRER
                                     <i class="icofont-heart-alt"></i>
                                 </a>
                             </div>

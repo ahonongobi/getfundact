@@ -54,7 +54,7 @@ class AdminController extends Controller
 
 
 
-        return view('admin.see-more',compact('users','hisCampagnes','usersCount','user_solde','lastLogin'));
+        return view('admin.see-more',compact('users','hisCampagnes','usersCount','user_solde','lastLogin','id'));
     }
     
     
