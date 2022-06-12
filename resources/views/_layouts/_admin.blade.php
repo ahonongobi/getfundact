@@ -303,11 +303,11 @@
   </div>
 </div>     
  <nav  class="sidebar sidebar-offcanvas" id="sidebar">
-  <ul class="nav">
+  <ul style="position: fixed" class="nav">
     <li class="nav-item active">
       <a class="nav-link" href="/dashboard-interface">
         <i class="ti-home menu-icon"></i>
-        <span class="menu-title">Home</span>
+        <span class="menu-title">Princiaple</span>
       </a>
     </li>
     <li class="nav-item">
@@ -596,6 +596,9 @@
                     "sSortDescending": ": activer pour trier la colonne par ordre d&eacute;croissant"
                 }
             }
+            //avoid alphabetical order
+            ,order: []
+
         } );
         } );
 

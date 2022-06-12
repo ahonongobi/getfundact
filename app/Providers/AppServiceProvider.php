@@ -103,7 +103,7 @@ class AppServiceProvider extends ServiceProvider
             }       
             //admin
             //select all_users from user table from the last inserted to first
-            $view->with('all_users', User::orderBy('created_at','desc')->get());
+            $view->with('all_users', User::orderBy('id','desc')->get());
             //$view->with('all_users', User::orderBy('id','DESC')->get());
             //select all user today registration by DESC
             $view->with('all_users_today', User::whereDate('created_at', date('Y-m-d'))->get());
