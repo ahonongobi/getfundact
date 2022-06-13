@@ -121,8 +121,8 @@ class AppServiceProvider extends ServiceProvider
             
             $view->with('Count_dispo_amount_today', DB::table('campagnes')->select(DB::raw('*'))
             ->whereRaw('Date(created_at) = CURDATE()')->sum('montant_cotise'));
-            $view->with('admin_all_campagne_actif', Campagne::where('statut',1)->paginate(10));
-            $view->with('admin_all_campagne_inactif', Campagne::where('statut',0)->paginate(10));
+            $view->with('admin_all_campagne_actif', Campagne::where('statut',1)->get());
+            $view->with('admin_all_campagne_inactif', Campagne::where('statut',0)->get());
             // all_withdraw order by id desc
             
             $view->with('all_withdraw', Withdrawal::orderBy('id','DESC')->get());

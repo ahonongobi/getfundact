@@ -13,6 +13,7 @@
                 <th>Hashtag</th>
                 <th>Mots clés</th>
                 <th>Statut</th>
+                <th>Etat</th>
                 <th>Voir</th>
                 <th>Desactivé</th>
                 <th>Etat</th>
@@ -36,6 +37,13 @@
                         <td class="font-weight-medium text-warning">Inactif</td>
                     @elseif($item->statut == 2)
                         <td class="font-weight-medium text-danger">Supprimer</td>
+                    @endif
+                    {{-- etat --}}
+                    @if ($item->etat == 1)
+                        <td class="font-weight-medium text-warning">Brouillon</td>
+                    @elseif($item->etat == 0)
+                        <td class="font-weight-medium text-success">Terminé</td>
+                   
                     @endif
                     <td>
                         <p data-placement="top" data-toggle="tooltip" title="voir plus"><a
