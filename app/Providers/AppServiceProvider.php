@@ -108,7 +108,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('all_users', User::orderBy('id','desc')->get());
             //$view->with('all_users', User::orderBy('id','DESC')->get());
             //select all user today registration by DESC
-            $view->with('all_users_today', User::whereDate('created_at', date('Y-m-d'))->get());
+            $view->with('all_users_today', User::whereDate('created_at', date('Y-m-d'))->orderBy('id','desc')->get());
             //select  user that has registered in recent 1 months 
             $view->with('all_users_1months', User::whereBetween('created_at', [date('Y-m-d', strtotime('-1 months')), date('Y-m-d')])->get());
             //select  user that has registered in recent 1 weeks

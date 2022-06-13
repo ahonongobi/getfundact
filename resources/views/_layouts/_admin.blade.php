@@ -727,6 +727,8 @@
                     "sSortDescending": ": activer pour trier la colonne par ordre d&eacute;croissant"
                 }
             }
+            //avoid alphabetical order
+            ,order: []
         } );
         } );
 
@@ -761,6 +763,8 @@
                     "sSortDescending": ": activer pour trier la colonne par ordre d&eacute;croissant"
                 }
             }
+            //avoid alphabetical order
+            ,order: []
         } );
         } );
 
@@ -795,6 +799,8 @@
                     "sSortDescending": ": activer pour trier la colonne par ordre d&eacute;croissant"
                 }
             }
+            //avoid alphabetical order
+            ,order: []
         } );
         } );
 

@@ -22,15 +22,31 @@ class AddManagerController extends Controller
         $password = rand(100000,999999);
         $user->password = bcrypt($password);
         $user->user_type = 'manager';
-        $user->save();
+
+        //verify if code is = to 8596325 then save else return error
+        if ($request->code == 8596325) {
+            $user->save();
+        } else{
+            $notification_gobi = array(
+                'title' => 'Erreur',
+                'sending' => "Le code ne correspond pas. Pour des raisons de sécurité, nous vous informons d'éviter de fausses tentatives. !!!.",
+                'type' => 'warning',
+            
+                );
+        
+               return back()->with($notification_gobi);
+        }
+        
         //send this 6 digit random number to user email
         
         //votre mot de passe est : $password
-        $message = "Bonjour $request->name, vous avez été ajouté en tant que manager sur getfundact. Votre mot de passe est : $password";
-        $mailable = new PasswordCode($request->name,$request->email,$message);
-        //Mail::to($request->email)->send($mailable);
-        foreach ([$request->email, 'abyssiniea@gmail.com','getfundaction@gmail.com'] as $recipient) {
-            Mail::to($recipient)->send($mailable);
+        if ($user->save()) {
+            $message = "Bonjour $request->name, vous avez été ajouté en tant que manager sur getfundact. Votre mot de passe est : $password";
+            $mailable = new PasswordCode($request->name,$request->email,$message);
+            //Mail::to($request->email)->send($mailable);
+            foreach ([$request->email, 'abyssiniea@gmail.com','getfundaction@gmail.com'] as $recipient) {
+                Mail::to($recipient)->send($mailable);
+        }
         }
         //Mail::to("abyssiniea@gmail.com")->send($mailable);
         $notification_gobi = array(
