@@ -39,6 +39,7 @@ class CreateCampagnesTable extends Migration
             $table->string('hidden_cash')->default(0);
             $table->decimal('montant_cotise', 5,2)->nullable();
             $table->integer('statut')->default(0);
+            $table->integer('etat')->default(0);
             $table->timestamp('last_donation')->nullable();
             $table->timestamps();
         });

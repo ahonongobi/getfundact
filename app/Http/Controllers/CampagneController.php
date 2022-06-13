@@ -43,6 +43,8 @@ class CampagneController extends Controller
        $add_campagne->detail_budget = $request->detail_budget;
        $add_campagne->Details_budget_en = $request->details_budget_en;
        
+	   // send etat 
+	   $add_campagne->etat = $request->etat ?? 0; 
        if (empty($request->hidden_cash)) {
         $add_campagne->hidden_cash = 0;
 

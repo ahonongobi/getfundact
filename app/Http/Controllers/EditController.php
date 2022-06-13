@@ -51,7 +51,8 @@ class EditController extends Controller
        $add_campagne->hashtag = $request->hashtag;
        $add_campagne->detail_budget = $request->detail_budget;
        $add_campagne->Details_budget_en = $request->details_budget_en;
-       
+       //etat value to 0
+       $add_campagne->etat = $request->etat ?? 0;
        if (empty($request->hidden_cash)) {
         $add_campagne->hidden_cash = 0;
 

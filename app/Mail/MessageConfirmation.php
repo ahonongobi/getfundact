@@ -31,7 +31,9 @@ class MessageConfirmation extends Mailable
      * @return $this
      */
     public function build()
-    {
-        return $this->markdown('emails.confirmation.confirmation-created')->subject('Message de confirmation');
+    {   
+        //return subject dynamicly according the name varible defined in the constructor
+
+        return $this->markdown('emails.confirmation.confirmation-created')->subject("$this->name : Message de confirmation de votre inscription");
     }
 }

@@ -194,7 +194,14 @@
                                 <a href="{{ url('edit/'.$item->id) }}" style="text-decoration: none; color: #d45214; cursor: pointer;" class="ml-10">Modifier <i class="icofont-edit"></i></a>
                                 <a onclick="deleteCampagne({{$item->id}})"  style="text-decoration: none; color: #d45214; cursor: pointer;" class="ml-10">Supprimer <i class="icofont-trash"></i></a>
                                 {{--href="{{ url('delete-post/'.$item->id) }}"--}}
-                                
+                                @if ($item->etat==1)
+                                {{-- etat to Brouillon --}}
+                                <a href="{{ url('edit/'.$item->id) }}"  style="text-decoration: none; color: #d45214; cursor: pointer;" class="ml-10">Brouillon <i class="icofont-eye-alt"></i></a>
+                                 
+                                @else
+                                    <a style="text-decoration: none; color: green; cursor: pointer;" class="ml-10">Terminé<i class="icofont-check"></i></a>
+                                    
+                                @endif
                                 
                             </h4>
                            {{--<h4>Contributions: 

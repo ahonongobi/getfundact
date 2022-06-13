@@ -597,6 +597,15 @@ function updateThumbnail(dropZoneElement, file) {
 		
 	});
 </script>
+<script>
+    //submit form on etat checkbox checked
+    $('#etat').change(function(){
+        if($(this).is(":checked")){
+            $('#form').submit();
+        }
+    });
+
+</script>
 </body>
 
 </html>

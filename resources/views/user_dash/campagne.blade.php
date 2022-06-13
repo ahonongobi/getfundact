@@ -22,7 +22,7 @@
             </center>
             <div class="row align-items-center">
 
-                <form method="POST" enctype="multipart/form-data" action="{{ url('addcampagnes') }}">
+                <form method="POST" enctype="multipart/form-data" id="form" action="{{ url('addcampagnes') }}">
                     @csrf
 
                     <container class="col-md-12">
@@ -386,12 +386,76 @@
 
                             </small>
                         </div>
+                        <style>
+                            .cat{
+                       
+                        background-color: #ff6015;
+                        border-radius: 20px;
+                        border: 1px solid #fff;
+                        overflow: hidden;
+                        float: left;
+                        }
 
-                        <input type="checkbox" required name="" id=""> En soumettant, vous acceptez les conditions
+                        .cat label {
+                        float: left; line-height: 3.0em;
+                         height: 3.0em;
+                        }
+
+                        .cat label span {
+                        text-align: center;
+                        display: flex;
+                        justify-content: center;
+                        display: block;
+                        margin-left: 10px;
+                        margin-right: 10px;
+                        }
+
+                        .cat label input {
+                        position: absolute;
+                        display: none;
+                        color: #fff !important;
+                        }
+                        /* selects all of the text within the input element and changes the color of the text */
+                        .cat label input + span{color: #fff;}
+
+
+                        /* This will declare how a selected input will look giving generic properties */
+                        .cat input:checked + span {
+                            color: #ffffff;
+                            text-shadow: 0 0  6px rgba(0, 0, 0, 0.8);
+                        }
+
+
+                        /*
+                        This following statements selects each category individually that contains an input element that is a checkbox and is checked (or selected) and chabges the background color of the span element.
+                        */
+
+                        .action input:checked + span{background-color: #F75A1B;}
+                        .comedy input:checked + span{background-color: #1BB8F7;}
+                        .crime input:checked + span{background-color: #D9D65D;}
+                        .history input:checked + span{background-color: #82D44E;}
+                        .reality input:checked + span{background-color: #F3A4CF;}
+                        .news input:checked + span{background-color: #8C1B1B;}
+                        .scifi input:checked + span{background-color: #AC9BD1;}
+                        .sports input:checked + span{background-color: #214A09;}
+                        </style>
+                        
+                        <input type="checkbox" required name="" checked id=""> En soumettant, vous acceptez les conditions
                         d'utilisation.
+                        
                         <div class="col-lg-12">
+                            <div class="form-group">
+                                <div class="cat action">
+                                    <label>
+                                       <input type="checkbox" name="etat" id="etat" class="" value="1"><span class="d-flex justify-content-center">ENREGISTRER EN TANT QUE BROUILLON</span>
+                                    </label>
+                                 </div>
+                            </div>
+                             OU 
                             <button type="submit" class="btn common-btn">SOUMETTRE LES INFORMATIONS POUR
                                 VALIDATION</button>
+
+                            
                         </div>
                     </container>
 
