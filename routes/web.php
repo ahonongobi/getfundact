@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AddManagerController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BanqucaireController;
 use App\Http\Controllers\CampagneController;
@@ -191,6 +192,8 @@ Route::get('/percentage',[AdminController::class,'percentage']);
 Route::post('/percentage',[PourcentageController::class,'percentagePost']);
 // create admin.percentage.delete route
 Route::get('/percentage/delete/{id}',[PourcentageController::class,'percentageDelete'])->name('admin.percentage.delete');
+// create admin.add.manager route with post method
+Route::post('/add-manager',[AddManagerController::class,'addManager'])->name('admin.add.manager');
 });
 
 

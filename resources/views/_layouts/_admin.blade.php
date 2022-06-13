@@ -34,7 +34,7 @@
   <link media="all" type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
-  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -63,6 +63,52 @@
       -webkit-transform: translateY(-150px);
       transform: translateY(-150px);
     }
+    /** floating toast **/
+        .float{
+      position:fixed;
+      width:60px;
+      height:60px;
+      bottom:40px;
+      right:40px;
+      background-color:#302c51;
+      color:#FFF;
+      border-radius:50px;
+      text-align:center;
+      box-shadow: 2px 2px 3px #999;
+    }
+
+    .my-float{
+      margin-top:22px;
+     }
+
+     input:invalid {
+            animation: shake 300ms;
+            border: solid 1px red;
+            filter: drop-shadow(5px 5px 1px red);
+            }
+            input:invalid::after {
+            content: "Error text input";
+            font-size: 28px;
+            color: red;
+            }
+
+            input:invalid + span::after {
+            content: "Rensigner le champ";
+            color: red;
+            position: relative;
+            top: 8px;
+            }
+            @keyframes shake {
+            25% {
+                transform: translateX(4px);
+            }
+            50% {
+                transform: translateX(-4px);
+            }
+            75% {
+                transform: translateX(4px);
+            }
+            }
    </style>
   </head>
 <body id="element" data-base-url="">
@@ -517,7 +563,52 @@
             </div>
 @yield('content')
 <span class="toastbox" role="alert"></span>
+{{-- floating button here --}}
+<a data-toggle="modal" data-target="#exampleModal" class="float">
+  <i class="fa fa-plus my-float text-white"></i>
+</a>
 
+{{-- floating button here --}}
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">AJOUTER UN MANAGER</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="{{ route('admin.add.manager') }}" method="POST">
+          {{-- {{ route('admin.add.manager') }} --}}
+            @csrf
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nom</label>
+                <input type="text" required class="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nom">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Prénom</label>
+              <input type="text" required class="form-control" name="surname" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Prénom">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">E-mail</label>
+            <input type="email" required class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail">
+         </div>
+
+         <div class="form-group">
+          <label for="exampleInputEmail1">Code da validation</label>
+          <input type="password" required class="form-control" name="code" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Code">
+       </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success">Enrégistrer</button>
+        <button type="button" class="btn btn-light" data-dismiss="modal">Annuler</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Ends -->
 <footer class="footer">
     <div class="container-fluid clearfix">
       <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2021 <a href="" target="_blank">Getfund-act</a>. All rights reserved.</span>
