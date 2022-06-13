@@ -352,8 +352,9 @@
     </div>
 </footer>
 
-
-<script>
+{{--<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="517c446a-bfd8-4e5e-b06b-85a965ff43c8";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>--}}
+<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="f685ffce-0f91-4e63-9783-3053bab47d12";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+<!--<script>
     var url = 'https://wati-integration-service.clare.ai/ShopifyWidget/shopifyWidget.js?10582';
     var s = document.createElement('script');
     s.type = 'text/javascript';
@@ -388,7 +389,7 @@
     };
     var x = document.getElementsByTagName('script')[0];
     x.parentNode.insertBefore(s, x);
-</script>
+</script> -->
 
 
 <div class="go-top d-none">

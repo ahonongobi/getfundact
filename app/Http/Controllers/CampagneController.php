@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\Confirmation;
+use App\Mail\LetMeKnow;
 use App\Mail\MessageConfirmation;
 use App\Models\Campagne;
 use Illuminate\Http\Request;
@@ -79,7 +80,11 @@ class CampagneController extends Controller
                 
                 $mailable = new Confirmation($request->name,$request->name_b,$message,$id);
                 Mail::to(Auth::user()->email)->send($mailable);
-
+                // notify admin at getfundaction@gmail.com
+                $message2 = "Ceci est un message pour vous informer qu'une nouvelle campagne a été créée par ".Auth::user()->name." Veuillez vérifier les détails de la campagne.";
+				$mailable2 = new LetMeKnow($request->name,Auth::user()->email,$message2);
+				Mail::to('getfundaction@gmail.com')->send($mailable2);
+				// end notify admin at getfundaction@gmail.com
                 $notification_gobi = array(
                 'title' => 'Félicitations',
                 'sending' => 'Les informations de la campagne ont été enrégistré avec succès.',

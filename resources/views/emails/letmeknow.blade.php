@@ -1,12 +1,12 @@
 @component('mail::message')
-# Introduction
+# Message alerte
 
-The body of your message.
+{{$message2}}
 
-@component('mail::button', ['url' => ''])
-Button Text
+@component('mail::button', ['url' => 'https://getfundact.com/login'])
+Se connecter pour valider
 @endcomponent
 
-Thanks,<br>
+Merci,<br>
 {{ config('app.name') }}
 @endcomponent
