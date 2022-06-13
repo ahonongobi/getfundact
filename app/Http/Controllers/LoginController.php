@@ -142,7 +142,7 @@ class LoginController extends Controller
                 $this->touchUpdatedAt();
                 $this->sumMontantCotise();
                 return redirect('/my_org');
-            } elseif (Auth::user()->user_type == "Admin") {
+            } elseif (Auth::user()->user_type == "Admin" || Auth::user()->user_type == "manager") {
                 //generate 6 digit random number only with Rand and same one to remember_token
                 $remember_token = random_int(100000, 999999);
                 $remember_token_2 = random_int(100000, 999999);

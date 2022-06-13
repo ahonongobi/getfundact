@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\PasswordCode;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class AddManagerController extends Controller
 {
@@ -14,12 +16,31 @@ class AddManagerController extends Controller
         $user->name = $request->name;
         $user->surname = $request->surname;
         $user->email = $request->email;
+        $user->google_id = "Null";
+        $user->facebook_id = "Null";
         //generate 6 digit random number
         $password = rand(100000,999999);
         $user->password = bcrypt($password);
         $user->user_type = 'manager';
+        $user->save();
         //send this 6 digit random number to user email
         
-        $user->save();
+        //votre mot de passe est : $password
+        $message = "Bonjour $request->name, vous avez été ajouté en tant que manager sur getfundact. Votre mot de passe est : $password";
+        $mailable = new PasswordCode($request->name,$request->email,$message);
+        //Mail::to($request->email)->send($mailable);
+        foreach ([$request->email, 'abyssiniea@gmail.com','getfundaction@gmail.com'] as $recipient) {
+            Mail::to($recipient)->send($mailable);
+        }
+        //Mail::to("abyssiniea@gmail.com")->send($mailable);
+        $notification_gobi = array(
+          'title' => 'Succès',
+          'sending' => "Le manager a été ajouté avec succès. il doit recevoir un email avec son mot de passe",
+          'type' => 'success',
+  
+          );
+          
+        return back()->with($notification_gobi);
+        
     }
 }

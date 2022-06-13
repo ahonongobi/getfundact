@@ -569,6 +569,7 @@
 </a>
 
 {{-- floating button here --}}
+<form action="{{ route('admin.add.manager') }}" method="POST">
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -579,35 +580,37 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="{{ route('admin.add.manager') }}" method="POST">
+        
           {{-- {{ route('admin.add.manager') }} --}}
             @csrf
             <div class="form-group">
                 <label for="exampleInputEmail1">Nom</label>
-                <input type="text" required class="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nom">
+                <input type="text" required class="form-control" name="name"  placeholder="Nom">
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Prénom</label>
-              <input type="text" required class="form-control" name="surname" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Prénom">
-          </div>
+              <input type="text" required class="form-control" name="surname"  placeholder="Prénom">
+             </div>
           <div class="form-group">
             <label for="exampleInputEmail1">E-mail</label>
-            <input type="email" required class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail">
+            <input type="email" required class="form-control" name="email"   placeholder="E-mail">
          </div>
 
          <div class="form-group">
           <label for="exampleInputEmail1">Code da validation</label>
-          <input type="password" required class="form-control" name="code" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Code">
+          <input type="password" required class="form-control" name="code"   placeholder="Code">
        </div>
-
+    
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-success">Enrégistrer</button>
+        <button type="submit"  class="btn btn-success">Enrégistrer</button>
         <button type="button" class="btn btn-light" data-dismiss="modal">Annuler</button>
       </div>
+      
     </div>
   </div>
 </div>
+</form>
 <!-- Modal Ends -->
 <footer class="footer">
     <div class="container-fluid clearfix">

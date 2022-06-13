@@ -19,7 +19,7 @@ class SecureProtocolController extends Controller
                 return redirect('/my_space');
             } elseif(Auth::user()->user_type == "Organisation") {
                 return redirect('/my_org');
-            } elseif(Auth::user()->user_type == "Admin"){
+            } elseif(Auth::user()->user_type == "Admin" || Auth::user()->user_type == "manager") {
                 return redirect('/dashboard-interface');
             }
             //forget session code

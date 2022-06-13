@@ -10,16 +10,21 @@ use Illuminate\Queue\SerializesModels;
 class PasswordCode extends Mailable
 {
     use Queueable, SerializesModels;
-
+    public $name;
+    public $email;
+    public $message;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($name,$email,$message)
     {
-        //
+        $this->name = $name;
+        $this->email = $email;
+        $this->message = $message;
     }
+    
 
     /**
      * Build the message.
