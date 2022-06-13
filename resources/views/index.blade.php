@@ -282,7 +282,7 @@ a.green-white:hover {
             <a href="{{url('campagnes/Anniversaire')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-birthday-cake"> </i> Anniversaire</a>
             <a href="{{url('campagnes/Soutien pour proche')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-heart-alt"> </i>Soutien pour proche</a>
             
-            <a href="{{url('campagnes/Ecole')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-education"> </i>Ecole</a>
+            <a href="{{url('campagnes/Ecole')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-education"> </i>Éducation</a>
             <a href="{{url('campagnes/Sport')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-football"> </i>Sport</a>
 
             

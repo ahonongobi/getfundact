@@ -635,7 +635,7 @@ $xof = round($xof, 2) ?? '';
                                     <li><a href="{{ url('campagnes/Humanitaire') }}">Humanitaire</a></li>
                                     <li><a href="{{ url('campagnes/Mariage') }}">Mariage</a></li>
                                     <li><a href="{{ url('campagnes/Mobility') }}">Mobilité</a></li>
-                                    <li><a href="{{ url('campagnes/Schools') }}">Ecole</a></li>
+                                    <li><a href="{{ url('campagnes/Schools') }}">Éducation</a></li>
                                     <li><a href="{{ url('campagnes/Soutien pour proche') }}">Soutien pour proche</a></li>
                                     <li><a href="{{ url('campagnes/Voyage') }}">Voyage</a></li>
                                 </ul>
