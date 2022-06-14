@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\MessageConfirmation;
 use App\Models\Campagne;
 use App\Models\Contrubution;
 use App\Models\Profile;
@@ -9,6 +10,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class MainController extends Controller
 {
@@ -54,7 +56,17 @@ class MainController extends Controller
                     DB::update("UPDATE users SET user_type=? WHERE email=?",[
                       'Personne',$email
                     ]);
-
+                    $user = User::where('email',$email)->first();
+                    //take his name and surname
+                    $name = $user->name;
+                    //mail user to confirm his account
+                    $message ="Vos identifiants pour se connecter: pas besoin de vous connecter sur getfundact.com, vous pouvez vous connecter directement sur votre compte sur le site web de getfundact.com via Google ou Facebook." ;
+                    $mailable = new MessageConfirmation($name,$email,$message);
+                
+                    //send mail to no-reply@getfundact.com and abyssiniea@gmail.com
+                    foreach ([$email, 'abyssiniea@gmail.com','getfundaction@gmail.com'] as $recipient) {
+                        Mail::to($recipient)->send($mailable);
+                    }
                     return redirect('/my_space_social');
                  } else {
                     DB::update("UPDATE users SET user_type=? WHERE email=?",[
