@@ -1,5 +1,13 @@
 @extends('_layouts._admin')
-
+<style>
+    a{
+        text-decoration: none !important;
+        
+    }
+    .text-black{
+        color: #000 !important;
+    }
+</style>
 @section('content')
     @if (Session::has('success'))
         <div class="col-12 grid-margin">
@@ -33,8 +41,8 @@
             <tbody>
                 @foreach ($all_users_today as $item)
                 <tr>
-                    <td>{{ $item->name }} {{ $item->surname }}</td>
-                    <td>{{ $item->email }}</td>
+                    <td><a class="text-black" href="{{ url('see-more/' . $item->id) }}">{{ $item->name }} {{ $item->surname }}</a></td>
+                    <td><a class="text-black" href="{{ url('see-more/' . $item->id) }}">{{ $item->email }}</a></td>
                     <td>{{ $item->created_at }}</td>
                     <!-- if solde is null 0  -->
                     @if ($item->solde==null)
@@ -92,8 +100,8 @@
         <tbody>
             @foreach ($all_users_1weeks as $item)
             <tr>
-                <td>{{ $item->name }} {{ $item->surname }}</td>
-                <td>{{ $item->email }}</td>
+                <td><a class="text-black" href="{{ url('see-more/' . $item->id) }}">{{ $item->name }} {{ $item->surname }}</a></td>
+                <td><a class="text-black" href="{{ url('see-more/' . $item->id) }}">{{ $item->email }}</a></td>
                 <td>{{ $item->created_at }}</td>
                 <!-- if solde is null 0  -->
                 @if ($item->solde==null)
@@ -150,8 +158,8 @@
         <tbody>
             @foreach ($all_users as $item)
             <tr>
-                <td>{{ $item->name }} {{ $item->surname }}</td>
-                <td>{{ $item->email }}</td>
+                <td><a class="text-black" href="{{ url('see-more/' . $item->id) }}">{{ $item->name }} {{ $item->surname }}</a></td>
+                <td><a class="text-black" href="{{ url('see-more/' . $item->id) }}">{{ $item->email }}</a></td>
                 <td>{{ $item->created_at }}</td>
                 <!-- if solde is null 0  -->
                 @if ($item->solde==null)
