@@ -33,6 +33,6 @@ class CodeVerification extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.code-verification');
+        return $this->markdown('emails.code-verification')->subject($this->name.' : Code de vérification');
     }
 }

@@ -551,9 +551,9 @@
                             <p class="card-title text-md-center text-xl-left text-white">Rétrait demandé en cours</p>
                             <div
                                 class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                                <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0 text-white">{{ $all_withdraw_amount ?? '0' }}XOF</h3>
+                                <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0 text-white">{{ $all_withdraw_amount ?? '0' }}</h3>
                                 {{-- icon ti-layers-alt   --}}
-                                <i style="color: white !important" class="ti-money icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
+                                <i style="color: white !important" class="ti-moneys icon-md text-muted mb-0 mb-md-3 mb-xl-0">XOF</i>
                             </div>
                             <p class="mb-0 mt-2 text-success d-none">22.00%<span class="text-black ml-1"><small>(30
                                         days)</small></span></p>
@@ -614,7 +614,7 @@
 <!-- Modal Ends -->
 <footer class="footer">
     <div class="container-fluid clearfix">
-      <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2021 <a href="" target="_blank">Getfund-act</a>. All rights reserved.</span>
+      <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2021 - <script>document.write(new Date().getFullYear())</script>  <a href="" target="_blank">Getfund-act</a>. All rights reserved.</span>
       <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Intelligencia & made with <i class="mdi mdi-heart text-danger"></i>
       </span>
     </div>
