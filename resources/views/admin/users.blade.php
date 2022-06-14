@@ -41,7 +41,12 @@
             <tbody>
                 @foreach ($all_users_today as $item)
                 <tr>
-                    <td><a class="text-black" href="{{ url('see-more/' . $item->id) }}">{{ $item->name }} {{ $item->surname }}</a></td>
+                    <td>
+                    <a class="text-black" href="{{ url('see-more/' . $item->id) }}"> 
+                        {{-- take 30 first characters using substr {{ substr($item->surname, 0, 5) }}... --}}
+                        {{ $item->name }} 
+                     </a>
+                    </td>
                     <td><a class="text-black" href="{{ url('see-more/' . $item->id) }}">{{ $item->email }}</a></td>
                     <td>{{ $item->created_at }}</td>
                     <!-- if solde is null 0  -->
@@ -107,7 +112,7 @@
         <tbody>
             @foreach ($all_users_1weeks as $item)
             <tr>
-                <td><a class="text-black" href="{{ url('see-more/' . $item->id) }}">{{ $item->name }} {{ $item->surname }}</a></td>
+                <td><a class="text-black" href="{{ url('see-more/' . $item->id) }}">{{ $item->name }}</a></td>
                 <td><a class="text-black" href="{{ url('see-more/' . $item->id) }}">{{ $item->email }}</a></td>
                 <td>{{ $item->created_at }}</td>
                 <!-- if solde is null 0  -->
@@ -169,7 +174,7 @@
         <tbody>
             @foreach ($all_users as $item)
             <tr>
-                <td><a class="text-black" href="{{ url('see-more/' . $item->id) }}">{{ $item->name }} {{ $item->surname }}</a></td>
+                <td><a class="text-black" href="{{ url('see-more/' . $item->id) }}">{{ $item->name }}</a></td>
                 <td><a class="text-black" href="{{ url('see-more/' . $item->id) }}">{{ $item->email }}</a></td>
                 <td>{{ $item->created_at }}</td>
                 <!-- if solde is null 0  -->
