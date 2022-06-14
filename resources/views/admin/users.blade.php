@@ -46,7 +46,7 @@
                     <td>{{ $item->created_at }}</td>
                     <!-- if solde is null 0  -->
                     @if ($item->solde==null)
-                    <td>0 XOF</td>
+                    <td>0.00 XOF</td>
                     @else
                     <td>{{ $item->solde }}XOF</td>
                     @endif
@@ -63,7 +63,14 @@
                         <td class="font-weight-medium text-danger">Supprimer</td>
                     @endif
                     <td><p data-placement="top" data-toggle="tooltip" title="voir plus"><a href="{{ url('see-more/' . $item->id) }}" class="btn btn-primary btn-lg" data-title="voir"  data-target="#edit" ><span class="ti-eye"></span></a></p></td>
+                    @if (Auth::user()->user_type == "Admin")
                     <td><p data-placement="top" data-toggle="tooltip" title="Supprimer"><a onclick="return confirm('Cette action est irreversible')" href="{{ url('delete/' . $item->id) }}" class="btn btn-danger btn-lg" data-title="Supprimer"  data-target="#delete" ><span class="ti-trash"></span></a></p></td>
+
+                    @elseif(Auth::user()->user_type == "manager")
+                    <td><p data-placement="top" data-toggle="tooltip" title="Supprimer"><a onclick="noRightToDeleteUser()" href="" class="btn btn-danger btn-lg" data-title="Supprimer"  data-target="#delete" ><span class="ti-trash"></span></a></p></td>
+
+                    @endif
+                    
     
                     <!-- if states = 0 and else -->
                     @if ($item->states == 0)
@@ -105,7 +112,7 @@
                 <td>{{ $item->created_at }}</td>
                 <!-- if solde is null 0  -->
                 @if ($item->solde==null)
-                <td>0 XOF</td>
+                <td>0.00 XOF</td>
                 @else
                 <td>{{ $item->solde }}XOF</td>
                 @endif
@@ -122,7 +129,11 @@
                     <td class="font-weight-medium text-danger">Supprimer</td>
                 @endif
                 <td><p data-placement="top" data-toggle="tooltip" title="voir plus"><a href="{{ url('see-more/' . $item->id) }}" class="btn btn-primary btn-lg" data-title="voir"  data-target="#edit" ><span class="ti-eye"></span></a></p></td>
+                @if (Auth::user()->user_type == "Admin")
                 <td><p data-placement="top" data-toggle="tooltip" title="Supprimer"><a onclick="return confirm('Cette action est irreversible')" href="{{ url('delete/' . $item->id) }}" class="btn btn-danger btn-lg" data-title="Supprimer"  data-target="#delete" ><span class="ti-trash"></span></a></p></td>
+                @elseif(Auth::user()->user_type == "manager")
+                <td><p data-placement="top" data-toggle="tooltip" title="Supprimer"><a onclick="return confirm('Vous n\'avez pas ce droit')" href="" class="btn btn-danger btn-lg" data-title="Supprimer"  data-target="#delete" ><span class="ti-trash"></span></a></p></td>
+                @endif
 
                 <!-- if states = 0 and else -->
                 @if ($item->states == 0)
@@ -163,7 +174,7 @@
                 <td>{{ $item->created_at }}</td>
                 <!-- if solde is null 0  -->
                 @if ($item->solde==null)
-                <td>0 XOF</td>
+                <td>0.00 XOF</td>
                 @else
                 <td>{{ $item->solde }}XOF</td>
                 @endif
@@ -180,7 +191,11 @@
                     <td class="font-weight-medium text-danger">Supprimer</td>
                 @endif
                 <td><p data-placement="top" data-toggle="tooltip" title="voir plus"><a href="{{ url('see-more/' . $item->id) }}" class="btn btn-primary btn-lg" data-title="voir"  data-target="#edit" ><span class="ti-eye"></span></a></p></td>
+                @if (Auth::user()->user_type == "Admin")
                 <td><p data-placement="top" data-toggle="tooltip" title="Supprimer"><a onclick="return confirm('Cette action est irreversible')" href="{{ url('delete/' . $item->id) }}" class="btn btn-danger btn-lg" data-title="Supprimer"  data-target="#delete" ><span class="ti-trash"></span></a></p></td>
+                @elseif(Auth::user()->user_type == "manager")
+                <td><p data-placement="top" data-toggle="tooltip" title="Supprimer"><a onclick="return confirm('Vous n\'avez pas ce droit')" href="" class="btn btn-danger btn-lg" data-title="Supprimer"  data-target="#delete" ><span class="ti-trash"></span></a></p></td>
+                @endif
 
                 <!-- if states = 0 and else -->
                 @if ($item->states == 0)

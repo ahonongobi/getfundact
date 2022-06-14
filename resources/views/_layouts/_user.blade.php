@@ -820,6 +820,27 @@ $('.select2button').select2button();
         //end of scrpit
 
  </script>
+ <script>
+     //swal to display you have no right to delete user
+        function noRightToDeleteUser() {
+            swal({
+                title: "Vous n'avez pas les droits pour supprimer cet utilisateur",
+                text: "",
+                type: "warning",
+                showCancelButton: false,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "OK",
+                closeOnConfirm: false
+            },
+            function(isConfirm){
+                if (isConfirm) {
+                    //close the swal
+                    window.location.href = "/profile";
+                }
+            });
+            
+        }
+ </script>
     <script>
         function readURL(input) {
     if (input.files && input.files[0]) {
