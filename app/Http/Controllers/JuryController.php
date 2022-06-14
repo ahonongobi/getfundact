@@ -23,7 +23,7 @@ class JuryController extends Controller
       
         $email = $user->email;
         $name = $user->name;
-        $message = "Votre compte a été validé avec succès";
+        $message = "Votre compte a été validé avec succès. Vous pouvez désormais vous connecter sur getfundact.com et créer votre campagne.";
         $mailable = new CampagneACtive($name,$email,$message);
         Mail::to($email)->send($mailable);
         $notification_gobi = array(
