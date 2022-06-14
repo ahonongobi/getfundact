@@ -183,6 +183,9 @@
             <a style="background-color:red !important" href="/send-reminder/{{$id}}" class="follow btn btn-danger">
                 Message de rappel
             </a>
+            <a style="background-color:green !important; margin-left:10px" href="/valider/{{$id}}" class="btn btn-success">
+                Valider le compte
+            </a>
         </div>
         <h1>{{ $users->nom_prenoms ?? 'non rensigné' }} <small> memebre depuis
                 {{ $users->created_at ?? 'non rensigné' }}</small></h1>
