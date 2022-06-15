@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\CampagneACtive;
 use App\Mail\LetMeKnow;
 use App\Models\Profile;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 
 class ProfileController extends Controller
@@ -74,12 +77,24 @@ class ProfileController extends Controller
                 }
             } else {
                 $send->photo = "avatar7.png";
+                //send mail to user that his account has been verified
+                $user = User::where('email', Auth::user()->email)->first();
+                DB::update("UPDATE users SET states=? WHERE email=?",[
+                    1,Auth::user()->email
+                ]);
+                $email = Auth::user()->email;
+                $name = Auth::user()->name;
+                $message = "Votre compte a été validé avec succès. Vous pouvez désormais vous connecter sur getfundact.com et créer votre campagne.";
+                $mailable = new CampagneACtive($name,$email,$message);
+                Mail::to($email)->send($mailable);
                 //stocked in userDocument folder
                 // notify admin at getfundaction@gmail.com
                 $message2 = "Ceci est un message pour vous informer qu'un nouveau utilisateur a rempli son profil(".(Auth::user()->email).") Veuillez vérifier les détails de la personne.";
 				$mailable2 = new LetMeKnow(Auth::user()->name,Auth::user()->email,$message2);
 				Mail::to('getfundaction@gmail.com')->send($mailable2);
                 // send admin at getfundaction@gmail.com
+                
+
                 if ($send->save()) {
                     $notification_gobi = array(
                         'title' => 'Félicitations',

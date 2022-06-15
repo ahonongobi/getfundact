@@ -108,7 +108,7 @@
             }
 
             input:invalid::after {
-            content: "Error text input";
+            content: "";
             font-size: 28px;
             color: red;
             }

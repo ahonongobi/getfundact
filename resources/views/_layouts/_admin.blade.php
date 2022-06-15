@@ -283,6 +283,7 @@
           <div class="info">
             <p>{{ $item->email }}</p>
             <p>{{ $item->created_at->diffForHumans() }}</p>
+            <p>{{ $item->country }}</p>
           </div>
                         @php
                             \Carbon\Carbon::setLocale('fr');
@@ -663,6 +664,7 @@
       <script> 
         $(document).ready(function() {
         $('#example').DataTable( {
+           // show
             dom: 'Bfrtip',
             buttons: [
                 'copy', 'csv', 'excel', 'pdf', 'print'
