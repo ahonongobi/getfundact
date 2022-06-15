@@ -94,7 +94,7 @@ class AppServiceProvider extends ServiceProvider
                 $view->with('email_value', User::where('id',Auth::user()->id)->first());
                 $view->with('auth_id', Auth::user()->email);
                 // get all from historique table
-                $view->with('historique', Historique::all());
+                $view->with('historique', Historique::orderBy('id','desc')->get());
 
                 //verify if user completed all fields Profile information using profile table where cni is not null, s_cni is not null, adresse is not null, phone is not null, date_naissance is not null, sexe is not null, nom is not null, prenom is not null iban is not null bic is not null
                 $view->with('check_if_user_complete_profile', Profile::where('user_id',Auth::user()->id)->count());
