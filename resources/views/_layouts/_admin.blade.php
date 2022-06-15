@@ -692,8 +692,24 @@
             }
             //avoid alphabetical order
             ,order: []
+            
 
         } );
+              $('#example tbody').on('click', 'tr', function () {
+              $(this).toggleClass('selected');
+              // add color #fff to a a tag
+              $(this).find('tr td a').css('color', '#fff !important');
+              
+              });
+              $('#example2 tbody').on('click', 'tr', function () {
+              $(this).toggleClass('selected');
+              });
+              $('#example3 tbody').on('click', 'tr', function () {
+              $(this).toggleClass('selected');
+              });
+              $('#example_today tbody').on('click', 'tr', function () {
+              $(this).toggleClass('selected');
+              });
         } );
 
       </script>
@@ -801,7 +817,12 @@
             }
             //avoid alphabetical order
             ,order: []
+
+            //make select menu sort by 10,20,30,40,50,60,70,80,90,100
+            
+
         } );
+             
         } );
 
       </script>
@@ -838,6 +859,9 @@
             }
             //avoid alphabetical order
             ,order: []
+            //make displat by row of 10,20,30,40,50,60,70,80,90,100
+            
+
         } );
         } );
       </script>
