@@ -160,7 +160,7 @@
                     alt="Profile banner" />
             </a>
         </figure>
-        @if ($usersCount != 0 and $users->photo != null)
+        @if ($usersCount != 0 and ($users->photo != null or $users->photo != 'avatar7.png'))
             <img class="profile-photo" src="{{ asset('assets/img/profile/' . $users->photo) }}" alt="Profile Photo" />
             <a data-fancybox="gallery" data-caption="Profile" href="{{ asset('storage/UserDocument/' . $users->photo) }}">
                 <figure class="profile-picture"
