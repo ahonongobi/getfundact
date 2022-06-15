@@ -74,6 +74,7 @@ class ProfileController extends Controller
                 }
             } else {
                 $send->photo = "avatar7.png";
+                //stocked in userDocument folder
                 // notify admin at getfundaction@gmail.com
                 $message2 = "Ceci est un message pour vous informer qu'un nouveau utilisateur a rempli son profil(".(Auth::user()->email).") Veuillez vérifier les détails de la personne.";
 				$mailable2 = new LetMeKnow(Auth::user()->name,Auth::user()->email,$message2);
