@@ -665,6 +665,7 @@
         $(document).ready(function() {
         $('#example').DataTable( {
            // show
+           
             dom: 'Bfrtip',
             buttons: [
                 'copy', 'csv', 'excel', 'pdf', 'print'

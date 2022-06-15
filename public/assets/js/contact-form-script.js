@@ -3,6 +3,13 @@
     $("#contactForm")
         .validator()
         .on("submit", function (event) {
+            // stop form from submitting if noroot value is not 12
+            var norobot = $("#norobot").val();
+            if (norobot != 17) {
+                event.preventDefault();
+                alert("Veuillez vérifier que vous n'êtes pas un robot en entrant de bon nombre.");
+                return false;
+            }
             if (event.isDefaultPrevented()) {
                 formError();
                 submitMSG(false, "Avez-vous remplir tout les champs?");
@@ -25,6 +32,7 @@
         var msg_subject = $("#msg_subject").val();
         var phone_number = $("#phone_number").val();
         var message = $("#message").val();
+        var norobot = $("#norobot").val();
 
         //change the submiting button text to sending
         $("#sendMessage").html("Le message est entrain d'être envoyé...");

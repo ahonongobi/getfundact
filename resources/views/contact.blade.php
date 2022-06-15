@@ -1,5 +1,6 @@
 @extends('_layouts._head')
-
+ <!-- french google captcha cdn link -->
+ 
 @section('content')
 
 
@@ -113,6 +114,13 @@
                                     <i class="icofont-comment"></i>
                                 </label>
                                 <textarea name="message" class="form-control" id="message" cols="30" rows="8" placeholder="Votre message....." required data-error="Veuillez ecrire un message"></textarea>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 mb-3">
+                            <div class="form-group d-flex">
+                                {{-- make Are you human ?  test here--}}
+                                <span style="font-size: 20px" class="mt-2">9+8=</span> <input id="norobot" class="form-control" name="no-robot" placeholder="?" type="text" required data-error="Vous devez mettre la réponse">
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
