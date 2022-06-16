@@ -84,7 +84,7 @@
                                             </div>
                                             <div class="form-check form-check-inline mb-2">
                                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Organisation">
-                                                <label class="form-check-label" for="inlineRadio2">Organisation<i title="Contribuer à des campagnes"  class="icofont-exclamation-circle"></i></label>
+                                                <label class="form-check-label" for="inlineRadio2">Contributeur<i title="Contribuer à des campagnes"  class="icofont-exclamation-circle"></i></label>
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-6">
