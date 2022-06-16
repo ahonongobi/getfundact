@@ -18,12 +18,12 @@ class ReminderEmailController extends Controller
 
             $name = $user->name;
             $email = $user->email;
-            $message = "Bonjour, il y a quelques jours, vous avez fait une inscription sur notre plateforme de crowdfunding. Mais vous n'avez pas complété votre profil, veuillez le compléter dans votre espace personnel. Notre équipe support est disponible 24h/24 pour vous aider en cas de besoin. Vous devez aussi anticiper pour créer votre campagne afin de toucher un plus grand nombre le plus vite que possible. Nous attendons votre campagne. Profitez-en bien !";
+            $message = "Bonjour $user->name, vous avez fait une inscription sur notre plateforme de crowdfunding. Mais vous n'avez pas complété votre profil, veuillez le compléter dans votre espace personnel. Notre équipe support est disponible 24h/24 pour vous aider en cas de besoin. Vous devez aussi anticiper pour créer votre campagne afin de toucher un plus grand nombre le plus vite que possible. Nous attendons votre campagne. Profitez-en bien !";
             $mailable = new Order($name,$email,$message);
             $send = Mail::to($email)->send($mailable);
             $notification_gobi = array(
               'title' => 'Succès',
-              'sending' => "L'email de confirmation a été envoyé avec succès",
+              'sending' => "L'email de rappel a été envoyé avec succès",
                 'type' => 'success',
         
                 );
@@ -33,7 +33,7 @@ class ReminderEmailController extends Controller
                 if (!$send){
                     $notification_gobi = array(
                       'title' => 'Succès',
-                      'sending' => "L'email de confirmation a été envoyé avec succès",
+                      'sending' => "L'email de rappel a été envoyé avec succès",
                         'type' => 'success',
                 
                         );
@@ -45,7 +45,7 @@ class ReminderEmailController extends Controller
         {
             $notification_gobi = array(
                 'title' => 'Succès',
-                'sending' => "L'email de confirmation a été envoyé avec succès",
+                'sending' => "L'email de rappel a été envoyé avec succès",
                   'type' => 'warning',
           
                   );
