@@ -52,8 +52,21 @@ class ProfileController extends Controller
                 $file1->move($path, $filename1);
                 //$file1->move_uploaded_file($filename1,$path);
                 $send->photo = $filename1;
-
+            
                 if ($send->save()) {
+                
+                //send mail to user that his account has been verified
+                //start
+                $user = User::where('email', Auth::user()->email)->first();
+                DB::update("UPDATE users SET states=? WHERE email=?",[
+                    1,Auth::user()->email
+                ]);
+                $email = Auth::user()->email;
+                $name = Auth::user()->name;
+                $message = "Votre compte a été validé avec succès. Vous pouvez désormais vous connecter sur getfundact.com et créer votre campagne.";
+                $mailable = new CampagneACtive($name,$email,$message);
+                Mail::to($email)->send($mailable);
+                //end 
                     // notify admin at getfundaction@gmail.com
                 $message2 = "Ceci est un message pour vous informer qu'un nouveau utilisateur a rempli son profil".(Auth::user()->name)." Veuillez vérifier les détails de la personne.";
 				$mailable2 = new LetMeKnow(Auth::user()->name,Auth::user()->email,$message2);

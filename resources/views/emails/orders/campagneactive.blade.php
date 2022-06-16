@@ -1,5 +1,5 @@
 @component('mail::message')
-# Votre campagne a été activé
+# Message alerte
 
 {{$message}}
 
