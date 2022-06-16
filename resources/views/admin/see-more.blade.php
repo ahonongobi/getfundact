@@ -186,6 +186,9 @@
             <a style="background-color:green !important; margin-left:10px" href="/valider/{{$id}}" class="btn btn-success">
                 Valider le compte
             </a>
+            <a style="background-color:green !important; margin-left:10px" href="/rapelle/{{$id}}" class="btn btn-success">
+                Rappel de création de campagne
+            </a>
         </div>
         <h1>{{ $users->nom_prenoms ?? 'non rensigné' }} <small> memebre depuis
                 {{ $users->created_at ?? 'non rensigné' }}</small></h1>

@@ -5,11 +5,22 @@
         .on("submit", function (event) {
             // stop form from submitting if noroot value is not 12
             var norobot = $("#norobot").val();
+
             if (norobot != 17) {
                 event.preventDefault();
                 alert("Veuillez vérifier que vous n'êtes pas un robot en entrant de bon nombre.");
                 return false;
             }
+            var objectvalue = $('#object').val();
+            if(objectvalue != ""){
+                event.preventDefault();
+                //alert("Veuillez entrer un objet.");
+                return false;
+            }
+            //stop form from submitting if object is filled
+            // stop form from submitting if the captcha checkbox is not checked
+
+
             if (event.isDefaultPrevented()) {
                 formError();
                 submitMSG(false, "Avez-vous remplir tout les champs?");
@@ -33,7 +44,8 @@
         var phone_number = $("#phone_number").val();
         var message = $("#message").val();
         var norobot = $("#norobot").val();
-
+        var object = $("#object").val();
+        
         //change the submiting button text to sending
         $("#sendMessage").html("Le message est entrain d'être envoyé...");
         $.ajax({
@@ -48,6 +60,7 @@
                 msg_subject +
                 "&phone_number=" +
                 phone_number +
+                "object=" + object +
                 "&message=" +
                 message,
             success: function (data) {

@@ -1,6 +1,11 @@
 @extends('_layouts._head')
  <!-- french google captcha cdn link -->
- 
+ <script src='https://www.google.com/recaptcha/api.js?hl=fr'></script>
+ <style>
+     .dispon{
+            display: none;
+     }
+ </style>
 @section('content')
 
 
@@ -71,6 +76,7 @@
                     <h2>Parlez avec nous!</h2>
                     <p>Besoin d’aide, nous sommes là pour vous.</p>
                     <div class="row">
+                        <input  class="dispon" id="object" name="object" type="text">
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label>
@@ -117,6 +123,7 @@
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
+
                         <div class="col-lg-12 mb-3">
                             <div class="form-group d-flex">
                                 {{-- make Are you human ?  test here--}}
@@ -124,10 +131,13 @@
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
+
                         <div class="col-lg-12">
-                            <button id="sendMessage" type="submit" class="btn common-btn">
+                            <button id="sendMessage" type="submit" class="btn common-btn disabled">
                                 Envoyer
                             </button>
+                            {{-- diseabled button --}}
+
                             <div id="msgSubmit" class="h3 text-center hidden"></div>
                             <div class="clearfix"></div>
                         </div>
@@ -141,5 +151,5 @@
             
         </div>
 
-
+        
         @endsection

@@ -171,6 +171,7 @@ Route::get('/see-more/{id}',[AdminController::class,'see']);
 Route::get('/see-more-campagne/{id}',[AdminController::class,'seeMoreCampagne']);
 
 Route::get('/valider/{id}',[JuryController::class,'validatePost']);
+Route::get('/rapelle/{id}',[ReminderEmailController::class,'rapellePost']);
 Route::get('/unvalider/{id}',[JuryController::class,'unvalidatePost']);
 Route::get('/activePost/{id}',[JuryController::class,'validateCampagne']);
 Route::get('/unactivePost/{id}',[JuryController::class,'unvalidateCampagne']);

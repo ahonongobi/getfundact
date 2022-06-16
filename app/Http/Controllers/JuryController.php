@@ -154,4 +154,5 @@ class JuryController extends Controller
         return back()->with('success','Campagne désactivée avec succès!!!');
       }
      
+      
 }
