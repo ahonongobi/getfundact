@@ -13,7 +13,7 @@ class ContactController extends Controller
     public function send_mail(Request $request){
             //reuqest validation of email, name, message, subject
              if(empty($request->object)){
-                $email = "abyssiniea@gmail.com";
+                $email = "getfundaction@gmail.com";
                 $mailable = new ContactMessage($request->subject,$request->email,$request->message,$request->name);
                 Mail::to($email)->send($mailable);
                     $Yes = "Yes";
