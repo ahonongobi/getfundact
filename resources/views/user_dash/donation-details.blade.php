@@ -625,17 +625,19 @@ $xof = round($xof, 2) ?? '';
                             <div class="d-flex justify-content-between">
                                 <ul class="mx-2">
                                     <li><a href="{{ url('campagnes/Anniversaire') }}">Anniversaire</a></li>
-                                    <li><a href="{{ url('campagnes/Associatif') }}">Associatif</a></li>
+                                    <li><a href="{{ url('campagnes/Association') }}">Association</a></li>
                                     <li><a href="{{ url('campagnes/Entertainment') }}">Divertissement</a></li>
                                     <li><a href="{{ url('campagnes/Evènement') }}">Evénément</a></li>
                                     <li><a href="{{ url('campagnes/Environnement') }}">Environnement</a></li>
                                     <li><a href="{{ url('campagnes/Sports') }}">Sports</a></li>
+                                    <li><a href="{{ url('campagnes/Agriculture') }}">Agriculture</a></li>
                                 </ul>
                                 <ul>
+                                   <li><a href="{{ url('campagnes/Élevage') }}">Élevage</a></li>
                                     <li><a href="{{ url('campagnes/Humanitaire') }}">Humanitaire</a></li>
                                     <li><a href="{{ url('campagnes/Mariage') }}">Mariage</a></li>
-                                    <li><a href="{{ url('campagnes/Mobility') }}">Mobilité</a></li>
-                                    <li><a href="{{ url('campagnes/Schools') }}">Éducation</a></li>
+                                    <li><a href="{{ url('campagnes/Culture') }}">Culture</a></li>
+                                    <li><a href="{{ url('campagnes/Eduction') }}">Éducation</a></li>
                                     <li><a href="{{ url('campagnes/Soutien pour proche') }}">Soutien pour proche</a></li>
                                     <li><a href="{{ url('campagnes/Voyage') }}">Voyage</a></li>
                                 </ul>

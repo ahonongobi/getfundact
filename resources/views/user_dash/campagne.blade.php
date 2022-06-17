@@ -154,7 +154,8 @@
                                 <option value="Humanitaire">Humanitaire</option>
                                 <option value="Mariage">Mariage</option>
                                
-                               
+                                <option value="Élevage">Élevage</option>
+                                <option value="Agriculture">Agriculture</option>
                                 <option value="Restauration">Restauration</option>
                                 <option value="Éducation">Éducation</option>
                                 
