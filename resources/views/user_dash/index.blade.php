@@ -15,25 +15,25 @@
                     <ul>
                         <li>
                             <span>01</span>
-                           Créez gratuitement et facilement une campagne.
+                           Créer gratuitement et facilement une campagne.
                         </li>
                         <li>
                             <span>02</span>
-                            Partagez la campagne avec vos amis, vos proches , sur des reseaux sociaux,  etc.
+                            Partager la campagne avec vos amis, vos proches , sur des reseaux sociaux,  etc.
                         </li>
                         <li>
                             <span>03</span>
-                            Collectez l’argent des participants par carte bancaire et par mobile money .
+                            Collecter l’argent des participants par carte bancaire et par mobile money .
                         </li>
                         <li>
                             <span>04</span>
-                            Recevez les fonds collectés sur votre compte bancaire ou sur votre compte mobile money puis exécuter votre projet.
+                            Recever les fonds collectés sur votre compte bancaire ou sur votre compte mobile money puis exécuter votre projet.
                         </li>
                     </ul>
                     <div class="about-btn-area">
                         {{-- withdrawal url --}}
-                        <a class="common-btn about-btn" href="{{ url('list-withdrawal') }}">Demander un rétrait</a>
-                        <a class="common-btn" href="/statut-withdrawal">Statut du rétrait</a>
+                        <a class="common-btn about-btn" href="{{ url('list-withdrawal') }}">Demander un retrait</a>
+                        <a class="common-btn" href="/statut-withdrawal">Statut du retrait</a>
                     </div>
                 </div>
             </div>

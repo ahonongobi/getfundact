@@ -147,19 +147,19 @@
                                         <option selected disabled>Catégories</option>
                                         <option value="Soutien pour proche">Soutien pour proche</option>
                                         <option value="Anniversaire">Anniversaire</option>
-                                        <option value="Associatif">Associatif</option>
-        
+                                        <option value="Association">Association</option>
+                                        <option value="Culture">Culture</option>
                                         
                                         <option value="Divertissement">Divertissement</option>
                                         <option value="Environment">Environnement</option>
-                                        <option value="Evènement">Evénément</option>
+                                        <option value="Evénément">Evénément</option>
                                         
-                                        <option value="Familial">Familial</option>
+                                        <option value="Famille">Famille</option>
                                         <option value="Humanitaire">Humanitaire</option>
                                         <option value="Mariage">Mariage</option>
-                                        <option value="Mobility">Mobilité</option>
                                         
-                                        <option value="Restoration">Restauration</option>
+                                        
+                                        <option value="Restauration">Restauration</option>
                                         <option value="Éducation">Éducation</option>
                                         
                                         <option value="Sports">Sports</option>
@@ -185,7 +185,7 @@
                                             <i id="close-btn" class="icofont-close"></i>
                                             <form method="POST" action="{{url('search-compagn')}}">
                                                 @csrf
-                                                <input type="text" name="search" class="form-control" placeholder="Tapez une  catgorie ou un mot cléfs..."/>
+                                                <input type="text" name="search" class="form-control" placeholder="Tapez une  catégorie ou un mot clefs..."/>
                                                 <button type="submit" class="btn">Réchercher</button>
                                             </form>
                                         </div>

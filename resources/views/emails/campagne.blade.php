@@ -1,7 +1,7 @@
 @component('mail::message')
 # CAMPAGNE DE FONDS
 
-La cagnotte {{$name}} est désormais en ligne sur www.getfund-act.com. Vous pouvez d'ores et déjà envoyer le lien ci-après à vos contributeurs.
+La cagnotte {{$name}} est désormaise en ligne sur www.getfundact.com. Vous pouvez d'ores et déjà envoyer le lien ci-après à vos contributeurs.
 
 Quelques astuces pour réussir votre cagnotte \
 **J'explique clairement les objectifs** \

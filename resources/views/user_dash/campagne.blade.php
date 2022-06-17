@@ -142,18 +142,19 @@
                             </label>
                             <select name="categories" class="select2button mt-3">
                                 <option value="Anniversaire" selected>Anniversaire</option>
-                                <option value="Associatif">Associatif</option>
+                                <option value="Associatiion">Association</option>
 
                                 
                                 <option value="Entertainment">Divertissement</option>
                                 <option value="Environment">Environnement</option>
                                 <option value="Evènement">Evénément</option>
+                                <option value="Culture">Culture</option>
                                 
-                                <option value="Familial">Familial</option>
+                                <option value="Familial">Famille</option>
                                 <option value="Humanitaire">Humanitaire</option>
                                 <option value="Mariage">Mariage</option>
-                                <option value="Mobility">Mobilité</option>
-                                <option value="Recreation">Récréation</option>
+                               
+                               
                                 <option value="Restauration">Restauration</option>
                                 <option value="Éducation">Éducation</option>
                                 
@@ -263,10 +264,10 @@
                                 <input type="text" value="{{ old('keys_word') }}" required name="keys_word"
                                     class="form-control" placeholder="* Mots Cléfs">
                                 <smal class="text-muted">
-                                    Ajouter des mots-cléfs augmente les chances de découverte de votre projet dans les
-                                    recherches. Mes mot-cléfs sont des mots qui décrivent le mieux votre projet. Si votre
+                                    Ajouter des mots-clefs augmente les chances de découverte de votre projet dans les
+                                    recherches. Mes mot-clefs sont des mots qui décrivent le mieux votre projet. Si votre
                                     projet consiste à construire une école, 'Ecole', 'Construction', 'Education' seront des
-                                    mots cléfs pertinents. Une liste de mots cléfs vous est proposée.
+                                    mots cléfs pertinents. Une liste de mots clefs vous est proposée.
                                 </smal>
                             </div>
                         </div>
@@ -281,9 +282,9 @@
                                 <input type="text" value="{{ old('video') }}" required name="video" class="form-control"
                                     placeholder="**Vidéo (si vous avez une vidéo youtube de votre événement ou projet)">
                                 <small class="text-muted">
-                                    Copier-Coller le lien "ifrmae" d une vidéo Viméo ou Youtube qui présente votre campagne. Votre
-                                    vidéo doit être courte pour captiver vos potentiels contributeurs mais complète afin de
-                                    dire d éclairer au mieux sur votre campagne. Comment copier le lien iframe de votre video Youtube, si vous ne le savez pas faire: cliquez 👉
+                                    Copiez-Collez le lien "ifrmae" d une vidéo Viméo ou Youtube qui présente votre campagne. Votre
+                                    vidéo doit être courte pour captiver vos potentiels contributeurs mais complète afin 
+                                     d'éclairer au mieux sur votre campagne. Comment copier le lien iframe de votre video Youtube, si vous ne le savez pas faire: cliquez 👉
                                     {{-- modal a target--}}
                                     <a href="#" id="modalshow">ici</a>
                                     {{-- modal a target--}}
@@ -310,7 +311,7 @@
                             <span class="drop-zone__prompt">
                                 <img class="box-icon"
                                     src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Octicons-cloud-upload.svg" />
-                                Glissez et deposer / ou cliquez pour télécharger
+                                Glisser et deposer / ou cliquer pour télécharger
                             </span>
                             <input type="file" required name="file_vignette" class="drop-zone__input">
                         </div>
@@ -325,17 +326,12 @@
                                     .png).</small>
                             </div>
                         </div> --}}
-
-                        <!-- file drop zone 2 -->
-                        <label for="">Image de couverture de votre campagne</label>
-                        <small class="text-muted">Télécharger une image de taille minimum 500x340(.jpg ou
-                            .png).</small>
                         <div class="drop-zone col-lg-12 mb-4 ">
 
                             <span class="drop-zone__prompt">
                                 <img class="box-icon"
                                     src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Octicons-cloud-upload.svg" />
-                                Glissez et deposer / ou cliquez pour télécharger
+                                Glisser et deposer / ou cliquer pour télécharger
                             </span>
                             <input type="file" required name="file_couverture" class="drop-zone__input">
                         </div>

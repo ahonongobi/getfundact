@@ -190,9 +190,10 @@ class AppServiceProvider extends ServiceProvider
     }
     //then make sendReminderEmail function
     public function sendReminderEmail(){
-        //get all users email two day after registration  to all user who has not completed their profile
+        //get latest users email 24h after registration where states = 0 and if states = 1 do nothing else send email again
+
         
-           $users = User::where('states',0)->where('created_at', '<', Carbon::now()->subDays(2))->get();
+           /**$users = User::where('states',0)->where('created_at', '<', Carbon::now()->subDays(2))->get();
               foreach ($users as $user) {
                  // var_dump($user->email);
                  $name = $user->name;
@@ -201,7 +202,7 @@ class AppServiceProvider extends ServiceProvider
                  $mailable = new Order($name,$email,$message);
                  Mail::to($email)->send($mailable);
                // Mail::to($user->email)->send(new ReminderEmail($user->name,$user->surname,$user->email));
-              }             
+              }   **/          
 
     }
 

@@ -129,19 +129,19 @@
                                     <select name="categories" class="select2button mt-3">
                                         <option value="{{ $item->categories }}" selected>{{ $item->categories }}</option>
                                         <option value="Anniversaire">Anniversaire</option>
-                                        <option value="Associatif">Associatif</option>
+                                        <option value="Association">Association</option>
         
                                         
-                                        <option value="Entertainment">Entertainment</option>
+                                        <option value="Culture">Culture</option>
                                         <option value="Environment">Environment</option>
                                         <option value="Evènement">Evènement</option>
                                         
-                                        <option value="Familial">Familial</option>
+                                        <option value="Famille">Famille</option>
                                         <option value="Humanitaire">Humanitaire</option>
                                         <option value="Mariage">Mariage</option>
-                                        <option value="Mobility">Mobility</option>
                                        
-                                        <option value="Restoration">Restauration</option>
+                                       
+                                        <option value="Restauration">Restauration</option>
                                         <option value="Éducation">Éducation</option>
                                         <option value="Soutien pour proche">Soutien pour proche</option>
                                         <option value="Sports">Sports</option>
@@ -214,7 +214,7 @@
                             <div class="form-group">
                                 <input type="text" value="{{ $item->keys_word }}" required name="keys_word" class="form-control" placeholder="* Mots cléfs">
                                 <smal class="text-muted">
-                                    Ajouter des mots-cléfs augmente les chances de découverte de votre projet dans les recherches. Mes mot-cléfs sont des mots qui décrivent le mieux votre projet. Si votre projet consiste à construire une école, 'Ecole', 'Construction', 'Education' seront des mots cléfs pertinents. Une liste de mots cléfs vous est proposée.
+                                    Ajouter des mots-clefs augmente les chances de découverte de votre projet dans les recherches. Mes mot-clefs sont des mots qui décrivent le mieux votre projet. Si votre projet consiste à construire une école, 'Ecole', 'Construction', 'Education' seront des mots clefs pertinents. Une liste de mots clefs vous est proposée.
                                 </smal>
                             </div>
                         </div>
@@ -227,7 +227,7 @@
                             <div class="form-group">
                                 <input type="text" value="{{ $item->video }}" required name="video" class="form-control" placeholder="**Vidéo (si vous avez une vidéo youtube de votre événement ou projet)">
                                 <small class="text-muted">
-                                    Copier-Coller le lien d une vidéo Viméo ou Youtube qui présente votre campagne. Votre vidéo doit être courte pour captiver vos potentiels contributeurs mais complète afin de dire d éclairer au mieux sur votre campagne.
+                                    Copiez-Collez le lien d une vidéo Viméo ou Youtube qui présente votre campagne. Votre vidéo doit être courte pour captiver vos potentiels contributeurs mais complète afin  d'éclairer au mieux sur votre campagne.
                                 </small>
                             </div>
                         </div> 

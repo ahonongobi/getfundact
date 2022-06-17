@@ -199,7 +199,7 @@
             <label for="tab3">MOT DE PASSE</label>
             <!-- Tab 4 -->
             <input type="radio" name="tabset" id="tab4" aria-controls="rauchbiers">
-            <label for="tab4">Mon Identité</label>
+            <label for="tab4">MON IDENTITÉ</label>
             
             <!-- Tab 4-->
             <div class="tab-panels">
@@ -316,8 +316,8 @@
                                     </div>--}}
                                     <div class='file-input'>
                                         <input accept="" name="file" type='file'>
-                                        <span class='button'>Chosir la photo (profile) en image</span>
-                                        <span class='label' data-js-label>Aucun fichier sélectionner</label>
+                                        <span class='button'>Chosir la photo (profil) en image</span>
+                                        <span class='label' data-js-label>Aucun fichier sélectionné</label>
                                             <span class="text-danger">
                                                 @if ($errors->has('file'))
                                                     {{$errors->first('file')}}

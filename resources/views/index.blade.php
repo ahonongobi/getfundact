@@ -199,7 +199,7 @@ a.green-white:hover {
                     <h3>
                         <a href="#">Bénéfique</a>
                     </h3>
-                    <p>Exploitez la puissance des réseaux sociaux pour diffuser votre histoire et obtenir davantage de soutien.</p>
+                    <p>Exploiter la puissance des réseaux sociaux pour diffuser votre histoire et obtenir davantage de soutien.</p>
                    
                 </div>
             </div>
@@ -223,19 +223,19 @@ a.green-white:hover {
                        
                         <li>
                             <span>01</span>
-                           Créez gratuitement et facilement une campagne.
+                           Créer gratuitement et facilement une campagne.
                         </li>
                         <li>
                             <span>02</span>
-                            Partagez la campagne avec vos amis, vos proches , sur des reseaux sociaux,  etc.
+                            Partager la campagne avec vos amis, vos proches , sur des reseaux sociaux,  etc.
                         </li>
                         <li>
                             <span>03</span>
-                            Collectez l’argent des participants par carte bancaire et par mobile money .
+                            Collecter l’argent des participants par carte bancaire et par mobile money .
                         </li>
                         <li>
                             <span>04</span>
-                            Recevez les fonds collectés sur votre compte bancaire ou sur votre compte mobile money puis exécuter votre projet.
+                            Recever les fonds collectés sur votre compte bancaire ou sur votre compte mobile money puis exécuter votre projet.
                         </li>
                     </ul>
                     <div class="about-btn-area">
@@ -282,18 +282,18 @@ a.green-white:hover {
             <a href="{{url('campagnes/Anniversaire')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-birthday-cake"> </i> Anniversaire</a>
             <a href="{{url('campagnes/Soutien pour proche')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-heart-alt"> </i>Soutien pour proche</a>
             
-            <a href="{{url('campagnes/Ecole')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-education"> </i>Éducation</a>
+            <a href="{{url('campagnes/Education')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-education"> </i>Éducation</a>
             <a href="{{url('campagnes/Sport')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-football"> </i>Sport</a>
 
             
         </span>
         <span class="element2 mb-3 mt-3">
-            <a href="{{url('campagnes/Associatif')}}" type="submit"  class="outline green-white"><i style="font-size: 20px" class="icofont-money"> </i>Associatif</a>
-            <a href="{{url('campagnes/Tontine')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-money"></i>Tontine</a>
+            <a href="{{url('campagnes/Association')}}" type="submit"  class="outline green-white"><i style="font-size: 20px" class="icofont-money"> </i>Association</a>
+            
             <a href="{{url('campagnes/Humanitaire')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-users-social"></i>Humanitaire</a>
             {{-- duplicate ten --}}
-            <a href="{{url('campagnes/Familliale')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-people"></i>Familliale</a>
-            <a href="{{url('campagnes/Mobilité')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-ui-travel"></i>Mobilité</a>
+            <a href="{{url('campagnes/Famille')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-people"></i>Famille</a>
+            
             <a href="{{url('campagnes/Effectuer un Voyage')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-airplane-alt"></i>Voyage</a>
 
             
@@ -301,7 +301,7 @@ a.green-white:hover {
         <span class="element2 mb-3 mt-3">
             <a href="{{url('campagnes/Technologie')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-help-robot"> </i>Technologie</a>
             {{-- duplicate ten --}}
-            <a href="{{url('campagnes/Medical')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-hospital"> </i>Medical</a>
+            <a href="{{url('campagnes/Santé')}}" type="submit" class="outline green-white"><i style="font-size: 20px" class="icofont-hospital"> </i>Santé</a>
             
 
             

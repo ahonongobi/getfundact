@@ -14,7 +14,7 @@
         @endif
         <div class="section-title">
             <span class="sub-title">GETFUND ACTION</span>
-            <h2>Campagnes publics</h2>
+            <h2>Campagnes publiques</h2>
    
         </div>
         <div class="row">
